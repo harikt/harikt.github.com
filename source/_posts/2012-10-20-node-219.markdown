@@ -1,0 +1,8 @@
+---
+layout: post
+title: Why apigen matters ?
+tags: [apigen, phpdocumentator]
+published: true
+date: 2012-10-20 22:03
+---
+I have been working with different open-source projects for a while. Most of them utilizes phpdocumentator2 . I liked it for a while. But I have been looking at apigen, swami etc. Recently I started to make use of apigen extensively. What made me comfortable with apigen than phpdocumentator ? Certain times we may want to look into the code also to see the implementation . I am not sure may be there is an option in phpdocumentator that it can show the code when we click on a function / method. The code highlighting and is shown once we click on it. I like this feature the most. If you haven't yet checked how the apigen generated api looks have a look into the one for the [aura project](https://github.com/auraphp) which is at [http://harikt.github.com/api](http://harikt.github.com/api) More information on a href="http://apigen.org\>apigen.org  

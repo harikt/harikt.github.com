@@ -1,0 +1,21 @@
+---
+layout: post
+title: Wordpress Comments: date shows up as at %I:%M %p
+tags: [wordpress, qtranslate]
+published: true
+date: 2011-11-26 14:11
+---
+Recently I was installing and configuring a wordpress site after a long time. It was a multilingual website. So I started to use [qTranslate](http://www.qianqin.de/qtranslate/)
+I noticed that the time was showing %I:%M %p . A quick google search landed me on [wordpress](http://wordpress.org/support/topic/comments-date-shows-up-as-a-b-eq-y-at-im-p) support website. Then to the qTranslate forum. But the thread was a huge one , and I landed on [date and time](http://codex.wordpress.org/Formatting_Date_and_Time). And then to internationalization [date_i18n](http://codex.wordpress.org/Function_Reference/date_i18n). So I changed the function
+
+```php
+get_comment_time
+```
+
+to something like the one below.
+
+```php
+date_i18n(get_option('date_format') ,strtotime($comment->comment_date))
+```
+
+And it works in a charm :) . I came to know that this only happens when you are using qTranslate. Not explored more on it . So happy hacking !

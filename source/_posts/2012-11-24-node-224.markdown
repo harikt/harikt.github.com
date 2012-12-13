@@ -1,0 +1,8 @@
+---
+layout: post
+title: The making of Hari.Extras
+tags: [auraphp, twig, composer]
+published: true
+date: 2012-11-24 21:22
+---
+If you have read my earlier posts, you know I started to love templating library like Twig, Mustache etc. So I was interested to in-corporate Twig or PhlyMustache or any sort of templating library to auraphp. [Aura.Web](https://github.com/auraphp/Aura.Web/tree/develop) makes it easy to do without much hassle. What you want to do is create the class which extends the Aura\\Web\\Renderer\\AbstractRenderer and have a exec() method. For more details checkout [Data and Rendering](https://github.com/auraphp/Aura.Web/tree/develop#data-and-rendering) {syntaxhighlighter class="php"} Twig in [Hari.Extras](http://github.com/harikt/Hari.Extras) . I will be adding support for PhlyMustache in the coming days. Hari.Extras comes with unit tests. Running unit tests : To run tests you should first install the dependencies. You can run {syntaxhighlighter class="php"}composer.phar install --dev{/syntaxhighlighter} This will install the dependencies like Aura.Web, Aura.Framework, Twig, vfsstream etc in vendor folder. Now you can run the phpunit from tests folder. A big Thanks to @Paul M Jones and Chris Hartjes and all who have supported one way or the other giving me tips and tricks, motivation to make this happen. The nice thing is with composer for I don't need to keep everything in the tests folder. Thanks to [Seldaek](https://github.com/Seldaek) By the way as [auraphp](https://github.com/auraphp) is getting closer and closer for the next release I am planning to start a series of posts to get started with using the components. Stay tuned :) .  

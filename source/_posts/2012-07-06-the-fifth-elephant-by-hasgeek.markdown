@@ -1,0 +1,8 @@
+---
+layout: post
+title: The Fifth Elephant by HasGeek
+tags: [hasgeek, events, bangalore]
+published: true
+date: 2012-07-06 09:59
+---
+The [Fifth Elephant](http://fifthelephant.in/2012/) is going to happen on 27 & 28 July 2012 , Nimhans Convention Centre, Bangalore . The Fifth Elephant is a community-powered conference on the big data ecosystem, covering the technology and its applications in a range of industries. The main event is on July 27-28 . There is also a free workshop on July 26th. A data meetup on July 7, data hacknight on July 14-15. The hacknight has two editions, in Bangalore at the Centre for Internet and Society, and in Pune at AmiWorks. The data workshops are hosted at The Energy & Resources Institute in Bangalore. The Chennai data meetup is at The Startup Centre. Data Meetup : July 7 HackNight : Sat, Jul 14 14:00 PM — Sun, Jul 15 10:00 AM Entry Fee Rs. 500 ( The hacknight is free if you have purchased your ticket to the event. ) Locations : Bangalore ( http://beta.hacknight.in/fifthelephant/bangalore2012 ) Centre for Internet and Society No 194, 2nd C Cross, 4th Main Opp. Domlur Club, Domlur 2nd Stage Bangalore, Karnataka – 560 071, IN Location : Pune ( http://beta.hacknight.in/fifthelephant/pune2012 ) AmiWorks \#3b, Ambika Co-Op Housing Society Near Chaturshringi Mandir, Senapati Bapat Road Pune, Maharashtra – 411 016, IN Free Work Shop : July 26 Main Event : July 27, 28 . I missed to know many of the events organised by @HasGeek, so if you don't want to miss signup over http://eepurl.com/duGmH For More Details http://hasgeek.com/ http://fifthelephant.in http://beta.hacknight.in  

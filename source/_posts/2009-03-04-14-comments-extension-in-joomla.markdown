@@ -1,0 +1,8 @@
+---
+layout: post
+title: Comments in Joomla
+tags: [joomla, yvcomments]
+published: true
+date: 2009-03-04 08:19
+---
+I want to make my Joomla site work similar to a blog. Though my mind doesn't allow me to delete my blog in blogger , I thought of moving completely. I will not be deleting my blog , but will ~~not~~ ( Changed my mind still publishing in http://ijust4u.blogspot.com/ ) be publishing any more posts in blogger. I dont see a built in function for comments in Joomla. Comments help you recognise more about your posts and what others think . So installed comments feature.  I will be posting more topics in this site only , for I need to learn Joomla ( Dropped my plan, moved to Drupal ![image](http://harikt.com/sites/all/libraries/fckeditor/editor/images/smiley/msn/regular_smile.gif) ) . Yes if you want to learn something you need to try it out. So comments is a must . I need to spent some time to configure the comments feature. Some times I have even thought of moving to Drupal , for it has some good features like that . ![image](http://harikt.com/sites/all/libraries/fckeditor/editor/images/smiley/msn/wink_smile.gif) . But I want to learn how to configure comments feature in Joomla , so I will never quit . Yes success comes to my path .  Now the comments feature is here . All can post your comments , need an account here or an open ID . The one I have installed extension for comments is mod\_comment , yvcomment plugin and yvcomment module The documentation is available at http://yurivolkov.com/Joomla/yvComment/index\_en.html . Its GNU/GPL . Have fun if you too need it .   

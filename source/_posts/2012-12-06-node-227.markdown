@@ -1,0 +1,44 @@
+---
+layout: post
+title: Aura.Sql can now make use of existing PDO connection
+tags: [auraphp, sql]
+published: true
+date: 2012-12-06 19:27
+---
+Aura.Sql can now make use of an existing PDO connection with the recent [commit here](https://github.com/auraphp/Aura.Sql/commit/79284382ef6351d81719376063076c7e511c28fd) . This all came after a short discussion with Stan Lemon. A big Thanks to him for making a featured request like this.     > @[harikt](https://twitter.com/harikt) can I inject an existing Pdo > object? > > — Stan Lemon (@stanlemon) > [December 1, 2012](https://twitter.com/stanlemon/status/274708971217100800)     How to make use of an existing PDO?  You want to get a connection object and set the instance of pdo. Note : In this way you are eager loading the PDO. Else Aura.Sql knows when to do the connection. Example of how to make use of it is  
+
+```php
+use Aura\Sql\ConnectionFactory; 
+$connection_factory = new ConnectionFactory; 
+$connection = $connection_factory->newInstance( 
+    // connection name 
+    'mysql', 
+    // DSN elements for PDO; this can also be 
+    // an array of key-value pairs 
+    // host=127.0.0.1;dbname=database-name 
+    '', 
+    // username for the connection 
+    '', 
+    // password for the connection 
+    '' 
+); 
+$connection->setPdo($pdo); 
+ ```
+
+Normally you need to pass the dsn as a string or array. But if you are having the PDO object and you don't love to do, you can pass it as null. Then to the connection object set the pdo instance. Now you can make use of the Aura.Sql insert ,update , delete queries. For a detailed information of how to do check the docs at https://github.com/auraphp/Aura.Sql .  Assuming you have a PDO object created something like the one below  
+
+```php
+$params = array( 
+    'driver' => 'pdo_mysql', 
+    'user' => 'username', 
+    'password' => 'password', 
+    'dbname' => 'database-name' 
+); 
+$dsn = 'mysql:host=localhost;dbname=' . $params['dbname']; 
+$pdo = new Pdo(
+    $dsn, 
+    $params['user'], 
+    $params['password'], 
+    $options = array( PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8', ) 
+); 
+```

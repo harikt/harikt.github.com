@@ -1,0 +1,8 @@
+---
+layout: post
+title: Talking at Barcamp on Composer, Eath and Facebook Search
+tags: [bck, fbsearch, composer, eath]
+published: true
+date: 2012-10-28 11:21
+---
+The 13th edition of Barcamp kerala is on November 4th. This time I am going to talk on Dependency Management with Composer. In the 12th Barcamp I talked about Aura , and it was a bit technical , so Kenny was making sure, not to go for intensive code. So the talk will not be limited to composer. I will be giving you an introduction to Eath , and also a small project which I have done for my personal use fbsearch. The tool is used to search your own status messages you have posted some months back. Its still on alpha for I didn't get enough time to move on to make it much more better. It has some issues which I am already aware of. So if you are interested , be there :) . For more information : [barcampkerala.org](http://barcampkerala.org) [composer.org](http://getcomposer.org) [Eath](https://github.com/crodas/Eath) [fbsearch](http://harikt.com/fbsearch)  

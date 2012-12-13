@@ -1,0 +1,8 @@
+---
+layout: post
+title: Introducing Neon, Simple Yaml parser for PHP
+tags: [neon, yaml]
+published: true
+date: 2012-05-17 22:15
+---
+Hi guys, have you heard about Neon ? Probably no I guess.  Neon is the project by David Grudl (http://davidgrudl.com) which is part of Nette Framework (http://nette.org) . I recently found Neon , but it was not in github for people may not have noticed that much. Also David Grudl tweets almost everything in Czech. So I assume he may be having less followers in twitter who speaks English or any language other than Czech. But he is an awesome guy who has some awesome projects. One of it is [Neon](http://ne-on.org/) and the other one is Texy . I will cover texy in another post.  You can create the php array from json, yaml etc with Neon . See the example below we are parsing as a json and getting $data as array . And then later we are encoding it and you will get Yaml. You can see the live demo at Neon website : http://ne-on.org/  {syntaxhighlighter class="php"} $data = Neon::decode(' { "repo": [ { "name": "resque" }, { "name": "hub" }, { "name": "rip" }, ] } '); print\_r($data); echo '   * * * * *  '; $neon = Neon::encode($data, Neon::BLOCK); {/syntaxhighlighter} PHP array  {syntaxhighlighter class="php"} Array ( [repo] =\> Array ( [0] =\> Array ( [name] =\> resque ) [1] =\> Array ( [name] =\> hub ) [2] =\> Array ( [name] =\> rip ) ) ) repo: - name: resque - name: hub - name: rip {/syntaxhighlighter}  You can see the source code at https://github.com/harikt/Neon for David Grudl has not kept in github. You can get more details from Neon Website http://ne-on.org/   

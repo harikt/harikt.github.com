@@ -1,0 +1,8 @@
+---
+layout: post
+title: Design Principles for a Better CMS
+tags: [cms, cmf]
+published: true
+date: 2012-11-06 21:32
+---
+May be the question is so simple for you. But many times I feel it much complicated. Everyone would have started their website with a custom cms and later moved to Wordpress, Drupal, Joomla or something similar. I used to look for a better book in any language which has design decisions made for the cms to make it such a way that it can be extended. Some of the books that seems interesting to me are 1 ) [Pro Zend Framework CMS](http://www.apress.com/9781430218791) 2 ) [PHP 5 CMS Framework Development](http://www.packtpub.com/php-5-cms-framework-development-2nd-edition/book) It will be great to see if you have came across such books or do you recommend any other books. I am not just looking for PHP, but I am interested to read any sort of books, which will help me to build the next blogger. Waiting to hear you suggestions on the same.  

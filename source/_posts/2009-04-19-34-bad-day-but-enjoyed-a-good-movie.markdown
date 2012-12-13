@@ -1,0 +1,8 @@
+---
+layout: post
+title: Bad day , but enjoyed a good movie
+tags: [movie, varanamairam]
+published: true
+date: 2009-04-19 09:03
+---
+I was sleeping when Faizal , called me and told about the Calicut University declared the fourth and sixth semester results . There was little hope for me , I know university you loves me, that's why you don't leave me . Yes, got only 1 paper Hardware Systems design ( Thanks at-least I got one ![Smile](plugins/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-smile.gif "Smile") ) . Still waiting for the revaluation results of the previous exam ( December 2008 ) . I may some times get a pass mark . Anyway lets wait and see. When I visit the results page I wondered , declared the results of June 2008 today ( April 19 2009 )and the last date of revaluation and application for supplementary was October 2008 ![Surprised](plugins/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-surprised.gif "Surprised") .  ![Varanam aairam](http://farm4.static.flickr.com/3594/3490849515_3f825a3df3.jpg?v=0 "Varanam aairam movie still") ![Vaaranam aairam movie still](http://farm4.static.flickr.com/3303/3490848977_9c8716450b.jpg?v=0 "Vaaranam aairam movie still") Started the day knowing the wonderful results, so the day was really a good one ![Cool](plugins/editors/tinymce/jscripts/tiny_mce/plugins/emotions/images/smiley-cool.gif "Cool") , so to forget the nice results just sat infront of my lap and started watching the movie Varanamairam ,starring Surya , Simaran , Sameera Reddy . A real touching story about Love . Love towards his father , mother and dear ones . Yes a real touching movie . Loved it , if you have not seen , just watch the wonderful movie .Every one has done their roles really well .   

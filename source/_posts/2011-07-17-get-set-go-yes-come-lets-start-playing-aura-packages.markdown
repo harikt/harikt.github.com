@@ -1,0 +1,8 @@
+---
+layout: post
+title: Get set go ... Yes come, lets start playing with Aura Packages
+tags: [php, framework, auraphp, aura]
+published: true
+date: 2011-07-17 17:47
+---
+Some of you may be knowing that I have been playing with [Aura](https://github.com/auraphp) components for the past few months . The Aura is a PHP 5.3 collection of library . Its the next major release of Solar PHP framework of Paul M Jones. If you want to use it as a framework the [system](https://github.com/auraphp/system) makes it possible. Aura uses dependency injection in the core .  I have been trying different things with the aura , testing, fixing some bugs if any and pull to it etc . Currently I have an example repo which will help you to get started .  [Bridge.Careers](https://github.com/harikt/Bridge.Careers) contains different branches, the ViewHelper branch will help you to learn how to create your own view helpers . The MInSrc branch is set of Model related files you want to integrate Aura.Sql in the Aura framework . In the branch the models reside in the src folder itself .  You may also see other branches in the coming days.  Play with it and let us know what you have in your mind .  https://github.com/harikt/Bridge.Careers  Code of Aura PHP : [https://github.com/auraphp](https://github.com/auraphp)  Aura PHP Website : [http://auraphp.github.com/](http://auraphp.github.com/)  Still have some components missing( I mean Porting the Solar components ), but don't worry we will be coming with it in the coming days, or you can even contribute to it. You can join and discuss with us in http://groups.google.com/group/auraphp or in \#auraphp irc channel at freenode.net .   

@@ -1,0 +1,8 @@
+---
+layout: post
+title: Mozilla service week and rewards for you
+tags: [mozilla, reward]
+published: true
+date: 2009-09-09 20:51
+---
+[![Spread Firefox Affiliate Button](http://sfx-images.mozilla.org/msw/avatar.png)](http://mozillaservice.org?from=sfx&uid=267461&t=476)Service its something that is now in the day today life . A vehicle , a pc or anything needs service . The Mozilla service week is here . It starts from 14th of september to 21st 2009 .  There are many programs during this week . A total of 8275 hours is donated . There are many affiliated programs also. You can get many cool Flip Video Camera, an iPod Touch, an iPod Nano, Amazon Gift Certificates and exclusive Top Fox T-shirts!  This is not why I recommend Mozilla Firefox ![image](http://www.harikt.com/sites/all/modules/fckeditor/fckeditor/editor/images/smiley/msn/regular_smile.gif) . But its the browser that changes the world of Internet . As the Mozilla service week is here , if you need any help you can ask for the heps in the mozilla service website http://www.mozillaservice.org/?from=sfx&amp;uid=267461&amp;t=471  There are many volunteers around the world ready to support you for free if yours is a non profit organization . So be part of mozilla and change the world .  [![Spread Firefox Affiliate Button](http://sfx-images.mozilla.org/msw/200x32_blue.png)](http://www.mozillaservice.org/?from=sfx&uid=267461&t=474) [![Spread Firefox Affiliate Button](http://sfx-images.mozilla.org/msw/200x32_red.png)](http://www.mozillaservice.org/?from=sfx&uid=267461&t=475)  These are some of the banners I have taken from the website . Hope you all enjoy the days from 14 to 21 st of september .   
