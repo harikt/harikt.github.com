@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Introducing git version control system by Linus Torvalds the man behind it
-tags: [git, version control system, linus torvalds]
+categories: [git, version control system, linus torvalds]
 published: true
 date: 2009-05-21 09:42
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: DHTML Jquery based google like week planner and calendar
-tags: [week planner]
+categories: [week planner]
 published: true
 date: 2009-06-29 19:58
 ---

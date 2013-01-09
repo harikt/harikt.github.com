@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Comments in Joomla
-tags: [joomla, yvcomments]
+categories: [joomla, yvcomments]
 published: true
 date: 2009-03-04 08:19
 ---

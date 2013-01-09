@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Browser war seems to end but OS war starts
-tags: [browsers, operating system, war]
+categories: [browsers, operating system, war]
 published: true
 date: 2009-07-31 01:51
 ---

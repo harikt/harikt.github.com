@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Playing with ratproxy - passive web application security assessment tool
-tags: [security]
+categories: [security]
 published: true
 date: 2010-06-24 23:22
 ---

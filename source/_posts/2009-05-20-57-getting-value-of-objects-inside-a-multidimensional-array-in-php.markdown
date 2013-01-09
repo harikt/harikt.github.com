@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Getting value of objects inside a multidimensional array in php
-tags: [php, multidimensional array, object]
+categories: [php, multidimensional array, object]
 published: true
 date: 2009-05-20 09:23
 ---

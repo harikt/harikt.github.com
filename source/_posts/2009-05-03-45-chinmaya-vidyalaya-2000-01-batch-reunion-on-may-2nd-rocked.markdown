@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Chinmaya Vidyalaya 2000-01 Batch Reunion on May 2nd rocked
-tags: [chinmaya vidyalaya, reunion]
+categories: [chinmaya vidyalaya, reunion]
 published: true
 date: 2009-05-03 09:32
 ---

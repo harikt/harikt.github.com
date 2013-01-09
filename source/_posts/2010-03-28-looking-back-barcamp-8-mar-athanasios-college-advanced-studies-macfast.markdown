@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Looking back Barcamp 8 at Mar Athanasios College For Advanced Studies ( MACFAST )
-tags: [barcamp, macfast, thiruvalla]
+categories: [barcamp, macfast, thiruvalla]
 published: true
 date: 2010-03-28 22:49
 ---

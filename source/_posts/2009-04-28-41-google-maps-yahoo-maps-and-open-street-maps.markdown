@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Google maps, Yahoo maps and Open street maps
-tags: [google maps, yahoo maps, open street maps]
+categories: [google maps, yahoo maps, open street maps]
 published: true
 date: 2009-04-28 09:08
 ---

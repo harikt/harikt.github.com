@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Replacing mysql query browser and phpmyadmin with Adminer
-tags: [adminer, phpmyadmin, jush]
+categories: [adminer, phpmyadmin, jush]
 published: true
 date: 2011-03-13 11:10
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Aura.Sql can now make use of existing PDO connection
-tags: [auraphp, sql]
+categories: [auraphp, sql]
 published: true
 date: 2012-12-06 19:27
 ---
@@ -23,9 +23,9 @@ $connection = $connection_factory->newInstance(
     '' 
 ); 
 $connection->setPdo($pdo); 
- ```
+```
 
-  Normally you need to pass the dsn as a string or array. But if you are having the PDO object and you don't love to do, you can pass it as null. Then to the connection object set the pdo instance. Now you can make use of the Aura.Sql insert ,update , delete queries. For a detailed information of how to do check the docs at https://github.com/auraphp/Aura.Sql .  Assuming you have a PDO object created something like the one below  
+Normally you need to pass the dsn as a string or array. But if you are having the PDO object and you don't love to do, you can pass it as null. Then to the connection object set the pdo instance. Now you can make use of the Aura.Sql insert ,update , delete queries. For a detailed information of how to do check the docs at https://github.com/auraphp/Aura.Sql .  Assuming you have a PDO object created something like the one below  
 
 ```php
 $params = array( 

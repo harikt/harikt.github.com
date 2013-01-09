@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Converting from PSD to XHTML and cross browser compatibility
-tags: [gnu/linux, ie6, browsers, remote-desktop, ie7, ie8]
+categories: [gnu/linux, ie6, browsers, remote-desktop, ie7, ie8]
 published: true
 date: 2010-03-22 23:09
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Kompozer A wonderful Dreamweaver like WYSIWYG Editor for GNU/Linux , Windows, Mac
-tags: [gnu/linux, wysiwyg editor, dreamweaver, kompozer]
+categories: [gnu/linux, wysiwyg editor, dreamweaver, kompozer]
 published: true
 date: 2009-03-26 08:15
 ---

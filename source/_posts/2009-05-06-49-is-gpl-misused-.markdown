@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Is GPL misused ?
-tags: [gpl, joomla extensions]
+categories: [gpl, joomla extensions]
 published: true
 date: 2009-05-06 09:06
 ---

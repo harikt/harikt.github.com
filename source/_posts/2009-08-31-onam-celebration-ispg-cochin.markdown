@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Onam celebration at ISPG cochin
-tags: [cochin, ispg, onam celebration]
+categories: [cochin, ispg, onam celebration]
 published: true
 date: 2009-08-31 22:06
 ---

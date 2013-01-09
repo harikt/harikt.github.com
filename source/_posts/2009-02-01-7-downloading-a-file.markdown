@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Downloading a file
-tags: [php download script]
+categories: [php download script]
 published: true
 date: 2009-02-01 08:24
 ---

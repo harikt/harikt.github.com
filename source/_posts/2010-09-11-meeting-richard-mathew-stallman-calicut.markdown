@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Meeting Richard Mathew Stallman at Calicut
-tags: [opensource, fsf, foss, nit]
+categories: [opensource, fsf, foss, nit]
 published: true
 date: 2010-09-11 14:07
 ---

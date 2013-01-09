@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Wordpress 3 Ultimate Security
-tags: [book, packt publisher]
+categories: [book, packt publisher]
 published: true
 date: 2011-07-17 17:17
 ---

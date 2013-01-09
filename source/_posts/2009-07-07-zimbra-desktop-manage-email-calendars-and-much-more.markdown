@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Zimbra Desktop to manage email , calendars and much more
-tags: [yahoo, zimbra, gnu/linux desktop application]
+categories: [yahoo, zimbra, gnu/linux desktop application]
 published: true
 date: 2009-07-07 19:36
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Aura T-Shirts
-tags: [auraphp, t-shirt]
+categories: [auraphp, t-shirt]
 published: true
 date: 2012-10-04 10:44
 ---

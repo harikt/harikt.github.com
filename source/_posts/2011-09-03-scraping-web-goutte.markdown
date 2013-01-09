@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Scraping the web with Goutte
-tags: [php, goutte, scraping]
+categories: [php, goutte, scraping]
 published: true
 date: 2011-09-03 13:38
 ---

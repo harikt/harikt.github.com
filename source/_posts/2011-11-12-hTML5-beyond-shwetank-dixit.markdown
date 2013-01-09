@@ -1,7 +1,7 @@
 ---
 layout: post
 title: HTML5 and beyond by Shwetank Dixit
-tags: [html5, bck, iim]
+categories: [html5, bck, iim]
 published: true
 date: 2011-11-12 22:06
 ---

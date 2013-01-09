@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Firebug a Handy tool for web developers
-tags: [firebug, webdeveloper tool]
+categories: [firebug, webdeveloper tool]
 published: true
 date: 2009-05-02 09:44
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Adding HTML Purifier Library in Lithium
-tags: [lithium, htmlpurifier]
+categories: [lithium, htmlpurifier]
 published: true
 date: 2011-03-12 08:06
 ---

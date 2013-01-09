@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Drupal 6 Content Administration
-tags: [drupal, book]
+categories: [drupal, book]
 published: true
 date: 2009-11-18 11:47
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Add WYSIWYG ckeditor to Zend_Textarea element of Zend_Form
-tags: [php, zendframework, Zend_Form, Zend_Textarea]
+categories: [php, zendframework, Zend_Form, Zend_Textarea]
 published: true
 date: 2009-09-17 10:01
 ---

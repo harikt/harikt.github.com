@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Making firefox look similar to google chrome
-tags: [firefox, chrome, addons]
+categories: [firefox, chrome, addons]
 published: true
 date: 2010-04-19 00:15
 ---

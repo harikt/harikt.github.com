@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Barcamp Kerala 5th edition on May 3rd @ Technopark , Trivandrum
-tags: [barcamp, technopark]
+categories: [barcamp, technopark]
 published: true
 date: 2009-04-10 09:14
 ---

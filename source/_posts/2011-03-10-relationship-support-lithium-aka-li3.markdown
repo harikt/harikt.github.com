@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Relationship support in Lithium aka li3
-tags: [lithium, li3, relationship, hasMany, belongsTo]
+categories: [lithium, li3, relationship, hasMany, belongsTo]
 published: true
 date: 2011-03-10 08:37
 ---

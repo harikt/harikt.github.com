@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Wolfram a new way to learn
-tags: [wolfram, learning, integration, mathematics]
+categories: [wolfram, learning, integration, mathematics]
 published: true
 date: 2009-07-09 19:56
 ---

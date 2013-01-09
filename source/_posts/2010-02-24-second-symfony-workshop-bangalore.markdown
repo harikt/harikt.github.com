@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Second Symfony Workshop at Bangalore
-tags: [symfony, bangalore, workshop, techjini]
+categories: [symfony, bangalore, workshop, techjini]
 published: true
 date: 2010-02-24 21:14
 ---

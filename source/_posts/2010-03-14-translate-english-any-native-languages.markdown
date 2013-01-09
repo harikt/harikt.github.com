@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Translate from English to any native languages
-tags: [desktop application, translate, malayalam, hindi, arabic, languages]
+categories: [desktop application, translate, malayalam, hindi, arabic, languages]
 published: true
 date: 2010-03-14 11:31
 ---

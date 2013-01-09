@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Your first cup of Lithium
-tags: [php, php framework, lithium]
+categories: [php, php framework, lithium]
 published: true
 date: 2010-10-31 08:14
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Thoughts on installing Zend Framework via composer
-tags: [zf2, composer, installation]
+categories: [zf2, composer, installation]
 published: true
 date: 2012-09-10 11:04
 ---

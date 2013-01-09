@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Installing and configuring PHP 5.4
-tags: [php54, installing, php, compiling]
+categories: [php54, installing, php, compiling]
 published: true
 date: 2012-01-05 22:33
 ---

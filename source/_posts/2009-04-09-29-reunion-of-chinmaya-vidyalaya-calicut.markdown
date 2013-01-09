@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Reunion of Chinmaya Vidyalaya Calicut
-tags: [chinmaya vidyalaya, reunion, calicut]
+categories: [chinmaya vidyalaya, reunion, calicut]
 published: true
 date: 2009-04-09 09:33
 ---

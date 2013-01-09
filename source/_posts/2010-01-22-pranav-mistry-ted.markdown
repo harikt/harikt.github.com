@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Pranav Mistry at TED :The sixth sense
-tags: [Pranav Mistry, technology, sixth sense, prajith]
+categories: [Pranav Mistry, technology, sixth sense, prajith]
 published: true
 date: 2010-01-22 12:53
 ---

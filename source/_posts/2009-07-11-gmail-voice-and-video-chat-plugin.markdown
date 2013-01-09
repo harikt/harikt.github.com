@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Gmail voice and video chat plugin
-tags: [gmail, video and voice chat]
+categories: [gmail, video and voice chat]
 published: true
 date: 2009-07-11 22:10
 ---

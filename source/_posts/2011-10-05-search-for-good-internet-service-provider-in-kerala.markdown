@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Search for a good internet service provider in Kerala
-tags: [internet, 2g, 3g, speed]
+categories: [internet, 2g, 3g, speed]
 published: true
 date: 2011-10-05 14:40
 ---

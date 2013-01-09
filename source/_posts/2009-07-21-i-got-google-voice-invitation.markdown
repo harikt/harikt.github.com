@@ -1,7 +1,7 @@
 ---
 layout: post
 title: I got Google voice invitation, but :(
-tags: [google voice]
+categories: [google voice]
 published: true
 date: 2009-07-21 11:35
 ---

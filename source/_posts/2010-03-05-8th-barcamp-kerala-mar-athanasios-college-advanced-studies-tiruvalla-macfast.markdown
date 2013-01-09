@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 8th Barcamp Kerala at Mar Athanasios College For Advanced Studies, Tiruvalla (MACFAST)
-tags: [kerala, barcamp, meetup]
+categories: [kerala, barcamp, meetup]
 published: true
 date: 2010-03-05 12:56
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What I feel after using Google Chrome OS
-tags: [google, Google chrome OS, chromium, os]
+categories: [google, Google chrome OS, chromium, os]
 published: true
 date: 2009-11-28 13:38
 ---

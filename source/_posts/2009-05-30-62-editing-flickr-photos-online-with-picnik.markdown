@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Editing flickr photos online with picnik
-tags: [flickr, picnick]
+categories: [flickr, picnick]
 published: true
 date: 2009-05-30 09:35
 ---

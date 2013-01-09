@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Symfony2 the future of PHP ?
-tags: [symfony2, php]
+categories: [symfony2, php]
 published: true
 date: 2011-10-02 11:53
 ---

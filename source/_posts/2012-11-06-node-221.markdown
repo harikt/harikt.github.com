@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Design Principles for a Better CMS
-tags: [cms, cmf]
+categories: [cms, cmf]
 published: true
 date: 2012-11-06 21:32
 ---

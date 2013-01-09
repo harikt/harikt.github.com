@@ -1,7 +1,7 @@
 ---
 layout: post
 title: REST API Design Rulebook by Mark Massé; O'Reilly Media
-tags: [book, review]
+categories: [book, review]
 published: true
 date: 2012-07-17 23:35
 ---

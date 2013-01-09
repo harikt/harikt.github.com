@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ubuntu 9.04 is about to release
-tags: [ubuntu 9.04]
+categories: [ubuntu 9.04]
 published: true
 date: 2009-04-21 09:10
 ---

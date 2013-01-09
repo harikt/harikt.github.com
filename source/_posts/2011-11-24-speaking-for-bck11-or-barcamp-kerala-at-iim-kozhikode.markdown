@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Speaking at Barcamp Kerala 11th Edition at IIM(K)
-tags: [barcamp, iim, facebook]
+categories: [barcamp, iim, facebook]
 published: true
 date: 2011-11-24 11:31
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Reading and Writing CSV files in PHP
-tags: [php, csv]
+categories: [php, csv]
 published: true
 date: 2011-09-03 14:07
 ---

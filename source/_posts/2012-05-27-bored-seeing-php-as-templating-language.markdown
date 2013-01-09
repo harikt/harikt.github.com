@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Getting bored of seeing PHP as a templating language
-tags: [templating, twig, mustache, dwoo, django, jinja, python, latte]
+categories: [templating, twig, mustache, dwoo, django, jinja, python, latte]
 published: true
 date: 2012-05-27 02:08
 ---

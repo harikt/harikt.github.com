@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Complete working example for pagination using Zend_Paginator
-tags: [php, zendframework]
+categories: [php, zendframework]
 published: true
 date: 2009-09-15 13:03
 ---

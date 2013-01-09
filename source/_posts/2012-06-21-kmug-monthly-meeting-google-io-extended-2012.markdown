@@ -1,7 +1,7 @@
 ---
 layout: post
 title: K-MUG Monthly Meeting & Google IO Extended 2012
-tags: [google-io, k-mug, events]
+categories: [google-io, k-mug, events]
 published: true
 date: 2012-06-21 15:47
 ---

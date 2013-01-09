@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Contributing to an opensource Project in github
-tags: [github, auraphp]
+categories: [github, auraphp]
 published: true
 date: 2011-04-29 10:51
 ---

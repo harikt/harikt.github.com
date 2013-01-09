@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Replacement for skype with ekiga or twinkle or coccinella or SIP Communicator for gtalk
-tags: [skype, ekiga, twinkle, coccinella, sip communicator, gtalk]
+categories: [skype, ekiga, twinkle, coccinella, sip communicator, gtalk]
 published: true
 date: 2009-04-26 09:09
 ---

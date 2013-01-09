@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Adding Digg , del.icio.us button in Blogger
-tags: [digg, blogger]
+categories: [digg, blogger]
 published: true
 date: 2009-03-08 08:47
 ---

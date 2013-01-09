@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Fifth Elephant by HasGeek
-tags: [hasgeek, events, bangalore]
+categories: [hasgeek, events, bangalore]
 published: true
 date: 2012-07-06 09:59
 ---

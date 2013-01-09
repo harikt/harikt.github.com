@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Downloading youtube videos to your system
-tags: [youtube, download videos]
+categories: [youtube, download videos]
 published: true
 date: 2009-03-11 08:28
 ---

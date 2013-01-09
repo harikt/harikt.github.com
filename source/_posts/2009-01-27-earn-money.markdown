@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to earn money from internet ?
-tags: [earn money, internet]
+categories: [earn money, internet]
 published: true
 date: 2009-01-27 08:29
 ---

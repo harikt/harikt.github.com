@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Google recently launched Study tips for students
-tags: [google]
+categories: [google]
 published: true
 date: 2009-05-30 09:27
 ---

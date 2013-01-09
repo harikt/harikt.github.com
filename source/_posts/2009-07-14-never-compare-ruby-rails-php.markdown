@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Never compare Ruby on Rails with PHP
-tags: [php, rubyonrails]
+categories: [php, rubyonrails]
 published: true
 date: 2009-07-14 22:12
 ---

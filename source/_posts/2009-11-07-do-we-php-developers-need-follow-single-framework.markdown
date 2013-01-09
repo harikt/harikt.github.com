@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Do we , PHP Developers need to follow a single framework ?
-tags: [zendframework, symfony, php framework]
+categories: [zendframework, symfony, php framework]
 published: true
 date: 2009-11-07 12:59
 ---

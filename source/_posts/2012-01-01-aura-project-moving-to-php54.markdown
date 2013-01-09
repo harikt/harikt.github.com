@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Aura Project aiming to PHP 5.4 + only
-tags: [auraphp]
+categories: [auraphp]
 published: true
 date: 2012-01-01 22:35
 ---

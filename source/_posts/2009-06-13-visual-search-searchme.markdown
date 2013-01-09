@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Visual Search by searchme
-tags: [searchme, visual search]
+categories: [searchme, visual search]
 published: true
 date: 2009-06-13 20:08
 ---

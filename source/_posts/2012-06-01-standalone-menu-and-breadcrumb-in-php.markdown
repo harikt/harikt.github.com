@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Standalone Menu's with PHP
-tags: [knpmenu, php, knplabs, menu, breadcrumb]
+categories: [knpmenu, php, knplabs, menu, breadcrumb]
 published: true
 date: 2012-06-01 22:26
 ---

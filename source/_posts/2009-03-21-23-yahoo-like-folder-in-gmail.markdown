@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Yahoo like folder in Gmail
-tags: [yahoo, gmail]
+categories: [yahoo, gmail]
 published: true
 date: 2009-03-21 08:27
 ---

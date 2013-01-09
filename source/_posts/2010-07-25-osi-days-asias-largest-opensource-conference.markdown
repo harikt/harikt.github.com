@@ -1,7 +1,7 @@
 ---
 layout: post
 title: OSI Days , Asia's Largest opensource conference
-tags: [opensource, osidays, conference, asia, opensource india]
+categories: [opensource, osidays, conference, asia, opensource india]
 published: true
 date: 2010-07-25 00:38
 ---

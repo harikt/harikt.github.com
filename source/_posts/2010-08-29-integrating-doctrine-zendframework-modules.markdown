@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Integrating Doctrine with Zendframework for modules
-tags: [php, zendframework, doctrine]
+categories: [php, zendframework, doctrine]
 published: true
 date: 2010-08-29 21:39
 ---

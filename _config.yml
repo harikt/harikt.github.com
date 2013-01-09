@@ -3,8 +3,8 @@
 # ----------------------- #
 
 url: http://harikt.github.com
-title: Random thoughts on PHP | Hari KT
-subtitle: Random thoughts on PHP | Hari KT
+title: Random thoughts | Hari KT
+subtitle: On programming
 author: Hari K T
 simple_search: http://google.com/search
 description:
@@ -93,7 +93,7 @@ disqus_short_name:
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-5998889-1
 
 # Facebook Like
 facebook_like: false

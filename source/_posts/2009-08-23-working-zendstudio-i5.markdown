@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Working on Zendstudio i5
-tags: [zendframework, zendstudioi5]
+categories: [zendframework, zendstudioi5]
 published: true
 date: 2009-08-23 11:33
 ---

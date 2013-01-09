@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Setting to run mysql query within aptana studio
-tags: [aptana, database configuration]
+categories: [aptana, database configuration]
 published: true
 date: 2009-07-06 21:24
 ---

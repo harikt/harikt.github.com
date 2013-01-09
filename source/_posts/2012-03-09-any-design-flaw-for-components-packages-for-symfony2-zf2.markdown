@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Is there a design flaw for the Components or Packages made by Symfony2 and Zend Framework 2
-tags: [auraphp, symfony2, zf2, zendframework]
+categories: [auraphp, symfony2, zf2, zendframework]
 published: true
 date: 2012-03-09 04:29
 ---

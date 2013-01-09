@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mercury Editor , Fluid Baseline
-tags: [mercury, editor, fluidbaseline, responsive-web]
+categories: [mercury, editor, fluidbaseline, responsive-web]
 published: true
 date: 2011-10-03 23:57
 ---

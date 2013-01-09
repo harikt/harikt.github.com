@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Tweets and Relationship
-tags: [twitter, relationship]
+categories: [twitter, relationship]
 published: true
 date: 2012-02-02 22:28
 ---

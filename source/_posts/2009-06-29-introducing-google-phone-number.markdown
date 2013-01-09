@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Introducing Google Phone number
-tags: [google voice]
+categories: [google voice]
 published: true
 date: 2009-06-29 20:23
 ---

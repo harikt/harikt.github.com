@@ -1,7 +1,7 @@
 ---
 layout: post
 title: New advertisement of Oracle and Sun and message to IBM
-tags: [ibm, sun microsystems, oracle]
+categories: [ibm, sun microsystems, oracle]
 published: true
 date: 2009-09-10 20:45
 ---

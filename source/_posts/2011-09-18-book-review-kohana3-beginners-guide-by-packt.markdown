@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Book Review Kohana 3.0 Beginner's Guide By Packt
-tags: [kohana, book]
+categories: [kohana, book]
 published: true
 date: 2011-09-18 22:16
 ---

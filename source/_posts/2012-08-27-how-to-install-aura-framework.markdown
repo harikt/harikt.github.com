@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to install aura framework
-tags: [auraphp, screencast]
+categories: [auraphp, screencast]
 published: true
 date: 2012-08-27 04:58
 ---

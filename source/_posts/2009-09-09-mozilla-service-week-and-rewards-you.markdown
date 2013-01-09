@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mozilla service week and rewards for you
-tags: [mozilla, reward]
+categories: [mozilla, reward]
 published: true
 date: 2009-09-09 20:51
 ---

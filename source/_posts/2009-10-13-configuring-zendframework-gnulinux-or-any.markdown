@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Configuring Zendframework 1.9 in GNU/Linux or any
-tags: [gnu/linux, zendframework, installation, configuration]
+categories: [gnu/linux, zendframework, installation, configuration]
 published: true
 date: 2009-10-13 23:28
 ---

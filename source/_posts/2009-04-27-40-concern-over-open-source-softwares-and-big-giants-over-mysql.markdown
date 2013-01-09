@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Concern over open source softwares and big giants over MySQL
-tags: [mysql]
+categories: [mysql]
 published: true
 date: 2009-04-27 09:08
 ---

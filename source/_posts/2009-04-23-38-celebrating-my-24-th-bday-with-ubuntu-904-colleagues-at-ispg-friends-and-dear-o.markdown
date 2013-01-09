@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Celebrating my 24 th B'day with Ubuntu 9.04, colleagues at ISPG, friends and dear ones
-tags: [birthday, ubuntu 9.04]
+categories: [birthday, ubuntu 9.04]
 published: true
 date: 2009-04-23 09:01
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Autoloading classes in PHP, the PSR-0 Standard way with Symfony2
-tags: [phpmaster, article]
+categories: [phpmaster, article]
 published: true
 date: 2012-02-17 10:12
 ---

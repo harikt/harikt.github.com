@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Joomla, Drupal, Typo3, Wordpress, Mamboo .. cms
-tags: [joomla, drupal, typo3, wordpress, cms]
+categories: [joomla, drupal, typo3, wordpress, cms]
 published: true
 date: 2009-01-27 08:21
 ---

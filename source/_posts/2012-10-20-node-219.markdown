@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Why apigen matters ?
-tags: [apigen, phpdocumentator]
+categories: [apigen, phpdocumentator]
 published: true
 date: 2012-10-20 22:03
 ---

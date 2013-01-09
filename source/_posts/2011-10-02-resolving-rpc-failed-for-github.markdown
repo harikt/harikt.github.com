@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Resolving RPC failed for github
-tags: [github]
+categories: [github]
 published: true
 date: 2011-10-02 15:07
 ---

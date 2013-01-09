@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Benefits of open source frameworks over custom frameworks
-tags: [joomla, drupal, framework, zendframework, codeigniter, lithium, cake]
+categories: [joomla, drupal, framework, zendframework, codeigniter, lithium, cake]
 published: true
 date: 2010-01-22 11:25
 ---

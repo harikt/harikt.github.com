@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Running Aptana Studio, PHP IDE on Ubuntu 9.04
-tags: [ubuntu 9.04, Aptana Studio, PHP IDE]
+categories: [ubuntu 9.04, Aptana Studio, PHP IDE]
 published: true
 date: 2009-07-05 20:59
 ---

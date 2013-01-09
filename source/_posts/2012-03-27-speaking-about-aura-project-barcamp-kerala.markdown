@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Speaking about Aura Project for PHP at Barcamp Kerala
-tags: [auraphp, barcamp, kerala]
+categories: [auraphp, barcamp, kerala]
 published: true
 date: 2012-03-27 21:13
 ---

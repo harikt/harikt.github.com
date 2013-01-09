@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Convert static html to a dynamic one with PHP
-tags: [php, static, dynamic]
+categories: [php, static, dynamic]
 published: true
 date: 2009-01-29 08:26
 ---

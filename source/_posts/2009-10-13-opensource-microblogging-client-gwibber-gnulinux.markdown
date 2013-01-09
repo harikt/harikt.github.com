@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Opensource Microblogging ( twitter ) Clients for GNU/Linux
-tags: [gnu/linux, opensource, gwibber, microblogging, choqok]
+categories: [gnu/linux, opensource, gwibber, microblogging, choqok]
 published: true
 date: 2009-10-13 22:31
 ---

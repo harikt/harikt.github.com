@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Change Thunderbird to Microsoft Outlook 2007 look and feel
-tags: [microsoft, outlook, thunderbird, evolution]
+categories: [microsoft, outlook, thunderbird, evolution]
 published: true
 date: 2010-05-07 20:59
 ---

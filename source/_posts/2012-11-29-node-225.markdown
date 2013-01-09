@@ -1,7 +1,7 @@
 ---
 layout: post
 title: First stable release for Aura components
-tags: [auraphp, packages, release]
+categories: [auraphp, packages, release]
 published: true
 date: 2012-11-29 20:46
 ---

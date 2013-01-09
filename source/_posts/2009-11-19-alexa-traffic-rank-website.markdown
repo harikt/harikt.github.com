@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Alexa Traffic rank for a website
-tags: [alexa, traffic rank]
+categories: [alexa, traffic rank]
 published: true
 date: 2009-11-19 10:53
 ---

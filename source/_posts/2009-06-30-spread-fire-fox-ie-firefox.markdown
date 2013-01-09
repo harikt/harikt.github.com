@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Spread Fire from Fox ie Firefox
-tags: [firefox]
+categories: [firefox]
 published: true
 date: 2009-06-30 19:28
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Seventh Barcamp at Kristu Jyoti College of Management and Technology
-tags: [barcamp, Kristu Jyoti College of Management and Technology]
+categories: [barcamp, Kristu Jyoti College of Management and Technology]
 published: true
 date: 2009-12-20 19:32
 ---

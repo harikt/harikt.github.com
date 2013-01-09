@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PHP5 CMS Framework Development
-tags: [cms]
+categories: [cms]
 published: true
 date: 2010-08-29 08:55
 ---

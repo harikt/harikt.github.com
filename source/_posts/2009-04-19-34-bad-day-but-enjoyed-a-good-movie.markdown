@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Bad day , but enjoyed a good movie
-tags: [movie, varanamairam]
+categories: [movie, varanamairam]
 published: true
 date: 2009-04-19 09:03
 ---

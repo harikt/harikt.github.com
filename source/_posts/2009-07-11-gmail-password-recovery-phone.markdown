@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Gmail password recovery on phone
-tags: [gmail, password]
+categories: [gmail, password]
 published: true
 date: 2009-07-11 21:57
 ---

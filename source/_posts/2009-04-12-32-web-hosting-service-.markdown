@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Web Hosting service 
-tags: [webhosting, vps, cdn]
+categories: [webhosting, vps, cdn]
 published: true
 date: 2009-04-12 09:50
 ---

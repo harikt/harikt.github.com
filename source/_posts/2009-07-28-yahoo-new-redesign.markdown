@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Yahoo with the new redesign
-tags: [yahoo, design]
+categories: [yahoo, design]
 published: true
 date: 2009-07-28 02:17
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Somethiing about Kohana and Lithium PHP framework
-tags: [framework, php framework, kohana, codeigniter, cakephp]
+categories: [framework, php framework, kohana, codeigniter, cakephp]
 published: true
 date: 2009-12-22 21:14
 ---

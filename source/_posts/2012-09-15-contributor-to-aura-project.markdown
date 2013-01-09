@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How I became a contributor to aura project
-tags: [auraphp, open-source, php]
+categories: [auraphp, open-source, php]
 published: true
 date: 2012-09-15 21:16
 ---

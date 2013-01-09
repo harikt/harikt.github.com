@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Google introducing Wave , the application that is coming to rock in 2009
-tags: [wave from google]
+categories: [wave from google]
 published: true
 date: 2009-07-07 20:24
 ---

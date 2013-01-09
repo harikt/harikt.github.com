@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Enjoyed Barcamp 5 from Park Center, Technopark
-tags: [barcamp, technopark, park center]
+categories: [barcamp, technopark, park center]
 published: true
 date: 2009-05-04 09:32
 ---

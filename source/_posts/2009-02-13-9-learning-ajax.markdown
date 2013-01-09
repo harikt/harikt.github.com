@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Learning Ajax
-tags: [php, ajax example, javascript]
+categories: [php, ajax example, javascript]
 published: true
 date: 2009-02-13 07:45
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Link to Mootools doc in jQuery website
-tags: [jquery, mootools]
+categories: [jquery, mootools]
 published: true
 date: 2010-05-06 00:54
 ---

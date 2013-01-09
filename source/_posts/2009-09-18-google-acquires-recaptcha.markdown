@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Google acquires reCAPTCHA
-tags: [google, recaptcha]
+categories: [google, recaptcha]
 published: true
 date: 2009-09-18 11:07
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Kerala Google Technology Users Group and Adobe Launch Event
-tags: [kerala, technopark, cochin, gtug, adobe, trivandrum]
+categories: [kerala, technopark, cochin, gtug, adobe, trivandrum]
 published: true
 date: 2010-04-06 19:23
 ---

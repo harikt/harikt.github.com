@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Working with Joomla and Drupal
-tags: [joomla, drupal]
+categories: [joomla, drupal]
 published: true
 date: 2009-05-11 09:05
 ---

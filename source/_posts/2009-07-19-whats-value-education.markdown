@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Whats the value of education ?
-tags: [education]
+categories: [education]
 published: true
 date: 2009-07-19 21:12
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: FireFTP , Filezilla a wonderful tool for web developers
-tags: [webdeveloper tool, fireftp, filezilla]
+categories: [webdeveloper tool, fireftp, filezilla]
 published: true
 date: 2009-03-27 08:44
 ---

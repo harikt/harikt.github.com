@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Twitter Retweet button, Show tweets ( twitter feeds ) on your websites
-tags: [twitter, juitter, retweet, John Resig]
+categories: [twitter, juitter, retweet, John Resig]
 published: true
 date: 2010-02-18 20:49
 ---

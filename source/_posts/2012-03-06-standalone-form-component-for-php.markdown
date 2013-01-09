@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Standalone Form component for PHP
-tags: [forms, php, symfony2, zf2]
+categories: [forms, php, symfony2, zf2]
 published: true
 date: 2012-03-06 22:18
 ---

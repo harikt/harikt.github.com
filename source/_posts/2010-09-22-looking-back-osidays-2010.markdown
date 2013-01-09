@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Walking you through OSIDays 2010
-tags: [osidays, conference]
+categories: [osidays, conference]
 published: true
 date: 2010-09-22 16:55
 ---

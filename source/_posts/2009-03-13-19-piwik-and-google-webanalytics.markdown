@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Piwik and Google Webanalytics
-tags: [google, piwik, webanalytics]
+categories: [google, piwik, webanalytics]
 published: true
 date: 2009-03-13 08:17
 ---

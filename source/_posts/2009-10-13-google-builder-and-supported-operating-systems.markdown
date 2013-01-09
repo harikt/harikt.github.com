@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Google Builder and supported Operating Systems
-tags: [google, gnu/linux, operating system]
+categories: [google, gnu/linux, operating system]
 published: true
 date: 2009-10-13 21:14
 ---

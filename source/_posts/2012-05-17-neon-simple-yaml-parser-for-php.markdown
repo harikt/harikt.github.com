@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Introducing Neon, Simple Yaml parser for PHP
-tags: [neon, yaml]
+categories: [neon, yaml]
 published: true
 date: 2012-05-17 22:15
 ---

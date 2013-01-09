@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Rajgiri College Cochin hosted the 6th Barcamp-Kerala
-tags: [barcamp, rajgiri, cuiet, rasat]
+categories: [barcamp, rajgiri, cuiet, rasat]
 published: true
 date: 2009-10-11 17:41
 ---

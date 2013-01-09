@@ -1,7 +1,7 @@
 ---
 layout: post
 title: GNU / GPL Licenced E-commerce systems
-tags: [ecommerce, gnu/gpl, oscommerce, zencart, magnento]
+categories: [ecommerce, gnu/gpl, oscommerce, zencart, magnento]
 published: true
 date: 2009-03-23 08:25
 ---

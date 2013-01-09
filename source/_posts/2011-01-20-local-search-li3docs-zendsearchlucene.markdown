@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A local search for the li3_docs with Zend_Search_Lucene
-tags: [zendframework, lithium, lucene, li3]
+categories: [zendframework, lithium, lucene, li3]
 published: true
 date: 2011-01-20 20:25
 ---

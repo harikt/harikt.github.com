@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Why you should write test
-tags: [php, array_merge, union]
+categories: [php, array_merge, union]
 published: true
 date: 2012-06-13 09:25
 ---

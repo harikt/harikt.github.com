@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Symfony Live 2010 at Paris
-tags: [framework, symfony, php framework]
+categories: [framework, symfony, php framework]
 published: true
 date: 2010-02-01 22:14
 ---

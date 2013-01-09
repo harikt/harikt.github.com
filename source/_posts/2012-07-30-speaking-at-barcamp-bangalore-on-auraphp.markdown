@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Speaking at Barcamp Bangalore August 25th 2012 on Aura PHP
-tags: [auraphp, barcamp, bangalore]
+categories: [auraphp, barcamp, bangalore]
 published: true
 date: 2012-07-30 23:24
 ---

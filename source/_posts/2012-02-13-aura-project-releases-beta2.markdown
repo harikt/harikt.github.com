@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Aura Project for PHP releases Beta 2
-tags: [aura, auraphp, library, components]
+categories: [aura, auraphp, library, components]
 published: true
 date: 2012-02-13 22:08
 ---

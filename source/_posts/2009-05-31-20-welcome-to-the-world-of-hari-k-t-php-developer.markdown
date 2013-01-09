@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Welcome to the World of Hari K T, PHP Developer
-tags: [php developer, hari kt]
+categories: [php developer, hari kt]
 published: true
 date: 2009-05-31 10:35
 ---

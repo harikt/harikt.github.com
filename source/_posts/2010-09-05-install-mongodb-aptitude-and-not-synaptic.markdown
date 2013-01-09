@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Install MongoDb via aptitude and not via Synaptic
-tags: [mongodb, nosql]
+categories: [mongodb, nosql]
 published: true
 date: 2010-09-05 14:38
 ---

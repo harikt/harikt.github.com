@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Captcha Image for Joomla
-tags: [joomla, captcha]
+categories: [joomla, captcha]
 published: true
 date: 2009-03-04 08:20
 ---

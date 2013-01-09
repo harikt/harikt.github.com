@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Documentation with help of Sphinx and readthedocs
-tags: [sphinx, documentation, readthedocs]
+categories: [sphinx, documentation, readthedocs]
 published: true
 date: 2011-08-05 23:23
 ---

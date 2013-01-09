@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Download videos which are played in your browser
-tags: [download youtube video, dailymotions, or any]
+categories: [download youtube video, dailymotions, or any]
 published: true
 date: 2009-07-03 20:39
 ---

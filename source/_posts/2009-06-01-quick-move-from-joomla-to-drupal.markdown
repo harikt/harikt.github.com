@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Quick move from Joomla to Drupal
-tags: [joomla, drupal]
+categories: [joomla, drupal]
 published: true
 date: 2009-06-01 00:31
 ---

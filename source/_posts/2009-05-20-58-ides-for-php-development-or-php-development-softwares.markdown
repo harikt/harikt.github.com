@@ -1,7 +1,7 @@
 ---
 layout: post
 title: IDE's for PHP Development or PHP development softwares
-tags: [php development, ide, aptana, zend studio, netbeans, eclipse]
+categories: [php development, ide, aptana, zend studio, netbeans, eclipse]
 published: true
 date: 2009-05-20 09:22
 ---

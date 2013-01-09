@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Booting gnewsense gnu/linux from USB flash drive
-tags: [gnewsense, gnu/linux, boot from usb, flash drive, pen drive, thumb drive, usb-creator]
+categories: [gnewsense, gnu/linux, boot from usb, flash drive, pen drive, thumb drive, usb-creator]
 published: true
 date: 2009-05-02 09:07
 ---

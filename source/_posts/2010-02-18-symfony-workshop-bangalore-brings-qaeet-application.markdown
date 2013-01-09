@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Symfony Workshop at Bangalore brings qaeet application
-tags: [symfony, bangalore, workshop, techjini, qaeet]
+categories: [symfony, bangalore, workshop, techjini, qaeet]
 published: true
 date: 2010-02-18 21:27
 ---

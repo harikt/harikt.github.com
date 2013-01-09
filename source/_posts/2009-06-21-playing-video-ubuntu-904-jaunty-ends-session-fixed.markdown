@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Playing video in Ubuntu 9.04 ( jaunty ) ends session fixed
-tags: [ubuntu 9.04, jaunty, ends session]
+categories: [ubuntu 9.04, jaunty, ends session]
 published: true
 date: 2009-06-21 11:49
 ---

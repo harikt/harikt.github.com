@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Resizing Image using command line in GNU/Linux
-tags: [gnu/linux, resize, image, command line]
+categories: [gnu/linux, resize, image, command line]
 published: true
 date: 2009-04-12 09:12
 ---

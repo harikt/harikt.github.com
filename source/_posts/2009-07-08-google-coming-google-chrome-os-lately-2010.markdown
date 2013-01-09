@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Google coming with the Google Chrome OS lately in 2010
-tags: [Google chrome OS, opensource]
+categories: [Google chrome OS, opensource]
 published: true
 date: 2009-07-08 20:29
 ---

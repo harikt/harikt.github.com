@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Google comes with movie search for your location
-tags: [google, movie, templates]
+categories: [google, movie, templates]
 published: true
 date: 2009-11-19 13:12
 ---

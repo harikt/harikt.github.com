@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A peep through PHP 5.3 frameworks
-tags: [php]
+categories: [php]
 published: true
 date: 2011-04-15 10:29
 ---

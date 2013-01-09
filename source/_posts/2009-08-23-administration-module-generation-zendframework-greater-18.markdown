@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Administration module generation for ZendFramework 1.9
-tags: [zendframework, module, administration, zend tool kit]
+categories: [zendframework, module, administration, zend tool kit]
 published: true
 date: 2009-08-23 09:56
 ---

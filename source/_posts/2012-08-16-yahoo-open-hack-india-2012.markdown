@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Yahoo Open Hack India 2012
-tags: [yahoo, openhackindia2012]
+categories: [yahoo, openhackindia2012]
 published: true
 date: 2012-08-16 11:38
 ---

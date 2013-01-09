@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Get set go ... Yes come, lets start playing with Aura Packages
-tags: [php, framework, auraphp, aura]
+categories: [php, framework, auraphp, aura]
 published: true
 date: 2011-07-17 17:47
 ---

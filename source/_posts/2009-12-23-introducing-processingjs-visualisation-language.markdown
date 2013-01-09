@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Introducing processingjs a visualisation language
-tags: [processingjs]
+categories: [processingjs]
 published: true
 date: 2009-12-23 18:35
 ---

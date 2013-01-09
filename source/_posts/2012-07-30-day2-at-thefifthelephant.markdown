@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Day 2 at the fifth elephant
-tags: [the5el, thefifthelephant]
+categories: [the5el, thefifthelephant]
 published: true
 date: 2012-07-30 23:17
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Frameworks in PHP
-tags: [php, framework, zend, mvc]
+categories: [php, framework, zend, mvc]
 published: true
 date: 2009-03-21 08:25
 ---

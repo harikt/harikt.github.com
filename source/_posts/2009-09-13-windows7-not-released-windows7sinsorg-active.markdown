@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Windows7 not released but windows7sins.org is active
-tags: [gnu/linux, gnu/gpl, windows, fsf]
+categories: [gnu/linux, gnu/gpl, windows, fsf]
 published: true
 date: 2009-09-13 14:54
 ---

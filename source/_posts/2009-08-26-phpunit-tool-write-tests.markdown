@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Phpunit a tool to write tests
-tags: [testing, software engineering, phpundercontrol, phpunit]
+categories: [testing, software engineering, phpundercontrol, phpunit]
 published: true
 date: 2009-08-26 21:48
 ---

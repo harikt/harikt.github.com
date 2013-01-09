@@ -1,7 +1,7 @@
 ---
 layout: post
 title: vfsStream and file system
-tags: [vfsstream, phpunit]
+categories: [vfsstream, phpunit]
 published: true
 date: 2012-11-24 20:42
 ---

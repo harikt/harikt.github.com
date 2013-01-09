@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Does CSS frameworks helps in rapid development of websites ?
-tags: [web development, css framework]
+categories: [web development, css framework]
 published: true
 date: 2009-10-07 13:05
 ---

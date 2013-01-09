@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MongoDB and PHP by Steve Francia; O'Reilly Media
-tags: [mongodb, php, O'Reilly]
+categories: [mongodb, php, O'Reilly]
 published: true
 date: 2012-02-13 21:30
 ---

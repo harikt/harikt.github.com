@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Things that will help you for the smooth running of a company
-tags: [startup, project-management]
+categories: [startup, project-management]
 published: true
 date: 2011-10-03 22:15
 ---

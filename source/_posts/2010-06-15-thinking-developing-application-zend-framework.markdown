@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Thinking of developing an application with Zend framework
-tags: [zendframework]
+categories: [zendframework]
 published: true
 date: 2010-06-15 23:35
 ---

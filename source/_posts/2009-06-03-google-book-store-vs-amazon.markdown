@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Google Book store Vs Amazon
-tags: [google books, amazon]
+categories: [google books, amazon]
 published: true
 date: 2009-06-03 09:52
 ---

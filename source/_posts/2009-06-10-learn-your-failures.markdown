@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Learn from your failures
-tags: [learn]
+categories: [learn]
 published: true
 date: 2009-06-10 10:34
 ---

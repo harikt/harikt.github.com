@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Search yahoo , google , youtube , flicker , facebook and more from Kosmix
-tags: [flickr, google, yahoo, kosmix, youtube, facebook]
+categories: [flickr, google, yahoo, kosmix, youtube, facebook]
 published: true
 date: 2009-04-22 09:02
 ---

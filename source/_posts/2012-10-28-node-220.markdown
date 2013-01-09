@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Talking at Barcamp on Composer, Eath and Facebook Search
-tags: [bck, fbsearch, composer, eath]
+categories: [bck, fbsearch, composer, eath]
 published: true
 date: 2012-10-28 11:21
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Different drupal themes that I love
-tags: [drupal, themes]
+categories: [drupal, themes]
 published: true
 date: 2009-08-15 21:52
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Things that you must take care before selecting a hosting
-tags: [webhosting]
+categories: [webhosting]
 published: true
 date: 2009-05-13 09:48
 ---

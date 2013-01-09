@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Day 1 at The Fifth Elephant
-tags: [the5el, thefifthelephant, hasgeek, talks]
+categories: [the5el, thefifthelephant, hasgeek, talks]
 published: true
 date: 2012-07-27 21:17
 ---

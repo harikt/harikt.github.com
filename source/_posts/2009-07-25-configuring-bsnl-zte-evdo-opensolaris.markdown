@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Configuring BSNL ZTE EVDO in opensolaris
-tags: [opensolaris, bsnl, evdo, zte]
+categories: [opensolaris, bsnl, evdo, zte]
 published: true
 date: 2009-07-25 22:21
 ---

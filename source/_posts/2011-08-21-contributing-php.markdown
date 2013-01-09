@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Contributing to PHP
-tags: [php]
+categories: [php]
 published: true
 date: 2011-08-21 14:21
 ---

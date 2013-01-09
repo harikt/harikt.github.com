@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Zend framework Bug Hunt
-tags: [zendframework, bug hunt]
+categories: [zendframework, bug hunt]
 published: true
 date: 2009-11-18 13:46
 ---

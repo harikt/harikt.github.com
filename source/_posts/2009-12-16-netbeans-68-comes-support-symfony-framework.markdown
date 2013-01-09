@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Netbeans 6.8 comes with support for Symfony framework , Zend framework
-tags: [ide, netbeans, zendframework, symfony]
+categories: [ide, netbeans, zendframework, symfony]
 published: true
 date: 2009-12-16 19:53
 ---

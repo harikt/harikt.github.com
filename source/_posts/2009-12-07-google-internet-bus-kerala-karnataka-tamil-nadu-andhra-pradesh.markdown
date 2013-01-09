@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Google Internet Bus in Kerala , Karnataka , Tamil Nadu , Andhra Pradesh
-tags: [google, kerala, internet]
+categories: [google, kerala, internet]
 published: true
 date: 2009-12-07 23:18
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Getting Started with OAuth 2.0 by Ryan Boyd; O'Reilly Media
-tags: [book, review, oauth2.0, open-id]
+categories: [book, review, oauth2.0, open-id]
 published: true
 date: 2012-04-26 22:46
 ---

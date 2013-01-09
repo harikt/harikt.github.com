@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ubuntu 9.10 and you get 2GB of online storage free
-tags: [gnu/linux, ubuntu, free]
+categories: [gnu/linux, ubuntu, free]
 published: true
 date: 2009-10-29 18:37
 ---

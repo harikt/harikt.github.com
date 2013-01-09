@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How strong are you in PHP and MySQL
-tags: [php, interview, questions]
+categories: [php, interview, questions]
 published: true
 date: 2010-03-22 21:23
 ---

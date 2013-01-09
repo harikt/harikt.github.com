@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PHPDirector, have your own free video cms site
-tags: [phpdirector, video site]
+categories: [phpdirector, video site]
 published: true
 date: 2009-02-22 08:18
 ---

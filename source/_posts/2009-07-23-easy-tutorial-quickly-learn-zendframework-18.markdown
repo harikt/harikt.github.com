@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Easy tutorial to quickly learn ZendFramework 1.8
-tags: [zendframework, tutorial]
+categories: [zendframework, tutorial]
 published: true
 date: 2009-07-23 08:51
 ---

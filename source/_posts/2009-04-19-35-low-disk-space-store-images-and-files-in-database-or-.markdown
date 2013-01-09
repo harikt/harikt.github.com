@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Low disk space , store images and files in database or 
-tags: [flickr, images in database, picasa]
+categories: [flickr, images in database, picasa]
 published: true
 date: 2009-04-19 09:49
 ---

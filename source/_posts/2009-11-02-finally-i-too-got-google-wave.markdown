@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Finally I too got google wave
-tags: [google, wave from google, wave]
+categories: [google, wave from google, wave]
 published: true
 date: 2009-11-02 18:19
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Zend Framework 1.8 Web Application Development
-tags: [zendframework, book, packt publisher]
+categories: [zendframework, book, packt publisher]
 published: true
 date: 2009-10-14 00:35
 ---

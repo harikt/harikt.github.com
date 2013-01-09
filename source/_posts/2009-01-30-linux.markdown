@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Some History About GNU/Linux
-tags: [gnu/linux]
+categories: [gnu/linux]
 published: true
 date: 2009-01-30 08:19
 ---

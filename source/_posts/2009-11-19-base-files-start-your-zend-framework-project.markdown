@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Base files to start your Zend framework project
-tags: [zendframework, module, layout, zfbase, zend framework skelton]
+categories: [zendframework, module, layout, zfbase, zend framework skelton]
 published: true
 date: 2009-11-19 11:23
 ---

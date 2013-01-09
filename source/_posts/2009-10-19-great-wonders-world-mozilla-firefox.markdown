@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Great wonders in the World of Mozilla firefox
-tags: [firefox, mozilla, labs, prism, personas, bespin, jetpack, ubiquity, weave, snowl]
+categories: [firefox, mozilla, labs, prism, personas, bespin, jetpack, ubiquity, weave, snowl]
 published: true
 date: 2009-10-19 19:05
 ---

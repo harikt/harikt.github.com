@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Opensolaris installation on ubuntu and after effects of grub
-tags: [opensolaris, ubuntu, grub]
+categories: [opensolaris, ubuntu, grub]
 published: true
 date: 2009-04-15 09:11
 ---

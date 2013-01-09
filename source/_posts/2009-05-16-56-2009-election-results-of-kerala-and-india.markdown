@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 2009 Election results of Kerala and India
-tags: [election 2009, kerala, india]
+categories: [election 2009, kerala, india]
 published: true
 date: 2009-05-16 09:31
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Select box poking out through menu in IE 6
-tags: [ie6, select box]
+categories: [ie6, select box]
 published: true
 date: 2009-03-20 08:45
 ---

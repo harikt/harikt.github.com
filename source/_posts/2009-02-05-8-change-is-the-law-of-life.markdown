@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Change is the law of life
-tags: [swaroop ch]
+categories: [swaroop ch]
 published: true
 date: 2009-02-05 08:34
 ---

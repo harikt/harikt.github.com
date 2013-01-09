@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Yahoo Open Hack India 2012, on August 11th, 12th at Bangalore
-tags: [yahoo, openhack]
+categories: [yahoo, openhack]
 published: true
 date: 2012-07-30 23:20
 ---

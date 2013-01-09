@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Does he opens the mail I send ? Why the images are blocked in mail ?
-tags: [mail, confirmation, email, newsletters]
+categories: [mail, confirmation, email, newsletters]
 published: true
 date: 2010-03-06 08:57
 ---

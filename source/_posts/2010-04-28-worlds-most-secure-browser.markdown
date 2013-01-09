@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The world's most secure browser
-tags: [firefox, browser, ie8, chrome, opera]
+categories: [firefox, browser, ie8, chrome, opera]
 published: true
 date: 2010-04-28 21:08
 ---

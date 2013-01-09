@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Track every coin to save your budget, a product from ion labs
-tags: [swaroop ch, ion labs, track every coin, yahoo, python]
+categories: [swaroop ch, ion labs, track every coin, yahoo, python]
 published: true
 date: 2009-05-20 09:30
 ---

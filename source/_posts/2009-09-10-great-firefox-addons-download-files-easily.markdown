@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Great Firefox addons to download files easily
-tags: [browser, download, rapidshare, mediafire, screenshot]
+categories: [browser, download, rapidshare, mediafire, screenshot]
 published: true
 date: 2009-09-10 20:58
 ---

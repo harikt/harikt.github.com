@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Will Bhuvan get much popularity like Google earth ?
-tags: [bhuvan, isro, google earth]
+categories: [bhuvan, isro, google earth]
 published: true
 date: 2009-08-25 21:27
 ---

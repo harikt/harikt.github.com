@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Bookmark manager Foxmarks now Xmarks
-tags: [bookmark, foxmark, xmark]
+categories: [bookmark, foxmark, xmark]
 published: true
 date: 2009-03-13 08:46
 ---

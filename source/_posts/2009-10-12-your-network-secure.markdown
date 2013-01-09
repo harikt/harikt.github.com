@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Is your network secure ?
-tags: [internet, security]
+categories: [internet, security]
 published: true
 date: 2009-10-12 22:27
 ---

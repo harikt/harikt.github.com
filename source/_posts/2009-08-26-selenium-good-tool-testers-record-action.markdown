@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Selenium a good tool for testers to record the action
-tags: [selenium, video, browser]
+categories: [selenium, video, browser]
 published: true
 date: 2009-08-26 21:20
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Dries Visiting India, We have Drupal Camp
-tags: [drupal, drupal-camp]
+categories: [drupal, drupal-camp]
 published: true
 date: 2011-10-03 19:58
 ---

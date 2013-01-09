@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Zend framework command line tools
-tags: [zendframework]
+categories: [zendframework]
 published: true
 date: 2009-08-15 22:07
 ---

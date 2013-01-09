@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Good Bye 2009 Let's Welcome 2010
-tags: [newyear]
+categories: [newyear]
 published: true
 date: 2009-12-31 19:56
 ---
