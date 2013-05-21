@@ -26,11 +26,9 @@ Let us look at some code.
 <?php
 // use composer or require '/path/to/Aura.Input/src.php';
 
-use Aura\Input\Filter;
 use Aura\Input\Form;
-use Aura\Input\FieldCollection;
-use Aura\Input\FieldFactory;
-use Aura\Input\Options;
+use Aura\Input\Builder;
+use Aura\Input\Filter;
 
 $filter = new Aura\Input\Filter();
 
@@ -65,7 +63,7 @@ class ContactForm extends Form
     }
 }
 
-$form = new ContactForm(new FieldCollection(new FieldFactory), new Options, $filter);
+$form = new ContactForm(new Builder, $filter);
 
 $values = [
     'name' => 'Hari K T',
