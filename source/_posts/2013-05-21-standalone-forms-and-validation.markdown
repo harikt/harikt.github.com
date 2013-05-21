@@ -149,8 +149,7 @@ if ($_POST && $_POST['submit'] == 'send') {
 }
 ```
 
-If you are not using [Aura.View][] you can make use of your own helper.
-
+The form element gives you hints for the view. An example from the above
 
 ```php
 // get the hints for the name field
@@ -175,6 +174,62 @@ $hints = array (
 )
 ```
 
+Without using Aura.View completely
+----------------------------------
+
+If you are not planning to use Aura.View entirely as templating, you can 
+make use of [Aura.View][] helpers which can render to make the form.
+
+For that you need to instantiate `Aura\View\HelperLocator` and get the 
+field object as below.
+
+```php
+$helper = new Aura\View\HelperLocator([
+    'anchor'        => function () { return new Aura\View\Helper\Anchor; },
+    'attribs'       => function () { return new Aura\View\Helper\Attribs; },
+    'base'          => function () { return new Aura\View\Helper\Base; },
+    'datetime'      => function () { return new Aura\View\Helper\Datetime; },
+    'escape'        => function () { return new Aura\View\Helper\Escape(new Aura\View\EscaperFactory); },
+    'field'         => function () { 
+        return new Aura\View\Helper\Form\Field(
+            require dirname(__DIR__) . '/vendor/aura/view/scripts/field_registry.php'
+        ); 
+    },
+    'image'         => function () { return new Aura\View\Helper\Image; },
+    'input'         => function () { return new Aura\View\Helper\Form\Input(
+            require dirname(__DIR__) . '/vendor/aura/view/scripts/input_registry.php'
+        ); 
+    },
+    'links'         => function () { return new Aura\View\Helper\Links; },
+    'metas'         => function () { return new Aura\View\Helper\Metas; },
+    'ol'            => function () { return new Aura\View\Helper\Ol; },
+    'radios'        => function () { return new Aura\View\Helper\Form\Radios(new Aura\View\Helper\Form\Input\Checked); },
+    'repeat'         => function () { return new Aura\View\Helper\Form\Repeat(
+            require dirname(__DIR__) . '/vendor/aura/view/scripts/repeat_registry.php'
+        ); 
+    },
+    'scripts'       => function () { return new Aura\View\Helper\Scripts; },
+    'scriptsFoot'   => function () { return new Aura\View\Helper\Scripts; },
+    'select'        => function () { return new Aura\View\Helper\Form\Select; },
+    'styles'        => function () { return new Aura\View\Helper\Styles; },
+    'tag'           => function () { return new Aura\View\Helper\Tag; },
+    'title'         => function () { return new Aura\View\Helper\Title; },
+    'textarea'      => function () { return new Aura\View\Helper\Form\Textarea; },
+    'ul'            => function () { return new Aura\View\Helper\Ul; },
+]);
+
+$field = $helper->get('field');
+echo $field($form->get('name'));
+
+```
+
+The above will output something like
+
+`<input id="name" type="text" name="name" size="20" maxlength="20" />`
+
+Using Aura.View
+---------------
+
 But you can use [Aura.View][] to render it nicely. An example is 
 
 ```php
@@ -187,6 +242,9 @@ in the example.
 
 If you have any problems or confusions, let me know by comments. 
 I will try to address the same.
+
+I would like to express huge Thanks to Paul M Jones for spending his 
+valuable time on the project, giving valuable feedback on the implementations.
 
 Happy PhPing!
 
