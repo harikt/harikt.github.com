@@ -13,8 +13,11 @@ The [Aura.Input][] itself contains a basic filter implementation. As shown
 in earlier post [Aura Turns 2][]
 
 But in this post let us use the power of [Aura.Filter][]. As [Aura.Input][]
-doesn't have a rendering capability you may need to use either [Aura.View][]
-or create your own helper classes to render the same.
+doesn't have a rendering capability you may need to use [Aura.View][] as 
+templating system ( see Using Aura.View ) or use the helper classes provided by [Aura.View][] 
+( see below Without using Aura.View completely )
+or create your own helper classes to render the same from the hints
+( see Hints for the view ).
 
 The whole example is in [https://github.com/harikt/form-example][] repo.
 If you don't have composer, you can download it from [http://getcomposer.org][]
@@ -151,6 +154,9 @@ if ($_POST && $_POST['submit'] == 'send') {
 
 The form element gives you hints for the view. An example from the above
 
+Hints for the view
+------------------
+
 ```php
 // get the hints for the name field
 $hints = $form->get('name');
@@ -185,41 +191,29 @@ field object as below.
 
 ```php
 $helper = new Aura\View\HelperLocator([
-    'anchor'        => function () { return new Aura\View\Helper\Anchor; },
-    'attribs'       => function () { return new Aura\View\Helper\Attribs; },
-    'base'          => function () { return new Aura\View\Helper\Base; },
-    'datetime'      => function () { return new Aura\View\Helper\Datetime; },
-    'escape'        => function () { return new Aura\View\Helper\Escape(new Aura\View\EscaperFactory); },
     'field'         => function () { 
         return new Aura\View\Helper\Form\Field(
             require dirname(__DIR__) . '/vendor/aura/view/scripts/field_registry.php'
         ); 
     },
-    'image'         => function () { return new Aura\View\Helper\Image; },
     'input'         => function () { return new Aura\View\Helper\Form\Input(
             require dirname(__DIR__) . '/vendor/aura/view/scripts/input_registry.php'
         ); 
     },
-    'links'         => function () { return new Aura\View\Helper\Links; },
-    'metas'         => function () { return new Aura\View\Helper\Metas; },
-    'ol'            => function () { return new Aura\View\Helper\Ol; },
     'radios'        => function () { return new Aura\View\Helper\Form\Radios(new Aura\View\Helper\Form\Input\Checked); },
     'repeat'         => function () { return new Aura\View\Helper\Form\Repeat(
             require dirname(__DIR__) . '/vendor/aura/view/scripts/repeat_registry.php'
         ); 
     },
-    'scripts'       => function () { return new Aura\View\Helper\Scripts; },
-    'scriptsFoot'   => function () { return new Aura\View\Helper\Scripts; },
     'select'        => function () { return new Aura\View\Helper\Form\Select; },
-    'styles'        => function () { return new Aura\View\Helper\Styles; },
-    'tag'           => function () { return new Aura\View\Helper\Tag; },
-    'title'         => function () { return new Aura\View\Helper\Title; },
     'textarea'      => function () { return new Aura\View\Helper\Form\Textarea; },
-    'ul'            => function () { return new Aura\View\Helper\Ul; },
 ]);
 
 $field = $helper->get('field');
 echo $field($form->get('name'));
+echo $field($form->get('message'));
+
+// echo $field($form->get('form-element'));
 
 ```
 
