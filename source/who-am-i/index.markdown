@@ -6,21 +6,33 @@ comments: false
 sharing: true
 footer: true
 ---
-Hari K T is a passionate PHP developer working with [Bridge
-Gobal IT Staffing][].
 
-Hari is one of the Technical Reviewer of the books [PHP 5 CMS Framework
-Development][] , [Wordpress 3 Ultimate Security][]  by [Packt
-publishers][] . Hari also contributes to [Aura
-project for PHP 5.4 component library and full stack framework][] , and
-occasionally writes article for [phpmaster.com][]
+Hari K T hails from God's own country in India. He is passionate about 
+[open-source], [PHP][] and technology.
 
-Hari was one of the speaker at [Osidays 2012][]
+Hari is one of the Technical Reviewer of [PHP 5 CMS Framework Development][] , 
+[Wordpress 3 Ultimate Security][]  by [Packt publishers][] .
 
-[Bridge Gobal IT Staffing]: http://www.bridge-india.in/
-[PHP 5 CMS Framework Development]: http://harikt.com/content/php5-cms-framework-development
-[Wordpress 3 Ultimate Security]: http://harikt.com/content/wordpress-3-ultimate-security
+In his free time, Hari contributes to [Aura][] project, which provides independent 
+library packages for PHP 5.4+. Occasionally he writes article for [phpmaster.com][]
+
+He used to speak at [Barcamp Kerala][], [Osidays][] and is looking forward.
+
+You can reach him via 
+
+1 ) [twitter][] @harikt
+2 ) Email : kthari85 at gmail dot com
+3 ) Skype : kthari85
+
+NB : Email is the prefered.
+
+[PHP 5 CMS Framework Development]: http://www.packtpub.com/php-5-cms-framework-development-2nd-edition/book
+[Wordpress 3 Ultimate Security]: http://www.packtpub.com/wordpress-3-ultimate-security/book
 [Packt publishers]: http://www.packtpub.com/
-[Aura project for PHP 5.4 component library and full stack framework]: http://auraphp.github.com/
+[Aura]: http://auraphp.com/
 [phpmaster.com]: http://phpmaster.com/author/kthari/
-[Osidays 2012]: http://osidays.com
+[Osidays]: http://osidays.com
+[Barcamp Kerala]: http://barcampkerala.org/blog/
+[twitter]: https://twitter.com/harikt
+[PHP]: http://stackoverflow.com/users/487878/hari-k-t
+[open-source]: https://github.com/harikt
