@@ -37,10 +37,9 @@ The page which you need to bring the form.
 
 ```php
 <?php
-use Aura\Input\Builder;
 
-use Aura\Filter\RuleLocator;
-use Aura\Filter\Translator;
+use Aura\Input\Builder;
+use Aura\Input\Filter;
 use Aura\Input\Form;
 
 $loader = require __DIR__ . '/vendor/autoload.php';
