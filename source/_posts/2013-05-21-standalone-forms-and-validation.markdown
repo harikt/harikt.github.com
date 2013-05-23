@@ -6,6 +6,8 @@ comments: true
 categories: [auraphp, form, filter]
 ---
 
+Update : I wrote a very minimal approach [here][]
+
 Recently [Aura.Input][] was tagged Beta1. I would like to show you how you 
 can use [Aura.Input][], [Aura.Filter][] and [Aura.View][] to create form.
 
@@ -249,3 +251,4 @@ Happy PhPing!
 [https://github.com/harikt/form-example]: https://github.com/harikt/form-example
 [templates]: https://github.com/harikt/form-example/blob/master/templates/default.php
 [http://getcomposer.org]: http://getcomposer.org
+[here]: http://harikt.com/blog/2013/05/23/standalone-form-for-php/

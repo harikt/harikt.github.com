@@ -21,7 +21,9 @@ He used to speak at [Barcamp Kerala][], [Osidays][] and is looking forward.
 You can reach him via 
 
 1 ) [twitter][] @harikt
+
 2 ) Email : kthari85 at gmail dot com
+
 3 ) Skype : kthari85
 
 NB : Email is the prefered.
