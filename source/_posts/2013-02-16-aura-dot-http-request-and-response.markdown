@@ -14,6 +14,8 @@ Instantiation:
 The easiest way is 
 
 ```php
+<?php
+
 $http = require 'path/to/Aura.Http/scripts/instance.php';
 ```
 
@@ -31,17 +33,23 @@ To create a proper http response via `Aura.Http` we need to create a
 response object.
 
 ```php
+<?php
+
 $response = $http->newResponse();
 ```
 
 Now you have the response object. You can set the `header` via 
 
 ```php
+<?php
+
 $response->headers->set('Header', 'Value');
 ```
 If you have an array of headers you can use `setAll`
 
 ```php
+<?php
+
 $response->headers->setAll([
     'Header-One' => 'header one value',
     'Header-Two' => [
@@ -55,6 +63,8 @@ $response->headers->setAll([
 So a basic example of setting header value is 
 
 ```php
+<?php
+
 $response->headers->set('Content-Type', 'text/plain');
 ```
 
@@ -66,6 +76,8 @@ server, and how it should render etc.
 So we need to set the content. This can be achieved via `setContent` method.
 
 ```php
+<?php
+
 $response->setContent('<html><head><title></title></head><body>Hello World!</body></html>');
 ```
 
@@ -76,6 +88,8 @@ Setting and Getting Cookies
 Sometimes we may want to set the cookies. You can do it as 
 
 ```php
+<?php
+
 $response->cookies->set('cookie_name', [
     'value'    => 'cookie value', // cookie value
     'expire'   => time() + 3600,  // expiration time in unix epoch seconds
@@ -89,6 +103,8 @@ The array keys mimic the [setcookie][] parameters. If you have an array
 you can use `setAll`.
 
 ```php
+<?php
+
 $response->cookies->setAll([
     'cookie_foo' => [
         'value' => 'value for cookie foo',
@@ -102,6 +118,8 @@ $response->cookies->setAll([
 You can get a cookie by calling `get` method on cookies.
 
 ```php
+<?php
+
 $response->cookies->get('cookie_name');
 ```
 
@@ -115,6 +133,8 @@ send the whole content. But just the status code.
 This is possible via `setStatusCode` and `setStatusText`
 
 ```php
+<?php
+
 $response->setStatusCode(304);
 $response->setStatusText('Same As It Ever Was');
 ```
@@ -126,12 +146,16 @@ And finally we can send the response back. We can call the `send`
 method and pass the `response` object.
 
 ```php
+<?php
+
 $http->send($response);
 ```
 
 The full source code of example is
 
 ```php
+<?php
+
 $http = require 'path/to/Aura.Http/scripts/instance.php';
 // send a response
 $response = $http->newResponse();
@@ -152,6 +176,8 @@ before we call `send()` method.
 Let us modify the example at [Status Code 304]
 
 ```php
+<?php
+
 $http = require 'path/to/Aura.Http/scripts/instance.php';
 $response = $http->newResponse();
 if ( isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) && 
@@ -196,12 +222,16 @@ to make this happen.
 You need to create a Request object.
 
 ```php
+<?php
+
 $request = $http->newRequest();
 ```
 
 Set the url via `setUrl` method and send.
 
 ```php
+<?php
+
 $request->setUrl('https://api.github.com/users/pmjones/repos');
 $stack = $http->send($request);
 $repos = json_decode($stack[0]->content);
