@@ -21,7 +21,7 @@ templating system ( see Using Aura.View ) or use the helper classes provided by 
 or create your own helper classes to render the same from the hints
 ( see Hints for the view ).
 
-The whole example is in [https://github.com/harikt/form-example][] repo.
+The whole example is in [https://github.com/harikt/phpform][] repo.
 If you don't have composer, you can download it from [http://getcomposer.org][]
 and install the dependencies via composer.
 
@@ -29,8 +29,8 @@ In a nut shell
 --------------
 
 ```
-git clone https://github.com/harikt/form-example
-cd form-example
+git clone https://github.com/harikt/phpform
+cd phpform
 php composer.phar install
 php -S localhost:8000 web/index.php
 ```
@@ -248,7 +248,7 @@ Happy PhPing!
 [Aura.Input]: http://auraphp.com/Aura.Input/
 [Aura.Filter]: http://auraphp.com/Aura.Filter/
 [Aura.View]: http://auraphp.com/Aura.View/
-[https://github.com/harikt/form-example]: https://github.com/harikt/form-example
-[templates]: https://github.com/harikt/form-example/blob/master/templates/default.php
+[https://github.com/harikt/phpform]: https://github.com/harikt/phpform
+[templates]: https://github.com/harikt/phpform/blob/master/templates/default.php
 [http://getcomposer.org]: http://getcomposer.org
 [here]: http://harikt.com/blog/2013/05/23/standalone-form-for-php/

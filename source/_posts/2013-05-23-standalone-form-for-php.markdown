@@ -202,7 +202,7 @@ function showFieldErrors($form, $name) {
 ```
 
 That's it. Pretty clear I guess. Still having trouble?
-The whole code lies in the [minimalview][] branch of the [form-example][].
+The whole code lies in the [minimalview][] branch of the [phpform][].
 
 [Standalone Forms and Validation]: http://harikt.com/blog/2013/05/21/standalone-forms-and-validation/
 [Aura.Filter]: http://auraphp.com/packages
@@ -211,5 +211,5 @@ The whole code lies in the [minimalview][] branch of the [form-example][].
 [valitron]: https://github.com/vlucas/valitron
 [DMS-Filter]: https://github.com/rdohms/DMS-Filter
 [composer]: http://getcomposer.org
-[minimalview]: https://github.com/harikt/form-example/tree/minimalview
-[form-example]: https://github.com/harikt/form-example
+[minimalview]: https://github.com/harikt/phpform/tree/minimalview
+[phpform]: https://github.com/harikt/phpform
