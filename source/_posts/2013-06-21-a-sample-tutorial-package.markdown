@@ -152,3 +152,15 @@ and much more.
 [The edit post doesn't work]: https://groups.google.com/d/msg/propel-users/x6PH_DwLtVE/H84o1cu4W4kJ
 
 [Question here]: https://groups.google.com/d/msg/propel-users/d8p-nw_4x4A/YYpkcP-EqUkJ
+
+Credits and Thanks
+------------------
+
+[Beau Simensen](https://github.com/simensen)
+[Paul M Jones](https://github.com/pmjones)
+
+[Aura Packages](http://auraphp.com)
+[Composer](http://getcomposer.org)
+[Propel ORM](https://github.com/pmjones)
+
+to all the people who motivated me to bring this sample application.
