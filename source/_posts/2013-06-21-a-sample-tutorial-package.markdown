@@ -161,6 +161,7 @@ Credits and Thanks
 
 [Aura Packages](http://auraphp.com)
 [Composer](http://getcomposer.org)
-[Propel ORM](https://github.com/pmjones)
+[Propel](http://propelorm.org)
+[Symfony](http://symfony.com)
 
 to all the people who motivated me to bring this sample application.
