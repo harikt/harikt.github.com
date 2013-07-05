@@ -51,7 +51,7 @@ same as the one you have provided when creating the oauth consumer.
 Source Code
 -----------
 
-```
+```php
 <?php
 class IndexController extends Zend_Controller_Action
 {
