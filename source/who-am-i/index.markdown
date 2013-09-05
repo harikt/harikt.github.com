@@ -14,12 +14,13 @@ hails from God's own country(Kerala) in India. He is passionate about
 Earlier he has worked with US, European and Indian clients.
 
 Some of them are 
-    
+
 * [Instant Magazine][] for [Raadhuis][]
     
 * [Rentautobus][]
     
-* [Bridge outsourcing][]
+* [Bridge Global IT Staffing][] also known as Bridge Outsourcing, 
+Bridge India
     
 * [Sandblue Technologies][]
     
@@ -57,7 +58,7 @@ If you are interested in hiring or to just say "Hi", you can reach via
 [open-source]: https://github.com/harikt
 [Raadhuis]: http://www.raadhuis.com
 [Rentautobus]: http://rentautobus.com
-[Bridge outsourcing]: http://bridge-india.in
+[Bridge Global IT Staffing]: http://bridge-india.in
 [Sandblue Technologies]: http://sandblue.com
 [ISPG]: http://ispg.in
 [Instant Magazine]: http://instantmagazine.com
