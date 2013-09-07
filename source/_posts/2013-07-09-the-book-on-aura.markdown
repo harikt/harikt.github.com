@@ -13,7 +13,7 @@ So today I am happy to announce that there is a work in progress
 to make the framework documentation better. I have already started 
 the work on the same.
 
-You can [read the chapters online](http://harikt.com/the-book-on-aura/).
+You can [read the chapters online](http://auraphp.com/manuals/).
 
 The examples used in the book are also online at  
 [https://github.com/harikt/Example.Package](https://github.com/harikt/Example.Package)
@@ -36,7 +36,7 @@ So do shout at me.
 Contributing
 ------------
 If you interested in contributing to make it better, it is available 
-at [https://github.com/harikt/the-book-on-aura](https://github.com/harikt/the-book-on-aura)
+at [https://github.com/auraphp/auraphp.github.com](https://github.com/auraphp/auraphp.github.com)
 
 Written in markdown. Still have hard time understanding things, create 
 an issue mentioning the problems you are facing.
