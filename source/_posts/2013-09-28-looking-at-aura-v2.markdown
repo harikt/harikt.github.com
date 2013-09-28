@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Looking at aura v2"
+title: "Looking at aura version 2"
 date: 2013-09-28 06:53
 comments: true
 categories: [auraphp, php]
@@ -38,6 +38,7 @@ $sth->bindValue('foo', $array);
 ExtendedPDO helps you to do it. 
 
 ```php
+<?php
 $pdo = new ExtendedPdo(...);
 $stm = 'SELECT * FROM test WHERE foo IN (:foo)';
 $pdo->bindValues(array(
@@ -165,7 +166,7 @@ Let us look into the example of the Aura.Includer and how it works.
 
 The `composer.json` looks like the one below.
 
-```php
+```json
 {
     "minimum-stability": "dev",
     "require": {
