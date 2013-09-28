@@ -78,9 +78,7 @@ CREATE TABLE `polls_choice` (
   `poll_id` int(11) NOT NULL,
   `choice_text` varchar(200) NOT NULL,
   `votes` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `polls_choice_70f78e6b` (`poll_id`),
-  CONSTRAINT `poll_id_refs_id_3aa09835` FOREIGN KEY (`poll_id`) REFERENCES `polls_poll` (`id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `polls_choice` (`id`, `poll_id`, `choice_text`, `votes`) VALUES
