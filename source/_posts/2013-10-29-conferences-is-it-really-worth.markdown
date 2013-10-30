@@ -57,7 +57,13 @@ if you are unable to attend at the time.
 Please Thank [Cal Evans](https://twitter.com/CalEvans) for 
 the greatest initiative.
 
-You can also join mastering object oriented programming with the 
+Do attend the talk by [Aura PHP](http://auraphp.com/) guru 
+[Paul M Jones](http://paul-m-jones.com/) who will be speaking for NomadPHP 
+titled [A Stitch In Time Saves 9; or,Solving the N+1 Problem](http://nomadphp.com/2013/10/18/january-2014-eu/)
+
+Chek the site [NomandPHP](http://nomadphp.com/) for more talks.
+
+Another one is join mastering object oriented programming with the 
 [Object Oriented PHP Masterclass](http://objectorientedphpmasterclass.com/)
 by [Brandon Savage](http://www.brandonsavage.net)
 
