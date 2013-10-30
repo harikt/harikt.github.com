@@ -42,7 +42,7 @@ It is well organized and have strict timing. I got more interested in
 data mining, analysis, processing etc. 
 Also got introduced to Hadoop and much more.
 
-I wasn't aware were I will be using stuffs like [gearman](http://gearman.org/), 
+I wasn't aware where I will be using stuffs like [gearman](http://gearman.org/), 
 [nltk](http://nltk.org/), [Elastic Search](http://www.elasticsearch.org/), 
 [GrayLog2](http://graylog2.org/), [Log Stash](http://www.logstash.net/) etc. 
 Fifth elephant and Yahoo open hack really helped me a lot to learn more about 
@@ -51,9 +51,9 @@ they are facing, how they resolved etc.
 
 If you are like me, who love to attend conference, but 
 unable to move to the location where it is happening, 
-then [NomandPHP](http://nomadphp.com/) is looking at you. 
-One of the good feature is you can watch the videos later, 
-if you are unable to attend at the time.
+then [NomadPHP](http://nomadphp.com/) is looking at you. 
+One of the good feature is you can watch the videos later 
+(if you are unable to attend at the time).
 Please Thank [Cal Evans](https://twitter.com/CalEvans) for 
 the greatest initiative.
 
@@ -61,15 +61,16 @@ Do attend the talk by [Aura PHP](http://auraphp.com/) guru
 [Paul M Jones](http://paul-m-jones.com/) who will be speaking for NomadPHP 
 titled [A Stitch In Time Saves 9; or,Solving the N+1 Problem](http://nomadphp.com/2013/10/18/january-2014-eu/)
 
-Chek the site [NomandPHP](http://nomadphp.com/) for more talks.
+Chek the site [NomadPHP](http://nomadphp.com/) for more talks.
 
-Another one is join mastering object oriented programming with the 
-[Object Oriented PHP Masterclass](http://objectorientedphpmasterclass.com/)
+If you have a feeling like conferences just introduce stuffs, 
+and you are left to learn from there, then you should join 
+mastering [Object Oriented PHP](http://objectorientedphpmasterclass.com/)
 by [Brandon Savage](http://www.brandonsavage.net)
 
 There is also a great initiative by 
 [Noufal Ibrahim](https://twitter.com/noufalibrahim) called 
-[The Lycaeum](http://thelycaeum.in/).
+[The Lycaeum](http://thelycaeum.in/), you can learn some Python.
 
 So do attend a conference, and don't miss opportunities that are 
 looking at you tomorrow.
