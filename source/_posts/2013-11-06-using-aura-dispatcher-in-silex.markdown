@@ -76,6 +76,7 @@ $dispatcher->setObject('blog', function () {
 });
 
 $app = new Silex\Application();
+
 $app->get('/hello/{name}', function ($name) use ($dispatcher, $app) {
     $params = [
         'controller' => 'blog',
@@ -93,6 +94,55 @@ $app->run();
 See how we moved the `return 'Hello '. ucfirst($app->escape($name));` 
 to a controller and action. I haven't used Silex extensively, so there 
 can be better ways for integration.
+
+> Update : I was asking [Beau D. Simensen](https://twitter.com/beausimensen) 
+> on the integration, and he gave another shot.
+
+```php
+// all code as same as above, upto the route
+
+$app->get('/hello/{name}', function ($name) use ($app) {
+    return [
+        'controller' => 'blog',
+        'action' => 'hello',
+        'name' => $name,
+        'app' => $app,
+    ];
+});
+
+$app->on(\Symfony\Component\HttpKernel\KernelEvents::VIEW, function ($event) use ($app, $dispatcher) {
+    $view = $event->getControllerResult();
+
+    if (is_null($view) || is_string($view)) {
+        return;
+    }
+    
+    if ( ! is_array($view)) {
+        // we can only handle array data in the view
+        return;
+    }
+    
+    if (! (isset($view['controller']) && isset($view['action']))) {
+        // at this point we don't know what is going on.
+        return;
+    }
+
+    $response = $dispatcher($view);
+
+    if ( ! $response instanceof \Symfony\Component\HttpFoundation\Response) {
+        // If the response is not a Response instance, wrap it in one
+        // and assume that it was something appropriate as a response
+        // body.
+        $response = new \Symfony\Component\HttpFoundation\Response($response);
+    }
+
+    $event->setResponse($response);
+});
+
+$app->run();
+```
+
+> I have purposefully kept the full path like `\Symfony\Component\HttpFoundation\Response`
 
 Hope you love [Aura.Dispatcher](http://github.com/auraphp/Aura.Dispatcher)
 and use when you need architecural changes.
