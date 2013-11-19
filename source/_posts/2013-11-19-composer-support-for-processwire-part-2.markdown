@@ -45,10 +45,10 @@ And run
 php composer.phar update
 ```
 
-> Don't forget to get composer.phar if you don't have from [getcomposer.org](http://getcomposer.org/download/)
+> Don't forget you need `composer.phar`. If you don't have get from [getcomposer.org](http://getcomposer.org/download/)
 
 The module is downloaded to `site/modules/ProcessExportProfile`. 
-It is using [hari/pw-module](https://github.com/harikt/pwmoduleinstaller)
+The package is of type [pw-module](https://github.com/harikt/pwmoduleinstaller)
 
 > The name process-export-profile is converted to ProcessExportProfile .
 > So if you have caps in between name put a hyphen in the naming
