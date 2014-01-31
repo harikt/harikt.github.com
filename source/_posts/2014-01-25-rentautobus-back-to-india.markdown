@@ -119,8 +119,6 @@ This `comparison concept` is quite comon in Europe.
 
 <iframe width="560" height="315" src="http://www.youtube.com/embed/zIirpcTgfhQ?rel=0" frameborder="0" allowfullscreen></iframe>
 
-[![Get Quotes for your Travel Plan](http://img.youtube.com/vi/zIirpcTgfhQ/0.jpg)](http://www.youtube.com/watch?v=zIirpcTgfhQ)
-
 You can choose from a wide variety of travel agents, easily compare 
 the price what they offer, the feedback they got from others. 
 The 1st concept of the website was built for European countries like Spain. And  
