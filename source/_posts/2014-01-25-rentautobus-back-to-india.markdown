@@ -137,7 +137,7 @@ in [India](http://www.rentautobus.com/en/india/item1291) as in
 Cultural differences do exist and this of-course translates into the 
 use of internet as a research and booking tool for transport, tours or other travels. 
 Travel arrangements in India by people over here are often done via a 
-trusted travel agents who normally is a friend or introduced by a friend  
+trusted travel agents who normally is a friend or introduced by a friend 
 or family member.
 
 For foreign tourists traveling to India for the 1st time, with no local 
