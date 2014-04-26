@@ -3,7 +3,7 @@ layout: post
 title: "Web routing in PHP with Aura.Router"
 date: 2014-04-26 20:30:10 +0530
 comments: true
-categories: [php, aura, router, video, tutorial]
+categories: [php, aura, router, video, tutorial, screencast]
 ---
 It took sometime for me to create a series of screencast on 
 [aura](http://auraphp.com). So my plan to start a series of 
