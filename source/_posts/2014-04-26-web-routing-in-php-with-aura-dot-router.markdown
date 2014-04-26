@@ -12,7 +12,8 @@ version 2.
 
 {% youtube hBV_BKP1WIY %}
 
-I am interested to hear your feedback and interest for the future screencast.
+Yes, I have made some mistakes, but I do love to hear your feedback 
+and interest for the future screencast.
 
 The next one will be on [Dispatcher](https://github.com/auraphp/Aura.Dispatcher)
 If you want to cover something special in the 
