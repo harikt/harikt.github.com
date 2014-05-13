@@ -28,7 +28,7 @@ projects like [Aura][] (Independent library packages for [PHP][] 5.4+.),
 [Symfony][], [Zend Framework](http://framework.zend.com/).
 Hari also writes articles for [sitepoint.com][]
 
-Hari is a buddiying speaker and have spoken at various events like 
+Hari is a budding speaker and have spoken at various events like 
 [Barcamp Kerala][], [Osidays][] 2012 and is looking forward.
 
 Hari is one of the Technical Reviewer of [PHP 5 CMS Framework Development][] , 
