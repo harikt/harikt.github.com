@@ -1,6 +1,11 @@
-<ul class="main-navigation">
-  <li><a href="{{ root_url }}/">Blog</a></li>
-  <li><a href="{{ root_url }}/blog/archives">Archives</a></li>
-  <li><a href="{{ root_url }}/who-am-i/">Who am I?</a></li>
-  <li><a href="https://github.com/auraphp">Library/Framework</a></li>
+<ul>
+    <li>
+        <a href="/blog">Blog</a>
+        <ul>
+            <li><a href="{{ root_url }}/blog/archives">Archives</a></li>
+        </ul>
+    </li>
+    <li><a href="{{ root_url }}/work/">Work</a></li>
+    <li class="break"><a href="{{ root_url }}/who-am-i/">About</a></li>
+    <li><a href="{{ root_url }}/opensource/">Open source</a></li>
 </ul>

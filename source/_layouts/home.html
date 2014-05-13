@@ -1,0 +1,16 @@
+{% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
+{% include head.html %}
+	<body class="homepage">        
+		<!-- Header Wrapper -->
+			<div id="header-wrapper">
+        {% include header.html %}
+				{{ content | expand_urls: root_url }}
+			</div>
+		<!-- Footer Wrapper -->
+			<div id="footer-wrapper">
+				{% include footer.html %}
+			</div>
+      {% include after_footer.html %}
+
+	</body>
+</html>

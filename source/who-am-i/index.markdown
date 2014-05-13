@@ -9,6 +9,7 @@ date: 2012-12-19 07:34
 comments: false
 sharing: true
 footer: true
+meta: false
 ---
 
 Hari K T is a freelance LAMP (

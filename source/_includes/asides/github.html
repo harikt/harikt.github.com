@@ -1,6 +1,8 @@
 {% if site.github_user %}
 <section>
-  <h1>GitHub Repos</h1>
+  <header>
+    <h3>GitHub Repos</h3>
+  </header>
   <ul id="gh_repos">
     <li class="loading">Status updating...</li>
   </ul>
@@ -25,6 +27,6 @@
         });
     });
   </script>
-  <script src="{{ root_url }}/javascripts/github.js" type="text/javascript"> </script>
+  <script src="{{ root_url }}/js/github.js" type="text/javascript"> </script>
 </section>
 {% endif %}
