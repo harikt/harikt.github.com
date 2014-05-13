@@ -40,7 +40,7 @@ which contains a `getFunctions` method which returns the functions
 available within your templates.
 
 We are going to name it as `AuraHtmlExtension` and call functions as 
-`aurahtml()` or `ah()` via the template.
+`aurahtml()` or `html()` via the template.
 
 ```php
 <?php
@@ -64,7 +64,7 @@ class AuraHtmlExtension implements ExtensionInterface
     {
         return array(
             'aurahtml' => 'callHelper',
-            'ah' => 'callHelper'
+            'html' => 'callHelper'
         );
     }
 
@@ -142,7 +142,7 @@ echo $this->aurahtml()->input(array(
 ));
 
 // <input type="color" name="name" value="value" />
-echo $this->ah()->input(array(
+echo $this->html()->input(array(
     'type'    => 'date',
     'name'    => 'name',
     'value'   => 'value',
