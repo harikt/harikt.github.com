@@ -76,7 +76,7 @@ class AuraHtmlExtension implements ExtensionInterface
 ```
 
 But you are not limited to name it as the same 
-[html tag helpers](https://github.com/auraphp/Aura.Html/blob/functions/README-HELPERS.md#aurahtml-tag-helpers)
+[html tag helpers](https://github.com/auraphp/Aura.Html/blob/develop-2/README-HELPERS.md#aurahtml-tag-helpers)
 and [form helpers](https://github.com/auraphp/Aura.Html/blob/develop-2/README-FORMS.md).
 
 So that will make the helpers look native Plates helpers. Thank you for
