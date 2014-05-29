@@ -6,8 +6,8 @@ comments: true
 categories: [php, composer, patch, bug-fix]
 ---
 
-I hope everyone in the PHP world is aware of [composer][] the dependency 
-management tool that gives an end to Pear.
+I hope everyone in the PHP world is aware of [composer](https://getcomposer.org) 
+the dependency management tool that gives an end to Pear.
 
 We can look into some of the hidden gems of composer. Some of them are 
 already documented in the composer docs.
@@ -55,7 +55,7 @@ the local directory without pushing it to github.
     "repositories": [
         {
             "type": "vcs",
-            "url": "/var/www/github.com/harikt/monolog"            
+            "url": "/home/github.com/harikt/monolog"            
         }
     ],
     "require": {
@@ -88,7 +88,7 @@ So your `composer.json` will look something like this.
                 "version": "3.1.7",               
                 "source": {
                     "type": "git",
-                    "url": "/var/www/github.com/harikt/experiments",
+                    "url": "/home/github.com/harikt/experiments",
                     "reference": "master"
                 },
                 "autoload": {
