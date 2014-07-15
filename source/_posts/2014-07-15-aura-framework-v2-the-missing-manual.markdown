@@ -62,7 +62,7 @@ in the same way as composer did.
 So was the existence of `aura/installer-default` in v1 package. In v2 we moved 
 to [composer assisted two stage configuration](http://auraphp.com/blog/2014/04/07/two-stage-config/).
 
-# v2 Framework
+## v2 Framework
 
 There exists a [micro framework/full stack](https://github.com/auraphp/Aura.Web_Project) 
 framework for v2. But things are hard to find when you are 
