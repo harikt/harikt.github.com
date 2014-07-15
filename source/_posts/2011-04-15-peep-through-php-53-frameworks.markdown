@@ -5,4 +5,176 @@ categories: [php]
 published: true
 date: 2011-04-15 10:29
 ---
-**AuraPHP** : AuraPHP is not a new framework, its by Paul M Jones who is one behind the bench marking of PHP frameworks and also the Solar PHP framework. A good thing I loved in AuraPHP is all things are discussed and implemented by Paul and the team in google groups. So you never miss bcoz your timezone is different. You always know what is happening, also if you love to know how a framework should be developed its good to join in the discusssion. I learned a lot from Paul and many of them in the group. The name was changed beacuse they don't want to confuse with the solar search project, else it would have been called Solar2 :) . Its developed as component based framework, but if you want to utilize whole framework then the system is for it. Some of the components are already available in github. They are the Dependency Injection , Router , Signal ( Event driven ) , Command Line , Http Request and Response , View etc .  Grab it from : [https://github.com/auraphp](https://github.com/auraphp)  Support : on IRC FreeNode \#auraphp , [http://groups.google.com/group/auraphp](http://groups.google.com/group/auraphp) ( Discussions usually happen in groups , ie always a + point )  Current : Slow Development  **FatFree** : Fatfree is another nice light weight framework ( 55K ) which already may have got some attention from [phpbuilder](http://www.phpbuilder.com/columns/php-fat-free-framework/Jason_Gilmore04052011.php3) article.  Grab it from : http://fatfree.sourceforge.net/  Support : FreeNode \#fatfree channel  **Flow3** : Flow3 is one of the promising framework founded by the TYPO3 association for the next development of TYPO3. Yes TYPO3 from version 5 will be using this new framework. It uses many of the concepts like AOP ( Lithium uses it ) , Signal Slot ( Zend , Aura etc ) etc. Flow3 is always a good one to check for they have a huge experience building websites with PHP. The major pitfalls of a framework or a system is understood once you start developing an application. So Flow3 tries to resolve most of the problems as they would have came when building a CMS like TYPO3.  Grab it from : [http://flow3.typo3.org/download/](http://flow3.typo3.org/download/)  Current Version : Beta  Support : IRC , Mailing List  **FuelPHP** : Beware its not a PSR-0 Standard one. I don't recommend until you are sure you love it. When Fuel started I do have written in the comments of Dan Horrigan blog. Why you need to write another framework for 5.2, but later they decided to move it to 5.3 ie great to hear. And the latest post by Phil Sturgeon also made me think he is right . Why we want to reinvent a wheel :) . Inbuilt ORM and OIL which will make your life easier. FUEL is a good one to check. Phil Sturgeon is the Engineer for the Codeignitter Reactor . Hope you know codeigniter and reactor ;) .  Grab it from : [https://github.com/fuel/fuel](https://github.com/fuel/fuel)  Support : [http://fuelphp.com/forums](http://fuelphp.com/forums)  Released  **Lithium** : Lithium is a light weight framework for those who hate frameworks. People who are behind Lithium are Nate Abele ( X lead developer of cake php ) , Gwoo ( x project leader of cake php ) , Win Sinchlair ( x lead developer of zend ), David Persson, Joel Perras are some of them.  The most interesting thing I loved in Lithium is the filter system. Lithium will defnitely teach you to write Beautiful Code .  Grab it from : [https://github.com/UnionOfRAD/framework](https://github.com/UnionOfRAD/framework) or [http://lithify.me](http://lithify.me) ( Need to create an account )  Support : FreeNode \#li3 channel  Current Version is 0.99 \* .  **Symfony2** :  Symfony2 is indeed the fastest growing and may be the next largest community driven framework. The main contributor of Symfony is Fabien Potentier who is the founder of Sensio Labs and ofcourse its backed by them. Symfony2 uses many of the concepts from symfony 1 and also decoupling the framework to components something like previously Zend framework was doing. So you can utilize symfony2 components seperately without using the whole framework.  Grab it from : [https://github.com/symfony/symfony](https://github.com/symfony/symfony)  Support : Group and IRC .  Current Version : Released 2.0.3  **Silex** : A microframework based on Symfony2  [https://github.com/fabpot/Silex](https://github.com/fabpot/Silex) . Silex can utilize many of the symfony2 components , swiftmailer , forms etc . Fabien is also working on a small admin generation tool.  **Zend**: Zend framework 2 development has started. From the latest webinars I came to know they will be releasing a stable version in this year.  Grab it from : [https://github.com/zendframework/zf2](https://github.com/zendframework/zf2)  Support : ? , I am not sure whether there is \#zf2 support in irc is happening.  An interesting thing is mostly all the above frameworks utilizes phpunit , as the unit testing suite. So you can grab phpunit and this will help in the TDD development of any any product which utilizes phpunit. I love AuraPHP 's implementation of phpunit inside it. So there is no tedious task installing and configuring phpunit for aura. Hands of to Paul for the wonderful way he has done.  Another notable one is Doctrine2 which can be used by all the frameworks . ie also a great thing that you just need to know one ORM and utilize it every where. Especially if you are like me, and are working on different projects which uses different frameworks.   If you love doctrine, the best framework which utilizes it in the core is Symfony. Symfony2 has a better documentation, and it will improve too for you can see the community.  Lithium was mainly concentrating on nosql ( built in support from 0.3 I guess ), the RDBMS support still in progress ( Rome was not built in a day ). Lithium tries to make everything that a developer needs into the core. For the same it has more todo ( RDBMS ) though you can utilize other libraries. Its one of the promising framework once it reaches 1.0 . Never ever forget to check.  Check the latest and utilize according to your needs.   
+
+Keep in mind that I am a core developer of aura.
+
+## Aura
+
+Aura is an independent collection of standalone library for PHP.
+You can download and plug into any framework or library and start using
+in approximately 1-2 minutes.
+
+The lead is [Paul M Jones](http://paul-m-jones.com) the author of
+SolarPHP, Savant, Zend_View and Zend_Db components. An active member of
+the [PHP-FIG](http://www.php-fig.org) who made his hands dirty with
+[psr-1](http://www.php-fig.org/psr/psr-1/),
+[psr-2](http://www.php-fig.org/psr/psr-2/) and 
+[psr-4](http://www.php-fig.org/psr/psr-4/).
+
+## Packages available :
+
+[Dependency injection container](https://github.com/auraphp/Aura.Di)
+
+[Authentication](https://github.com/auraphp/Aura.Auth)
+
+[Cli](https://github.com/auraphp/Aura.Cli)
+
+[Request and Response](https://github.com/auraphp/Aura.Web)
+
+[Router](https://github.com/auraphp/Aura.Router)
+
+[Sispatcher](https://github.com/auraphp/Aura.Dispatcher)
+
+[Html](https://github.com/auraphp/Aura.Html)
+
+[View](https://github.com/auraphp/Aura.View)
+
+[Event handlers](https://github.com/auraphp/Aura.Signal)
+
+[Validation](https://github.com/auraphp/Aura.Filter)
+
+[Extended pdo](https://github.com/auraphp/Aura.Sql)
+
+[Query builders](https://github.com/auraphp/Aura.SqlQuery)
+
+[sql schema](https://github.com/auraphp/Aura.SqlSchema)
+
+[Marshal](https://github.com/auraphp/Aura.Marshal)
+
+[build and modify uri](https://github.com/auraphp/Aura.Uri)
+
+[http](https://github.com/auraphp/Aura.Http)
+
+[Internationalization](https://github.com/auraphp/Aura.Intl)
+
+[Session](https://github.com/auraphp/Aura.Session)
+
+[forms](https://github.com/auraphp/Aura.Input)
+
+[includer](https://github.com/auraphp/Aura.Include)
+
+### Framework
+
+[Web_Project](https://github.com/auraphp/Aura.Web_Project) : A micro framework
+which can be expanded to full stack.
+
+[Cli_Project](https://github.com/auraphp/Aura.Web_Project) : Deals only with cli application.
+
+[Framework_Project](https://github.com/auraphp/Aura.Framework_Project) combining
+both the cli and the web framework.
+
+Support : on IRC FreeNode #auraphp , [auraphp groups](http://groups.google.com/group/auraphp),
+[stackoverflow](http://stackoverflow.com/tags/auraphp)
+
+## Pros
+
+* Build on top of components
+* Using components in other projects will help not to learn another library
+* Small and growing community, easy to reach core developers
+
+## Cons
+
+* Small community. Remember : Everything starts small, but later make a difference.
+
+## Symfony2
+
+Fabien Potencier is the man behind Symfony2, which have a big community.
+
+## Pros
+
+* Large community
+* Component driven
+* Support backed by Sensiolabs
+* Conferences
+
+## Cons
+
+* Learning curve is a bit steep
+
+Source code : [https://github.com/symfony/symfony](https://github.com/symfony/symfony)
+
+Support : Group and IRC
+
+## Zend
+
+## Pros
+
+* Supported by Zend
+* Large community
+* Conferences
+
+## Cons
+
+* Learning curve is a bit steep
+
+Source : [https://github.com/zendframework/zf2](https://github.com/zendframework/zf2)
+
+
+## Flow
+
+Founded by the TYPO3 association, which was earlier named Flow3.
+
+[http://flow.typo3.org/](http://flow.typo3.org/)
+
+## Pros
+
+* Supported by typo3
+* Nice community
+
+## Cons
+
+* Monolythic
+* CLA need to be signed to contribute to project
+* Not in github
+
+## Laravel
+
+Founded by Taylor Otwell.
+
+[https://github.com/laravel/framework](https://github.com/laravel/framework)
+
+## Pros
+
+* Nice community
+* Conferences
+* Easy to learn
+
+## Cons
+
+* Monolythic
+
+> NB:. Even if it claims to be driven by components, the way my defnition
+to component is not satisfied.
+Eg : [routing](https://github.com/illuminate/routing/blob/1fe6974d945989a14b0916536a09806c926165f8/composer.json#L10)
+
+## Lithium
+
+Lithium a framework started in 2009 by Nate Abele (X lead developer of cakephp),
+Gwoo (X project leader of cake php),
+David Persson, Joel Perras and many others. 
+The most interesting thing I loved in Lithium is the filter system.
+
+Source : [https://github.com/UnionOfRAD/framework](https://github.com/UnionOfRAD/framework)
+
+Site : [http://li3.me](http://li3.me)
+
+Support : #li3 on freenode
+
+## Pros
+
+* Nice community
+
+## Cons
+
+* Monolythic
+* no stable version released
