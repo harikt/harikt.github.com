@@ -3,7 +3,7 @@ layout: post
 title: "Aura Input Form inside Slim framework"
 date: 2014-09-02 19:14:14 +0530
 comments: true
-categories: 
+categories: [auraphp, slimframework, forms]
 ---
 
 Rob Allen wrote about [Integrating ZF2 forms into Slim](http://akrabat.com/zend-framework-2/integrating-zf2-forms-into-slim/).
