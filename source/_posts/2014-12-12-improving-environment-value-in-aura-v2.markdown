@@ -6,9 +6,9 @@ comments: true
 categories: [auraphp, .env]
 ---
 
-Aura v2 framework probably have missed a better way to environment variables. But that doesn't make you stall. Things can be improved ;-) .
+Aura v2 framework probably have missed a better way to handle environment variables. But that doesn't make you stall. Things can be improved ;-).
 
-> Assume you are already using aura framework and is on the root of the project.
+> Assume you are already using aura framework and is at root of the project.
 
 We are going to make use of [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv) , alternatives are there if you are interested to experiment.
 
@@ -16,13 +16,26 @@ We are going to make use of [vlucas/phpdotenv](https://github.com/vlucas/phpdote
 composer require vlucas/phpdotenv
 ```
 
-Edit the file `config/_env.php` add `Dotenv::load(/path/to/.env);` to the first line.
+Edit the file `config/_env.php` and add `Dotenv::load(/path/to/.env);` to the first line. If you have not modified anything it will look as below
+
+```php
+<?php
+// {PROJECT_PATH}/config/_env.php
+Dotenv::load(__DIR__);
+// set the mode here only if it is not already set.
+// this allows for setting via web server, shell script, etc.
+if (! isset($_ENV['AURA_CONFIG_MODE'])) {
+    $_ENV['AURA_CONFIG_MODE'] = 'dev';
+}
+```
 
 > Don't forget to create the `.env` file.
 
 You are done!
 
-Now you can easily make use of environment values easily from the configuration files. Below is an example.
+Now you can easily make use of environment variables easily from the configuration files.
+
+Below is an example.
 
 
 ```php
