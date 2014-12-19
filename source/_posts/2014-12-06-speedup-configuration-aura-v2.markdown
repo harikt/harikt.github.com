@@ -21,16 +21,16 @@ composer require foa/di-config
 ## Usage
 
 ```bash
-vendor/bin/di-config-dump 
+vendor/bin/di-config-dump
 Usage : vendor/bin/di-config-dump /real/path/to/file.php
 Usage : vendor/bin/di-config-dump /real/path/to/directory
 ```
 
 ## Example 1
 
-Let's assume you have 
+Let's assume you have
 
-```
+```php
 <?php
 // src/Vendor/World.php
 namespace Vendor;
@@ -43,7 +43,7 @@ class World
 }
 ```
 
-```
+```php
 <?php
 // src/Vendor/Baz.php
 namespace Vendor;
@@ -53,13 +53,13 @@ class Baz
 }
 ```
 
-Now you can make use of 
+Now you can make use of
 
 ```bash
 vendor/bin/di-config-dump src/Vendor/World.php
 ```
 
-will output 
+will output
 
 ```php
 $di->params['Vendor\World']['baz'] = $di->lazyNew('Vendor\Baz');
@@ -79,8 +79,8 @@ namespace Vendor;
 class Hello
 {
     public function __construct(
-        \Aura\Web\Response $response, 
-        \Aura\Web\Request $request, 
+        \Aura\Web\Response $response,
+        \Aura\Web\Request $request,
         \Aura\Router\Router $router,
         World $word
     ) {
@@ -93,7 +93,7 @@ class Hello
 vendor/bin/di-config-dump src/Vendor/Hello.php
 ```
 
-will output 
+will output
 
 ```bash
 $di->params['Vendor\Hello']['response'] = $di->lazyGet('aura/web-kernel:response');
