@@ -169,12 +169,12 @@ Filesystem is another nice component which helps you to copy, rename, create dir
 
 ## Complex components
 
-So far, most of the components are easy ones. One of the complex component is the security component. It tries to do authentication and authorization.
+So far, the above components are easy to use. One of the complex component is the security component. It tries to do authentication and authorization.
 
 As a person who have worked with zend framework, I love how  [authentication](http://framework.zend.com/manual/current/en/modules/zend.authentication.intro.html) and [authorization](http://framework.zend.com/manual/current/en/modules/zend.permissions.acl.intro.html) is done. I do love the latest  [Aura.Auth](https://github.com/auraphp/Aura.Auth) library.
 
 If you are using symfony as a framework, there is a bundle to rescue. Yes, [FOSUserBundle](https://github.com/FriendsOfSymfony/FOSUserBundle). I believe most of them who use symfony will be using it.
 
-Part of the complexity may be because symfony security was based on Spring security from Java. I am not sure why Fabien chose Spring when there were good ones in the PHP world, but I hope there is a reason.
+Part of the complexity may be because symfony security was based on Spring security from Java. I am not sure why Fabien choose Spring when there were good ones in the PHP world, but I hope there is a reason behind it.
 
 Conclusion : Symfony as a framework is nice!.
