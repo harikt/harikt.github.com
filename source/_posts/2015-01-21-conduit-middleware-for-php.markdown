@@ -107,7 +107,7 @@ $app->pipe(function ($request, $response, $next) use ($router, $dispatcher) {
 });
 ```
 
-Now your router middleware can handle dynamic things. You can see the full example over   [gist](https://gist.github.com/harikt/477902c09eb51dad6433). If you don't like closure approach, have a look at how you can [refactor application to architecture changes](https://github.com/auraphp/Aura.Dispatcher/blob/2.0.0/README.md#refactoring-to-architecture-changes).
+Now your router middleware can handle dynamic things. You can see the full example over   [gist](https://gist.github.com/harikt/477902c09eb51dad6433).
 
 You may need an authentication middleware to check whether the user is authenticated, or a content negotiation middleware to set the corresponding `Content-Type` header in the response.
 
