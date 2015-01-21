@@ -21,7 +21,7 @@ I hope you know about the tool [composer](https://getcomposer.org) and know abou
 ```
 mkdir sample-project
 cd sample-project
-composer require "phly/conduit:~0.10"
+composer require "phly/conduit:0.10.*"
 mkdir web
 ```
 
