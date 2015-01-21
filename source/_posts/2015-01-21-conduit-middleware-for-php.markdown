@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Conduit:Middleware for PHP"
+title: "Conduit : The Middleware for PHP"
 date: 2015-01-21 12:12:32 +0530
 comments: true
-categories: [middleware, framework]
+categories: [middleware, framework, conduit]
 ---
 
 Long back, I happened to talk with [Beau Simensen](https://beau.io/) about [stackphp](http://stackphp.com/) on #auraphp channel. It was hard for me to digest when I noticed it need `symfony/http-kernel` and its dependencies.
@@ -12,7 +12,7 @@ After a few months, I started to like the middleware approach of slim framework 
 
 ## Conduit to rescue
 
-Conduit is a Middleware for PHP built by [Matthew Weier O'Phinney](http://mwop.net/) lead of Zend framework. Conduit supports the current [PSR-7 proposal](https://github.com/php-fig/fig-standards/blob/master/proposed/http-message.md). I believe like the many PSR's, PSR-7 will be a revolution in the PHP world.
+Conduit is a Middleware for PHP built by [Matthew Weier O'Phinney](http://mwop.net/) lead of Zend framework. Conduit supports the current [PSR-7 proposal](https://github.com/php-fig/fig-standards/blob/master/proposed/http-message.md). I believe like the many PSR's, PSR-7 will be a revolution in the PHP world. Conduit is really a micro framework and can grow with your project.
 
 ## Starting your project
 
@@ -65,12 +65,12 @@ The idea is same even if you are using a different library.
 1. Get the path via `$request->getUri()->getPath()`
 2. Check router if the path is matching
 3. If
-    a) `no` call the next middleware in stack. ie `return $next()`
-    b) `yes` execute the controller and return back the response
+    * `no` call the next middleware in stack. ie `return $next()`
+    * `yes` execute the controller and return back the response
 
 > Be sure that if you change something you need to return the response. Because Request and Response are immutable.
 
-Inorder to build something like the above, we need a [router library](https://github.com/auraphp/Aura.Router) which can handle routing, and a [dispatcher library](https://github.com/auraphp/Aura.Dispatcher) which can handle the necessary operation when a route is found.
+In-order to build something like the above, we need a [router library](https://github.com/auraphp/Aura.Router) which can handle routing, and a [dispatcher library](https://github.com/auraphp/Aura.Dispatcher) which can handle the necessary operation when a route is found.
 
 Install the dependencies.
 
@@ -78,21 +78,16 @@ Install the dependencies.
 composer require "aura/router:~2.0" "aura/dispatcher:~2.0"
 ```
 
-The full code will look like as below.
+The router middleware will look like as below.
 
 ```php
 <?php
-require dirname(__DIR__) . '/vendor/autoload.php';
-
-use Phly\Conduit\Middleware;
-use Phly\Http\Server;
-
-$app = new Middleware();
 $router = new \Aura\Router\Router(
     new \Aura\Router\RouteCollection(new \Aura\Router\RouteFactory),
     new \Aura\Router\Generator
 );
 $dispatcher = new \Aura\Dispatcher\Dispatcher(array(), 'controller', 'action');
+
 $app->pipe(function ($request, $response, $next) use ($router, $dispatcher) {
     $path = $request->getUri()->getPath();
     $route = $router->match($path, $request->getServerParams());
@@ -110,41 +105,11 @@ $app->pipe(function ($request, $response, $next) use ($router, $dispatcher) {
     }
     return $response;
 });
-
-$router->add('homepage', '/')
-    ->addValues(array('controller' => 'homepage'));
-
-$router->add('blog.browse', '/blog')
-    ->addValues(array('controller' => 'blog.browse'));
-
-$router->add('blog.view', '/blog/view/{id}')
-    ->addValues(array('controller' => 'blog.view'));
-
-$dispatcher->setObject('homepage', function ($response) {
-    return $response->write('<p>Hello conduit! </p><p><a href="/blog">Browse some blog posts</a></p>')->end();
-});
-
-$dispatcher->setObject('blog.browse', function ($response) {
-    return 'Here you can see some blog posts <a href="/blog/view/' . rand(0, 100). ' ">blog post</a>';
-});
-
-$dispatcher->setObject('blog.view', function ($response, $id) {
-    return '<p><a href="/blog">Browse all</a></p><p>I am a blog post ' . htmlspecialchars($id, ENT_QUOTES, 'UTF-8') . '</p>';
-});
-
-$server = Server::createServer($app,
-  $_SERVER,
-  $_GET,
-  $_POST,
-  $_COOKIE,
-  $_FILES
-);
-$server->listen();
 ```
 
-Now the router can handle dynamic things. I have purposefully skipped how you can [refactor application to architecture changes](https://github.com/auraphp/Aura.Dispatcher/blob/2.0.0/README.md#refactoring-to-architecture-changes)
+Now your router middleware can handle dynamic things. You can see the full example over   [gist](https://gist.github.com/harikt/477902c09eb51dad6433). If you don't like closure approach, have a look at how you can [refactor application to architecture changes](https://github.com/auraphp/Aura.Dispatcher/blob/2.0.0/README.md#refactoring-to-architecture-changes).
 
-You can add an authentication middleware to check whether the user is authenticated, or a content negotiation middleware to set the corresponding `Content-Type` header in the response.
+You may need an authentication middleware to check whether the user is authenticated, or a content negotiation middleware to set the corresponding `Content-Type` header in the response.
 
 I have created a [skelton project](https://github.com/harikt/conduit-skelton) which have a [router middleware](https://github.com/harikt/conduit-skelton/blob/0.2.0/src/Conduit/Middleware/RouterMiddleware.php), [authentication middleware](https://github.com/harikt/conduit-skelton/blob/0.2.0/src/Conduit/Middleware/AuthenticationMiddleware.php) and [negotiation middleware](https://github.com/harikt/conduit-skelton/blob/0.2.0/src/Conduit/Middleware/NegotiationMiddleware.php) with the help of a few libraries. Less libraray means less code to maintain, easy to understand and debug the code behind the scenes.
 
