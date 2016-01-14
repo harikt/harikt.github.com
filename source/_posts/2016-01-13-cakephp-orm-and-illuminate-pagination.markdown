@@ -11,7 +11,7 @@ Do you know CakePHP version 3 has a lovely ORM which can be used as standalone?
 Thank you [José Lorenzo Rodríguez](https://github.com/lorenzo) and every contributor, for your hard work.
 
 ```
-composer require cake/orm
+composer require cakephp/orm
 ```
 
 That's it.
