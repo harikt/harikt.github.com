@@ -41,19 +41,19 @@ class PaginatorMiddleware
             $params = $request->getQueryParams();
             return empty($params[$pageName]) ? 1 : $params[$pageName];
         });
-        
+
         IlluminatePaginator::currentPathResolver(function () use($request )
         {
             return $request->getUri()->getPath();
         });
-        
+
         return $next($request, $response);
     }
 }
 ```
 
-What we did above are a few things for Illuminate to give the url path when 
-it is doing the pagination. So for example `/article?page=<page-number>` will come 
+What we did above are a few things for Illuminate to give the url path when
+it is doing the pagination. So for example `/article?page=<page-number>` will come
 instead of just `?page=<page-number>`.
 
 ```php
@@ -61,7 +61,6 @@ instead of just `?page=<page-number>`.
 use Cake\ORM\TableRegistry;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Pagination\BootstrapThreePresenter;
 
 $table = TableRegistry::get('Articles');
 $currentPage = 1;
@@ -69,14 +68,17 @@ $perPage = 20;
 $query = $table->find('all');
 $total = $query->count();
 $items = $query->page($currentPage, $perPage);
-$presenter = new BootstrapThreePresenter(new LengthAwarePaginator($items, $total, $perPage, $currentPage, [
+$paginator = new LengthAwarePaginator($items, $total, $perPage, $currentPage, [
 	'path' => Paginator::resolveCurrentPath(),
-]));
-echo $presenter->render();
+]);
+echo $paginator->render();
 ```
 
 The above code is querying the articles and rendering the pagination with the returned results.
 
-I hope you will love this integration.
+By default the Presenter is `Illuminate\Pagination\BootstrapThreePresenter`, but you
+can create your own.
 
-Thank you everyone for your support and hard work on making different components to make PHP better every day.
+I hope you will love the integration.
+
+Thank you everyone for your support and hard work on components to make PHP better every day.
