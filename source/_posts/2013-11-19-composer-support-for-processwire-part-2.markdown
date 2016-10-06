@@ -6,7 +6,7 @@ comments: true
 categories: [processwire, composer, modules]
 ---
 
-In my [earlier post](http://harikt.com/blog/2013/11/16/composer-support-for-processwire-modules/) 
+In my [earlier post](http://harikt.com/blog/2013/11/16/composer-support-for-processwire-modules/)
 I mentioned about adding a `composer.json` in the root of the github repo.
 
 Sometimes you may see a non `composer.json` repo or some times people reject
@@ -28,7 +28,7 @@ it, you still can do like the below.
                 },
                 "type": "pw-module",
                 "require": {
-                    "hari/pw-module": "dev-master"
+                    "hari/pw-module": "~1.0"
                 }
             }
         }
@@ -39,7 +39,7 @@ it, you still can do like the below.
 }
 ```
 
-And run 
+And run
 
 ```bash
 php composer.phar update
@@ -47,7 +47,7 @@ php composer.phar update
 
 > Don't forget you need `composer.phar`. If you don't have get from [getcomposer.org](http://getcomposer.org/download/)
 
-The module is downloaded to `site/modules/ProcessExportProfile`. 
+The module is downloaded to `site/modules/ProcessExportProfile`.
 The package is of type [pw-module](https://github.com/harikt/pwmoduleinstaller)
 
 > The name process-export-profile is converted to ProcessExportProfile .
