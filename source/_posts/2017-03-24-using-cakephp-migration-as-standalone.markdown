@@ -54,6 +54,9 @@ if (!defined('PHINX_VERSION')) {
 $config = require  ROOT . '/config/app.php';
 ConnectionManager::config($config['Datasources']);
 Cake\Cache\Cache::config($config['Cache']);
+Plugin::load('Migrations', [
+    'path' => ROOT . '/vendor/cakephp/migrations/',
+]);
 $application = new MigrationsDispatcher(PHINX_VERSION);
 $application->run();
 ```
