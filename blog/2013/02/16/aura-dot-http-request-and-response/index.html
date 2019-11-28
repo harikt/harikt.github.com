@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>aura dot http request and response – Random thoughts</title>
+<meta name="description" content="The Aura.Http package provide you the tool to build and send request and response. Instantiation: The easiest way is &amp;lt;?php $http = require …">
+<meta name="created" content="2013-02-16T00:00:00&#43;0000">
+<meta name="modified" content="2013-02-16T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="aura dot http request and response">
+<meta property="og:url" content="https://harikt.com/blog/2013/02/16/aura-dot-http-request-and-response/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2013/02/16/aura-dot-http-request-and-response/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "aura dot http request and response",
+    "datePublished": "2013-02-16T00:00:00Z",
+    "dateModified": "2013-02-16T00:00:00Z",
+    "url" : "https://harikt.com/blog/2013/02/16/aura-dot-http-request-and-response/",
+    "description": "The Aura.Http package provide you the tool to build and send request and response. Instantiation: The easiest way is \u0026lt;?php $http = require …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">aura dot http request and response</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2013-02-16T00:00:00Z">16 February, 2013</time>
+</p>
+</header>
+<div class="content">
+<p>The <code>Aura.Http</code> package provide you the tool to build and send request and response.</p>
+<h1 id="instantiation">Instantiation:</h1>
+<p>The easiest way is</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+$http <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span> <span style="color:#e6db74">&#39;path/to/Aura.Http/scripts/instance.php&#39;</span>;
+</code></pre></div><p>What it gives you is an object of <code>Aura\Http\Manager</code>. If you want to create
+manually you can look into the <code>instance.php</code></p>
+<h1 id="building-your-response">Building your Response</h1>
+<p>Probably you may not have bothered too much on building the http response
+either the framework does it for you, or until you need to send the correct
+response.</p>
+<p>To create a proper http response via <code>Aura.Http</code> we need to create a
+response object.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+$response <span style="color:#f92672">=</span> $http<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">newResponse</span>();
+</code></pre></div><p>Now you have the response object. You can set the <code>header</code> via</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+$response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">headers</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;Header&#39;</span>, <span style="color:#e6db74">&#39;Value&#39;</span>);
+</code></pre></div><p>If you have an array of headers you can use <code>setAll</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+$response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">headers</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setAll</span>([
+    <span style="color:#e6db74">&#39;Header-One&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;header one value&#39;</span>,
+    <span style="color:#e6db74">&#39;Header-Two&#39;</span> <span style="color:#f92672">=&gt;</span> [
+        <span style="color:#e6db74">&#39;header two value A&#39;</span>,
+        <span style="color:#e6db74">&#39;header two value B&#39;</span>,
+        <span style="color:#e6db74">&#39;header two value C&#39;</span>,
+    ],
+]);
+</code></pre></div><p>So a basic example of setting header value is</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+$response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">headers</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;Content-Type&#39;</span>, <span style="color:#e6db74">&#39;text/plain&#39;</span>);
+</code></pre></div><h2 id="setting-content">Setting Content</h2>
+<p>The header values are for the browser to understand what is coming from
+server, and how it should render etc.</p>
+<p>So we need to set the content. This can be achieved via <code>setContent</code> method.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+$response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setContent</span>(<span style="color:#e6db74">&#39;&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;/head&gt;&lt;body&gt;Hello World!&lt;/body&gt;&lt;/html&gt;&#39;</span>);
+</code></pre></div><p>You can always get the content via calling <code>getContent</code>.</p>
+<h2 id="setting-and-getting-cookies">Setting and Getting Cookies</h2>
+<p>Sometimes we may want to set the cookies. You can do it as</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+$response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cookies</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;cookie_name&#39;</span>, [
+    <span style="color:#e6db74">&#39;value&#39;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;cookie value&#39;</span>, <span style="color:#75715e">// cookie value
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#39;expire&#39;</span>   <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">time</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">3600</span>,  <span style="color:#75715e">// expiration time in unix epoch seconds
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#39;path&#39;</span>     <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;/path&#39;</span>,        <span style="color:#75715e">// server path for the cookie
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#39;domain&#39;</span>   <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;example.com&#39;</span>,  <span style="color:#75715e">// domain for the cookie
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#39;secure&#39;</span>   <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">false</span>,          <span style="color:#75715e">// send by ssl only?
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#39;httponly&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>,           <span style="color:#75715e">// send by http/https only?
+</span><span style="color:#75715e"></span>]);
+</code></pre></div><p>The array keys mimic the <a href="http://php.net/setcookies">setcookie</a> parameters. If you have an array
+you can use <code>setAll</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+$response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cookies</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setAll</span>([
+    <span style="color:#e6db74">&#39;cookie_foo&#39;</span> <span style="color:#f92672">=&gt;</span> [
+        <span style="color:#e6db74">&#39;value&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;value for cookie foo&#39;</span>,
+    ],
+    <span style="color:#e6db74">&#39;cookie_bar&#39;</span> <span style="color:#f92672">=&gt;</span> [
+        <span style="color:#e6db74">&#39;value&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;value for cookie bar&#39;</span>,
+    ],
+]);
+</code></pre></div><p>You can get a cookie by calling <code>get</code> method on cookies.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+$response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cookies</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;cookie_name&#39;</span>);
+</code></pre></div><h2 id="setting-and-getting-status">Setting and Getting Status</h2>
+<p>By default the status code is 200. But at some point of time
+like the one I explained earlier in <a href="http://harikt.com/blog/2012/12/16/status-code-304/">Status Code 304</a>, we don't need to
+send the whole content. But just the status code.</p>
+<p>This is possible via <code>setStatusCode</code> and <code>setStatusText</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+$response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setStatusCode</span>(<span style="color:#ae81ff">304</span>);
+$response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setStatusText</span>(<span style="color:#e6db74">&#39;Same As It Ever Was&#39;</span>);
+</code></pre></div><h2 id="sending-your-response">Sending your response</h2>
+<p>And finally we can send the response back. We can call the <code>send</code>
+method and pass the <code>response</code> object.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+$http<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">send</span>($response);
+</code></pre></div><p>The full source code of example is</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+$http <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span> <span style="color:#e6db74">&#39;path/to/Aura.Http/scripts/instance.php&#39;</span>;
+<span style="color:#75715e">// send a response
+</span><span style="color:#75715e"></span>$response <span style="color:#f92672">=</span> $http<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">newResponse</span>();
+$response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">headers</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;Content-Type&#39;</span>, <span style="color:#e6db74">&#39;text/plain&#39;</span>);
+$response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setContent</span>(<span style="color:#e6db74">&#39;&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;/head&gt;&lt;body&gt;Hello World!&lt;/body&gt;&lt;/html&gt;&#39;</span>);
+$http<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">send</span>($response);
+</code></pre></div><p>From terminal start the server by <code>php -S localhost:8000 example.php</code> and
+pointintg to <code>localhost:8000</code> in your browser.</p>
+<p>In order to render just <code>Hello World!</code> in the browser the <code>Content-Type</code> we added should be
+<code>text/html</code>.</p>
+<p>We can always change the header status code, content-type etc
+before we call <code>send()</code> method.</p>
+<p>Let us modify the example at <a href="http://harikt.com/blog/2012/12/16/status-code-304/">Status Code 304</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+$http <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span> <span style="color:#e6db74">&#39;path/to/Aura.Http/scripts/instance.php&#39;</span>;
+$response <span style="color:#f92672">=</span> $http<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">newResponse</span>();
+<span style="color:#66d9ef">if</span> ( <span style="color:#a6e22e">isset</span>($_SERVER[<span style="color:#e6db74">&#39;HTTP_IF_MODIFIED_SINCE&#39;</span>]) <span style="color:#f92672">&amp;&amp;</span> 
+    $_SERVER[<span style="color:#e6db74">&#39;HTTP_IF_MODIFIED_SINCE&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Tue, 15 Jan 2011 12:00 GMT&#39;</span> ) {
+    $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setStatusCode</span>(<span style="color:#ae81ff">304</span>);
+} <span style="color:#66d9ef">else</span> {
+    $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">headers</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;Content-Type&#39;</span>, <span style="color:#e6db74">&#39;text/html&#39;</span>);
+    $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">headers</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;Last-Modified&#39;</span>, <span style="color:#e6db74">&#39;Tue, 15 Jan 2011 12:00 GMT&#39;</span>);
+    $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setContent</span>(<span style="color:#e6db74">&#39;&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;/head&gt;&lt;body&gt;Hello World!&lt;/body&gt;&lt;/html&gt;&#39;</span>);
+}
+$http<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">send</span>($response);
+</code></pre></div><p>You would have noticed I have used <code>$_SERVER</code> variable. In <code>Aura.Http</code>,
+there is no methods to access the global server values. This is because
+the <code>$_SERVER</code> values are not the exact http requested header. The server
+modifies the request and we will be only getting the manipulated values
+if we use <code>$_SERVER</code>, <code>$_GET</code>, <code>$_POST</code> values.</p>
+<p><code>Aura.Http</code> only helps you to build, create, modify response and request.</p>
+<h1 id="creating-http-request">Creating Http Request</h1>
+<p>We talked about response so far. What does Request actually mean?</p>
+<p>Client -&gt; Request something -&gt; Server Responds</p>
+<p>So that means we are trying to be a client or a browser, and making the necessary
+headers and sending to server to get the corresponding response.</p>
+<p>We can get all the repos of a user in github via curl.</p>
+<pre><code>curl -i https://api.github.com/users/pmjones/repos
+</code></pre><p>The same can be achieved via <a href="https://github.com/auraphp/Aura.Http">Aura.Http</a>. The <a href="https://github.com/auraphp/Aura.Http">Aura.Http</a> provides a
+means to do the same with PHP. It uses <code>curl</code> if it is available or <code>stream</code>
+to make this happen.</p>
+<p>You need to create a Request object.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+$request <span style="color:#f92672">=</span> $http<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">newRequest</span>();
+</code></pre></div><p>Set the url via <code>setUrl</code> method and send.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+$request<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setUrl</span>(<span style="color:#e6db74">&#39;https://api.github.com/users/pmjones/repos&#39;</span>);
+$stack <span style="color:#f92672">=</span> $http<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">send</span>($request);
+$repos <span style="color:#f92672">=</span> <span style="color:#a6e22e">json_decode</span>($stack[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">content</span>);
+<span style="color:#66d9ef">foreach</span> ($repos <span style="color:#66d9ef">as</span> $repo) {
+    <span style="color:#66d9ef">echo</span> $repo<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">PHP_EOL</span>;
+}
+</code></pre></div><p>There are more things to say. It can do basic authentication, post values etc.
+Browse the documentation examples, source code, tests, and api.</p>
+<p>Source Code : <a href="https://github.com/auraphp/Aura.Http"><a href="https://github.com/auraphp/Aura.Http">https://github.com/auraphp/Aura.Http</a></a></p>
+<p>Documentation : <a href="http://auraphp.github.com/Aura.Http/version/1.0.0/"><a href="http://auraphp.github.com/Aura.Http/version/1.0.0/">http://auraphp.github.com/Aura.Http/version/1.0.0/</a></a></p>
+<p>API : <a href="http://auraphp.github.com/Aura.Http/version/1.0.0/api/"><a href="http://auraphp.github.com/Aura.Http/version/1.0.0/api/">http://auraphp.github.com/Aura.Http/version/1.0.0/api/</a></a></p>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

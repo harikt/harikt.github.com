@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>thoughts on package or component – Random thoughts</title>
+<meta name="description" content="Comparing a software X with Y will not make anything worst, but makes it better. But many of them will think it as a promotional stuff. It is not anyones&#39;s problem. Some …">
+<meta name="created" content="2013-01-04T00:00:00&#43;0000">
+<meta name="modified" content="2013-01-04T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="thoughts on package or component">
+<meta property="og:url" content="https://harikt.com/blog/2013/01/04/thoughts-on-package-or-component/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2013/01/04/thoughts-on-package-or-component/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "thoughts on package or component",
+    "datePublished": "2013-01-04T00:00:00Z",
+    "dateModified": "2013-01-04T00:00:00Z",
+    "url" : "https://harikt.com/blog/2013/01/04/thoughts-on-package-or-component/",
+    "description": "Comparing a software X with Y will not make anything worst, but makes it better. But many of them will think it as a promotional stuff. It is not anyones's problem. Some …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">thoughts on package or component</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2013-01-04T00:00:00Z">4 January, 2013</time>
+</p>
+</header>
+<div class="content">
+<p>Comparing a software X with Y will not make anything worst, but makes it better. But many of them will think it as a promotional stuff. It is not anyones's problem. Some like to build it that way, some like the other way.</p>
+<p>So I am not comparing X with Y here.</p>
+<p>Not talking about package like Guzzle:</p>
+<p>I am not mentioning building something like Guzzle, which is a framework that includes the tools needed to create a robust web service client.</p>
+<p>But I am interested in talking about the packages which can be used to build something like Guzzle when you look into the require of composer.json.</p>
+<p>That means something like Aura.Http which can be used to make a request to google and do the search if needed or post etc.</p>
+<p>Structure of Package or Component:</p>
+<p>1 ) We need to name a package.</p>
+<p>Let us go for the <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md">PSR-0</a> naming.</p>
+<p>Each namespace must have a top-level namespace (&ldquo;Vendor Name&rdquo;), and a Package name. Probably you will end up with Vendor.Package or Vendor_Package .</p>
+<p>2 ) <a href="http://getcomposer.org/">Composer</a>/<a href="https://github.com/crodas/Eath">Eath</a>, are great tools which help you to manage the dependency management in your PHP projects. So we need a composer.json or package.yml .</p>
+<p>3 ) We are creating a package or component, so obviously it will contain source files and test files. It will be a mess when we keep all tests and source files in a same place. Most of them uses either <code>src</code> folder or <code>lib</code> or <code>library</code> to keep source files and <code>tests</code> to keep test files. Probably you have some documentation, a <code>docs</code> folder may help. May be some executable scripts. You can also add a <code>scripts</code> or <code>bin</code> folder.</p>
+<p>Now your structure will be something like</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Vendor.Package
+  ├── composer.json
+  ├── package.yml
+  ├── docs
+  ├── src
+  │   └── Vendor
+  │       └── Package
+  └── tests
+      └── Vendor
+          └── Package
+</code></pre></div><p>The above structure follows a PSR-0 naming convention for package/component.</p>
+<p>NIH : We all create new packages for we don't like some other package invented here, not for its not invented here or probably to make use of newer stuffs like traits, closures etc available in PHP 5.4 than sticking with PHP 5 or sometimes it is not inveneted here.</p>
+<p>So add your depenedencies to composer.json or package.yml</p>
+<p>Let us assume we are going to create a Validation pacakge. Probably you love annotations or yml format. It is always a better idea to keep the annotations, yaml etc on a bridge than in the Validation package. Remember you have composer, let the bridge package composer.json helps you to download validation package, annotation library. This also helps you to write your integration tests in bridge package than making a dependency on the Validation package.</p>
+<p>And also help people to use different annotations library than a single one or you will end up messing with more annotation classes.</p>
+<p>I guess this helps people to</p>
+<p>1 ) fork and contribute</p>
+<p>2 ) Even if there is no documentation, it helps to look into the source and get the point. Else a lot of classes confuses people.</p>
+<p>Nothing is developed to make it bad, everything is made for good. Though at-times it acts badly.</p>
+<p>These are some of the principles I learned looking at various projects like Aura, Symfony2, ZF2, Lithium, Fuel2, Illuminate&hellip; you name it.</p>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>speedup configuration aura v2 – Random thoughts</title>
+<meta name="description" content="Aura v2 added auto resolution in-order to help lazy people writing configuration manually. Even though it was introduced to help, it introduced a few issues. So auto …">
+<meta name="created" content="2014-12-06T00:00:00&#43;0000">
+<meta name="modified" content="2014-12-06T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="speedup configuration aura v2">
+<meta property="og:url" content="https://harikt.com/blog/2014/12/06/speedup-configuration-aura-v2/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2014/12/06/speedup-configuration-aura-v2/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "speedup configuration aura v2",
+    "datePublished": "2014-12-06T00:00:00Z",
+    "dateModified": "2014-12-06T00:00:00Z",
+    "url" : "https://harikt.com/blog/2014/12/06/speedup-configuration-aura-v2/",
+    "description": "Aura v2 added auto resolution in-order to help lazy people writing configuration manually. Even though it was introduced to help, it introduced a few issues. So auto …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">speedup configuration aura v2</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2014-12-06T00:00:00Z">6 December, 2014</time>
+</p>
+</header>
+<div class="content">
+<p>Aura v2 added auto resolution in-order to help lazy people writing configuration manually. Even though it was introduced to help, <a href="https://github.com/auraphp/Aura.Di/blob/2.1.0/README.md#auto-resolution-of-parameter-values">it introduced a few issues</a>.</p>
+<p>So auto resolution will be disabled in the future. Some of the complains/suggestions are how to easily write the di configuration.</p>
+<p>So introducing you <a href="https://github.com/friendsofaura/FOA.DiConfig">FOA.DiConfig</a></p>
+<h2 id="installation">Installation</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require foa/di-config
+</code></pre></div><h2 id="usage">Usage</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vendor/bin/di-config-dump
+Usage : vendor/bin/di-config-dump /real/path/to/file.php
+Usage : vendor/bin/di-config-dump /real/path/to/directory
+</code></pre></div><h2 id="example-1">Example 1</h2>
+<p>Let's assume you have</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#75715e">// src/Vendor/World.php
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Vendor</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">World</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(<span style="color:#a6e22e">Baz</span> $baz)
+    {
+    }
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#75715e">// src/Vendor/Baz.php
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Vendor</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Baz</span>
+{
+}
+</code></pre></div><p>Now you can make use of</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vendor/bin/di-config-dump src/Vendor/World.php
+</code></pre></div><p>will output</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$di-&gt;params[&#39;Vendor\World&#39;][&#39;baz&#39;] = $di-&gt;lazyNew(&#39;Vendor\Baz&#39;);
+</code></pre></div><p>You can also pass directory path instead of file. It will read the files and display the configuration.</p>
+<h2 id="example-2">Example 2</h2>
+<p>Let us look into another example</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#75715e">// src/Vendor/Hello.php
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Vendor</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Hello</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(
+        <span style="color:#a6e22e">\Aura\Web\Response</span> $response,
+        <span style="color:#a6e22e">\Aura\Web\Request</span> $request,
+        <span style="color:#a6e22e">\Aura\Router\Router</span> $router,
+        <span style="color:#a6e22e">World</span> $word
+    ) {
+    }
+}
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vendor/bin/di-config-dump src/Vendor/Hello.php
+</code></pre></div><p>will output</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$di-&gt;params<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;Vendor\Hello&#39;</span><span style="color:#f92672">]</span><span style="color:#f92672">[</span><span style="color:#e6db74">&#39;response&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> $di-&gt;lazyGet<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;aura/web-kernel:response&#39;</span><span style="color:#f92672">)</span>;
+$di-&gt;params<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;Vendor\Hello&#39;</span><span style="color:#f92672">]</span><span style="color:#f92672">[</span><span style="color:#e6db74">&#39;request&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> $di-&gt;lazyGet<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;aura/web-kernel:request&#39;</span><span style="color:#f92672">)</span>;
+$di-&gt;params<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;Vendor\Hello&#39;</span><span style="color:#f92672">]</span><span style="color:#f92672">[</span><span style="color:#e6db74">&#39;router&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> $di-&gt;lazyGet<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;aura/web-kernel:router&#39;</span><span style="color:#f92672">)</span>;
+$di-&gt;params<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;Vendor\Hello&#39;</span><span style="color:#f92672">]</span><span style="color:#f92672">[</span><span style="color:#e6db74">&#39;word&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> $di-&gt;lazyNew<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;Vendor\World&#39;</span><span style="color:#f92672">)</span>;
+</code></pre></div><p>If you look carefully the <code>Aura\Web\Response</code>, <code>Aura\Web\Request</code> and <code>Aura\Router\Router</code> are making use of <code>lazyGet</code> which gets the shared instance of the <a href="https://github.com/auraphp/Aura.Web_Kernel">Aura.Web_Kernel</a> .</p>
+<p>If you are not using inside the framework just pass something as 2nd argument.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vendor/bin/di-config-dump src/Vendor/Hello.php h
+$di-&gt;params<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;Vendor\Hello&#39;</span><span style="color:#f92672">]</span><span style="color:#f92672">[</span><span style="color:#e6db74">&#39;response&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> $di-&gt;lazyNew<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;Aura\Web\Response&#39;</span><span style="color:#f92672">)</span>;
+$di-&gt;params<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;Vendor\Hello&#39;</span><span style="color:#f92672">]</span><span style="color:#f92672">[</span><span style="color:#e6db74">&#39;request&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> $di-&gt;lazyNew<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;Aura\Web\Request&#39;</span><span style="color:#f92672">)</span>;
+$di-&gt;params<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;Vendor\Hello&#39;</span><span style="color:#f92672">]</span><span style="color:#f92672">[</span><span style="color:#e6db74">&#39;router&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> $di-&gt;lazyNew<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;Aura\Router\Router&#39;</span><span style="color:#f92672">)</span>;
+$di-&gt;params<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;Vendor\Hello&#39;</span><span style="color:#f92672">]</span><span style="color:#f92672">[</span><span style="color:#e6db74">&#39;word&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> $di-&gt;lazyNew<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;Vendor\World&#39;</span><span style="color:#f92672">)</span>;
+</code></pre></div><blockquote>
+<p>Please make sure all the files need to be autoloadable in-order to generate this.</p>
+</blockquote>
+<p>If you like to improve something <a href="https://github.com/friendsofaura/FOA.DiConfig">fork and contribute</a>.</p>
+<p>I have purposefully left not to make use of <a href="https://github.com/auraphp/Aura.Cli">Aura.Cli</a> in this library. Not sure if we need to integrate or not.</p>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

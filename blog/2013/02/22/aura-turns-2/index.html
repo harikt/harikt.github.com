@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>aura turns 2 – Random thoughts</title>
+<meta name="description" content="Looking over the commits on Aura.Router, Aura.Signal etc you will notice, aura project has turned 2. And today, I would like to introduce you, the new born baby still …">
+<meta name="created" content="2013-02-22T00:00:00&#43;0000">
+<meta name="modified" content="2013-02-22T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="aura turns 2">
+<meta property="og:url" content="https://harikt.com/blog/2013/02/22/aura-turns-2/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2013/02/22/aura-turns-2/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "aura turns 2",
+    "datePublished": "2013-02-22T00:00:00Z",
+    "dateModified": "2013-02-22T00:00:00Z",
+    "url" : "https://harikt.com/blog/2013/02/22/aura-turns-2/",
+    "description": "Looking over the commits on Aura.Router, Aura.Signal etc you will notice, aura project has turned 2. And today, I would like to introduce you, the new born baby still …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">aura turns 2</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2013-02-22T00:00:00Z">22 February, 2013</time>
+</p>
+</header>
+<div class="content">
+<p>Looking over <a href="https://github.com/auraphp/Aura.Router/commit/8de403dc49bf803a1fd641f55726079853716ab7">the commits on Aura.Router</a>, <a href="https://github.com/auraphp/Aura.Signal">Aura.Signal</a> etc you will
+notice, <a href="https://github.com/auraphp">aura project</a> has turned 2.</p>
+<p>And today, I would like to introduce you, the new born baby still under active
+development and refactoring based on user feedback, the
+<a href="https://github.com/auraphp/Aura.Input">form library for php, Aura.Input</a>.</p>
+<p>The <a href="https://github.com/auraphp/Aura.Input">Aura.Input</a>, doesn't have a rendering functionality. But you can always
+use Aura.View or create your own helpers.</p>
+<p>A basic filtering based on closure exists in <a href="https://github.com/auraphp/Aura.Input">Aura.Input</a>. But you are
+not limited, you can use your own filtering components or
+integrate <a href="https://github.com/auraphp/Aura.Filter">Aura.Filter</a>.</p>
+<p>Let us look at some code.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#75715e">// use composer or require &#39;/path/to/Aura.Input/src.php&#39;;
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Input\Form</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Input\Builder</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Input\Filter</span>;
+
+$filter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Aura\Input\Filter</span>();
+
+<span style="color:#75715e">// validate
+</span><span style="color:#75715e"></span>$filter<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setRule</span>(<span style="color:#e6db74">&#39;name&#39;</span>, <span style="color:#e6db74">&#39;Name should be alpha only&#39;</span>, <span style="color:#66d9ef">function</span> ($value) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ctype_alpha</span>($value);
+});
+
+$filter<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setRule</span>(<span style="color:#e6db74">&#39;email&#39;</span>, <span style="color:#e6db74">&#39;Enter a valid email address&#39;</span>, <span style="color:#66d9ef">function</span> ($value) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">filter_var</span>($value, <span style="color:#a6e22e">FILTER_VALIDATE_EMAIL</span>);
+});
+
+$filter<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setRule</span>(<span style="color:#e6db74">&#39;url&#39;</span>, <span style="color:#e6db74">&#39;Enter a valid url&#39;</span>, <span style="color:#66d9ef">function</span> ($value) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">filter_var</span>($value, <span style="color:#a6e22e">FILTER_VALIDATE_URL</span>);
+});
+
+$filter<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setRule</span>(<span style="color:#e6db74">&#39;message&#39;</span>, <span style="color:#e6db74">&#39;Message should be more than 7 characters&#39;</span>, <span style="color:#66d9ef">function</span> ($value) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">strlen</span>($value) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">7</span>) {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+});
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ContactForm</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Form</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">init</span>()
+    {
+        $name    <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setField</span>(<span style="color:#e6db74">&#39;name&#39;</span>);
+        $email   <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setField</span>(<span style="color:#e6db74">&#39;email&#39;</span>);
+        $url     <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setField</span>(<span style="color:#e6db74">&#39;url&#39;</span>);
+        $message <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setField</span>(<span style="color:#e6db74">&#39;message&#39;</span>, <span style="color:#e6db74">&#39;textarea&#39;</span>);
+    }
+}
+
+$form <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ContactForm</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Builder</span>, $filter);
+
+$values <span style="color:#f92672">=</span> [
+    <span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Hari K T&#39;</span>,
+    <span style="color:#e6db74">&#39;email&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;oh will it works!&#39;</span>,
+    <span style="color:#e6db74">&#39;url&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;google.com&#39;</span>,
+    <span style="color:#e6db74">&#39;message&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Aweso&#39;</span>
+];
+
+$form<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setValues</span>($values);
+
+$passed <span style="color:#f92672">=</span> $form<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">filter</span>();
+
+<span style="color:#75715e">// &#39;foo&#39; is invalid
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span> $passed) {
+    <span style="color:#75715e">// get all messages
+</span><span style="color:#75715e"></span>    $actual <span style="color:#f92672">=</span> $form<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getMessages</span>();
+    <span style="color:#a6e22e">var_dump</span>($actual);
+}
+</code></pre></div><p>Try it out, we have some more documentation for the <a href="https://github.com/auraphp/Aura.Input">Aura.Input</a>. I warn
+the api is still not stable for <a href="https://github.com/auraphp/Aura.Input">Aura.Input</a> and is not yet released a Beta.</p>
+<p>But it is a good start!</p>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

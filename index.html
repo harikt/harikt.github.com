@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Random thoughts</title>
+<link rel="alternate" type="application/rss&#43;xml" title="RSS" href="https://harikt.com/index.xml">
+<link rel="alternate" type="application/json" title="JSON" href="https://harikt.com/index.json">
+<meta name="description" content="">
+<meta name="created" content="2017-03-24T00:00:00&#43;0000">
+<meta name="modified" content="2017-03-24T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="Random thoughts">
+<meta property="og:url" content="https://harikt.com/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url" : "https://harikt.com/",
+    "name": "Random thoughts",
+    "description": "Random thoughts of Hari KT.",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="active" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="single-view">
+<div class="content">
+
+</div>
+</article>
+
+
+<article class="section-blog list-view">
+<header>
+<h2 class="title title-submitted"><a href="/blog/2017/03/24/building-modular-applications-with-psr-7/">building modular applications with psr 7</a></h2>
+<p class="submitted">
+<time class="modified-date" datetime="2017-03-24T00:00:00Z">24 March, 2017</time>
+</p>
+
+</header>
+<div class="content">
+PSR-7, the HTTP message interfaces opened a new door of creating modular applications.
+Sadly many of the PSR-7 implementations added many helper methods.
+So if someone is creating a library that needs a PSR-7 implementations they tie the particular library with the PSR-7 implementation and use these convinient helper methods.
+So was PSR-15: interfaces for HTTP Middleware and PSR-17: interfaces for HTTP Factories was proposed.
+When creating a module one of the most challenging part is how to serve the javascript, css and images.
+</div>
+</article>
+
+<article class="section-blog list-view">
+<header>
+<h2 class="title title-submitted"><a href="/blog/2017/03/24/using-cakephp-migration-as-standalone/">using cakephp migration as standalone</a></h2>
+<p class="submitted">
+<time class="modified-date" datetime="2017-03-24T00:00:00Z">24 March, 2017</time>
+</p>
+
+</header>
+<div class="content">
+Cakephp version 3 have a nice ORM. When using the cakephp/orm, it may be nice to integrate cakephp/migration than any other migration libraries, even though it uses phinx under the hood.
+Lets see how we can install and integrate cakephp/migration in our application.
+composer require cakephp/migrations:dev-master  The dev-master is currently passed for we need the latest version of master branch. Before this pull request, it was having dependency on cakephp/cakephp, which is not needed.
+</div>
+</article>
+
+<article class="section-blog list-view">
+<header>
+<h2 class="title title-submitted"><a href="/blog/2016/03/15/aura-dot-di-2-dot-x-to-3-dot-x-upgrade-guide/">aura dot di 2 dot x to 3 dot x upgrade guide</a></h2>
+<p class="submitted">
+<time class="modified-date" datetime="2016-03-15T00:00:00Z">15 March, 2016</time>
+</p>
+
+</header>
+<div class="content">
+3.x has a very minimal BC break. But if you are not sure what are they, then you may feel the pain. I am trying to document most of them, incase I missed please edit and send a pull request.
+I will try to eventually pushed to the main Aura.Di repo.
+BC Breaks Instantiation The way di container is instantiated has been changed from
+use Aura\Di\Container; use Aura\Di\Factory; use Aura\Di\ContainerBuilder; $di = new Container(new Factory); // or $container_builder = new ContainerBuilder(); $di = $container_builder-&gt;newInstance( array(), array(), $auto_resolve = false ); to
+</div>
+</article>
+
+<article class="section-blog list-view">
+<header>
+<h2 class="title title-submitted"><a href="/blog/2016/01/16/cakephp-orm-and-logging-queries/">cakephp orm and logging queries</a></h2>
+<p class="submitted">
+<time class="modified-date" datetime="2016-01-16T00:00:00Z">16 January, 2016</time>
+</p>
+
+</header>
+<div class="content">
+Working with cakephp/orm library, I needed to log all the queries. Cakephp provides a way to do it via cakephp/log.
+use Cake\Log\Log; Log::config(&#39;queries&#39;, [ &#39;className&#39; =&gt; &#39;File&#39;, &#39;path&#39; =&gt; &#39;/my/log/path/&#39;, &#39;file&#39; =&gt; &#39;app&#39;, &#39;scopes&#39; =&gt; [&#39;queriesLog&#39;] ]); But you are not limited, if you need to configure it to a PSR-3 logger like monolog/monolog
+use Cake\Log\Log; use Monolog\Logger; use Monolog\Handler\StreamHandler; Log::config(&#39;default&#39;, function () { $log = new Logger(&#39;cli&#39;); $log-&gt;pushHandler(new StreamHandler(&#39;php://stdout&#39;)); return $log; }); That was pretty simple and it logs to cli.
+</div>
+</article>
+
+<article class="section-blog list-view">
+<header>
+<h2 class="title title-submitted"><a href="/blog/2016/01/13/cakephp-orm-and-illuminate-pagination/">cakephp orm and illuminate pagination</a></h2>
+<p class="submitted">
+<time class="modified-date" datetime="2016-01-13T00:00:00Z">13 January, 2016</time>
+</p>
+
+</header>
+<div class="content">
+Do you know CakePHP version 3 has a lovely ORM which can be used as standalone?
+Thank you José Lorenzo Rodríguez and every contributor, for your hard work.
+composer require cakephp/orm That's it.
+Working on I noticed I need to do some pagination. Oh, remember we have illuminate/pagination. Why not use it?
+Problem, there seems no one have implemented it. How could we achieve it? Lets do it.
+composer require illuminate/pagination If you are using a psr-7 request / response here is the middleware for you.
+</div>
+</article>
+
+<article class="section-blog list-view">
+<header>
+<h2 class="title title-submitted"><a href="/blog/2015/11/13/eloquent-and-pagination-inside-zend-expressive/">eloquent and pagination inside zend expressive</a></h2>
+<p class="submitted">
+<time class="modified-date" datetime="2015-11-13T00:00:00Z">13 November, 2015</time>
+</p>
+
+</header>
+<div class="content">
+Recently working with eloquent (Laravel's orm), zend expressive and zend view, I wanted to integrate pagination.
+It was simple as registering a Paginator middleware.
+use Illuminate\Pagination\Paginator; use Psr\Http\Message\ResponseInterface; use Psr\Http\Message\ServerRequestInterface; IlluminatePaginator::currentPageResolver(function ($pageName) use ($request) { $params = $request-&gt;getQueryParams(); return empty($params[$pageName]) ? 1 : $params[$pageName]; }); IlluminatePaginator::currentPathResolver(function () use ($request) { return $request-&gt;getUri()-&gt;getPath(); }); and you can call paginate on the Model.
+Eg : Consider you have a Post model.
+$posts = Post::paginate(20); and in view you can iterate through the $posts and render the pagination.
+</div>
+</article>
+
+<article class="section-blog list-view">
+<header>
+<h2 class="title title-submitted"><a href="/blog/2015/11/13/integrating-zend-form-in-zend-expressive-and-view/">integrating zend form in zend expressive and view</a></h2>
+<p class="submitted">
+<time class="modified-date" datetime="2015-11-13T00:00:00Z">13 November, 2015</time>
+</p>
+
+</header>
+<div class="content">
+Example is based using Aura.Di. But the functionality will be same for any containers. First register the service Zend\View\HelperPluginManager, so that we can access the same object.
+To register the form helpers, create the object of Zend\Form\View\HelperConfig and pass the Zend\View\HelperPluginManager service.
+Example code with Aura.Di version 3 configuration.
+&lt;?php use Aura\Di\ContainerConfig; use Aura\Di\Container; use Zend\Form\View\HelperConfig; class ViewHelper extends ContainerConfig { public function define(Container $di) { $di-&gt;set(&#39;Zend\View\HelperPluginManager&#39;, $di-&gt;lazyNew(&#39;Zend\View\HelperPluginManager&#39;)); } public function modify(Container $di) { $serviceManager = $di-&gt;get(&#39;Zend\View\HelperPluginManager&#39;); $helper = new HelperConfig(); $helper-&gt;configureServiceManager($servicemanager); } } Creating your own zend-view helper  Create your helper class  &lt;?
+</div>
+</article>
+
+<article class="section-blog list-view">
+<header>
+<h2 class="title title-submitted"><a href="/blog/2015/10/11/custom-events-in-symfony2-bundle/">custom events in symfony2 bundle</a></h2>
+<p class="submitted">
+<time class="modified-date" datetime="2015-10-11T00:00:00Z">11 October, 2015</time>
+</p>
+
+</header>
+<div class="content">
+In this tutorial we will create a custom event for symfony2 bundle.
+ Assuming you have downloaded the symfony-standard distribution to play.
+ Create HktEventBundle via sensio generator bundle.
+php app/console generate:bundle --namespace=Hkt/EventBundle --dir src --no-interaction Create the event class.
+&lt;?php // src/Hkt/EventBundle/Event/PageViewed.php namespace Hkt\EventBundle\Event; use Symfony\Component\EventDispatcher\Event; class PageViewed extends Event { protected $name; public function __construct($name) { $this-&gt;name = $name; } public function getName() { return $this-&gt;name; } } Add as many methods/properties which are needed from the listener.
+</div>
+</article>
+
+<article class="section-blog list-view">
+<header>
+<h2 class="title title-submitted"><a href="/blog/2015/06/17/20-years-of-php/">20 years of php</a></h2>
+<p class="submitted">
+<time class="modified-date" datetime="2015-06-17T00:00:00Z">17 June, 2015</time>
+</p>
+
+</header>
+<div class="content">
+First my apologies being late! I hope you all know PHP is celebrating its 20th years of existence in the web.
+There is something that makes PHP unique that helps to standout with other languages.
+In this opporchunity I would like to thank the creator, the contributors, the maintainers, and all the users (past/present) to make this memorable.
+My Story I got an exposure to learn and use internet in my college days.
+</div>
+</article>
+
+<article class="section-blog list-view">
+<header>
+<h2 class="title title-submitted"><a href="/blog/2015/04/01/zend-feed-and-guzzle/">zend feed and guzzle</a></h2>
+<p class="submitted">
+<time class="modified-date" datetime="2015-04-01T00:00:00Z">1 April, 2015</time>
+</p>
+
+</header>
+<div class="content">
+You may have worked with Zend Feed as a standalone component. I don't know whether you have integrated Zend framework Feed with Guzzle as Http Client.
+This post is inspired by Matthew Weier O'Phinney, who have mentioned the same on github.
+Our composer.json looks
+{ &#34;require&#34;: { &#34;guzzlehttp/guzzle&#34;: &#34;~5.2&#34;, &#34;zendframework/zend-feed&#34;: &#34;~2.3&#34;, &#34;zendframework/zend-servicemanager&#34;: &#34;~2.3&#34; }, &#34;autoload&#34;: { &#34;psr-0&#34;: { &#34;&#34;: &#34;src/&#34; } } } Zen\Feed\Reader\Reader have a method importRemoteFeed which accepts an instance of Zend\Feed\Reader\Http\ClientInterface.
+</div>
+</article>
+
+<nav class="pager">
+<a href="/page/2/" rel="next" class="pager-item pager-next">Next</a>
+</nav>
+
+</main>
+
+
+<footer class="footer layout__footer">
+<p>Subscribe: <a rel="alternate" type="application/rss&#43;xml" href="https://harikt.com/index.xml">RSS</a> | <a rel="alternate" type="application/json" href="https://harikt.com/index.json">JSON</a></p>
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="active" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

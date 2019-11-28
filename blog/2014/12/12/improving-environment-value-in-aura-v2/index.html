@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>improving environment value in aura v2 – Random thoughts</title>
+<meta name="description" content="Aura v2 framework probably have missed a better way to handle environment variables. But that doesn&#39;t make you stall. Things can be improved ;-).  Assume you are already …">
+<meta name="created" content="2014-12-12T00:00:00&#43;0000">
+<meta name="modified" content="2014-12-12T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="improving environment value in aura v2">
+<meta property="og:url" content="https://harikt.com/blog/2014/12/12/improving-environment-value-in-aura-v2/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2014/12/12/improving-environment-value-in-aura-v2/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "improving environment value in aura v2",
+    "datePublished": "2014-12-12T00:00:00Z",
+    "dateModified": "2014-12-12T00:00:00Z",
+    "url" : "https://harikt.com/blog/2014/12/12/improving-environment-value-in-aura-v2/",
+    "description": "Aura v2 framework probably have missed a better way to handle environment variables. But that doesn't make you stall. Things can be improved ;-).  Assume you are already …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">improving environment value in aura v2</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2014-12-12T00:00:00Z">12 December, 2014</time>
+</p>
+</header>
+<div class="content">
+<p>Aura v2 framework probably have missed a better way to handle environment variables. But that doesn't make you stall. Things can be improved ;-).</p>
+<blockquote>
+<p>Assume you are already using aura framework and is at root of the project.</p>
+</blockquote>
+<p>We are going to make use of <a href="https://github.com/vlucas/phpdotenv">vlucas/phpdotenv</a> , alternatives are there if you are interested to experiment.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require vlucas/phpdotenv
+</code></pre></div><p>Edit the file <code>config/_env.php</code> and add <code>Dotenv::load(/path/to/.env);</code> to the first line. If you have not modified anything it will look as below</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#75715e">// {PROJECT_PATH}/config/_env.php
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">Dotenv</span><span style="color:#f92672">::</span><span style="color:#a6e22e">load</span>(<span style="color:#66d9ef">__DIR__</span>);
+<span style="color:#75715e">// set the mode here only if it is not already set.
+</span><span style="color:#75715e">// this allows for setting via web server, shell script, etc.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span> <span style="color:#a6e22e">isset</span>($_ENV[<span style="color:#e6db74">&#39;AURA_CONFIG_MODE&#39;</span>])) {
+    $_ENV[<span style="color:#e6db74">&#39;AURA_CONFIG_MODE&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;dev&#39;</span>;
+}
+</code></pre></div><blockquote>
+<p>Don't forget to create the <code>.env</code> file.</p>
+</blockquote>
+<p>You are done!</p>
+<p>Now you can easily make use of environment variables easily from the configuration files.</p>
+<p>Below is an example.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Aura\Framework_Project\_Config</span>;
+<span style="color:#75715e">// config/Common.php
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Di\Config</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Di\Container</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Common</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Config</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">define</span>(<span style="color:#a6e22e">Container</span> $di)
+    {
+        $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#39;Aura\Sql\ExtendedPdo&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+            <span style="color:#e6db74">&#39;dsn&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">getenv</span>(<span style="color:#e6db74">&#39;dsn&#39;</span>),
+            <span style="color:#e6db74">&#39;username&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">getenv</span>(<span style="color:#e6db74">&#39;username&#39;</span>),
+            <span style="color:#e6db74">&#39;password&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">getenv</span>(<span style="color:#e6db74">&#39;password&#39;</span>),
+        );
+    }
+
+    <span style="color:#75715e">// more code
+</span></code></pre></div>
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

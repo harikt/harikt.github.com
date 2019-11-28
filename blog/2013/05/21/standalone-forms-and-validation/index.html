@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>standalone forms and validation – Random thoughts</title>
+<meta name="description" content="Update : I wrote a very minimal approach here Recently Aura.Input was tagged Beta1. I would like to show you how you can use Aura.Input, Aura.Filter and Aura.View to …">
+<meta name="created" content="2013-05-21T00:00:00&#43;0000">
+<meta name="modified" content="2013-05-21T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="standalone forms and validation">
+<meta property="og:url" content="https://harikt.com/blog/2013/05/21/standalone-forms-and-validation/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2013/05/21/standalone-forms-and-validation/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "standalone forms and validation",
+    "datePublished": "2013-05-21T00:00:00Z",
+    "dateModified": "2013-05-21T00:00:00Z",
+    "url" : "https://harikt.com/blog/2013/05/21/standalone-forms-and-validation/",
+    "description": "Update : I wrote a very minimal approach here Recently Aura.Input was tagged Beta1. I would like to show you how you can use Aura.Input, Aura.Filter and Aura.View to …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">standalone forms and validation</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2013-05-21T00:00:00Z">21 May, 2013</time>
+</p>
+</header>
+<div class="content">
+<p>Update : I wrote a very minimal approach <a href="http://harikt.com/blog/2013/05/23/standalone-form-for-php/">here</a></p>
+<p>Recently <a href="http://auraphp.com/Aura.Input/">Aura.Input</a> was tagged Beta1. I would like to show you how you
+can use <a href="http://auraphp.com/Aura.Input/">Aura.Input</a>, <a href="http://auraphp.com/Aura.Filter/">Aura.Filter</a> and <a href="http://auraphp.com/Aura.View/">Aura.View</a> to create form.</p>
+<p>The <a href="http://auraphp.com/Aura.Input/">Aura.Input</a> itself contains a basic filter implementation. As shown
+in earlier post <a href="http://harikt.com/blog/2013/02/22/aura-turns-2/">Aura Turns 2</a></p>
+<p>But in this post let us use the power of <a href="http://auraphp.com/Aura.Filter/">Aura.Filter</a>. As <a href="http://auraphp.com/Aura.Input/">Aura.Input</a>
+doesn't have a rendering capability you may need to use <a href="http://auraphp.com/Aura.View/">Aura.View</a> as
+templating system ( see Using Aura.View ) or use the helper classes provided by <a href="http://auraphp.com/Aura.View/">Aura.View</a>
+( see below Without using Aura.View completely )
+or create your own helper classes to render the same from the hints
+( see Hints for the view ).</p>
+<p>The whole example is in <a href="https://github.com/harikt/phpform"><a href="https://github.com/harikt/phpform">https://github.com/harikt/phpform</a></a> repo.
+If you don't have composer, you can download it from <a href="http://getcomposer.org"><a href="http://getcomposer.org">http://getcomposer.org</a></a>
+and install the dependencies via composer.</p>
+<h2 id="in-a-nut-shell">In a nut shell</h2>
+<pre><code>git clone https://github.com/harikt/phpform
+cd phpform
+php composer.phar install
+php -S localhost:8000 web/index.php
+</code></pre><p>Point your browser to the url http://localhost:8000</p>
+<h2 id="let-us-look-into-some-details">Let us look into some details</h2>
+<p>Inorder to use <a href="http://auraphp.com/Aura.Filter/">Aura.Filter</a> with <a href="http://auraphp.com/Aura.Input/">Aura.Input</a> we need to implement the
+<code>Aura\Input\FilterInterface</code>.</p>
+<p>This is just extending the <code>Aura\Filter\RuleCollection</code> and implementing
+the <code>Aura\Input\FilterInterface</code> as below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Domicile\Example</span>;
+
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Filter\RuleCollection</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Input\FilterInterface</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Filter</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">RuleCollection</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">FilterInterface</span>
+{
+}
+
+</code></pre></div><p>Let us create the form class.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Domicile\Example</span>;
+
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Input\Form</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ContactForm</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Form</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">init</span>()
+    {
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setField</span>(<span style="color:#e6db74">&#39;name&#39;</span>)
+            <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setAttribs</span>([
+                <span style="color:#e6db74">&#39;id&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;name&#39;</span>,
+                <span style="color:#e6db74">&#39;size&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>,
+                <span style="color:#e6db74">&#39;maxlength&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>,
+            ]);
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setField</span>(<span style="color:#e6db74">&#39;email&#39;</span>)
+            <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setAttribs</span>([
+                <span style="color:#e6db74">&#39;size&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>,
+                <span style="color:#e6db74">&#39;maxlength&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>,
+            ]);
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setField</span>(<span style="color:#e6db74">&#39;url&#39;</span>)
+            <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setAttribs</span>([
+                <span style="color:#e6db74">&#39;size&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>,
+                <span style="color:#e6db74">&#39;maxlength&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>,
+            ]);
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setField</span>(<span style="color:#e6db74">&#39;message&#39;</span>, <span style="color:#e6db74">&#39;textarea&#39;</span>)
+            <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setAttribs</span>([
+                <span style="color:#e6db74">&#39;cols&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">40</span>,
+                <span style="color:#e6db74">&#39;rows&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">5</span>,
+            ]);
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setField</span>(<span style="color:#e6db74">&#39;submit&#39;</span>, <span style="color:#e6db74">&#39;submit&#39;</span>)
+            <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setAttribs</span>([<span style="color:#e6db74">&#39;value&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;send&#39;</span>]);
+        
+        $filter <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getFilter</span>();
+        
+        $filter<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addSoftRule</span>(<span style="color:#e6db74">&#39;name&#39;</span>, $filter<span style="color:#f92672">::</span><span style="color:#a6e22e">IS</span>, <span style="color:#e6db74">&#39;string&#39;</span>);
+        $filter<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addSoftRule</span>(<span style="color:#e6db74">&#39;name&#39;</span>, $filter<span style="color:#f92672">::</span><span style="color:#a6e22e">IS</span>, <span style="color:#e6db74">&#39;strlenMin&#39;</span>, <span style="color:#ae81ff">4</span>);
+        $filter<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addSoftRule</span>(<span style="color:#e6db74">&#39;email&#39;</span>, $filter<span style="color:#f92672">::</span><span style="color:#a6e22e">IS</span>, <span style="color:#e6db74">&#39;email&#39;</span>);
+        $filter<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addSoftRule</span>(<span style="color:#e6db74">&#39;url&#39;</span>, $filter<span style="color:#f92672">::</span><span style="color:#a6e22e">IS</span>, <span style="color:#e6db74">&#39;url&#39;</span>);
+        $filter<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addSoftRule</span>(<span style="color:#e6db74">&#39;message&#39;</span>, $filter<span style="color:#f92672">::</span><span style="color:#a6e22e">IS</span>, <span style="color:#e6db74">&#39;string&#39;</span>);
+        $filter<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addSoftRule</span>(<span style="color:#e6db74">&#39;message&#39;</span>, $filter<span style="color:#f92672">::</span><span style="color:#a6e22e">IS</span>, <span style="color:#e6db74">&#39;strlenMin&#39;</span>, <span style="color:#ae81ff">6</span>);
+    }
+}
+
+</code></pre></div><p>Create the filter object and pass it on instantiation of form.</p>
+<p>Please note that the $rootpath in this example is just above the vendor
+folder of the composer.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$filter = new Domicile\Example\Filter(
+    new RuleLocator(array_merge(
+        require $rootpath . &#39;/vendor/aura/filter/scripts/registry.php&#39;,
+        [&#39;any&#39; =&gt; function () {
+            $rule = new \Aura\Filter\Rule\Any;
+            $rule-&gt;setRuleLocator(new RuleLocator(
+                require $rootpath . &#39;/vendor/aura/filter/scripts/registry.php&#39;
+            ));
+            return $rule;
+        }]
+    )),
+    new Translator(require $rootpath . &#39;/vendor/aura/filter/intl/en_US.php&#39;)
+);
+
+$form = new Domicile\Example\ContactForm(new Builder, $filter);
+</code></pre></div><p>The <a href="http://auraphp.com/Aura.Input/">Aura.Input</a> has two methods we can make use.</p>
+<p>1 ) fill() method helps us to fill the data values</p>
+<p>2 ) filter() method which helps to filter and validate data according to
+the rules specified in the form.</p>
+<p>The code will looks like</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
+if ($_POST <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">&amp;</span> $_POST[&#39;submit&#39;] == &#39;send&#39;) {
+    $data = $_POST;
+    $form-&gt;fill($data);
+    if ($form-&gt;filter()) {
+        //
+        echo &#34;Yes successfully validated and filtered&#34;;
+        var_dump($data);
+        exit;
+    }
+}
+</code></pre></div><p>The form element gives you hints for the view. An example from the above</p>
+<h2 id="hints-for-the-view">Hints for the view</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// get the hints for the name field
+$hints = $form-&gt;get(&#39;name&#39;);
+
+// the hints array looks like this:
+$hints = array (
+  &#39;type&#39; =&gt; &#39;text&#39;,
+  &#39;name&#39; =&gt; &#39;name&#39;,
+  &#39;attribs&#39; =&gt; 
+  array (
+    &#39;id&#39; =&gt; &#39;name&#39;,
+    &#39;type&#39; =&gt; NULL,
+    &#39;name&#39; =&gt; NULL,
+    &#39;size&#39; =&gt; 20,
+    &#39;maxlength&#39; =&gt; 20,
+  ),
+  &#39;options&#39; =&gt; 
+  array (
+  ),
+  &#39;value&#39; =&gt; NULL,
+)
+</code></pre></div><h2 id="without-using-auraview-completely">Without using Aura.View completely</h2>
+<p>If you are not planning to use Aura.View entirely as templating, you can
+make use of <a href="http://auraphp.com/Aura.View/">Aura.View</a> helpers which can render to make the form.</p>
+<p>For that you need to instantiate <code>Aura\View\HelperLocator</code> and get the
+field object as below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$helper = new Aura\View\HelperLocator([
+    &#39;field&#39;         =&gt; function () { 
+        return new Aura\View\Helper\Form\Field(
+            require dirname(__DIR__) . &#39;/vendor/aura/view/scripts/field_registry.php&#39;
+        ); 
+    },
+    &#39;input&#39;         =&gt; function () { return new Aura\View\Helper\Form\Input(
+            require dirname(__DIR__) . &#39;/vendor/aura/view/scripts/input_registry.php&#39;
+        ); 
+    },
+    &#39;radios&#39;        =&gt; function () { return new Aura\View\Helper\Form\Radios(new Aura\View\Helper\Form\Input\Checked); },
+    &#39;repeat&#39;         =&gt; function () { return new Aura\View\Helper\Form\Repeat(
+            require dirname(__DIR__) . &#39;/vendor/aura/view/scripts/repeat_registry.php&#39;
+        ); 
+    },
+    &#39;select&#39;        =&gt; function () { return new Aura\View\Helper\Form\Select; },
+    &#39;textarea&#39;      =&gt; function () { return new Aura\View\Helper\Form\Textarea; },
+]);
+
+$field = $helper-&gt;get(&#39;field&#39;);
+echo $field($form-&gt;get(&#39;name&#39;));
+echo $field($form-&gt;get(&#39;message&#39;));
+
+// echo $field($form-&gt;get(&#39;form-element&#39;));
+
+</code></pre></div><p>The above will output something like</p>
+<p><code>&lt;input id=&quot;name&quot; type=&quot;text&quot; name=&quot;name&quot; size=&quot;20&quot; maxlength=&quot;20&quot; /&gt;</code></p>
+<h2 id="using-auraview">Using Aura.View</h2>
+<p>But you can use <a href="http://auraphp.com/Aura.View/">Aura.View</a> to render it nicely. An example is</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+    <span style="color:#66d9ef">echo</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">field</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">form</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;name&#39;</span>));
+<span style="color:#75715e">?&gt;</span>
+</code></pre></div><p>You can still look more closely on the <a href="https://github.com/harikt/phpform/blob/master/templates/default.php">templates</a> to see how it is used
+in the example.</p>
+<p>If you have any problems or confusions, let me know by comments.
+I will try to address the same.</p>
+<p>I would like to express huge Thanks to Paul M Jones for spending his
+valuable time on the project, giving valuable feedback on the implementations.</p>
+<p>Happy PhPing!</p>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

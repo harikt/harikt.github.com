@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>conduit middleware for php – Random thoughts</title>
+<meta name="description" content="Long back, I happened to talk with Beau Simensen about stackphp on #auraphp channel. It was hard for me to digest when I noticed it need symfony/http-kernel and its …">
+<meta name="created" content="2015-01-21T00:00:00&#43;0000">
+<meta name="modified" content="2015-01-21T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="conduit middleware for php">
+<meta property="og:url" content="https://harikt.com/blog/2015/01/21/conduit-middleware-for-php/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2015/01/21/conduit-middleware-for-php/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "conduit middleware for php",
+    "datePublished": "2015-01-21T00:00:00Z",
+    "dateModified": "2015-01-21T00:00:00Z",
+    "url" : "https://harikt.com/blog/2015/01/21/conduit-middleware-for-php/",
+    "description": "Long back, I happened to talk with Beau Simensen about stackphp on #auraphp channel. It was hard for me to digest when I noticed it need symfony/http-kernel and its …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">conduit middleware for php</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2015-01-21T00:00:00Z">21 January, 2015</time>
+</p>
+</header>
+<div class="content">
+<p>Long back, I happened to talk with <a href="https://beau.io/">Beau Simensen</a> about <a href="http://stackphp.com/">stackphp</a> on #auraphp channel. It was hard for me to digest when I noticed it need <code>symfony/http-kernel</code> and its dependencies.</p>
+<p>After a few months, I started to like the middleware approach of slim framework and wanted to push it to aura. But nothing happened  there.</p>
+<h2 id="conduit-to-rescue">Conduit to rescue</h2>
+<p>Conduit is a Middleware for PHP built by <a href="http://mwop.net/">Matthew Weier O'Phinney</a> lead of Zend framework. Conduit supports the current <a href="https://github.com/php-fig/fig-standards/blob/master/proposed/http-message.md">PSR-7 proposal</a>. I believe like the many PSR's, PSR-7 will be a revolution in the PHP world. Conduit is really a micro framework and can grow with your project.</p>
+<h2 id="starting-your-project">Starting your project</h2>
+<p>I hope you know about the tool <a href="https://getcomposer.org">composer</a> and know about PHP 5.3 to follow the tutorial.</p>
+<pre><code>mkdir sample-project
+cd sample-project
+composer require &quot;phly/conduit:0.10.*&quot;
+mkdir web
+</code></pre><p>We have created an extra <code>web</code> folder, so it acts as the document root. Create an <code>index.php</code> file in the <code>web</code> folder and lets start serving our first <code>Hello conduit!</code> message.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">require</span> <span style="color:#a6e22e">dirname</span>(<span style="color:#66d9ef">__DIR__</span>) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/autoload.php&#39;</span>;
+
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Phly\Conduit\Middleware</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Phly\Http\Server</span>;
+
+$app <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Middleware</span>();
+$app<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">pipe</span>(<span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#66d9ef">function</span> ($request, $response, $next) {
+    <span style="color:#66d9ef">return</span> $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;Hello conduit!&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">end</span>();
+});
+$server <span style="color:#f92672">=</span> <span style="color:#a6e22e">Server</span><span style="color:#f92672">::</span><span style="color:#a6e22e">createServer</span>($app,
+  $_SERVER,
+  $_GET,
+  $_POST,
+  $_COOKIE,
+  $_FILES
+);
+$server<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">listen</span>();
+</code></pre></div><p>Start your web server, or fire your built in PHP server.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php -S localhost:8000 web/index.php -t web
+</code></pre></div><p>Point your browser to <code>http://localhost:8000</code> and you can see <code>Hello conduit!</code>.</p>
+<h2 id="middlewares">Middlewares</h2>
+<p>Conduit route is very limited and will not handle dynamic routing. So we need a router middleware to resuce. Let us build our first router middleware. If you check the <a href="https://github.com/phly/conduit/blob/0.10.0/README.md#creating-middleware">docs</a> middleware can be a closure, invokable objects, array callback etc. We will stick with <code>closure</code> in the examples.</p>
+<p>The idea is same even if you are using a different library.</p>
+<ol>
+<li>Get the path via <code>$request-&gt;getUri()-&gt;getPath()</code></li>
+<li>Check router if the path is matching</li>
+<li>If
+<ul>
+<li><code>no</code> call the next middleware in stack. ie <code>return $next()</code></li>
+<li><code>yes</code> execute the controller and return back the response</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>Be sure that if you change something you need to return the response. Because Request and Response are immutable.</p>
+</blockquote>
+<p>In-order to build something like the above, we need a <a href="https://github.com/auraphp/Aura.Router">router library</a> which can handle routing, and a <a href="https://github.com/auraphp/Aura.Dispatcher">dispatcher library</a> which can handle the necessary operation when a route is found.</p>
+<p>Install the dependencies.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer require <span style="color:#e6db74">&#34;aura/router:~2.0&#34;</span> <span style="color:#e6db74">&#34;aura/dispatcher:~2.0&#34;</span>
+</code></pre></div><p>The router middleware will look like as below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$router <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\Aura\Router\Router</span>(
+    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\Aura\Router\RouteCollection</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\Aura\Router\RouteFactory</span>),
+    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\Aura\Router\Generator</span>
+);
+$dispatcher <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\Aura\Dispatcher\Dispatcher</span>(<span style="color:#66d9ef">array</span>(), <span style="color:#e6db74">&#39;controller&#39;</span>, <span style="color:#e6db74">&#39;action&#39;</span>);
+
+$app<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">pipe</span>(<span style="color:#66d9ef">function</span> ($request, $response, $next) <span style="color:#66d9ef">use</span> ($router, $dispatcher) {
+    $path <span style="color:#f92672">=</span> $request<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getUri</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getPath</span>();
+    $route <span style="color:#f92672">=</span> $router<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">match</span>($path, $request<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getServerParams</span>());
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span> $route) {
+        <span style="color:#66d9ef">return</span> $next();
+    }
+    $params <span style="color:#f92672">=</span> $route<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">params</span>;
+    $params[<span style="color:#e6db74">&#39;request&#39;</span>] <span style="color:#f92672">=</span> $request;
+    $params[<span style="color:#e6db74">&#39;response&#39;</span>] <span style="color:#f92672">=</span> $response;
+    $result <span style="color:#f92672">=</span> $dispatcher<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">__invoke</span>($params);
+    <span style="color:#66d9ef">if</span> ($result <span style="color:#a6e22e">instanceof</span> <span style="color:#a6e22e">\Psr\Http\Message\ResponseInterface</span>) {
+        $response <span style="color:#f92672">=</span> $result;
+    } <span style="color:#66d9ef">else</span> {
+        $response <span style="color:#f92672">=</span> $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">write</span>($result)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">end</span>();
+    }
+    <span style="color:#66d9ef">return</span> $response;
+});
+</code></pre></div><p>Now your router middleware can handle dynamic things. You can see the full example over   <a href="https://gist.github.com/harikt/477902c09eb51dad6433">gist</a>.</p>
+<p>You may need an authentication middleware to check whether the user is authenticated, or a content negotiation middleware to set the corresponding <code>Content-Type</code> header in the response.</p>
+<p>I have created a <a href="https://github.com/harikt/conduit-skelton">skelton project</a> which have a <a href="https://github.com/harikt/conduit-skelton/blob/0.2.0/src/Conduit/Middleware/RouterMiddleware.php">router middleware</a>, <a href="https://github.com/harikt/conduit-skelton/blob/0.2.0/src/Conduit/Middleware/AuthenticationMiddleware.php">authentication middleware</a> and <a href="https://github.com/harikt/conduit-skelton/blob/0.2.0/src/Conduit/Middleware/NegotiationMiddleware.php">negotiation middleware</a> with the help of a few libraries. Less libraray means less code to maintain, easy to understand and debug the code behind the scenes.</p>
+<p>Today, I noticed one question over reddit <code>Moving to a real framework.. need help with the migration</code> wrote my <a href="http://www.reddit.com/r/PHP/comments/2t4970/moving_to_a_real_framework_need_help_with_the/cnvml5m">suggestion</a> how conduit + aura can help.</p>
+<p>Play and enjoy!</p>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

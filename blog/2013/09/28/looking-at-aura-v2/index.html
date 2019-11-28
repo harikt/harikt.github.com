@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>looking at aura v2 – Random thoughts</title>
+<meta name="description" content="If you have noticed recently, there have been tons of commits from Paul M Jones﻿ for aura version 2. More standalone repos born. Everyone should try and give feedback as …">
+<meta name="created" content="2013-09-28T00:00:00&#43;0000">
+<meta name="modified" content="2013-09-28T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="looking at aura v2">
+<meta property="og:url" content="https://harikt.com/blog/2013/09/28/looking-at-aura-v2/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2013/09/28/looking-at-aura-v2/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "looking at aura v2",
+    "datePublished": "2013-09-28T00:00:00Z",
+    "dateModified": "2013-09-28T00:00:00Z",
+    "url" : "https://harikt.com/blog/2013/09/28/looking-at-aura-v2/",
+    "description": "If you have noticed recently, there have been tons of commits from Paul M Jones﻿ for aura version 2. More standalone repos born. Everyone should try and give feedback as …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">looking at aura v2</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2013-09-28T00:00:00Z">28 September, 2013</time>
+</p>
+</header>
+<div class="content">
+<p>If you have noticed recently, there have been tons of commits from
+<a href="https://github.com/pmjones">Paul M Jones</a>﻿ for aura version 2.</p>
+<p>More standalone repos born. Everyone should try and give feedback as much as possible.</p>
+<p>Interesting stuffs split from Aura.Sql v 1.3 are</p>
+<p><a href="https://github.com/auraphp/Aura.Sql/tree/develop-2">Extended PDO</a>,</p>
+<p>As the name says, it is an extended version of PDO. Good thing is it is
+PHP 5.3 compatible.</p>
+<p>If you have worked with PDO you know the good and bad.
+One of the difficulty is, it cannot use an array for an in clause.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#75715e">// the array to be quoted
+</span><span style="color:#75715e"></span>$array <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;foo&#39;</span>, <span style="color:#e6db74">&#39;bar&#39;</span>, <span style="color:#e6db74">&#39;baz&#39;</span>);
+
+<span style="color:#75715e">// the statement to prepare
+</span><span style="color:#75715e"></span>$stm <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;SELECT * FROM test WHERE foo IN (:foo) AND bar = :bar&#39;</span>
+
+<span style="color:#75715e">// the native PDO way does not work (PHP Notice:  Array to string conversion)
+</span><span style="color:#75715e"></span>$pdo <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Pdo</span>(<span style="color:#f92672">...</span>);
+$sth <span style="color:#f92672">=</span> $pdo<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">prepare</span>($stm);
+$sth<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">bindValue</span>(<span style="color:#e6db74">&#39;foo&#39;</span>, $array);
+</code></pre></div><p>ExtendedPDO helps you to do it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$pdo <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ExtendedPdo</span>(<span style="color:#f92672">...</span>);
+$stm <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;SELECT * FROM test WHERE foo IN (:foo)&#39;</span>;
+$pdo<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">bindValues</span>(<span style="color:#66d9ef">array</span>(
+    <span style="color:#e6db74">&#39;foo&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;foo&#39;</span>, <span style="color:#e6db74">&#39;bar&#39;</span>, <span style="color:#e6db74">&#39;baz&#39;</span>),
+    <span style="color:#e6db74">&#39;bar&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;qux&#39;</span>,
+));
+$sth <span style="color:#f92672">=</span> $pdo<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">prepare</span>($stm);
+<span style="color:#66d9ef">echo</span> $sth<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">queryString</span>;
+</code></pre></div><p>Try out an example, and see in action.</p>
+<p>Your composer.json will look as</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;minimum-stability&#34;</span>: <span style="color:#e6db74">&#34;dev&#34;</span>,
+    <span style="color:#f92672">&#34;require&#34;</span>: {
+        <span style="color:#f92672">&#34;aura/sql&#34;</span>:<span style="color:#e6db74">&#34;dev-develop-2&#34;</span>
+    }
+}
+</code></pre></div><p>Run the below Sql query in your favourite tools like phpmyadmin or adminer.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- Adminer 3.7.1 MySQL dump
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">NAMES</span> utf8;
+<span style="color:#66d9ef">SET</span> foreign_key_checks <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+<span style="color:#66d9ef">SET</span> time_zone <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">+05:30</span><span style="color:#e6db74">&#39;</span>;
+<span style="color:#66d9ef">SET</span> sql_mode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">NO_AUTO_VALUE_ON_ZERO</span><span style="color:#e6db74">&#39;</span>;
+
+<span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> <span style="color:#f92672">`</span>polls_choice<span style="color:#f92672">`</span>;
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>polls_choice<span style="color:#f92672">`</span> (
+  <span style="color:#f92672">`</span>id<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> AUTO_INCREMENT,
+  <span style="color:#f92672">`</span>poll_id<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+  <span style="color:#f92672">`</span>choice_text<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">200</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+  <span style="color:#f92672">`</span>votes<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+  <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>id<span style="color:#f92672">`</span>)
+) ENGINE<span style="color:#f92672">=</span>InnoDB <span style="color:#66d9ef">DEFAULT</span> CHARSET<span style="color:#f92672">=</span>utf8;
+
+<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>polls_choice<span style="color:#f92672">`</span> (<span style="color:#f92672">`</span>id<span style="color:#f92672">`</span>, <span style="color:#f92672">`</span>poll_id<span style="color:#f92672">`</span>, <span style="color:#f92672">`</span>choice_text<span style="color:#f92672">`</span>, <span style="color:#f92672">`</span>votes<span style="color:#f92672">`</span>) <span style="color:#66d9ef">VALUES</span>
+(<span style="color:#ae81ff">1</span>,	<span style="color:#ae81ff">1</span>,	<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Not much</span><span style="color:#e6db74">&#39;</span>,	<span style="color:#ae81ff">0</span>),
+(<span style="color:#ae81ff">2</span>,	<span style="color:#ae81ff">1</span>,	<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">The sky</span><span style="color:#e6db74">&#39;</span>,	<span style="color:#ae81ff">0</span>),
+(<span style="color:#ae81ff">5</span>,	<span style="color:#ae81ff">1</span>,	<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Hello World</span><span style="color:#e6db74">&#39;</span>,	<span style="color:#ae81ff">0</span>);
+
+<span style="color:#75715e">-- 2013-09-28 11:22:17
+</span></code></pre></div><p>Run the below PHP code and see the result.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">require</span> <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/autoload.php&#39;</span>;
+
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Sql\ExtendedPdo</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Sql\Profiler</span>;
+
+$pdo <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ExtendedPdo</span>(
+    <span style="color:#e6db74">&#39;mysql:host=localhost;dbname=dbname&#39;</span>,
+    <span style="color:#e6db74">&#39;user&#39;</span>,
+    <span style="color:#e6db74">&#39;password&#39;</span>,
+    <span style="color:#66d9ef">array</span>(), <span style="color:#75715e">// driver options as key-value pairs
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">array</span>()  <span style="color:#75715e">// attributes as key-value pairs
+</span><span style="color:#75715e"></span>);
+$pdo<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setProfiler</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Profiler</span>);
+$pdo<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getProfiler</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setActive</span>(<span style="color:#66d9ef">true</span>);
+
+$stm <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;SELECT * FROM polls_choice WHERE id IN (:id) AND poll_id = :poll_id&#39;</span>;
+
+$bind <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+    <span style="color:#e6db74">&#39;id&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;1&#39;</span>, <span style="color:#e6db74">&#39;2&#39;</span>),
+    <span style="color:#e6db74">&#39;poll_id&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;1&#39;</span>,
+);
+$results <span style="color:#f92672">=</span> $pdo<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">fetchAll</span>($stm, $bind);
+
+<span style="color:#66d9ef">foreach</span> ($results <span style="color:#66d9ef">as</span> $result) {
+  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Query Result : &#34;</span> <span style="color:#f92672">.</span> $result[<span style="color:#e6db74">&#39;choice_text&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#a6e22e">PHP_EOL</span>;
+}
+
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Profiler&#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">PHP_EOL</span>;
+
+$profiles <span style="color:#f92672">=</span> $pdo<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getProfiler</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getProfiles</span>();
+
+<span style="color:#66d9ef">foreach</span> ($profiles <span style="color:#66d9ef">as</span> $profile) {
+  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39; Function : &#39;</span> <span style="color:#f92672">.</span> $profile[<span style="color:#e6db74">&#39;function&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#a6e22e">PHP_EOL</span>;
+  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39; Duration : &#39;</span> <span style="color:#f92672">.</span> $profile[<span style="color:#e6db74">&#39;duration&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#a6e22e">PHP_EOL</span>;
+  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39; Statement : &#39;</span> <span style="color:#f92672">.</span> $profile[<span style="color:#e6db74">&#39;statement&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#a6e22e">PHP_EOL</span>;
+  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39; Bind Values : &#39;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">print_r</span>($profile[<span style="color:#e6db74">&#39;bind_values&#39;</span>], <span style="color:#66d9ef">true</span>) <span style="color:#f92672">.</span> <span style="color:#a6e22e">PHP_EOL</span>;
+}
+</code></pre></div><p>It comes with lazy connection, profiler, connection locator etc. Read more from
+<a href="https://github.com/auraphp/Aura.Sql/tree/develop-2#getting-started">getting started docs</a></p>
+<p>##<a href="https://github.com/auraphp/Aura.Sql_Schema">Aura.Sql_Schema</a></p>
+<p>An independent schema discovery tool for MySQL, PostgreSQL,
+SQLite, and Microsoft SQL Server. You can
+<a href="https://github.com/auraphp/Aura.Sql_Schema#getting-started">read more from the docs</a></p>
+<p>##<a href="https://github.com/auraphp/Aura.Sql_Query">Aura.Sql_Query</a></p>
+<p>Independent query builders for MySQL, PostgreSQL, SQLite, and Microsoft SQL Server</p>
+<p>Good thing is all are standalone.</p>
+<p>Version 2 also comes with a new
+<a href="https://github.com/auraphp/Aura.Dispatcher">Dispatcher</a>
+and <a href="https://github.com/auraphp/Aura.Includer">Includer</a>.</p>
+<p>You can read the story behind Dispatcher from
+<a href="https://groups.google.com/d/msg/auraphp/hyjEPEeo6_w/u616Pu3kQrcJ">here</a>
+and Includer from
+<a href="https://groups.google.com/d/msg/auraphp/WOo6TSceqHU/ZdgIkUgU0VIJ">here</a></p>
+<p>vi <a href="https://github.com/auraphp/Aura.Includer">Includer</a>
+aura solved one of the problem of reading configuration files.</p>
+<p>Let us look into the example of the Aura.Includer and how it works.</p>
+<p>The <code>composer.json</code> looks like the one below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;minimum-stability&#34;</span>: <span style="color:#e6db74">&#34;dev&#34;</span>,
+    <span style="color:#f92672">&#34;require&#34;</span>: {
+        <span style="color:#f92672">&#34;aura/cli&#34;</span>: <span style="color:#e6db74">&#34;dev-develop-2&#34;</span>,
+        <span style="color:#f92672">&#34;aura/web&#34;</span>: <span style="color:#e6db74">&#34;dev-develop-2&#34;</span>,
+        <span style="color:#f92672">&#34;aura/autoload&#34;</span>: <span style="color:#e6db74">&#34;dev-develop-2&#34;</span>,
+        <span style="color:#f92672">&#34;aura/dispatcher&#34;</span>: <span style="color:#e6db74">&#34;dev-develop-2&#34;</span>,
+        <span style="color:#f92672">&#34;aura/html&#34;</span>: <span style="color:#e6db74">&#34;dev-master&#34;</span>,
+        <span style="color:#f92672">&#34;aura/input&#34;</span>: <span style="color:#e6db74">&#34;dev-master&#34;</span>,
+        <span style="color:#f92672">&#34;aura/view&#34;</span>: <span style="color:#e6db74">&#34;2.*&#34;</span>,
+        <span style="color:#f92672">&#34;aura/includer&#34;</span>: <span style="color:#e6db74">&#34;dev-develop-2&#34;</span>,
+        <span style="color:#f92672">&#34;aura/router&#34;</span>: <span style="color:#e6db74">&#34;dev-develop&#34;</span>,
+        <span style="color:#f92672">&#34;aura/di&#34;</span>: <span style="color:#e6db74">&#34;1.*&#34;</span>
+    }
+}
+</code></pre></div><p>We can use the includer to read the configuration files and store it and
+later use the cached file. The <code>includer.php</code> looks like</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$loader <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span> <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/autoload.php&#39;</span>;
+ 
+$includer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\Aura\Includer\Includer</span>();
+ 
+$includer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setDirs</span>(<span style="color:#66d9ef">array</span>(
+    <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/aura/router&#39;</span>,
+    <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/aura/dispatcher&#39;</span>,
+    <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/aura/web&#39;</span>,
+    <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/aura/view&#39;</span>,
+    <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/aura/html&#39;</span>,
+    <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/aura/cli&#39;</span>,
+    <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/aura/input&#39;</span>,
+));
+ 
+$includer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setFiles</span>(<span style="color:#66d9ef">array</span>(
+    <span style="color:#e6db74">&#39;config/default.php&#39;</span>,
+));
+ 
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Router\Map</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Router\DefinitionFactory</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Router\RouteFactory</span>;
+ 
+$router <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DefinitionFactory</span>, <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">RouteFactory</span>);
+ 
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Di\Container</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Di\Forge</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Di\Config</span>;
+ 
+$di <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Container</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Forge</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Config</span>));
+ 
+$includer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setVars</span>(<span style="color:#66d9ef">array</span>(
+    <span style="color:#e6db74">&#39;loader&#39;</span> <span style="color:#f92672">=&gt;</span> $loader,
+    <span style="color:#e6db74">&#39;router&#39;</span> <span style="color:#f92672">=&gt;</span> $router,
+    <span style="color:#e6db74">&#39;di&#39;</span> <span style="color:#f92672">=&gt;</span> $di,
+));
+ 
+<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span> <span style="color:#a6e22e">file_exists</span>(<span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/cache/includer.php&#39;</span>)) {
+    $includer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">load</span>();
+    $text <span style="color:#f92672">=</span> $includer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">read</span>();
+    <span style="color:#a6e22e">file_put_contents</span>(<span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/cache/includer.php&#39;</span>, <span style="color:#e6db74">&#39;&lt;?php&#39;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">PHP_EOL</span> <span style="color:#f92672">.</span> $text);
+} <span style="color:#66d9ef">else</span> {
+    $includer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setCacheFile</span>(<span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/cache/includer.php&#39;</span>);
+    $includer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">load</span>();
+}
+$stdio <span style="color:#f92672">=</span> $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">newInstance</span>(<span style="color:#e6db74">&#39;Aura\Cli\Stdio&#39;</span>);
+$stdio<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">outln</span>(<span style="color:#e6db74">&#39;This is normal text.&#39;</span>);
+</code></pre></div><p>Install the dependencies via <code>composer</code> and run via cli <code>php includer.php</code>.</p>
+<p>The Aura.Includer is a nice addition for version 2
+( I am also seeing it can be used in version 1 )
+which will help a lot in the making of the framework with the libraries.</p>
+<p>If you are interested to use, learn, or have a feedback a warm welcome to
+<a href="https://groups.google.com/forum/#!forum/auraphp">join the google group for aura project for PHP</a></p>
+<p>Have a nice day ahead. Enjoy PHPing.</p>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

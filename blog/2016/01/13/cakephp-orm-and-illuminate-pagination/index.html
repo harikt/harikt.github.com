@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>cakephp orm and illuminate pagination – Random thoughts</title>
+<meta name="description" content="Do you know CakePHP version 3 has a lovely ORM which can be used as standalone? Thank you José Lorenzo Rodríguez and every contributor, for your hard work. composer …">
+<meta name="created" content="2016-01-13T00:00:00&#43;0000">
+<meta name="modified" content="2016-01-13T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="cakephp orm and illuminate pagination">
+<meta property="og:url" content="https://harikt.com/blog/2016/01/13/cakephp-orm-and-illuminate-pagination/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2016/01/13/cakephp-orm-and-illuminate-pagination/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "cakephp orm and illuminate pagination",
+    "datePublished": "2016-01-13T00:00:00Z",
+    "dateModified": "2016-01-13T00:00:00Z",
+    "url" : "https://harikt.com/blog/2016/01/13/cakephp-orm-and-illuminate-pagination/",
+    "description": "Do you know CakePHP version 3 has a lovely ORM which can be used as standalone? Thank you José Lorenzo Rodríguez and every contributor, for your hard work. composer …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">cakephp orm and illuminate pagination</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2016-01-13T00:00:00Z">13 January, 2016</time>
+</p>
+</header>
+<div class="content">
+<p>Do you know CakePHP version 3 has a lovely ORM which can be used as standalone?</p>
+<p>Thank you <a href="https://github.com/lorenzo">José Lorenzo Rodríguez</a> and every contributor, for your hard work.</p>
+<pre><code>composer require cakephp/orm
+</code></pre><p>That's it.</p>
+<p>Working on I noticed I need to do some pagination. Oh, remember we have <code>illuminate/pagination</code>. Why not use it?</p>
+<p>Problem, there seems no one have implemented it. How could we achieve it?
+Lets do it.</p>
+<pre><code>composer require illuminate/pagination
+</code></pre><p>If you are using a psr-7 request / response here is the middleware for you.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Psr\Http\Message\ResponseInterface</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Psr\Http\Message\ServerRequestInterface</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Illuminate\Pagination\Paginator</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">IlluminatePaginator</span>;
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PaginatorMiddleware</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __invoke( <span style="color:#a6e22e">ServerRequestInterface</span> $request, <span style="color:#a6e22e">ResponseInterface</span> $response, <span style="color:#a6e22e">callable</span> $next <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span> )
+    {
+        <span style="color:#a6e22e">IlluminatePaginator</span><span style="color:#f92672">::</span><span style="color:#a6e22e">currentPageResolver</span>(<span style="color:#66d9ef">function</span> ( $pageName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;page&#39;</span> ) <span style="color:#66d9ef">use</span>($request )
+        {
+            $params <span style="color:#f92672">=</span> $request<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getQueryParams</span>();
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">empty</span>($params[$pageName]) <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> $params[$pageName];
+        });
+
+        <span style="color:#a6e22e">IlluminatePaginator</span><span style="color:#f92672">::</span><span style="color:#a6e22e">currentPathResolver</span>(<span style="color:#66d9ef">function</span> () <span style="color:#66d9ef">use</span>($request )
+        {
+            <span style="color:#66d9ef">return</span> $request<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getUri</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getPath</span>();
+        });
+
+        <span style="color:#66d9ef">return</span> $next($request, $response);
+    }
+}
+</code></pre></div><p>What we did above are a few things for Illuminate to give the url path when
+it is doing the pagination. So for example <code>/article?page=&lt;page-number&gt;</code> will come
+instead of just <code>?page=&lt;page-number&gt;</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Cake\ORM\TableRegistry</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Illuminate\Pagination\Paginator</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Illuminate\Pagination\LengthAwarePaginator</span>;
+
+$table <span style="color:#f92672">=</span> <span style="color:#a6e22e">TableRegistry</span><span style="color:#f92672">::</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;Articles&#39;</span>);
+$currentPage <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+$perPage <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
+$query <span style="color:#f92672">=</span> $table<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;all&#39;</span>);
+$total <span style="color:#f92672">=</span> $query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">count</span>();
+$items <span style="color:#f92672">=</span> $query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">page</span>($currentPage, $perPage);
+$paginator <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">LengthAwarePaginator</span>($items, $total, $perPage, $currentPage, [
+	<span style="color:#e6db74">&#39;path&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">Paginator</span><span style="color:#f92672">::</span><span style="color:#a6e22e">resolveCurrentPath</span>(),
+]);
+<span style="color:#66d9ef">echo</span> $paginator<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">render</span>();
+</code></pre></div><p>The above code is querying the articles and rendering the pagination with the returned results.</p>
+<p>By default the Presenter is <code>Illuminate\Pagination\BootstrapThreePresenter</code>, but you
+can create your own.</p>
+<p>I hope you will love the integration.</p>
+<p>Thank you everyone for your support and hard work on components to make PHP better every day.</p>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

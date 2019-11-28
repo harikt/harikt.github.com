@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>extending plates with aura html helpers – Random thoughts</title>
+<meta name="description" content="Aura.Html provides HTML escapers and helpers, including form input helpers, that can be used in any template, view, or presentation system. In this post I would like to …">
+<meta name="created" content="2014-05-13T00:00:00&#43;0000">
+<meta name="modified" content="2014-05-13T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="extending plates with aura html helpers">
+<meta property="og:url" content="https://harikt.com/blog/2014/05/13/extending-plates-with-aura-html-helpers/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2014/05/13/extending-plates-with-aura-html-helpers/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "extending plates with aura html helpers",
+    "datePublished": "2014-05-13T00:00:00Z",
+    "dateModified": "2014-05-13T00:00:00Z",
+    "url" : "https://harikt.com/blog/2014/05/13/extending-plates-with-aura-html-helpers/",
+    "description": "Aura.Html provides HTML escapers and helpers, including form input helpers, that can be used in any template, view, or presentation system. In this post I would like to …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">extending plates with aura html helpers</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2014-05-13T00:00:00Z">13 May, 2014</time>
+</p>
+</header>
+<div class="content">
+<p><a href="https://github.com/auraphp/Aura.Html">Aura.Html</a> provides HTML escapers and helpers, including form input helpers,
+that can be used in any template, view, or presentation system.</p>
+<p>In this post I would like to give you a short introduction to Aura.Html
+and how you could use with <a href="http://platesphp.com">Plates</a> a native php templating system like <a href="https://github.com/auraphp/Aura.View">Aura.View</a>.</p>
+<p><a href="https://github.com/auraphp/Aura.Html">Aura.Html</a> was extracted from <a href="https://github.com/auraphp/Aura.View">Aura.View</a> helper functions of version 1,
+when we at aura noticed that people who uses <a href="https://github.com/auraphp/Aura.Input">Aura.Input</a> may need some html helper
+functions and they may not be using a templating like <a href="https://github.com/auraphp/Aura.View">Aura.View</a>,
+but some other templating system.</p>
+<p>You can see an example of a simple <a href="http://harikt.com/phpform/">contact form</a> with <a href="https://github.com/auraphp/Aura.Input">Aura.Input</a>.</p>
+<h2 id="installation">Installation</h2>
+<p>The easiest way to install Aura.Html is via composer. Let us create our <code>composer.json</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;require&#34;</span>: {
+        <span style="color:#f92672">&#34;aura/html&#34;</span>: <span style="color:#e6db74">&#34;2.*@dev&#34;</span>,
+        <span style="color:#f92672">&#34;league/plates&#34;</span>: <span style="color:#e6db74">&#34;2.*&#34;</span>
+    }
+}
+</code></pre></div><p>One of the good thing about Plates is you can create <a href="http://platesphp.com/extensions/">extensions</a>.</p>
+<p>Let us create an extension that can make use of <a href="https://github.com/auraphp/Aura.Html">Aura.Html</a> helpers inside <a href="http://platesphp.com">Plates</a>.
+Any Plates extension should implement <code>League\Plates\Extension\ExtensionInterface</code>
+which contains a <code>getFunctions</code> method which returns the functions
+available within your templates.</p>
+<p>We are going to name it as <code>AuraHtmlExtension</code> and call functions as
+<code>aurahtml()</code> or <code>html()</code> via the template.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">League\Plates\Extension\ExtensionInterface</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Html\HelperLocator</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AuraHtmlExtension</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">ExtensionInterface</span>
+{
+    <span style="color:#66d9ef">public</span> $engine;
+
+    <span style="color:#66d9ef">public</span> $template;
+
+    <span style="color:#66d9ef">protected</span> $helper;
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(<span style="color:#a6e22e">HelperLocator</span> $helper)
+    {
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">helper</span> <span style="color:#f92672">=</span> $helper;
+    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getFunctions</span>()
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">array</span>(
+            <span style="color:#e6db74">&#39;aurahtml&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;callHelper&#39;</span>,
+            <span style="color:#e6db74">&#39;html&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;callHelper&#39;</span>
+        );
+    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">callHelper</span>()
+    {
+        <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">helper</span>;
+    }
+}
+</code></pre></div><p>But you are not limited to name it as the same
+<a href="https://github.com/auraphp/Aura.Html/blob/develop-2/README-HELPERS.md#aurahtml-tag-helpers">html tag helpers</a>
+and <a href="https://github.com/auraphp/Aura.Html/blob/develop-2/README-FORMS.md">form helpers</a>.</p>
+<p>So that will make the helpers look native Plates helpers. Thank you for
+this functionality to plugin the helpers.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">League\Plates\Extension\ExtensionInterface</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Html\HelperLocator</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AuraHtmlExtension</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">ExtensionInterface</span>
+{
+    <span style="color:#66d9ef">public</span> $engine;
+
+    <span style="color:#66d9ef">public</span> $template;
+
+    <span style="color:#66d9ef">protected</span> $helper;
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(<span style="color:#a6e22e">HelperLocator</span> $helper)
+    {
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">helper</span> <span style="color:#f92672">=</span> $helper;
+    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getFunctions</span>()
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">array</span>(
+            <span style="color:#e6db74">&#39;anchor&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;anchor&#39;</span>
+            <span style="color:#75715e">// ... more functions same as aura
+</span><span style="color:#75715e"></span>        );
+    }
+    
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">anchor</span>($href, $text, <span style="color:#66d9ef">array</span> $attr <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>())
+    {
+        <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">helper</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">anchor</span>($href, $text, <span style="color:#66d9ef">array</span> $attr);
+    }
+}
+</code></pre></div><p>Let us use the <a href="http://platesphp.com/simple-example/">basic example in plates</a>
+and use aura html helper to show the system works as expected.</p>
+<p>Create the templates in a <code>templates</code> folder or change the path in Plates Engine.</p>
+<h3 id="profile-template">Profile Template</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;!-- profile.php --&gt;</span>
+
+<span style="color:#75715e">&lt;?php</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">layout</span>(<span style="color:#e6db74">&#39;template&#39;</span>) <span style="color:#75715e">?&gt;</span>
+
+<span style="color:#75715e">&lt;?php</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;User Profile&#39;</span> <span style="color:#75715e">?&gt;</span>
+
+&lt;<span style="color:#f92672">h1</span>&gt;User Profile&lt;/<span style="color:#f92672">h1</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;Hello, <span style="color:#75715e">&lt;?</span><span style="color:#f92672">=</span>$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">e</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span>)<span style="color:#75715e">?&gt;</span>&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;<span style="color:#f92672">div</span>&gt;
+<span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">echo</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">aurahtml</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">input</span>(<span style="color:#66d9ef">array</span>(
+    <span style="color:#e6db74">&#39;type&#39;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;color&#39;</span>,
+    <span style="color:#e6db74">&#39;name&#39;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;name&#39;</span>,
+    <span style="color:#e6db74">&#39;value&#39;</span>   <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;value&#39;</span>,
+    <span style="color:#e6db74">&#39;attribs&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(),
+    <span style="color:#e6db74">&#39;options&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(),
+));
+
+<span style="color:#75715e">// &lt;input type=&#34;color&#34; name=&#34;name&#34; value=&#34;value&#34; /&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">html</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">input</span>(<span style="color:#66d9ef">array</span>(
+    <span style="color:#e6db74">&#39;type&#39;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;date&#39;</span>,
+    <span style="color:#e6db74">&#39;name&#39;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;name&#39;</span>,
+    <span style="color:#e6db74">&#39;value&#39;</span>   <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;value&#39;</span>,
+    <span style="color:#e6db74">&#39;attribs&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(),
+    <span style="color:#e6db74">&#39;options&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(),
+));
+
+<span style="color:#75715e">// &lt;input type=&#34;date&#34; name=&#34;name&#34; value=&#34;value&#34; /&gt;
+</span><span style="color:#75715e"></span><span style="color:#75715e">?&gt;</span>
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><h3 id="layout-template">Layout Template</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;!-- template.php --&gt;</span>
+
+&lt;<span style="color:#f92672">html</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;<span style="color:#75715e">&lt;?</span><span style="color:#f92672">=</span>$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">title</span><span style="color:#75715e">?&gt;</span>&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+
+<span style="color:#75715e">&lt;?</span><span style="color:#f92672">=</span>$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">content</span>()<span style="color:#75715e">?&gt;</span>
+
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><h3 id="autoload-extension">Autoload Extension</h3>
+<p>Make sure AuraHtmlExtension can be autoloaded. We can add in <code>composer.json</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">    <span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span> <span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">t</span> <span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">f</span> <span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">e</span> <span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">d</span><span style="color:#960050;background-color:#1e0010">e</span>    
+    <span style="color:#e6db74">&#34;autoload&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+        <span style="color:#f92672">&#34;psr-4&#34;</span>: {
+            <span style="color:#f92672">&#34;&#34;</span>: <span style="color:#e6db74">&#34;path/to/aura/html/extension/&#34;</span>
+        }
+    }
+</code></pre></div><h3 id="bootstrapping-and-rendering">Bootstrapping and Rendering</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// test.php file
+require __DIR__ . &#39;/vendor/autoload.php&#39;;
+$engine = new \League\Plates\Engine( __DIR__ . &#39;/templates&#39;);
+
+// Create a new template
+$template = new \League\Plates\Template($engine);
+$factory = new \Aura\Html\HelperLocatorFactory();
+$helper = $factory-&gt;newInstance();
+$engine-&gt;loadExtension(new AuraHtmlExtension($helper));
+
+// Assign a variable to the template
+$template-&gt;name = &#39;Jonathan&#39;;
+
+// Render the template
+echo $template-&gt;render(&#39;profile&#39;);
+</code></pre></div><p>If you run <code>php test.php</code> you will see something like this rendered.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;User Profile&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">body</span>&gt;
+
+
+&lt;<span style="color:#f92672">h1</span>&gt;User Profile&lt;/<span style="color:#f92672">h1</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;
+Hello, Jonathan
+&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;value&#34;</span> /&gt;
+&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;date&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;name&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;value&#34;</span> /&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;&lt;/<span style="color:#f92672">title</span>&gt;
+</code></pre></div><p>Thank you and Happy PhPing!</p>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

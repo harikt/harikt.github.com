@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>hidden gems of composer – Random thoughts</title>
+<meta name="description" content="I hope everyone in the PHP world is aware of composer the dependency management tool that gives an end to Pear. We can look into some of the hidden gems of composer. Some …">
+<meta name="created" content="2014-05-29T00:00:00&#43;0000">
+<meta name="modified" content="2014-05-29T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="hidden gems of composer">
+<meta property="og:url" content="https://harikt.com/blog/2014/05/29/hidden-gems-of-composer/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2014/05/29/hidden-gems-of-composer/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "hidden gems of composer",
+    "datePublished": "2014-05-29T00:00:00Z",
+    "dateModified": "2014-05-29T00:00:00Z",
+    "url" : "https://harikt.com/blog/2014/05/29/hidden-gems-of-composer/",
+    "description": "I hope everyone in the PHP world is aware of composer the dependency management tool that gives an end to Pear. We can look into some of the hidden gems of composer. Some …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">hidden gems of composer</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2014-05-29T00:00:00Z">29 May, 2014</time>
+</p>
+</header>
+<div class="content">
+<p>I hope everyone in the PHP world is aware of <a href="https://getcomposer.org">composer</a>
+the dependency management tool that gives an end to Pear.</p>
+<p>We can look into some of the hidden gems of composer. Some of them are
+already documented in the composer docs.</p>
+<h2 id="bug-fixing-">Bug Fixing :</h2>
+<p>Documented over <a href="https://getcomposer.org/doc/05-repositories.md#loading-a-package-from-a-vcs-repository">Loading a package from a VCS repository</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;repositories&#34;</span>: [
+        {
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;vcs&#34;</span>,
+            <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://github.com/igorw/monolog&#34;</span>
+        }
+    ],
+    <span style="color:#f92672">&#34;require&#34;</span>: {
+        <span style="color:#f92672">&#34;monolog/monolog&#34;</span>: <span style="color:#e6db74">&#34;dev-bugfix&#34;</span>
+    }
+}
+</code></pre></div><p>The above example assume you have pushed your code to github. But you can
+also make use of the local directory.</p>
+<p>Assume you are organizing your code something like</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">home
+└── github.com
+    └── harikt
+        ├── Aura.Router
+        ├── Aura.Web
+        └── monolog
+</code></pre></div><p>Now on your project you could make use of the patches you are working on
+the local directory without pushing it to github.</p>
+<blockquote>
+<p>Note : You should commit the changes though.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;minimum-stability&#34;</span>:<span style="color:#e6db74">&#34;dev&#34;</span>,
+    <span style="color:#f92672">&#34;repositories&#34;</span>: [
+        {
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;vcs&#34;</span>,
+            <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;/home/github.com/harikt/monolog&#34;</span>            
+        }
+    ],
+    <span style="color:#f92672">&#34;require&#34;</span>: {
+        <span style="color:#f92672">&#34;monolog/monolog&#34;</span>: <span style="color:#e6db74">&#34;dev-bugfix&#34;</span>
+    }
+}
+</code></pre></div><p>And you can also disable packagist for fast look up.</p>
+<h2 id="experimenting-your-own-packages">Experimenting your own packages</h2>
+<p>I did add packages in <a href="https://packagist.org">packagist</a> for testing.
+This is really a wrong way to do, you are adding more packages that
+makes other people's life hard to find a useful package.</p>
+<p>What I learned is, you can do in a different way. See docs under
+<a href="https://getcomposer.org/doc/05-repositories.md#package-2">Package</a></p>
+<p>So your <code>composer.json</code> will look something like this.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;minimum-stability&#34;</span>:<span style="color:#e6db74">&#34;dev&#34;</span>,
+    <span style="color:#f92672">&#34;repositories&#34;</span>: [        
+        {
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;package&#34;</span>,
+            <span style="color:#f92672">&#34;package&#34;</span>: {
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;harikt/experiments&#34;</span>,
+                <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;3.1.7&#34;</span>,               
+                <span style="color:#f92672">&#34;source&#34;</span>: {
+                    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;git&#34;</span>,
+                    <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;/home/github.com/harikt/experiments&#34;</span>,
+                    <span style="color:#f92672">&#34;reference&#34;</span>: <span style="color:#e6db74">&#34;master&#34;</span>
+                },
+                <span style="color:#f92672">&#34;autoload&#34;</span>: {
+                    <span style="color:#f92672">&#34;classmap&#34;</span>: [<span style="color:#e6db74">&#34;libs/&#34;</span>]
+                }
+            }
+        }
+    ],
+    <span style="color:#f92672">&#34;require&#34;</span>: {        
+        <span style="color:#f92672">&#34;harikt/experiments&#34;</span>: <span style="color:#e6db74">&#34;3.1.*&#34;</span>
+    }
+}
+</code></pre></div><p>That's for now.</p>
+<p>Happy PhPing!</p>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

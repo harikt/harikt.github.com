@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>integrating zend form in zend expressive and view – Random thoughts</title>
+<meta name="description" content="Example is based using Aura.Di. But the functionality will be same for any containers. First register the service Zend\View\HelperPluginManager, so that we can access the …">
+<meta name="created" content="2015-11-13T00:00:00&#43;0000">
+<meta name="modified" content="2015-11-13T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="integrating zend form in zend expressive and view">
+<meta property="og:url" content="https://harikt.com/blog/2015/11/13/integrating-zend-form-in-zend-expressive-and-view/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2015/11/13/integrating-zend-form-in-zend-expressive-and-view/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "integrating zend form in zend expressive and view",
+    "datePublished": "2015-11-13T00:00:00Z",
+    "dateModified": "2015-11-13T00:00:00Z",
+    "url" : "https://harikt.com/blog/2015/11/13/integrating-zend-form-in-zend-expressive-and-view/",
+    "description": "Example is based using Aura.Di. But the functionality will be same for any containers. First register the service Zend\\View\\HelperPluginManager, so that we can access the …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">integrating zend form in zend expressive and view</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2015-11-13T00:00:00Z">13 November, 2015</time>
+</p>
+</header>
+<div class="content">
+<p>Example is based using <a href="https://github.com/auraphp/Aura.Di">Aura.Di</a>.
+But the functionality will be same for any containers.
+First register the service <code>Zend\View\HelperPluginManager</code>, so that we
+can access the same object.</p>
+<p>To register the form helpers, create the object of <code>Zend\Form\View\HelperConfig</code>
+and pass the <code>Zend\View\HelperPluginManager</code> service.</p>
+<p>Example code with <a href="https://github.com/auraphp/Aura.Di">Aura.Di</a> version 3 configuration.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Di\ContainerConfig</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Di\Container</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Zend\Form\View\HelperConfig</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewHelper</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">ContainerConfig</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">define</span>(<span style="color:#a6e22e">Container</span> $di)
+    {
+        $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;Zend\View\HelperPluginManager&#39;</span>, $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">lazyNew</span>(<span style="color:#e6db74">&#39;Zend\View\HelperPluginManager&#39;</span>));
+    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">modify</span>(<span style="color:#a6e22e">Container</span> $di)
+    {
+        $serviceManager <span style="color:#f92672">=</span> $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;Zend\View\HelperPluginManager&#39;</span>);
+        $helper <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">HelperConfig</span>();
+        $helper<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">configureServiceManager</span>($servicemanager);
+    }
+}
+</code></pre></div><h2 id="creating-your-own-zendview-helper">Creating your own zend-view helper</h2>
+<ol>
+<li>Create your helper class</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">App\View\Helper</span>;
+
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Zend\View\Helper\AbstractHelper</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HasError</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">AbstractHelper</span>
+{
+    <span style="color:#75715e">// add as many parameters you want to pass from the view
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __invoke()
+    {
+        <span style="color:#75715e">// some code
+</span><span style="color:#75715e"></span>    }
+}
+</code></pre></div><ol start="2">
+<li>Registering your helper class.</li>
+</ol>
+<p>First get the <code>Zend\View\HelperPluginManager</code> service.</p>
+<p>2.a ) Registering as a factory</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$serviceManager-&gt;setFactory(&#39;hasError&#39;, function () {
+    return new \App\View\Helper\HasError();
+});
+</code></pre></div><p>2.b ) As an invokable</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$serviceManager-&gt;setInvokableClass(&#39;hasError&#39;, &#39;App\View\Helper\HasError&#39;);
+</code></pre></div><p>Now you can access inside zend-view as <code>$this-&gt;hasError()</code>. If your view
+helper need dependencies don't use the <code>setInvokableClass</code> method.
+Use factory and get the object from the container.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$serviceManager-&gt;setFactory(&#39;hasError&#39;, function () use ($di) {
+     return $di-&gt;get(&#39;App\View\Helper\HasError&#39;);
+});
+</code></pre></div><p>I wished if <code>$serviceManager</code> can understand the aura's <code>lazyNew</code> functionality
+so that we don't need to register it as a service.</p>
+<p>Eg : Below will not work.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$serviceManager-&gt;setFactory(&#39;hasError&#39;, $di-&gt;lazyNew(&#39;App\View\Helper\HasError&#39;));
+</code></pre></div><p>This is what I love to see it working for this a closure, but with namespaced.</p>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>aura dot di 2 dot x to 3 dot x upgrade guide – Random thoughts</title>
+<meta name="description" content="3.x has a very minimal BC break. But if you are not sure what are they, then you may feel the pain. I am trying to document most of them, incase I missed please edit and …">
+<meta name="created" content="2016-03-15T00:00:00&#43;0000">
+<meta name="modified" content="2016-03-15T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="aura dot di 2 dot x to 3 dot x upgrade guide">
+<meta property="og:url" content="https://harikt.com/blog/2016/03/15/aura-dot-di-2-dot-x-to-3-dot-x-upgrade-guide/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2016/03/15/aura-dot-di-2-dot-x-to-3-dot-x-upgrade-guide/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "aura dot di 2 dot x to 3 dot x upgrade guide",
+    "datePublished": "2016-03-15T00:00:00Z",
+    "dateModified": "2016-03-15T00:00:00Z",
+    "url" : "https://harikt.com/blog/2016/03/15/aura-dot-di-2-dot-x-to-3-dot-x-upgrade-guide/",
+    "description": "3.x has a very minimal BC break. But if you are not sure what are they, then you may feel the pain. I am trying to document most of them, incase I missed please edit and …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">aura dot di 2 dot x to 3 dot x upgrade guide</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2016-03-15T00:00:00Z">15 March, 2016</time>
+</p>
+</header>
+<div class="content">
+<p>3.x has a very minimal BC break. But if you are not sure what are they, then you may feel the pain.
+I am trying to document most of them, incase I missed please <a href="https://github.com/harikt/harikt.github.com/edit/source/source/_posts/2016-03-15-aura-dot-di-2-dot-x-to-3-dot-x-upgrade-guide.markdown">edit and send a pull request</a>.</p>
+<p>I will try to eventually pushed to the main Aura.Di repo.</p>
+<h2 id="bc-breaks">BC Breaks</h2>
+<h3 id="instantiation">Instantiation</h3>
+<p>The way di container is instantiated has been changed from</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Aura\Di\Container;
+use Aura\Di\Factory;
+use Aura\Di\ContainerBuilder;
+
+$di = new Container(new Factory);
+
+// or 
+
+$container_builder = new ContainerBuilder();
+$di = $container_builder-&gt;newInstance(
+    array(),
+    array(),
+    $auto_resolve = false
+);
+</code></pre></div><p>to</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Aura\Di\ContainerBuilder;
+
+$container_builder = new ContainerBuilder();
+
+// use the builder to create and configure a container
+// using an array of ContainerConfig classes
+$di = $container_builder-&gt;newConfiguredInstance([
+    &#39;Aura\Cli\_Config\Common&#39;,
+    &#39;Aura\Router\_Config\Common&#39;,
+    &#39;Aura\Web\_Config\Common&#39;,
+]);
+</code></pre></div><h3 id="setter-vs-setters">setter vs setters</h3>
+<p><code>$di-&gt;setter</code> is now <code>$di-&gt;setters</code>. Please note there is an additional <code>s</code> in the end. <a href="https://github.com/auraphp/Aura.Di/issues/115"><a href="https://github.com/auraphp/Aura.Di/issues/115">https://github.com/auraphp/Aura.Di/issues/115</a></a>.</p>
+<h3 id="automatic-locking">Automatic locking</h3>
+<p>Automatic locking of container once an object is created by container. So make sure everything is lazy call, else you will run something like <a href="https://github.com/auraphp/Aura.Di/issues/118">Cannot modify container when locked</a>.</p>
+<h3 id="config-vs-containerconfig">Config vs ContainerConfig</h3>
+<p>Version 2 <a href="https://github.com/auraphp/Aura.Di/blob/2.2.4/src/Config.php">Aura\Di\Config</a> is now <a href="https://github.com/auraphp/Aura.Di/blob/3.0.0/src/ContainerConfig.php">Aura\Di\ContainerConfig</a></p>
+<h2 id="features">Features</h2>
+<h3 id="lazygetcall">lazyGetCall</h3>
+<p>Example taken from <a href="https://github.com/radarphp/Radar.Adr/blob/0b4fa74c4939a715562d60e37c1976fc59b420b6/src/Config.php#L50">Radar</a></p>
+<pre><code>$di-&gt;params['Radar\Adr\Handler\RoutingHandler']['matcher'] = $di-&gt;lazyGetCall('radar/adr:router', 'getMatcher');
+</code></pre><p>Here the <code>matcher</code> assigned is taken from the <a href="https://github.com/auraphp/Aura.Router/blob/3.0.0/src/RouterContainer.php#L263-L273">RouterContainer</a> <code>getMatcher</code> method.</p>
+<h3 id="instance-factories">Instance Factories</h3>
+<p>Create multiple instances of the class. You can read the <a href="http://auraphp.com/packages/3.x/Di/factories.html">docs</a></p>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

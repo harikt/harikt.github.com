@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>building modular applications with psr 7 – Random thoughts</title>
+<meta name="description" content="PSR-7, the HTTP message interfaces opened a new door of creating modular applications. Sadly many of the PSR-7 implementations added many helper methods. So if someone is …">
+<meta name="created" content="2017-03-24T00:00:00&#43;0000">
+<meta name="modified" content="2017-03-24T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="building modular applications with psr 7">
+<meta property="og:url" content="https://harikt.com/blog/2017/03/24/building-modular-applications-with-psr-7/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2017/03/24/building-modular-applications-with-psr-7/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "building modular applications with psr 7",
+    "datePublished": "2017-03-24T00:00:00Z",
+    "dateModified": "2017-03-24T00:00:00Z",
+    "url" : "https://harikt.com/blog/2017/03/24/building-modular-applications-with-psr-7/",
+    "description": "PSR-7, the HTTP message interfaces opened a new door of creating modular applications. Sadly many of the PSR-7 implementations added many helper methods. So if someone is …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">building modular applications with psr 7</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2017-03-24T00:00:00Z">24 March, 2017</time>
+</p>
+</header>
+<div class="content">
+<p><a href="http://www.php-fig.org/psr/psr-7/">PSR-7, the HTTP message interfaces</a> opened
+a new door of creating modular applications.</p>
+<p>Sadly many of the PSR-7 implementations added many helper methods.</p>
+<p>So if someone is creating a library that needs a PSR-7 implementations they tie
+the particular library with the PSR-7 implementation and use these convinient helper methods.</p>
+<p>So was <a href="https://github.com/http-interop/http-middleware">PSR-15: interfaces for HTTP Middleware</a>
+and <a href="https://github.com/http-interop/http-factory">PSR-17: interfaces for HTTP Factories</a>
+was proposed.</p>
+<p>When creating a module one of the most challenging part is how to serve the
+javascript, css and images. We are going to use
+<a href="github.com/harikt/psr7-asset">hkt/psr7-asset</a> which is a fork of
+<a href="https://github.com/friendsofaura/Aura.Asset_Bundle/">Aura.Asset_Bundle</a> .
+What you want to do is only map the path to the assets folder.</p>
+<p>We can discuss more on the features later and start writing our first module.
+The source code of the module is hosted at <a href="https://github.com/harikt/psr7-asset-example">github</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p <span style="color:#f92672">{</span>src/<span style="color:#f92672">{</span>Middleware<span style="color:#f92672">}</span>,templates,public/<span style="color:#f92672">{</span>css,images,js<span style="color:#f92672">}</span><span style="color:#f92672">}</span>
+</code></pre></div><p>The command will create folder structure as below.</p>
+<blockquote>
+<p>If you are not using *nix probably you want to create each folder separately.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">├── public
+│   ├── css
+│   ├── images
+│   └── js
+├── src
+│   └── Middleware
+└── templates
+</code></pre></div><p>Lets create our <code>Welcome</code> middleware.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Hkt\Psr7AssetExample\Middleware</span>;
+
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Interop\Http\Factory\ResponseFactoryInterface</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Interop\Http\ServerMiddleware\MiddlewareInterface</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Interop\Http\ServerMiddleware\DelegateInterface</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Psr\Http\Message\ServerRequestInterface</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Zend\Expressive\Template\TemplateRendererInterface</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Welcome</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">MiddlewareInterface</span>
+{
+    <span style="color:#66d9ef">private</span> $template;
+
+    <span style="color:#66d9ef">private</span> $responseFactory;
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(
+        <span style="color:#a6e22e">TemplateRendererInterface</span> $template,
+        <span style="color:#a6e22e">ResponseFactoryInterface</span> $responseFactory
+    ) {
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">template</span> <span style="color:#f92672">=</span> $template;
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">responseFactory</span> <span style="color:#f92672">=</span> $responseFactory;
+    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">process</span>(
+        <span style="color:#a6e22e">ServerRequestInterface</span> $request,
+        <span style="color:#a6e22e">DelegateInterface</span> $delegate
+    ) {
+        $response <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">responseFactory</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">createResponse</span>();
+        $response <span style="color:#f92672">=</span> $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">withHeader</span>(<span style="color:#e6db74">&#39;Content-Type&#39;</span>, <span style="color:#e6db74">&#39;text/html&#39;</span>);
+        $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getBody</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">write</span>(
+            $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">template</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">render</span>(<span style="color:#e6db74">&#39;hkt-psr7-asset-example::welcome&#39;</span>, [])
+        );
+        <span style="color:#66d9ef">return</span> $response;
+    }
+}
+</code></pre></div><p>You can see we have not tied the <code>Welcome</code> class to any PSR-7 implementation.
+But instead to many interfaces. This helps us to use <code>Welcome</code> middleware with any PSR-7 based frameworks.</p>
+<h2 id="how-can-we-serve-the-static-files">How can we serve the static files?</h2>
+<p>This can be solved with <a href="https://github.com/zfcampus/zf-asset-manager">zf-asset-manager</a>.
+What it does is copy the assets to the public folder and the files are served by  webserver.</p>
+<p>But what about if you need to alter the behaviour of the file?</p>
+<p>Eg : You want to override the <code>hello.js</code> contents with something like</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">function</span> () {
+    <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Hello World&#34;</span>);
+});
+</code></pre></div><p>This is possible with the <code>hkt/psr7-asset</code>.</p>
+<p>What you need is get the asset locator and set the path to <code>vendor/package</code> as</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$assetLocator = $di-&gt;get(&#39;Hkt\Psr7Asset\AssetLocator&#39;);
+$assetLocator-&gt;set(&#39;hkt/psr7-asset-example&#39;, dirname(dirname(__DIR__)) . &#39;/public&#39;);
+</code></pre></div><p>alternatievely you can set individual paths or files also.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$assetLocator = $di-&gt;get(&#39;Hkt\Psr7Asset\AssetLocator&#39;);
+$assetLocator-&gt;set(&#39;vendor/package/images/someimage.png&#39;, &#39;/path/to/different-image.png&#39;);
+</code></pre></div><p>The full source code of the example module is at <a href="https://github.com/harikt/psr7-asset-example"><a href="https://github.com/harikt/psr7-asset-example">https://github.com/harikt/psr7-asset-example</a></a></p>
+<h2 id="how-can-we-make-use-of-this-module-in-your-application">How can we make use of this module in your application?</h2>
+<p>Any frameworks that supports psr-7, psr-15 and psr-17 interfaces should work. We will use zend expressive with <a href="https://github.com/auraphp/Aura.Di">Aura.Di</a> as dependency injection container and <a href="https://github.com/auraphp/Aura.Router">Aura.Router</a>.</p>
+<pre><code>composer create-project zendframework/zend-expressive-skeleton expressive
+</code></pre><p>Below is selection process</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Installing zendframework/zend-expressive-skeleton <span style="color:#f92672">(</span>2.0.1<span style="color:#f92672">)</span>
+  - Installing zendframework/zend-expressive-skeleton <span style="color:#f92672">(</span>2.0.1<span style="color:#f92672">)</span> Loading from cache
+Created project in expressive
+&gt; ExpressiveInstaller<span style="color:#ae81ff">\O</span>ptionalPackages::install
+Setting up optional packages
+Setup data and cache dir
+Removing installer development dependencies
+
+  What type of installation would you like?
+  <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> Minimal <span style="color:#f92672">(</span>no default middleware, templates, or assets; configuration only<span style="color:#f92672">)</span>
+  <span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> Flat <span style="color:#f92672">(</span>flat source code structure; default selection<span style="color:#f92672">)</span>
+  <span style="color:#f92672">[</span>3<span style="color:#f92672">]</span> Modular <span style="color:#f92672">(</span>modular source code structure; recommended<span style="color:#f92672">)</span>
+  Make your selection <span style="color:#f92672">(</span>2<span style="color:#f92672">)</span>: <span style="color:#ae81ff">3</span>
+  - Adding package zendframework/zend-expressive-tooling <span style="color:#f92672">(</span>^0.3.2<span style="color:#f92672">)</span>
+  - Copying src/App/src/ConfigProvider.php
+
+  Which container <span style="color:#66d9ef">do</span> you want to use <span style="color:#66d9ef">for</span> dependency injection?
+  <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> Aura.Di
+  <span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> Pimple
+  <span style="color:#f92672">[</span>3<span style="color:#f92672">]</span> Zend ServiceManager
+  Make your selection or type a composer package name and version <span style="color:#f92672">(</span>Zend ServiceManager<span style="color:#f92672">)</span>: <span style="color:#ae81ff">1</span>
+  - Adding package aura/di <span style="color:#f92672">(</span>^3.2<span style="color:#f92672">)</span>
+  - Copying config/container.php
+  - Copying config/ExpressiveAuraConfig.php
+  - Copying config/ExpressiveAuraDelegatorFactory.php
+
+  Which router <span style="color:#66d9ef">do</span> you want to use?
+  <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> Aura.Router
+  <span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> FastRoute
+  <span style="color:#f92672">[</span>3<span style="color:#f92672">]</span> Zend Router
+  Make your selection or type a composer package name and version <span style="color:#f92672">(</span>FastRoute<span style="color:#f92672">)</span>: <span style="color:#ae81ff">1</span>
+  - Adding package zendframework/zend-expressive-aurarouter <span style="color:#f92672">(</span>^2.0<span style="color:#f92672">)</span>
+  - Copying config/routes.php
+  - Copying config/autoload/router.global.php
+
+  Which template engine <span style="color:#66d9ef">do</span> you want to use?
+  <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> Plates
+  <span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> Twig
+  <span style="color:#f92672">[</span>3<span style="color:#f92672">]</span> Zend View installs Zend ServiceManager
+  <span style="color:#f92672">[</span>n<span style="color:#f92672">]</span> None of the above
+  Make your selection or type a composer package name and version <span style="color:#f92672">(</span>n<span style="color:#f92672">)</span>: <span style="color:#ae81ff">2</span>
+  - Adding package zendframework/zend-expressive-twigrenderer <span style="color:#f92672">(</span>^1.4<span style="color:#f92672">)</span>
+  - Copying config/autoload/templates.global.php
+  - Copying src/App/templates/error/404.html.twig
+  - Copying src/App/templates/error/error.html.twig
+  - Copying src/App/templates/layout/default.html.twig
+  - Copying src/App/templates/app/home-page.html.twig
+
+  Which error handler <span style="color:#66d9ef">do</span> you want to use during development?
+  <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> Whoops
+  <span style="color:#f92672">[</span>n<span style="color:#f92672">]</span> None of the above
+  Make your selection or type a composer package name and version <span style="color:#f92672">(</span>Whoops<span style="color:#f92672">)</span>: <span style="color:#ae81ff">1</span>
+  - Adding package filp/whoops <span style="color:#f92672">(</span>^2.1.7<span style="color:#f92672">)</span>
+  - Copying config/autoload/development.local.php.dist
+</code></pre></div><p>Once the installation is finished we can start integrating the module.</p>
+<pre><code>cd expressive
+</code></pre><p>Add to your <code>composer.json</code> the below configuration.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">    <span style="color:#e6db74">&#34;repositories&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
+        {
+            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;git&#34;</span>,
+            <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://github.com/harikt/psr7-asset-example&#34;</span>
+        }
+    ]<span style="color:#960050;background-color:#1e0010">,</span>
+    <span style="color:#e6db74">&#34;require&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+        <span style="color:#f92672">&#34;http-interop/http-factory-diactoros&#34;</span>: <span style="color:#e6db74">&#34;^0.2.0&#34;</span>,
+        <span style="color:#f92672">&#34;hkt/psr7-asset-example&#34;</span>:<span style="color:#e6db74">&#34;1.*@dev&#34;</span>,
+        <span style="color:#f92672">&#34;hkt/psr7-asset&#34;</span>:<span style="color:#e6db74">&#34;1.*@dev&#34;</span>,
+        <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span>
+    }<span style="color:#960050;background-color:#1e0010">,</span>
+</code></pre></div><blockquote>
+<p>I think the dependencies are self explanatory. In case you need any help feel free to comment on the post.</p>
+</blockquote>
+<p>We need a few things for the assets to be displayed.</p>
+<ol>
+<li>Add the asset router. So that any request coming to <code>/asset/*</code> can be served by <code>Hkt\Psr7Asset\AssetAction</code>.</li>
+<li>Configure the <code>Interop\Http\Factory\ResponseFactoryInterface</code> to return an instance of <code>Http\Factory\Diactoros\ResponseFactory</code>.</li>
+<li>Add a route to serve the example welcome action &lsquo;Hkt\Psr7AssetExample\Middleware\Welcome&rsquo;</li>
+</ol>
+<p>Below is what we can do with Aura.Di configuration.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#75715e">// src/App/src/Config/Common.php
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">App\Config</span>;
+
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Di\Container</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Di\ContainerConfigInterface</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Zend\Expressive\Router\Route</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Common</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">ContainerConfigInterface</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">define</span>(<span style="color:#a6e22e">Container</span> $di)
+    {
+        $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;Interop\Http\Factory\ResponseFactoryInterface&#39;</span>, $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">lazyNew</span>(<span style="color:#e6db74">&#39;Http\Factory\Diactoros\ResponseFactory&#39;</span>));
+    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">modify</span>(<span style="color:#a6e22e">Container</span> $di)
+    {
+        $router <span style="color:#f92672">=</span> $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;Zend\Expressive\Router\RouterInterface&#39;</span>);
+
+        <span style="color:#75715e">// PSR-7 asset Router
+</span><span style="color:#75715e"></span>
+        $route <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Route</span>(<span style="color:#e6db74">&#39;/asset/{vendor}/{package}/{file}&#39;</span>, <span style="color:#e6db74">&#39;Hkt\Psr7Asset\AssetAction&#39;</span>, [<span style="color:#e6db74">&#39;GET&#39;</span>], <span style="color:#e6db74">&#39;hkt/psr7-asset&#39;</span>);
+        $route<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setOptions</span>([
+            <span style="color:#e6db74">&#39;tokens&#39;</span> <span style="color:#f92672">=&gt;</span> [
+                <span style="color:#e6db74">&#39;file&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;(.*)&#39;</span>
+            ]
+        ]);
+        $router<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addRoute</span>($route);
+        $router<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addRoute</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Route</span>(<span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#e6db74">&#39;Hkt\Psr7AssetExample\Middleware\Welcome&#39;</span>, [<span style="color:#e6db74">&#39;GET&#39;</span>], <span style="color:#e6db74">&#39;hkt/psr7-asset-example:welcome&#39;</span>));
+        <span style="color:#75715e">// Try modifying the below lines
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// $assetLocator = $di-&gt;get(&#39;Hkt\Psr7Asset\AssetLocator&#39;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// $rootPath = dirname(dirname(dirname(dirname(__DIR__))));
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// $assetLocator-&gt;set(&#39;hkt/psr7-asset-example/images/white-image.png&#39;, $rootPath . &#39;/public/zf-logo.png&#39;);
+</span><span style="color:#75715e"></span>    }
+}
+</code></pre></div><p>Now we can load the Aura.Di configuration in <code>config/container.php</code> .</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#f92672">....</span> <span style="color:#a6e22e">more</span> <span style="color:#a6e22e">code</span><span style="color:#f92672">.</span>
+
+<span style="color:#66d9ef">return</span> $builder<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">newConfiguredInstance</span>([
+    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ExpressiveAuraConfig</span>(<span style="color:#a6e22e">is_array</span>($config) <span style="color:#f92672">?</span> $config <span style="color:#f92672">:</span> []),
+    <span style="color:#a6e22e">Hkt\Psr7Asset\Container\AssetConfig</span><span style="color:#f92672">::</span><span style="color:#a6e22e">class</span>,
+    <span style="color:#a6e22e">Hkt\Psr7AssetExample\Container\Common</span><span style="color:#f92672">::</span><span style="color:#a6e22e">class</span>,
+    <span style="color:#a6e22e">App\Config\Common</span><span style="color:#f92672">::</span><span style="color:#a6e22e">class</span>,
+]);
+</code></pre></div><p>What it does, is load different configurations of different modules.</p>
+<p>If you run</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php -S 0.0.0.0:8080 -t public public/index.php
+</code></pre></div><p>and point to <code>http://localhost:8080</code> you can see the welcome screen of example module.</p>
+<p>Try modifying the <code>hkt/psr7-asset-example/images/white-image.png</code> path to a different image and browse  http://localhost:8080/asset/hkt/psr7-asset-example/images/white-image.png</p>
+<p>It will render that image.</p>
+<p>All source code is accompanied at <a href="https://github.com/harikt/psr7-asset-example-zendexpressive"><a href="https://github.com/harikt/psr7-asset-example-zendexpressive">https://github.com/harikt/psr7-asset-example-zendexpressive</a></a></p>
+<h2 id="caching">Caching</h2>
+<p>We can use psr7-asset-cache to cache all public files in production.</p>
+<p>Hope this will be helpful to someone to begin writing modular applications.</p>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

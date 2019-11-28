@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>aura framework v2 the missing manual – Random thoughts</title>
+<meta name="description" content="Aura has an awesome collection of libraries for different purpose. It has components for authentication, cli, request and response, router, dependency injection …">
+<meta name="created" content="2014-07-15T00:00:00&#43;0000">
+<meta name="modified" content="2014-07-15T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="aura framework v2 the missing manual">
+<meta property="og:url" content="https://harikt.com/blog/2014/07/15/aura-framework-v2-the-missing-manual/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2014/07/15/aura-framework-v2-the-missing-manual/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "aura framework v2 the missing manual",
+    "datePublished": "2014-07-15T00:00:00Z",
+    "dateModified": "2014-07-15T00:00:00Z",
+    "url" : "https://harikt.com/blog/2014/07/15/aura-framework-v2-the-missing-manual/",
+    "description": "Aura has an awesome collection of libraries for different purpose. It has components for authentication, cli, request and response, router, dependency injection …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">aura framework v2 the missing manual</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2014-07-15T00:00:00Z">15 July, 2014</time>
+</p>
+</header>
+<div class="content">
+<p><a href="http://auraphp.com">Aura</a> has an awesome collection of
+<a href="https://github.com/auraphp">libraries</a> for different purpose.</p>
+<p>It has components for
+<a href="https://github.com/auraphp/Aura.Auth">authentication</a>,
+<a href="https://github.com/auraphp/Aura.Cli">cli</a>,
+<a href="https://github.com/auraphp/Aura.Web">request and response</a>,
+<a href="https://github.com/auraphp/Aura.Router">router</a>,
+<a href="https://github.com/auraphp/Aura.Router">dependency injection container</a>,
+<a href="https://github.com/auraphp/Aura.Dispatcher">dispatcher</a>,
+<a href="https://github.com/auraphp/Aura.Html">html</a>,
+<a href="https://github.com/auraphp/Aura.View">view</a>,
+<a href="https://github.com/auraphp/Aura.Signal">event handlers</a>,
+<a href="https://github.com/auraphp/Aura.Filter">validation</a>,
+<a href="https://github.com/auraphp/Aura.Sql">extended pdo</a>,
+<a href="https://github.com/auraphp/Aura.SqlQuery">query builders</a>,
+<a href="https://github.com/auraphp/Aura.SqlSchema">sql schema</a>,
+<a href="https://github.com/auraphp/Aura.Marshal">marshal</a>,
+<a href="https://github.com/auraphp/Aura.Uri">build and modify uri</a>,
+<a href="https://github.com/auraphp/Aura.Http">http</a>,
+<a href="https://github.com/auraphp/Aura.Intl">internationalization</a>,
+<a href="https://github.com/auraphp/Aura.Session">session</a>,
+<a href="https://github.com/auraphp/Aura.Input">forms</a>,
+<a href="https://github.com/auraphp/Aura.Include">includer</a>.</p>
+<p>If you are new to aura, there is probably something you
+may want to figure out yourself.</p>
+<p>Some of the components have <a href="http://auraphp.com/packages/">version 1</a> and
+<a href="http://auraphp.com/packages/v2">version 2</a> releases.
+There is a question of which branch corresponds to which version.</p>
+<p>The v1 packages are in <code>develop</code> branch and v2 over <code>develop-2</code> branch.</p>
+<p>There are a few changes in v1 to v2. It is easy to understand when you
+look into the <code>composer.json</code> or if you know aura
+v2 follows <a href="http://www.php-fig.org/psr/psr-4/">psr-4</a>
+directory structure than the v1 that followed
+<a href="http://www.php-fig.org/psr/psr-0/">psr-0</a>.</p>
+<p>If you see a package <code>&quot;aura/installer-default&quot;: &quot;1.0.0&quot;</code> in the
+require of <code>composer.json</code> it is for sure v1.</p>
+<p>Composer installs every package in the vendor folder. The
+name of the package installed will be the package name. So basically
+it installs <code>vendor/aura/&lt;package-name&gt;</code> .</p>
+<p>In aura framework v1 we have some specific folder structure and it was
+before composer becomes a standard. So when composer became a standard
+we added a way to install the framework specific installations in
+<code>package</code> folder and the rest of the library installation (other than aura framework)
+in the same way as composer did.</p>
+<p>So was the existence of <code>aura/installer-default</code> in v1 package. In v2 we moved
+to <a href="http://auraphp.com/blog/2014/04/07/two-stage-config/">composer assisted two stage configuration</a>.</p>
+<h2 id="v2-framework">v2 Framework</h2>
+<p>There exists a <a href="https://github.com/auraphp/Aura.Web_Project">micro framework/full stack</a>
+framework for v2. But things are hard to find when you are
+new to aura and when <a href="https://github.com/auraphp">github organization</a>
+have more than 30 repositories.</p>
+<p>[Aura framework]((<a href="https://github.com/auraphp/Aura.Framework_Project">https://github.com/auraphp/Aura.Framework_Project</a>)
+is built on top of aura libraries, and the library docs
+applies to the framework also. But people new to aura may be having
+hard time to find the specific documentation or may be stuck sometime.
+I don’t know whether my thoughts are right or wrong.</p>
+<p>Documentation is one of the hardest problem when newer versions
+are released. Say 1.0.0 released, 1.1.0 &hellip; although the documentation
+is there in the installed repo, it is probably hard to make things online.</p>
+<p>I was talking with <a href="http://paul-m-jones.com/">Paul M Jones</a>
+regarding the documentation lately,
+and he too shared some concerns. Talking with him gave me some
+inspiration to start
+<a href="http://leanpub.com/aurav2/read">the missing manual for the aura framework</a>.</p>
+<h2 id="goal">Goal</h2>
+<ul>
+<li>let people read and learn</li>
+<li>promote aura with good documentation</li>
+<li>at the sametime, to make a living</li>
+</ul>
+<p>Yes, I am independent freelance php developer. It was a sad
+story that I don’t want to recall how I became a freelancer
+by chance.</p>
+<p>Before my freelancing, I was down for a few months, not physically
+but mentally which has impacted my life with some ups and downs.
+But now I really love working as an independent contractor.</p>
+<h2 id="about-the-book">About the book</h2>
+<p>You can find the <a href="http://github.com/harikt/aurav2book">book over github</a>
+licensed under
+<a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a></p>
+<p>The book is available <a href="https://leanpub.com/aurav2/read">free to read online</a>.
+If you find a typo, or feel something can be improved
+<a href="https://github.com/harikt/aurav2book/issues">open an issue</a>
+or <a href="https://help.github.com/articles/using-pull-requests">send a pull request</a> .</p>
+<p>If you find it interesting you should consider
+<a href="https://leanpub.com/aurav2/packages/book/purchases/new">buying a copy from leanpub</a>
+to show your support to the project.</p>
+<p>Thank you.</p>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

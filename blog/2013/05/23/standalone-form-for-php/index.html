@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>standalone form for php – Random thoughts</title>
+<meta name="description" content="Yesterday I wrote about Standalone Forms and Validation. It may need a little bit knowledge on how the Aura.Filter works. But that is a good start if you want to know how …">
+<meta name="created" content="2013-05-23T00:00:00&#43;0000">
+<meta name="modified" content="2013-05-23T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="standalone form for php">
+<meta property="og:url" content="https://harikt.com/blog/2013/05/23/standalone-form-for-php/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2013/05/23/standalone-form-for-php/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "standalone form for php",
+    "datePublished": "2013-05-23T00:00:00Z",
+    "dateModified": "2013-05-23T00:00:00Z",
+    "url" : "https://harikt.com/blog/2013/05/23/standalone-form-for-php/",
+    "description": "Yesterday I wrote about Standalone Forms and Validation. It may need a little bit knowledge on how the Aura.Filter works. But that is a good start if you want to know how …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">standalone form for php</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2013-05-23T00:00:00Z">23 May, 2013</time>
+</p>
+</header>
+<div class="content">
+<p>Yesterday I wrote about <a href="http://harikt.com/blog/2013/05/21/standalone-forms-and-validation/">Standalone Forms and Validation</a>. It may need
+a little bit knowledge on how the <a href="http://auraphp.com/packages">Aura.Filter</a> works. But that is
+a good start if you want to know how you can integrate the pieces of Aura.</p>
+<p>Today I think I need to show you the very minimal approach you can take
+to build the form and validate your form. If you want to
+use a powerful validation and filtering use something like <a href="http://auraphp.com/packages">Aura.Filter</a>
+or bind your favourite components which does the validation <a href="https://github.com/Respect/Validation">Respect</a>, <a href="https://github.com/symfony/validator">Symfony2 Validator</a>,
+<a href="https://github.com/vlucas/valitron">valitron</a> and filtering with something like <a href="https://github.com/rdohms/DMS-Filter">DMS-Filter</a>.</p>
+<p>You can see how you can integrate with different components as I did with
+<a href="http://auraphp.com/packages">Aura.Filter</a> in the example in master branch.</p>
+<p>I assume you know a bit about <a href="http://getcomposer.org">composer</a> and how to install.</p>
+<p>The <code>composer.json</code> file</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">{
+    &#34;minimum-stability&#34;: &#34;dev&#34;,
+    &#34;require&#34;: {
+        &#34;aura/input&#34;: &#34;1.0.0-beta1&#34;,
+        &#34;aura/view&#34;: &#34;1.1.2&#34;
+    }
+}
+</code></pre></div><p>The page which you need to bring the form.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Input\Builder</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Input\Filter</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Input\Form</span>;
+
+$loader <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span> <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/autoload.php&#39;</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ContactForm</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Form</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">init</span>()
+    {
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setField</span>(<span style="color:#e6db74">&#39;name&#39;</span>)
+            <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setAttribs</span>([
+                <span style="color:#e6db74">&#39;id&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;name&#39;</span>,
+                <span style="color:#e6db74">&#39;size&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>,
+                <span style="color:#e6db74">&#39;maxlength&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>,
+            ]);
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setField</span>(<span style="color:#e6db74">&#39;email&#39;</span>)
+            <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setAttribs</span>([
+                <span style="color:#e6db74">&#39;size&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>,
+                <span style="color:#e6db74">&#39;maxlength&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>,
+            ]);
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setField</span>(<span style="color:#e6db74">&#39;url&#39;</span>)
+            <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setAttribs</span>([
+                <span style="color:#e6db74">&#39;size&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>,
+                <span style="color:#e6db74">&#39;maxlength&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>,
+            ]);
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setField</span>(<span style="color:#e6db74">&#39;message&#39;</span>, <span style="color:#e6db74">&#39;textarea&#39;</span>)
+            <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setAttribs</span>([
+                <span style="color:#e6db74">&#39;cols&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">40</span>,
+                <span style="color:#e6db74">&#39;rows&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">5</span>,
+            ]);
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setField</span>(<span style="color:#e6db74">&#39;submit&#39;</span>, <span style="color:#e6db74">&#39;submit&#39;</span>)
+            <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setAttribs</span>([<span style="color:#e6db74">&#39;value&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;send&#39;</span>]);
+        
+        $filter <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getFilter</span>();
+        
+        $filter<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setRule</span>(
+            <span style="color:#e6db74">&#39;name&#39;</span>,
+            <span style="color:#e6db74">&#39;Name must be alphabetic only.&#39;</span>,
+            <span style="color:#66d9ef">function</span> ($value) {
+                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ctype_alpha</span>($value);
+            }
+        );
+
+        $filter<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setRule</span>(<span style="color:#e6db74">&#39;email&#39;</span>, <span style="color:#e6db74">&#39;Enter a valid email address&#39;</span>, <span style="color:#66d9ef">function</span> ($value) {
+            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">filter_var</span>($value, <span style="color:#a6e22e">FILTER_VALIDATE_EMAIL</span>);
+        });
+
+        $filter<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setRule</span>(<span style="color:#e6db74">&#39;url&#39;</span>, <span style="color:#e6db74">&#39;Enter a valid url&#39;</span>, <span style="color:#66d9ef">function</span> ($value) {
+            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">filter_var</span>($value, <span style="color:#a6e22e">FILTER_VALIDATE_URL</span>);
+        });
+
+        $filter<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setRule</span>(<span style="color:#e6db74">&#39;message&#39;</span>, <span style="color:#e6db74">&#39;Message should be more than 7 characters&#39;</span>, <span style="color:#66d9ef">function</span> ($value) {
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">strlen</span>($value) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">7</span>) {
+                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+            }
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+        });
+    }
+}
+
+$form <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ContactForm</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Builder</span>(), <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Filter</span>());
+
+<span style="color:#66d9ef">if</span> ($_POST <span style="color:#f92672">&amp;&amp;</span> $_POST[<span style="color:#e6db74">&#39;submit&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;send&#39;</span>) {
+    $data <span style="color:#f92672">=</span> $_POST;
+    $form<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">fill</span>($data);
+    <span style="color:#66d9ef">if</span> ($form<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">filter</span>()) {
+        <span style="color:#75715e">//
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Yes successfully validated and filtered&#34;</span>;
+        <span style="color:#a6e22e">var_dump</span>($data);
+        <span style="color:#66d9ef">exit</span>;
+    }
+}
+
+$helper <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Aura\View\HelperLocator</span>([
+    <span style="color:#e6db74">&#39;field&#39;</span>         <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> () { 
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Aura\View\Helper\Form\Field</span>(
+            <span style="color:#66d9ef">require</span> <span style="color:#a6e22e">dirname</span>(<span style="color:#66d9ef">__DIR__</span>) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/aura/view/scripts/field_registry.php&#39;</span>
+        ); 
+    },
+    <span style="color:#e6db74">&#39;input&#39;</span>         <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> () { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Aura\View\Helper\Form\Input</span>(
+            <span style="color:#66d9ef">require</span> <span style="color:#a6e22e">dirname</span>(<span style="color:#66d9ef">__DIR__</span>) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/aura/view/scripts/input_registry.php&#39;</span>
+        ); 
+    },
+    <span style="color:#e6db74">&#39;radios&#39;</span>        <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> () { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Aura\View\Helper\Form\Radios</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Aura\View\Helper\Form\Input\Checked</span>); },
+    <span style="color:#e6db74">&#39;repeat&#39;</span>         <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> () { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Aura\View\Helper\Form\Repeat</span>(
+            <span style="color:#66d9ef">require</span> <span style="color:#a6e22e">dirname</span>(<span style="color:#66d9ef">__DIR__</span>) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/aura/view/scripts/repeat_registry.php&#39;</span>
+        ); 
+    },
+    <span style="color:#e6db74">&#39;select&#39;</span>        <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> () { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Aura\View\Helper\Form\Select</span>; },
+    <span style="color:#e6db74">&#39;textarea&#39;</span>      <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> () { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Aura\View\Helper\Form\Textarea</span>; },
+]);
+
+$field <span style="color:#f92672">=</span> $helper<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;field&#39;</span>);
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">showFieldErrors</span>($form, $name) {
+    $errors <span style="color:#f92672">=</span> $form<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getMessages</span>($name);
+    $str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+    <span style="color:#66d9ef">if</span> ($errors) {
+        $str <span style="color:#f92672">.=</span> <span style="color:#e6db74">&#39;&lt;ul&gt;&#39;</span>;
+        <span style="color:#66d9ef">foreach</span> ($errors <span style="color:#66d9ef">as</span> $error) {
+            $str <span style="color:#f92672">.=</span> <span style="color:#e6db74">&#39;&lt;li&gt;&#39;</span> <span style="color:#f92672">.</span> $error <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;&lt;/li&gt;&#39;</span>;
+        }
+        $str <span style="color:#f92672">.=</span> <span style="color:#e6db74">&#39;&lt;/ul&gt;&#39;</span>;
+    }
+    <span style="color:#66d9ef">return</span> $str;
+}
+<span style="color:#75715e">?&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Aura Form, to make it standalone&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post&#34;</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">enctype</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;multipart/form-data&#34;</span> &gt;
+        &lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">cellpadding</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">cellspacing</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span>&gt;
+            &lt;<span style="color:#f92672">tr</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;Name : &lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;
+                <span style="color:#75715e">&lt;?php</span>
+                    <span style="color:#66d9ef">echo</span> $field($form<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;name&#39;</span>));
+                    <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">showFieldErrors</span>($form, <span style="color:#e6db74">&#39;name&#39;</span>);
+                <span style="color:#75715e">?&gt;</span>
+                &lt;/<span style="color:#f92672">td</span>&gt;
+            &lt;/<span style="color:#f92672">tr</span>&gt;
+            &lt;<span style="color:#f92672">tr</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;Email : &lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;
+                <span style="color:#75715e">&lt;?php</span>
+                    <span style="color:#66d9ef">echo</span> $field($form<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;email&#39;</span>));
+                    <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">showFieldErrors</span>($form, <span style="color:#e6db74">&#39;email&#39;</span>);
+                <span style="color:#75715e">?&gt;</span>
+                &lt;/<span style="color:#f92672">td</span>&gt;
+            &lt;/<span style="color:#f92672">tr</span>&gt;
+            &lt;<span style="color:#f92672">tr</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;Url : &lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;
+                <span style="color:#75715e">&lt;?php</span>
+                    <span style="color:#66d9ef">echo</span> $field($form<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;url&#39;</span>));
+                    <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">showFieldErrors</span>($form, <span style="color:#e6db74">&#39;url&#39;</span>);
+                <span style="color:#75715e">?&gt;</span>
+                &lt;/<span style="color:#f92672">td</span>&gt;
+            &lt;/<span style="color:#f92672">tr</span>&gt;
+            &lt;<span style="color:#f92672">tr</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;Message : &lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;
+                <span style="color:#75715e">&lt;?php</span>
+                    <span style="color:#66d9ef">echo</span> $field($form<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;message&#39;</span>));
+                    <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">showFieldErrors</span>($form, <span style="color:#e6db74">&#39;message&#39;</span>);
+                <span style="color:#75715e">?&gt;</span>
+                &lt;/<span style="color:#f92672">td</span>&gt;
+            &lt;/<span style="color:#f92672">tr</span>&gt;
+            &lt;<span style="color:#f92672">tr</span>&gt;
+                &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">colspan</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span>&gt;
+                <span style="color:#75715e">&lt;?php</span> 
+                <span style="color:#66d9ef">echo</span> $field($form<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;submit&#39;</span>));
+                <span style="color:#75715e">?&gt;</span>
+                &lt;/<span style="color:#f92672">td</span>&gt;
+            &lt;/<span style="color:#f92672">tr</span>&gt;
+        &lt;/<span style="color:#f92672">table</span>&gt;
+    &lt;/<span style="color:#f92672">form</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>That's it. Pretty clear I guess. Still having trouble?
+The whole code lies in the <a href="https://github.com/harikt/phpform/tree/minimalview">minimalview</a> branch of the <a href="https://github.com/harikt/phpform">phpform</a>.</p>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

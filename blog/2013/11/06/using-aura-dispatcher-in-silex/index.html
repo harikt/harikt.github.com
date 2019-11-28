@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>using aura dispatcher in silex – Random thoughts</title>
+<meta name="description" content="2 days back Paul M Jones wrote an awesome post A Peek At Aura v2 &amp;ndash; Aura.Dispatcher the idea behind Aura.Dispatcher and how it was born. So today, let us try to …">
+<meta name="created" content="2013-11-06T00:00:00&#43;0000">
+<meta name="modified" content="2013-11-06T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="using aura dispatcher in silex">
+<meta property="og:url" content="https://harikt.com/blog/2013/11/06/using-aura-dispatcher-in-silex/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2013/11/06/using-aura-dispatcher-in-silex/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "using aura dispatcher in silex",
+    "datePublished": "2013-11-06T00:00:00Z",
+    "dateModified": "2013-11-06T00:00:00Z",
+    "url" : "https://harikt.com/blog/2013/11/06/using-aura-dispatcher-in-silex/",
+    "description": "2 days back Paul M Jones wrote an awesome post A Peek At Aura v2 \u0026ndash; Aura.Dispatcher the idea behind Aura.Dispatcher and how it was born. So today, let us try to …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">using aura dispatcher in silex</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2013-11-06T00:00:00Z">6 November, 2013</time>
+</p>
+</header>
+<div class="content">
+<p>2 days back <a href="http://paul-m-jones.com/">Paul M Jones</a> wrote an awesome post
+<a href="http://auraphp.com/blog/2013/11/04/aura-v2-dispatcher/">A Peek At Aura v2 &ndash; Aura.Dispatcher</a>
+the idea behind <a href="http://github.com/auraphp/Aura.Dispatcher/">Aura.Dispatcher</a>
+and how it was born.</p>
+<p>So today, let us try to integrate
+<a href="http://github.com/auraphp/Aura.Dispatcher">Aura.Dispatcher</a> with
+<a href="https://github.com/silexphp/Silex">Silex</a>. This post is inspired by the
+<a href="http://auraphp.com/blog/2013/11/04/aura-v2-dispatcher/#comment-1109657910">comment</a>
+made by <a href="https://twitter.com/cordoval">Luis Cordova</a>. Thank you.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer create-project silex/silex --no-dev silexproject
+cd silexproject
+composer require aura/dispatcher dev-develop-2
+</code></pre></div><blockquote>
+<p>I hope you have composer installed else <a href="http://getcomposer.org/">get composer</a>.</p>
+</blockquote>
+<p>I am not going to explain each and everything, the code is self explanatory.
+You can move the classes according to your wish (may be to another folder).
+I am trying to show a simple use case.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">require</span> <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/autoload.php&#39;</span>;
+
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Dispatcher\Dispatcher</span>;
+
+$dispatcher <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Dispatcher</span>;
+
+$dispatcher<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setMethodParam</span>(<span style="color:#e6db74">&#39;action&#39;</span>);
+$dispatcher<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setObjectParam</span>(<span style="color:#e6db74">&#39;controller&#39;</span>);
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Blog</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">browse</span>()
+    {
+        <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">hello</span>($name, $app)
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Hello &#39;</span><span style="color:#f92672">.</span> <span style="color:#a6e22e">ucfirst</span>($app<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">escape</span>($name));
+    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">edit</span>($id)
+    {
+        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Here&#34;</span>;
+        <span style="color:#66d9ef">exit</span>;
+        <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">add</span>()
+    {
+        <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">delete</span>($id)
+    {
+        <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>    }
+}
+
+$dispatcher<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setObject</span>(<span style="color:#e6db74">&#39;blog&#39;</span>, <span style="color:#66d9ef">function</span> () {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Blog</span>;
+});
+
+$app <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Silex\Application</span>();
+
+$app<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/hello/{name}&#39;</span>, <span style="color:#66d9ef">function</span> ($name) <span style="color:#66d9ef">use</span> ($dispatcher, $app) {
+    $params <span style="color:#f92672">=</span> [
+        <span style="color:#e6db74">&#39;controller&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;blog&#39;</span>,
+        <span style="color:#e6db74">&#39;action&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;hello&#39;</span>,
+        <span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#f92672">=&gt;</span> $name,
+        <span style="color:#e6db74">&#39;app&#39;</span> <span style="color:#f92672">=&gt;</span> $app,
+    ];
+    $result <span style="color:#f92672">=</span> $dispatcher<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">__invoke</span>($params);    
+    <span style="color:#66d9ef">return</span> $result;
+});
+
+$app<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">run</span>();
+</code></pre></div><p>See how we moved the <code>return 'Hello '. ucfirst($app-&gt;escape($name));</code>
+to a controller and action. I haven't used Silex extensively, so there
+can be better ways for integration.</p>
+<blockquote>
+<p>Update : I was asking <a href="https://twitter.com/beausimensen">Beau D. Simensen</a>
+on the integration, and he gave another shot.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// all code as same as above, upto the route
+
+$app-&gt;get(&#39;/hello/{name}&#39;, function ($name) use ($app) {
+    return [
+        &#39;controller&#39; =&gt; &#39;blog&#39;,
+        &#39;action&#39; =&gt; &#39;hello&#39;,
+        &#39;name&#39; =&gt; $name,
+        &#39;app&#39; =&gt; $app,
+    ];
+});
+
+$app-&gt;on(\Symfony\Component\HttpKernel\KernelEvents::VIEW, function ($event) use ($app, $dispatcher) {
+    $view = $event-&gt;getControllerResult();
+
+    if (is_null($view) || is_string($view)) {
+        return;
+    }
+    
+    if ( ! is_array($view)) {
+        // we can only handle array data in the view
+        return;
+    }
+    
+    if (! (isset($view[&#39;controller&#39;]) <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">&amp;</span> isset($view[&#39;action&#39;]))) {
+        // at this point we don&#39;t know what is going on.
+        return;
+    }
+
+    $response = $dispatcher($view);
+
+    if ( ! $response instanceof \Symfony\Component\HttpFoundation\Response) {
+        // If the response is not a Response instance, wrap it in one
+        // and assume that it was something appropriate as a response
+        // body.
+        $response = new \Symfony\Component\HttpFoundation\Response($response);
+    }
+
+    $event-&gt;setResponse($response);
+});
+
+$app-&gt;run();
+</code></pre></div><blockquote>
+<p>I have purposefully kept the full path like <code>\Symfony\Component\HttpFoundation\Response</code></p>
+</blockquote>
+<p>Hope you love <a href="http://github.com/auraphp/Aura.Dispatcher">Aura.Dispatcher</a>
+and use when you need architecural changes.</p>
+<p>Please do take time to read
+<a href="https://github.com/auraphp/Aura.Dispatcher#refactoring-to-architecture-changes">Refactoring To Architecture Changes</a></p>
+<p>Thank you and if you loved the post please do a tweet :-).</p>
+<p>Happy PhPing!</p>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>composer support for processwire part 2 – Random thoughts</title>
+<meta name="description" content="In my earlier post I mentioned about adding a composer.json in the root of the github repo. Sometimes you may see a non composer.json repo or some times people reject it, …">
+<meta name="created" content="2013-11-19T00:00:00&#43;0000">
+<meta name="modified" content="2013-11-19T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="composer support for processwire part 2">
+<meta property="og:url" content="https://harikt.com/blog/2013/11/19/composer-support-for-processwire-part-2/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2013/11/19/composer-support-for-processwire-part-2/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "composer support for processwire part 2",
+    "datePublished": "2013-11-19T00:00:00Z",
+    "dateModified": "2013-11-19T00:00:00Z",
+    "url" : "https://harikt.com/blog/2013/11/19/composer-support-for-processwire-part-2/",
+    "description": "In my earlier post I mentioned about adding a composer.json in the root of the github repo. Sometimes you may see a non composer.json repo or some times people reject it, …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">composer support for processwire part 2</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2013-11-19T00:00:00Z">19 November, 2013</time>
+</p>
+</header>
+<div class="content">
+<p>In my <a href="http://harikt.com/blog/2013/11/16/composer-support-for-processwire-modules/">earlier post</a>
+I mentioned about adding a <code>composer.json</code> in the root of the github repo.</p>
+<p>Sometimes you may see a non <code>composer.json</code> repo or some times people reject
+it, you still can do like the below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">{
+    &#34;minimum-stability&#34;: &#34;dev&#34;,
+    &#34;repositories&#34;: [
+        {
+            &#34;type&#34;: &#34;package&#34;,
+            &#34;package&#34;: {
+                &#34;name&#34;: &#34;ryancramerdesign/process-export-profile&#34;,
+                &#34;version&#34;: &#34;1.0.0&#34;,
+                &#34;source&#34;: {
+                    &#34;url&#34;: &#34;https://github.com/ryancramerdesign/ProcessExportProfile&#34;,
+                    &#34;type&#34;: &#34;git&#34;,
+                    &#34;reference&#34;: &#34;master&#34;
+                },
+                &#34;type&#34;: &#34;pw-module&#34;,
+                &#34;require&#34;: {
+                    &#34;hari/pw-module&#34;: &#34;~1.0&#34;
+                }
+            }
+        }
+    ],    
+    &#34;require&#34;: {
+        &#34;ryancramerdesign/process-export-profile&#34;: &#34;1.0.0&#34;
+    }
+}
+</code></pre></div><p>And run</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php composer.phar update
+</code></pre></div><blockquote>
+<p>Don't forget you need <code>composer.phar</code>. If you don't have get from <a href="http://getcomposer.org/download/">getcomposer.org</a></p>
+</blockquote>
+<p>The module is downloaded to <code>site/modules/ProcessExportProfile</code>.
+The package is of type <a href="https://github.com/harikt/pwmoduleinstaller">pw-module</a></p>
+<blockquote>
+<p>The name process-export-profile is converted to ProcessExportProfile .
+So if you have caps in between name put a hyphen in the naming</p>
+</blockquote>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>rest is delete idempotent – Random thoughts</title>
+<meta name="description" content="This post is a thrive to learn, and not to show anyone is incorrect. Feel free to share your thoughts. Lukas Kahwe Smith was having a nice post RESTing with Symfony2 …">
+<meta name="created" content="2013-11-01T00:00:00&#43;0000">
+<meta name="modified" content="2013-11-01T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="rest is delete idempotent">
+<meta property="og:url" content="https://harikt.com/blog/2013/11/01/rest-is-delete-idempotent/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2013/11/01/rest-is-delete-idempotent/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "rest is delete idempotent",
+    "datePublished": "2013-11-01T00:00:00Z",
+    "dateModified": "2013-11-01T00:00:00Z",
+    "url" : "https://harikt.com/blog/2013/11/01/rest-is-delete-idempotent/",
+    "description": "This post is a thrive to learn, and not to show anyone is incorrect. Feel free to share your thoughts. Lukas Kahwe Smith was having a nice post RESTing with Symfony2 …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">rest is delete idempotent</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2013-11-01T00:00:00Z">1 November, 2013</time>
+</p>
+</header>
+<div class="content">
+<p>This post is a thrive to learn, and not to show anyone is incorrect.
+Feel free to share your thoughts.</p>
+<p>Lukas Kahwe Smith was having a nice post
+<a href="https://blog.liip.ch/archive/2013/10/28/resting-with-symfony2.html">RESTing with Symfony2</a></p>
+<p>Quoting a few words from the post on REST</p>
+<h2 id="delete-and-404">DELETE and 404</h2>
+<blockquote>
+<p>I started my talk on RESTing with Symfony2 with an introduction to REST itself.
+On slide 7 of my talk I explained the concept of &ldquo;safe&rdquo; and
+&ldquo;idempotent&rdquo; HTTP methods. Many people were surprised when I explained
+that DELETE should be idempotent, meaning that sending a DELETE request
+to a resource that has been removed should infact not return a 404.</p>
+</blockquote>
+<p>I am not a REST guru, but in fact I got curious on the same, and
+was looking at http status <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.11">410 Gone</a></p>
+<blockquote>
+<p><a href="https://twitter.com/harikt">@harikt</a> 1st Q that must be answered is if
+DELETE is idempotent. if it is then the status code shouldn't
+change on subsequent delete requests
+— Lukas Kahwe Smith (@lsmith) <a href="https://twitter.com/lsmith/statuses/395160219376164864">October 29, 2013</a></p>
+</blockquote>
+<h2 id="what-is-idempotent">What is idempotent?</h2>
+<p>Quoting from <a href="http://en.wikipedia.org/wiki/Idempotence">Wikipedia</a></p>
+<blockquote>
+<p>Idempotence is the property of certain operations in mathematics and
+computer science, that can be applied multiple times without changing
+the result beyond the initial application. The concept of idempotence
+arises in a number of places in abstract algebra (in particular, in
+the theory of projectors and closure operators) and functional
+programming (in which it is connected to the property of referential transparency).</p>
+</blockquote>
+<blockquote>
+<p>There are several meanings of idempotence, depending on what the concept is applied to:</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>A unary operation (or function) is idempotent if, whenever it is applied twice to any value, it gives the same result as if it were applied once; i.e., ƒ(ƒ(x)) ≡ ƒ(x). For example, the absolute value: abs(abs(x)) ≡ abs(x).</li>
+<li>A binary operation is idempotent if, whenever it is applied to two equal values, it gives that value as the result. For example, the operation giving the maximum value of two values is idempotent: max (x, x) ≡ x.</li>
+<li>Given a binary operation, an idempotent element (or simply an idempotent) for the operation is a value for which the operation, when given that value for both of its operands, gives the value as the result. For example, the number 1 is an idempotent of multiplication: 1 × 1 = 1.</li>
+</ul>
+</blockquote>
+<p>Christophe Coevoet also feel the same</p>
+<blockquote>
+<p><a href="https://twitter.com/lsmith">@lsmith</a> then 410 is probably the best status
+code here, and 404 otherwise /cc <a href="https://twitter.com/harikt">@harikt</a> <a href="https://twitter.com/_m6w6">@_m6w6</a>
+— Christophe Coevoet (@Stof70) <a href="https://twitter.com/Stof70/statuses/395193333347135488">October 29, 2013</a></p>
+</blockquote>
+<p>Why?</p>
+<blockquote>
+<p><a href="https://twitter.com/lsmith">@lsmith</a> The definition says &quot;without changing the result&quot;.
+the HTTP spec says that the result is the state of the app <a href="https://twitter.com/_m6w6">@_m6w6</a> <a href="https://twitter.com/harikt">@harikt</a>
+— Christophe Coevoet (@Stof70) <a href="https://twitter.com/Stof70/statuses/395193644585480192">October 29, 2013</a></p>
+</blockquote>
+<p><img src="/assets/images/http-delete.png" alt=" Status code of DELETE "></p>
+<p>The above screenshot is limited, you can check all the messages passed from
+<a href="https://twitter.com/harikt/status/395154834426314752"><a href="https://twitter.com/harikt/status/395154834426314752">https://twitter.com/harikt/status/395154834426314752</a></a></p>
+<p>Woke up early morning and I noticed a subsequent post
+<a href="http://www.duckheads.co.uk/is-a-http-delete-requests-idempotent/491">Is a HTTP DELETE request idempotent?</a>
+by Lee Davis. Interesting to read his thoughts on the same.
+There was a nice discussion by <a href="http://www.jasonlotito.com/">Jason Lotito</a>,
+do consider reading it.</p>
+<p>I felt Jason Lotito is correct.</p>
+<h2 id="wikipedia-has-something-to-say-aboout-idempotent-methods">Wikipedia has something to say aboout Idempotent methods</h2>
+<p><a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Idempotent_methods_and_web_applications">Hypertext Transfer Protocol Idempotent methods</a></p>
+<blockquote>
+<p>Methods PUT and DELETE are defined to be idempotent, meaning that multiple
+identical requests should have the same effect as a single request
+(Note that idempotence refers to the state of the system after the
+request has completed, so while the action the server takes
+(e.g. deleting a record) or the response code it returns may be
+different on subsequent requests, the system state will be the same every time).</p>
+</blockquote>
+<p>So what does that mean?</p>
+<p>Let us look into a real world example deleting <a href="http://example.com/post/121">http://example.com/post/121</a></p>
+<p>We send a DELETE method via REST. What is going to happen?</p>
+<p>I am quoting from
+<a href="http://www.restapitutorial.com/lessons/httpmethods.html"><a href="http://www.restapitutorial.com/lessons/httpmethods.html">http://www.restapitutorial.com/lessons/httpmethods.html</a></a></p>
+<blockquote>
+<p>On successful deletion, return HTTP status 200 (OK) along with a response body,
+perhaps the representation of the deleted item (often demands too much bandwidth),
+or a wrapped response (see Return Values below). Either that or
+return HTTP status 204 (NO CONTENT) with no response body</p>
+</blockquote>
+<p>so far, so good.</p>
+<p>What is going to happen on your subsequent request?</p>
+<p>2nd time we are sending a DELETE method via REST, what do you expect to get?</p>
+<p><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.5">204 No Content</a>. What does that mean?</p>
+<blockquote>
+<p>The server has fulfilled the request but does not need to return an
+entity-body, and might want to return updated metainformation.</p>
+</blockquote>
+<p>No Content is a good status, which means the server has exectuted your
+delete operation successfully is a wrong information.</p>
+<p>iirc I have learned in Software Engineering, the wrong information
+is too bad than sending an error. Eg : 5+2 returning 9. I read some where
+at <a href="http://www.joelonsoftware.com/"><a href="http://www.joelonsoftware.com/">http://www.joelonsoftware.com/</a></a> the bug
+they want to deal with when he was at microsoft. ( If anyone have the link
+please comment it)</p>
+<p>So if you know that a request for <a href="http://example.com/post/121">http://example.com/post/121</a> is already
+deleted, then <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.11">410 Gone</a>
+will be the right status.</p>
+<p>If you don't know <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a>
+is the best status. Say it is not created, do we send 204?.</p>
+<p>So here <a href="http://example.com/post/121">http://example.com/post/121</a> is already deleted.
+(That means your subsequent response should be same,
+note that not response status code)</p>
+<p>It is upto your application how to deal with making it truely RESTful. Else
+passing false information as response always is a wrong way.</p>
+<p>I have also tried to get RSDL (RESTful Service Description Language)
+<a href="http://en.wikipedia.org/wiki/RSDL#Maintainer">Maintainer</a> to know
+the real information.</p>
+<p>Probably I am wrong, but I am still learning REST.</p>
+<p>Thank you.</p>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

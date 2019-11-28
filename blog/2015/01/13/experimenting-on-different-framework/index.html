@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>experimenting on different framework – Random thoughts</title>
+<meta name="description" content="Whenever I get some time, I try to learn and experiment on different frameworks. I would like to stay away from pin pointing to the frameworks I have looked, so they …">
+<meta name="created" content="2015-01-13T00:00:00&#43;0000">
+<meta name="modified" content="2015-01-13T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="experimenting on different framework">
+<meta property="og:url" content="https://harikt.com/blog/2015/01/13/experimenting-on-different-framework/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2015/01/13/experimenting-on-different-framework/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "experimenting on different framework",
+    "datePublished": "2015-01-13T00:00:00Z",
+    "dateModified": "2015-01-13T00:00:00Z",
+    "url" : "https://harikt.com/blog/2015/01/13/experimenting-on-different-framework/",
+    "description": "Whenever I get some time, I try to learn and experiment on different frameworks. I would like to stay away from pin pointing to the frameworks I have looked, so they …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">experimenting on different framework</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2015-01-13T00:00:00Z">13 January, 2015</time>
+</p>
+</header>
+<div class="content">
+<p>Whenever I get some time, I try to learn and experiment on different frameworks. I would like to stay away from pin pointing to the frameworks I have looked, so they don't feel bad.</p>
+<h2 id="long-live-components">Long live components</h2>
+<p>Components are awesome!. You can plug your favourite components to any system. Thank you composer.
+One strong preference choosing a framework was</p>
+<ul>
+<li>It should be built from components</li>
+</ul>
+<h3 id="advantage">Advantage</h3>
+<ul>
+<li>I could use those components on a different project without spending long time learning a different API.</li>
+</ul>
+<h2 id="choosing-symfony-as-a-framework">Choosing Symfony as a framework</h2>
+<ul>
+<li>Symfony framework have been used in production for long, big community, and backed by Sensio Labs.</li>
+<li>Many of the libraries, cms and frameowrks that exists on packagist rely on symfony components.</li>
+</ul>
+<p>Look at <a href="http://phinx.org">phinx</a> a db migration tool, <a href="https://drupal.org">drupal 8</a> etc. These makes use of components like <code>symfony/console</code>, <code>symfony/http-foundation</code>, <code>symfony/router</code> etc.</p>
+<p>Some of the good things I like in symfony console component are its <a href="http://symfony.com/doc/current/components/console/helpers/index.html">helpers</a>.</p>
+<h3 id="table">Table</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Symfony\Component\Console\Helper\Table;
+use Symfony\Component\Console\Output\ConsoleOutput;
+
+$output = new ConsoleOutput();
+$table = new Table($output);
+$table
+    -&gt;setHeaders(array(&#39;ISBN&#39;, &#39;Title&#39;, &#39;Author&#39;))
+    -&gt;setRows(array(
+        array(&#39;99921-58-10-7&#39;, &#39;Divine Comedy&#39;, &#39;Dante Alighieri&#39;),
+        array(&#39;9971-5-0210-0&#39;, &#39;A Tale of Two Cities&#39;, &#39;Charles Dickens&#39;),
+        array(&#39;960-425-059-0&#39;, &#39;The Lord of the Rings&#39;, &#39;J. R. R. Tolkien&#39;),
+        array(&#39;80-902734-1-6&#39;, &#39;And Then There Were None&#39;, &#39;Agatha Christie&#39;),
+    ))
+;
+$table-&gt;render();
+</code></pre></div><h2 id="progress-bar">Progress bar</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Symfony\Component\Console\Helper\ProgressBar;
+use Symfony\Component\Console\Output\ConsoleOutput;
+
+$output = new ConsoleOutput();
+
+// create a new progress bar (50 units)
+$progress = new ProgressBar($output, 50);
+
+// start and displays the progress bar
+$progress-&gt;start();
+
+$i = 0;
+while ($i++ &lt; <span style="color:#f92672">50</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">{</span>
+    <span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#a6e22e">do</span> <span style="color:#a6e22e">some</span> <span style="color:#a6e22e">work</span>
+
+    <span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span> <span style="color:#a6e22e">advance</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">progress</span> <span style="color:#a6e22e">bar</span> <span style="color:#a6e22e">1</span> <span style="color:#a6e22e">unit</span>
+    <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">progress-</span>&gt;advance();
+
+    // you can also advance the progress bar by more than 1 unit
+    // $progress-&gt;advance(3);
+}
+
+// ensure that the progress bar is at 100%
+$progress-&gt;finish();
+</code></pre></div><h2 id="question">Question</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Symfony\Component\Console\Helper\QuestionHelper;
+use Symfony\Component\Console\Output\ConsoleOutput;
+use Symfony\Component\Console\Input\StringInput;
+use Symfony\Component\Console\Question\ConfirmationQuestion;
+use Symfony\Component\Console\Question\ChoiceQuestion;
+
+$output = new ConsoleOutput();
+$helper = new QuestionHelper();
+$input = new StringInput(&#39;action&#39;);
+$question = new ConfirmationQuestion(&#39;Continue with this action?&#39;, false);
+
+if ($helper-&gt;ask($input, $output, $question)) {
+    $question = new ChoiceQuestion(
+        &#39;Please select your favorite color (defaults to red)&#39;,
+        array(&#39;red&#39;, &#39;blue&#39;, &#39;yellow&#39;),
+        0
+    );
+    $question-&gt;setErrorMessage(&#39;Color %s is invalid.&#39;);
+
+    $color = $helper-&gt;ask($input, $output, $question);
+    $output-&gt;writeln(&#39;You have just selected: &#39;.$color);
+} else {
+    $output-&gt;writeln(&#39;Exiting !&#39;);
+}
+</code></pre></div><h2 id="hidden-passwords">Hidden Passwords</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Symfony\Component\Console\Helper\QuestionHelper;
+use Symfony\Component\Console\Output\ConsoleOutput;
+use Symfony\Component\Console\Input\StringInput;
+use Symfony\Component\Console\Question\Question;
+
+$output = new ConsoleOutput();
+$helper = new QuestionHelper();
+$input = new StringInput(&#39;action&#39;);
+$question = new Question(&#39;What is the database password?&#39;);
+$question-&gt;setHidden(true);
+$question-&gt;setHiddenFallback(false);
+
+$password = $helper-&gt;ask($input, $output, $question);
+$output-&gt;writeln(&#39;Entered password : &#39; . $password);
+</code></pre></div><p>and more.. I hope you will also add <code>symfony/console</code> into your list.</p>
+<h2 id="http-foundation">Http Foundation</h2>
+<p>The <code>symfony/http-foundation</code> is another extensively used component. It is actually <a href="https://github.com/auraphp/Aura.Web">Aura.Web</a> + <a href="https://github.com/auraphp/Aura.Session">Aura.Session</a> with more session handlers. Used by <code>drupal</code>, <code>laravel</code> etc in core. When working on mixed projects like <code>drupal</code>, <code>laravel</code> etc, it is good to be in your list.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+$request = Request::createFromGlobals();
+$response = new Response(
+    &#39;Hello symfony&#39;,
+    Response::HTTP_OK,
+    array(&#39;content-type&#39; =&gt; &#39;text/html&#39;)
+);
+$response-&gt;send();
+</code></pre></div><h2 id="finder">Finder</h2>
+<p>Another wonderful component is the finder.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Symfony\Component\Finder\Finder;
+
+$finder = new Finder();
+
+$iterator = $finder
+  -&gt;files()
+  -&gt;depth(0)
+  -&gt;in(__DIR__);
+
+foreach ($iterator as $file) {
+    print $file-&gt;getRealpath().&#34;\n&#34;;
+}
+</code></pre></div><h2 id="filesystem">Filesystem</h2>
+<p>Filesystem is another nice component which helps you to copy, rename, create directories.</p>
+<h2 id="complex-components">Complex components</h2>
+<p>So far, the above components are easy to use. One of the complex component is the security component. It tries to do authentication and authorization.</p>
+<p>As a person who have worked with zend framework, I love how  <a href="http://framework.zend.com/manual/current/en/modules/zend.authentication.intro.html">authentication</a> and <a href="http://framework.zend.com/manual/current/en/modules/zend.permissions.acl.intro.html">authorization</a> is done. I do love the latest  <a href="https://github.com/auraphp/Aura.Auth">Aura.Auth</a> library.</p>
+<p>If you are using symfony as a framework, there is a bundle to rescue. Yes, <a href="https://github.com/FriendsOfSymfony/FOSUserBundle">FOSUserBundle</a>. I believe most of them who use symfony will be using it.</p>
+<p>Part of the complexity may be because symfony security was based on Spring security from Java. I am not sure why Fabien choose Spring when there were good ones in the PHP world, but I hope there is a reason behind it.</p>
+<p>Conclusion : Symfony as a framework is nice!.</p>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

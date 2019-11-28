@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>eloquent and pagination inside zend expressive – Random thoughts</title>
+<meta name="description" content="Recently working with eloquent (Laravel&#39;s orm), zend expressive and zend view, I wanted to integrate pagination. It was simple as registering a Paginator middleware. use …">
+<meta name="created" content="2015-11-13T00:00:00&#43;0000">
+<meta name="modified" content="2015-11-13T00:00:00&#43;0000">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="eloquent and pagination inside zend expressive">
+<meta property="og:url" content="https://harikt.com/blog/2015/11/13/eloquent-and-pagination-inside-zend-expressive/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2015/11/13/eloquent-and-pagination-inside-zend-expressive/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "eloquent and pagination inside zend expressive",
+    "datePublished": "2015-11-13T00:00:00Z",
+    "dateModified": "2015-11-13T00:00:00Z",
+    "url" : "https://harikt.com/blog/2015/11/13/eloquent-and-pagination-inside-zend-expressive/",
+    "description": "Recently working with eloquent (Laravel's orm), zend expressive and zend view, I wanted to integrate pagination. It was simple as registering a Paginator middleware. use …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">eloquent and pagination inside zend expressive</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2015-11-13T00:00:00Z">13 November, 2015</time>
+</p>
+</header>
+<div class="content">
+<p>Recently working with eloquent (Laravel's orm), zend expressive and zend view,
+I wanted to integrate pagination.</p>
+<p>It was simple as registering a <code>Paginator</code> middleware.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Illuminate\Pagination\Paginator;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+
+IlluminatePaginator::currentPageResolver(function ($pageName) use ($request) {
+    $params = $request-&gt;getQueryParams();
+    return empty($params[$pageName]) ? 1 : $params[$pageName];
+});
+IlluminatePaginator::currentPathResolver(function () use ($request) {
+    return $request-&gt;getUri()-&gt;getPath();
+});
+</code></pre></div><p>and you can call paginate on the <code>Model</code>.</p>
+<p>Eg : Consider you have a <code>Post</code> model.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$posts = Post::paginate(20);
+</code></pre></div><p>and in view you can iterate through the <code>$posts</code> and render the pagination.
+The <code>$posts</code> is an object of <a href="http://laravel.com/api/5.0/Illuminate/Pagination/LengthAwarePaginator.html">LengthAwarePaginator</a>.</p>
+<p>You can also modify the presenter accordingly. Default comes with  <a href="http://laravel.com/api/5.0/Illuminate/Pagination/BootstrapThreePresenter.html">BootstrapThreePresenter</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">foreach</span> ($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">posts</span> <span style="color:#66d9ef">as</span> $post) {
+<span style="color:#75715e">?&gt;</span>
+    <span style="color:#75715e">&lt;?</span><span style="color:#f92672">=</span> $post<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">title</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;&lt;br /&gt;&#34;</span> <span style="color:#75715e">?&gt;</span>
+<span style="color:#75715e">&lt;?php</span>
+}
+<span style="color:#75715e">?&gt;</span>
+<span style="color:#75715e">&lt;?</span><span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">posts</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">render</span>() <span style="color:#75715e">?&gt;</span>
+</code></pre></div><blockquote>
+<p>Note : Please be aware of the <a href="https://github.com/laravel/framework/issues/10909">issues/10909</a>.</p>
+</blockquote>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>
