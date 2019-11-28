@@ -7,8 +7,8 @@
 <link rel="alternate" type="application/rss&#43;xml" title="RSS" href="https://harikt.com/index.xml">
 <link rel="alternate" type="application/json" title="JSON" href="https://harikt.com/index.json">
 <meta name="description" content="">
-<meta name="created" content="2017-03-24T00:00:00&#43;0000">
-<meta name="modified" content="2017-03-24T00:00:00&#43;0000">
+<meta name="created" content="2019-11-29T01:04:31&#43;0530">
+<meta name="modified" content="2019-11-29T01:04:31&#43;0530">
 
 <meta name="contact" content="me@harikt.com">
 <meta property="og:site_name" content="Random thoughts">
@@ -96,6 +96,24 @@
 </div>
 </article>
 
+
+<article class="section-blog list-view">
+<header>
+<h2 class="title title-submitted"><a href="/blog/2019/11/29/symfony-debug-to-error-handler-component/">Symfony Debug to Error Handler Component</a></h2>
+<p class="submitted">
+<time class="modified-date" datetime="2019-11-29T01:04:31&#43;05:30">29 November, 2019</time>
+</p>
+
+</header>
+<div class="content">
+Since symfony 4.4 the symfony/debug component is deprecated.
+ The &ldquo;\Symfony\Component\Debug\ErrorHandler&rdquo; class is deprecated since Symfony 4.4, use &ldquo;\Symfony\Component\ErrorHandler\ErrorHandler&rdquo;
+ Running unit tests on Mascot, I noticed lots of warnings.
+But it was not easy as changing Symfony\Component\Debug\ExceptionHandler to Symfony\Component\ErrorHandler\ErrorHandler.
+Assume we have something as below
+37 38 39 40 41 42 43  $handler = new \Symfony\Component\Debug\ExceptionHandler($debug); $exception = $event-&gt;getThrowable(); if (!$exception instanceof FlattenException) { $exception = FlattenException::create($exception); } $response = Response::create($handler-&gt;getHtml($exception), $exception-&gt;getStatusCode(), $exception-&gt;getHeaders())-&gt;setCharset(ini_get(&#39;default_charset&#39;)); $event-&gt;setResponse($response);   The Symfony\Component\ErrorHandler\ErrorHandler has no getHtml method.
+</div>
+</article>
 
 <article class="section-blog list-view">
 <header>
@@ -241,22 +259,6 @@ First my apologies being late! I hope you all know PHP is celebrating its 20th y
 There is something that makes PHP unique that helps to standout with other languages.
 In this opporchunity I would like to thank the creator, the contributors, the maintainers, and all the users (past/present) to make this memorable.
 My Story I got an exposure to learn and use internet in my college days.
-</div>
-</article>
-
-<article class="section-blog list-view">
-<header>
-<h2 class="title title-submitted"><a href="/blog/2015/04/01/zend-feed-and-guzzle/">zend feed and guzzle</a></h2>
-<p class="submitted">
-<time class="modified-date" datetime="2015-04-01T00:00:00Z">1 April, 2015</time>
-</p>
-
-</header>
-<div class="content">
-You may have worked with Zend Feed as a standalone component. I don't know whether you have integrated Zend framework Feed with Guzzle as Http Client.
-This post is inspired by Matthew Weier O'Phinney, who have mentioned the same on github.
-Our composer.json looks
-{ &#34;require&#34;: { &#34;guzzlehttp/guzzle&#34;: &#34;~5.2&#34;, &#34;zendframework/zend-feed&#34;: &#34;~2.3&#34;, &#34;zendframework/zend-servicemanager&#34;: &#34;~2.3&#34; }, &#34;autoload&#34;: { &#34;psr-0&#34;: { &#34;&#34;: &#34;src/&#34; } } } Zen\Feed\Reader\Reader have a method importRemoteFeed which accepts an instance of Zend\Feed\Reader\Http\ClientInterface.
 </div>
 </article>
 

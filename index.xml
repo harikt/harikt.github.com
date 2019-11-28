@@ -6,8 +6,101 @@
     <description>Recent content on Random thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-GB</language>
-    <lastBuildDate>Fri, 24 Mar 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 Nov 2019 01:04:31 +0530</lastBuildDate>
     <atom:link href="https://harikt.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Symfony Debug to Error Handler Component</title>
+      <link>https://harikt.com/blog/2019/11/29/symfony-debug-to-error-handler-component/</link>
+      <pubDate>Fri, 29 Nov 2019 01:04:31 +0530</pubDate>
+      <guid>https://harikt.com/blog/2019/11/29/symfony-debug-to-error-handler-component/</guid>
+      <description>&lt;p&gt;Since symfony 4.4 the symfony/debug component is deprecated.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The &amp;ldquo;\Symfony\Component\Debug\ErrorHandler&amp;rdquo; class is deprecated since Symfony 4.4, use &amp;ldquo;\Symfony\Component\ErrorHandler\ErrorHandler&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Running unit tests on &lt;a href=&#34;https://github.com/MascotPhp/Mascot/blob/70b41240a5db8a84d0e8aa57995fded21052b9e4/src/ExceptionHandler.php#L37-L44&#34;&gt;Mascot&lt;/a&gt;,
+I noticed lots of warnings.&lt;/p&gt;
+&lt;p&gt;But it was not easy as changing &lt;code&gt;Symfony\Component\Debug\ExceptionHandler&lt;/code&gt; to &lt;code&gt;Symfony\Component\ErrorHandler\ErrorHandler&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Assume we have something as below&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;37
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;38
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;39
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;40
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;41
+&lt;/span&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;42
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;43
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;$handler = new \Symfony\Component\Debug\ExceptionHandler($debug);
+&lt;/span&gt;$exception = $event-&amp;gt;getThrowable();
+if (!$exception instanceof FlattenException) {
+    $exception = FlattenException::create($exception);
+}
+&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;$response = Response::create($handler-&amp;gt;getHtml($exception), $exception-&amp;gt;getStatusCode(), $exception-&amp;gt;getHeaders())-&amp;gt;setCharset(ini_get(&amp;#39;default_charset&amp;#39;));
+&lt;/span&gt;$event-&amp;gt;setResponse($response);
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;The &lt;code&gt;Symfony\Component\ErrorHandler\ErrorHandler&lt;/code&gt; has no &lt;code&gt;getHtml&lt;/code&gt; method.&lt;/p&gt;
+&lt;p&gt;From the symfony docs, if you are in development mode we can use below code.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;if ($_SERVER[&amp;#39;APP_DEBUG&amp;#39;]) {
+    Debug::enable();
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;so I started with&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;ErrorHandler::register();
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;But it was throwing all details. I was struggling how to fix this.
+After many failed experiments, I asked &lt;a href=&#34;https://twitter.com/YonelCerutoG&#34;&gt;Yonel Ceruto Gonzalez&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Sets the scope at 0 to tell the handler that it is in &amp;ldquo;non-debug&amp;rdquo; mode:&lt;/p&gt;
+&lt;p&gt;$errorHandler-&amp;gt;scopeAt(0, true);&lt;/p&gt;
+&lt;p&gt;However, don&#39;t expect the real exception message in non-debug mode, it could reveal sensitive information.&lt;/p&gt;
+&lt;p&gt;— &lt;!-- raw HTML omitted --&gt;Yonel Ceruto Gonzalez&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The above information was really helpful to do more experiments. I finally fixed the unit tests with the below code.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;38
+&lt;/span&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;39
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;40
+&lt;/span&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;41
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;42
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;43
+&lt;/span&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;44
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;45
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;46
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;47
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;48
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;49
+&lt;/span&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;50
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;$handler = new \Symfony\Component\ErrorHandler\ErrorHandler();
+&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;$handler-&amp;gt;setExceptionHandler([$handler, &amp;#39;renderException&amp;#39;]);
+&lt;/span&gt;if (! $this-&amp;gt;debug) {
+&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;    $handler-&amp;gt;scopeAt(0, true);
+&lt;/span&gt;}
+$exception = $event-&amp;gt;getThrowable();
+&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;ob_start();
+&lt;/span&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;$handler-&amp;gt;handleException($exception);
+&lt;/span&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;$response = ob_get_clean();
+&lt;/span&gt;if (!$exception instanceof FlattenException) {
+    $exception = FlattenException::create($exception);
+}
+&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;$response = Response::create($response, $exception-&amp;gt;getStatusCode(), $exception-&amp;gt;getHeaders())-&amp;gt;setCharset(ini_get(&amp;#39;default_charset&amp;#39;));
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;I hope this information may help someone at somepoint of time.&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;The above quote is excerpted from &lt;a href=&#34;https://twitter.com/YonelCerutoG/status/1199767714035912704&#34;&gt;Yonel Ceruto Gonzalez&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+    </item>
     
     <item>
       <title>building modular applications with psr 7</title>
@@ -1841,25 +1934,6 @@ Hello, Jonathan
 &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt;&amp;gt;
 &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Thank you and Happy PhPing!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>installing aura framework project via composer</title>
-      <link>https://harikt.com/blog/2014/04/29/installing-aura-framework-project-via-composer/</link>
-      <pubDate>Tue, 29 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>https://harikt.com/blog/2014/04/29/installing-aura-framework-project-via-composer/</guid>
-      <description>&lt;p&gt;In this tutorial I am showing how to install aura framework project v2
-via composer.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;composer create-project -s beta aura/framework-project path-to-project
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/auraphp/Aura.Framework_Project&#34;&gt;Aura.Framework_Project&lt;/a&gt; helps
-you to build web and cli applications.&lt;/p&gt;
-&lt;p&gt;If you need only web based application then
-&lt;a href=&#34;https://github.com/auraphp/Aura.Web_Project&#34;&gt;Aura.Web_Project&lt;/a&gt;
-is what you need.&lt;/p&gt;
-&lt;p&gt;{% showterm b971330ea7fd28d22e2f3 %}&lt;/p&gt;
-&lt;p&gt;If you need only cli, then &lt;a href=&#34;https://github.com/auraphp/Aura.Cli_Project&#34;&gt;Aura.Cli_Project&lt;/a&gt; helps you.&lt;/p&gt;
 </description>
     </item>
     

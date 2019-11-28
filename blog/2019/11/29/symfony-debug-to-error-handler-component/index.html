@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Symfony Debug to Error Handler Component – Random thoughts</title>
+<meta name="description" content="Since symfony 4.4 the symfony/debug component is deprecated.  The &amp;ldquo;\Symfony\Component\Debug\ErrorHandler&amp;rdquo; class is deprecated since Symfony 4.4, use …">
+<meta name="created" content="2019-11-29T01:04:31&#43;0530">
+<meta name="modified" content="2019-11-29T01:04:31&#43;0530">
+
+<meta name="contact" content="me@harikt.com">
+<meta property="og:site_name" content="Random thoughts">
+<meta property="og:title" content="Symfony Debug to Error Handler Component">
+<meta property="og:url" content="https://harikt.com/blog/2019/11/29/symfony-debug-to-error-handler-component/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
+<meta name="generator" content="Hugo 0.60.0" />
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="canonical" href="https://harikt.com/blog/2019/11/29/symfony-debug-to-error-handler-component/">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
+<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
+<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Symfony Debug to Error Handler Component",
+    "datePublished": "2019-11-29T01:04:31+05:30",
+    "dateModified": "2019-11-29T01:04:31+05:30",
+    "url" : "https://harikt.com/blog/2019/11/29/symfony-debug-to-error-handler-component/",
+    "description": "Since symfony 4.4 the symfony/debug component is deprecated.  The \u0026ldquo;\\Symfony\\Component\\Debug\\ErrorHandler\u0026rdquo; class is deprecated since Symfony 4.4, use …",
+    "image" : "https://harikt.com/apple-touch-icon-180.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://harikt.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Random thoughts",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://harikt.com/apple-touch-icon-180.png"
+      },
+      "url": "https://harikt.com/"
+    }
+  }
+</script>
+
+<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
+<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
+<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
+<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+
+
+</head>
+
+<body>
+<div class="page layout__page">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
+</h1>
+<div class="region header__region">
+
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+</div>
+</header>
+
+<nav class="main-menu layout__navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/about/">About</a></li>
+<li><a class="" href="/blog/archives/">Archive</a></li>
+<li><a class="" href="/contact/">Contact</a></li>
+<li><a class="active" href="/blog/">Blog</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main">
+<article class="section-blog single-view">
+<header>
+<h1 class="title title-submitted">Symfony Debug to Error Handler Component</h1>
+<p class="submitted">
+<time class="modified-date" datetime="2019-11-29T01:04:31&#43;05:30">29 November, 2019</time>
+</p>
+</header>
+<div class="content">
+<p>Since symfony 4.4 the symfony/debug component is deprecated.</p>
+<blockquote>
+<p>The &ldquo;\Symfony\Component\Debug\ErrorHandler&rdquo; class is deprecated since Symfony 4.4, use &ldquo;\Symfony\Component\ErrorHandler\ErrorHandler&rdquo;</p>
+</blockquote>
+<p>Running unit tests on <a href="https://github.com/MascotPhp/Mascot/blob/70b41240a5db8a84d0e8aa57995fded21052b9e4/src/ExceptionHandler.php#L37-L44">Mascot</a>,
+I noticed lots of warnings.</p>
+<p>But it was not easy as changing <code>Symfony\Component\Debug\ExceptionHandler</code> to <code>Symfony\Component\ErrorHandler\ErrorHandler</code>.</p>
+<p>Assume we have something as below</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="display:block;width:100%;background-color:#3c3d38">$handler = new \Symfony\Component\Debug\ExceptionHandler($debug);
+</span>$exception = $event-&gt;getThrowable();
+if (!$exception instanceof FlattenException) {
+    $exception = FlattenException::create($exception);
+}
+<span style="display:block;width:100%;background-color:#3c3d38">$response = Response::create($handler-&gt;getHtml($exception), $exception-&gt;getStatusCode(), $exception-&gt;getHeaders())-&gt;setCharset(ini_get(&#39;default_charset&#39;));
+</span>$event-&gt;setResponse($response);
+</code></pre></td></tr></table>
+</div>
+</div><p>The <code>Symfony\Component\ErrorHandler\ErrorHandler</code> has no <code>getHtml</code> method.</p>
+<p>From the symfony docs, if you are in development mode we can use below code.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">if ($_SERVER[&#39;APP_DEBUG&#39;]) {
+    Debug::enable();
+}
+</code></pre></div><p>so I started with</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">ErrorHandler::register();
+</code></pre></div><p>But it was throwing all details. I was struggling how to fix this.
+After many failed experiments, I asked <a href="https://twitter.com/YonelCerutoG">Yonel Ceruto Gonzalez</a>.</p>
+<blockquote>
+<p>Sets the scope at 0 to tell the handler that it is in &ldquo;non-debug&rdquo; mode:</p>
+<p>$errorHandler-&gt;scopeAt(0, true);</p>
+<p>However, don't expect the real exception message in non-debug mode, it could reveal sensitive information.</p>
+<p>— <!-- raw HTML omitted -->Yonel Ceruto Gonzalez<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><!-- raw HTML omitted --></p>
+</blockquote>
+<p>The above information was really helpful to do more experiments. I finally fixed the unit tests with the below code.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$handler = new \Symfony\Component\ErrorHandler\ErrorHandler();
+<span style="display:block;width:100%;background-color:#3c3d38">$handler-&gt;setExceptionHandler([$handler, &#39;renderException&#39;]);
+</span>if (! $this-&gt;debug) {
+<span style="display:block;width:100%;background-color:#3c3d38">    $handler-&gt;scopeAt(0, true);
+</span>}
+$exception = $event-&gt;getThrowable();
+<span style="display:block;width:100%;background-color:#3c3d38">ob_start();
+</span><span style="display:block;width:100%;background-color:#3c3d38">$handler-&gt;handleException($exception);
+</span><span style="display:block;width:100%;background-color:#3c3d38">$response = ob_get_clean();
+</span>if (!$exception instanceof FlattenException) {
+    $exception = FlattenException::create($exception);
+}
+<span style="display:block;width:100%;background-color:#3c3d38">$response = Response::create($response, $exception-&gt;getStatusCode(), $exception-&gt;getHeaders())-&gt;setCharset(ini_get(&#39;default_charset&#39;));
+</span></code></pre></td></tr></table>
+</div>
+</div><p>I hope this information may help someone at somepoint of time.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>The above quote is excerpted from <a href="https://twitter.com/YonelCerutoG/status/1199767714035912704">Yonel Ceruto Gonzalez</a></p>
+</li>
+</ol>
+</section>
+
+
+</div>
+</article>
+</main>
+
+
+<footer class="footer layout__footer">
+<p><!-- raw HTML omitted --></p>
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+
+</footer>
+
+</div>
+<div class="mobile-nav" dir="ltr">
+  <div class="mobile-nav__cover"></div>
+  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
+  <div class="mobile-nav__sheet">
+    <div class="mobile-nav__region">
+    
+    
+<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
+<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
+<input type="hidden" name="sites" value="harikt.com">
+<input type="submit" value="DuckDuckGo Search" class="hidden">
+</form>
+
+    </div>
+    <nav class="mobile-nav__main-menu">
+    <h2 class="visually-hidden">Main menu</h2>
+    <ul class="mobile-nav__navbar">
+    <li><a class="" href="/">Home</a></li>
+    <li><a class="" href="/about/">About</a></li>
+    <li><a class="" href="/blog/archives/">Archive</a></li>
+    <li><a class="" href="/contact/">Contact</a></li>
+    <li><a class="active" href="/blog/">Blog</a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+</body>
+</html>

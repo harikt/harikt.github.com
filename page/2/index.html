@@ -7,8 +7,8 @@
 <link rel="alternate" type="application/rss&#43;xml" title="RSS" href="https://harikt.com/index.xml">
 <link rel="alternate" type="application/json" title="JSON" href="https://harikt.com/index.json">
 <meta name="description" content="">
-<meta name="created" content="2017-03-24T00:00:00&#43;0000">
-<meta name="modified" content="2017-03-24T00:00:00&#43;0000">
+<meta name="created" content="2019-11-29T01:04:31&#43;0530">
+<meta name="modified" content="2019-11-29T01:04:31&#43;0530">
 
 <meta name="contact" content="me@harikt.com">
 <meta property="og:site_name" content="Random thoughts">
@@ -96,6 +96,22 @@
 </div>
 </article>
 
+
+<article class="section-blog list-view">
+<header>
+<h2 class="title title-submitted"><a href="/blog/2015/04/01/zend-feed-and-guzzle/">zend feed and guzzle</a></h2>
+<p class="submitted">
+<time class="modified-date" datetime="2015-04-01T00:00:00Z">1 April, 2015</time>
+</p>
+
+</header>
+<div class="content">
+You may have worked with Zend Feed as a standalone component. I don't know whether you have integrated Zend framework Feed with Guzzle as Http Client.
+This post is inspired by Matthew Weier O'Phinney, who have mentioned the same on github.
+Our composer.json looks
+{ &#34;require&#34;: { &#34;guzzlehttp/guzzle&#34;: &#34;~5.2&#34;, &#34;zendframework/zend-feed&#34;: &#34;~2.3&#34;, &#34;zendframework/zend-servicemanager&#34;: &#34;~2.3&#34; }, &#34;autoload&#34;: { &#34;psr-0&#34;: { &#34;&#34;: &#34;src/&#34; } } } Zen\Feed\Reader\Reader have a method importRemoteFeed which accepts an instance of Zend\Feed\Reader\Http\ClientInterface.
+</div>
+</article>
 
 <article class="section-blog list-view">
 <header>
@@ -233,23 +249,6 @@ Bug Fixing : Documented over Loading a package from a VCS repository
 Aura.Html provides HTML escapers and helpers, including form input helpers, that can be used in any template, view, or presentation system.
 In this post I would like to give you a short introduction to Aura.Html and how you could use with Plates a native php templating system like Aura.View.
 Aura.Html was extracted from Aura.View helper functions of version 1, when we at aura noticed that people who uses Aura.Input may need some html helper functions and they may not be using a templating like Aura.
-</div>
-</article>
-
-<article class="section-blog list-view">
-<header>
-<h2 class="title title-submitted"><a href="/blog/2014/04/29/installing-aura-framework-project-via-composer/">installing aura framework project via composer</a></h2>
-<p class="submitted">
-<time class="modified-date" datetime="2014-04-29T00:00:00Z">29 April, 2014</time>
-</p>
-
-</header>
-<div class="content">
-In this tutorial I am showing how to install aura framework project v2 via composer.
-composer create-project -s beta aura/framework-project path-to-project  Aura.Framework_Project helps you to build web and cli applications.
-If you need only web based application then Aura.Web_Project is what you need.
-{% showterm b971330ea7fd28d22e2f3 %}
-If you need only cli, then Aura.Cli_Project helps you.
 </div>
 </article>
 
