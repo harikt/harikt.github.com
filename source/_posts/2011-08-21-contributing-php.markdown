@@ -1,8 +1,0 @@
----
-layout: post
-title: Contributing to PHP
-categories: [php]
-published: true
-date: 2011-08-21 14:21
----
-You don't want to be a strong C programmer to contribute to PHP. You just need to know some XML to contriute to the documentation of PHP and improve it . Recently I was going through some of the functions . I noticed an example which was not for that function. There was a link just next to it to file a Bug . Though I clicked and moved , I didn't felt it as a huge issue to report as Bug . I came back to the page and saw the edit on the top right . Clicked on it and went to edit . I logged in with my open-id , though the docbook didn't redirected me , I just logged in as annonymous . I made the necessary changes .  [![image](http://farm7.static.flickr.com/6181/6065016304_574fec7e1a.jpg)](http://www.flickr.com/photos/harikt/6065016304/in/photostream/)  Though it says it saved , I didnot see it reflected quickly . I guess some of the peers need to review it and push to see it . Anyway what I want you guys of PHP community is rather than filing a bug in documentation if you know what to do , then go for an edit . This will help the people of our PHP community rather than looking what the bug is verifying it, then assigning a person if he is not familiar with that language etc. I am writing this post for I noticed the same thing . If I had made the bug rather than editing the appropriate files the number of bugs will increase . After all the person who does the documentation is doing things as a community effort and not paid for it. Let us try to help those people, after all we all are in PHP and enjoying the awesome Language. You can also vote for the bugs so that will help the core developers to do the needful .   

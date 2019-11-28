@@ -1,8 +1,0 @@
----
-layout: post
-title: Wolfram a new way to learn
-categories: [wolfram, learning, integration, mathematics]
-published: true
-date: 2009-07-09 19:56
----
-If I have not posted about this then it may be cruel . Yes, I was recently in the site wolfram . The company wolframs has been started around 20 years. I have really missed without knowing about the site wolfram . Yes , if you have not heard about this before then you too .  When I was learning integration I may have got confused whether my answer was right or wrong . But with wolfram you can integrate . You will be getting the result . How easy isnt ?  ![Integration made simple with wolfram](http://farm4.static.flickr.com/3507/3704604740_6338b88ebe.jpg?v=0)  Wolfram is really a web site for science and mathematics . It will give you a graphical representation for your queries.  ![Search for Carbon dioxide , CO2](http://farm4.static.flickr.com/3436/3704606336_7e55b7392a.jpg?v=0)     ![Our country India](http://farm3.static.flickr.com/2626/3704605610_5d551021b6.jpg?v=0)  I searched movie name , got answers great  .  I am attaching some links and pictures. Go and explore the wonderful site .  [http://www.wolframalpha.com/](http://www.wolframalpha.com/)  [http://www.wolfram.com/](http://www.wolfram.com/)  From the above two site you can explore and get more links . I am keeping only some more , for if you need you wil really explore. I am sure .  [http://integrals.wolfram.com](http://integrals.wolfram.com)  [http://library.wolfram.com/](http://library.wolfram.com/)  [http://functions.wolfram.com/](http://functions.wolfram.com/)  [http://tones.wolfram.com/](http://tones.wolfram.com/)   

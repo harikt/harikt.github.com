@@ -1,0 +1,16 @@
+{{ define "main" -}}
+<main class="main layout__main">
+  {{ range (where .Site.Pages "Type" "blog") }}
+    <article class="{{ with .Section }}section-{{ . | urlize }} {{ end }}single-view">    
+      <header>
+        <a href="{{ .Permalink }}" title="{{ .Title }}">
+          <h2 class="title {{ if $.Param "submitted" | default false }}title-submitted{{ end }}">{{ .Title }}</h2>
+        </a>          
+        {{ if $.Param "submitted" | default false }}{{ partial "submitted.html" . }}{{ end -}}
+        {{ if .Params.tags }}{{ partial "tags.html" . }}{{ end -}}
+
+      </header>
+    </article>
+  {{ end }}
+</main>
+{{ end }}

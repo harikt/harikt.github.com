@@ -1,8 +1,0 @@
----
-layout: post
-title: Working with Joomla and Drupal
-categories: [joomla, drupal]
-published: true
-date: 2009-05-11 09:05
----
-Yes, this may be a controversial post. As I told you before , I was interested in Joomla. But its some what hard to learn , configure some of the plugins, and its not an easy task to find a good plugin. I was trying to learn Drupal , after I came to read and discuss with some of the guys who uses Drupal. Yes, I am switching my site to Drupal . So in a few days you may see a new face for this site. I am trying to configure it in my local system first, so I can learn . After that I will switch this to Drupal.  The reasons behind the switching are its easy to make a blog and add comments feature in drupal . In Joomla its tough , you may need to add additional plugins or extensions .  Recently saw a post about news paper site , which makes me interested to look how to make in Joomla, but was very tough. I googled a lot to get a right solution how it works and all . I was reading a lot of blog posts about the news paper site and finally thought to switch to drupal ![image](http://harikt.com/sites/all/libraries/fckeditor/editor/images/smiley/msn/regular_smile.gif) .  Also have seen creating multiple sites with Drupal is easy than that of Joomla. Configuring a module and all in Joomla is tough . Once you have started working with Joomla you will recognise , what I am telling. May be I don't have learned every corners.  Some of the reasons I thought of working on local are  1 ) My pages are indexed in google , so don't want to make a problem .  2 ) I am getting good amount of visitors now adays .  3 ) I will learn drupal from my local :-) . Why I need to do in the server itslef ? This may be a good decesion I think .   

@@ -1,8 +1,0 @@
----
-layout: post
-title: DHTML Jquery based google like week planner and calendar
-categories: [week planner]
-published: true
-date: 2009-06-29 19:58
----
-All of you may have heard about the google calendars . Its a free service by google. You just need a gmail id .  But I was looking like a one that's freely available. Now adays I got  a chance to work with the javascript frameworks like jquery and prototype. Working on it, I was impressed . Its really cool guys, if you know little javascript then , you can look into it . Yes once you used , you will never go without using one of it . :) .  Yes talking about the week planner . I searched for a jquery based week planner. This is one I got and it looks cute and its having almost all functionalities . I have seen a DHTML calendar , but when resizing the events overlaps. But in this there is no such over laps occuring . There are lots of methods , you can see the demo and know how it works. If you are satisfied then go and look the documentation.  A screenshot is taken to show you how it looks .  ![A google like week planner, developed in jquery](http://farm3.static.flickr.com/2554/3671667577_b703d612e6.jpg?v=0)  The demo page is [http://jquery-week-calendar.googlecode.com/svn/trunk/jquery.weekcalendar/full\_demo/weekcalendar\_full\_demo.html](http://jquery-week-calendar.googlecode.com/svn/trunk/jquery.weekcalendar/full_demo/weekcalendar_full_demo.html)  You can visit the site [http://www.redredred.com.au/projects/jquery-week-calendar/](http://www.redredred.com.au/projects/jquery-week-calendar/) , for more informations regarding it .  If you guys have any other stuffs like the one , you can just leave a comment .  Thanks   

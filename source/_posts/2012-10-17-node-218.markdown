@@ -1,8 +1,0 @@
----
-layout: post
-title: HTML5 and Upcoming Web Technologies
-categories: [html5, interface-tech]
-published: true
-date: 2012-10-17 19:41
----
-Probably you may have already heard about the full day workshop on HTML5 and Upcoming Web Technologies by [Shwetank Dixit](https://twitter.com/shwetank) of Opera at [Interface](http://interface-tech.in/) which will be held on 3rd November 2012 . Where ? The Woods Manor, Cochin . Why you should participate? HTML5 is the future of internet. Why not learn from the leader? Who should attend ? Are you a web developer? A person who works on android, iphone or any device ? If you said yes, then its for you. What is the cost? This time we are charging 500 INR. The money is used to give you tea/coffee and snacks plus an awesome lunch during the event and to cover the event expenses. I don't think its a huge amount for I have been spending more than 500 INR to travel from Cochin to Bangalore to participate in such awesome workshops. You are only spending a 500 INR in a year which will be a worth in your career. There is also discounts available for group registration for companies, please contact Sofie Holmberg via sofie.holmberg at interface-tech dot in or 0484 4433638 . There is only limited seats available , so be there and don't loose the best chance attending the workshop and interacting with [Shwetank Dixit](https://twitter.com/shwetank). Register and get your tickets from : http://interface-tech.in/register  

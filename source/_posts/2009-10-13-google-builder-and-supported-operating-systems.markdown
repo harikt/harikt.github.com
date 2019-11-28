@@ -1,8 +1,0 @@
----
-layout: post
-title: Google Builder and supported Operating Systems
-categories: [google, gnu/linux, operating system]
-published: true
-date: 2009-10-13 21:14
----
-Recently in googles blog , it has published a new tool called Google Builder , which is used to create a threee dimensional model for everything built on earth . Google describes builder as a game , but the others say its a tool .  [![Builder not for you GNU/Linux users](http://farm4.static.flickr.com/3524/4008305011_253151fe7d.jpg)](http://www.flickr.com/photos/harikt/4008305011/)  These are some of the things that the blog says we must be aware,  1 ) Builder maker is entirely a browser based and the list contains my favourite browser Firefox too .  2 ) You need to signup before you start the application .  3 ) Google Sketchup a free 3D modelling tool will help you edit and modify.  and some more things like this . You can read more about it from http://googleblog.blogspot.com/2009/10/introducing-google-building-maker.html .  I was little curious and thought ( let me experiment my skills ) of trying it as its an online free tool.  But I this time too I am disappointed . Both the tools google sketup and google builder will support Windows and Mac . Its not supporting the powerful operating system GNU/Linux . I don't know how come we can call it as a browser based tool as once the isro says the map of isro is a browser based one . I can call it now as an Operating System dependent tool only till it can support every Operating Systems without installing additional softwares .  I am waiting for the release of the Google Chrome OS , so I hope the new tools will defnitely support GNU / Linux operating system .   

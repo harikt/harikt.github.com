@@ -1,8 +1,0 @@
----
-layout: post
-title: Alexa Traffic rank for a website
-categories: [alexa, traffic rank]
-published: true
-date: 2009-11-19 10:53
----
-I have been looking the traffic rank of my website in alexa . But before the blog post about the [blog tutorial using zend framework](http://harikt.com/content/simple-blog-using-zend-framework-19) , it was far away ![image](http://harikt.com/sites/all/libraries/fckeditor/editor/images/smiley/msn/regular_smile.gif) . You cannot think the number .  But now I am happy as I am below 10 lakhs . I don't really know how its working , because we are not placing any javascript or anything in our site for alexa to crawl. If its google then I can say its with the google webmaster tools .  I am very happy to see even though harikt.com is not in the hundreds or thousands . I wonder how much bandwidth is consumed for the sites in the top list . Even my site consumes a huge bandwidth .  [![About the article in phpdeveloper.org](http://farm3.static.flickr.com/2622/4116300059_698808b5b1.jpg)](http://www.flickr.com/photos/harikt/4116300059/)  [![Article in devzone](http://farm3.static.flickr.com/2750/4116294515_490f33347b.jpg)](http://www.flickr.com/photos/harikt/4116294515/)  [![Home page of framework.zend.com](http://farm3.static.flickr.com/2688/4116260005_00795e500a.jpg)](http://www.flickr.com/photos/harikt/4116260005/)  Thanks especially to phpdeveloper.org ,  devzone.zend.com for publishing my post about developing a [simple blog application using zend framework](http://harikt.com/content/simple-blog-using-zend-framework-19) and making such a huge hits , also to zend for keeping in the home page .   
