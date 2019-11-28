@@ -51,7 +51,7 @@ After many failed experiments, I asked [Yonel Ceruto Gonzalez](https://twitter.c
 >
 > — <cite>Yonel Ceruto Gonzalez[^1]</cite>
 
-[^1]: The above quote is excerpted from [Yonel Ceruto Gonzalez](https://twitter.com/YonelCerutoG/status/1199767714035912704)
+[^1]: Taken from twitter status [Yonel Ceruto Gonzalez](https://twitter.com/YonelCerutoG/status/1199767714035912704)
 
 The above information was really helpful to do more experiments. I finally fixed the unit tests with the below code.
 
