@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Random thoughts</title>
+    <link>https://harikt.com/blog/</link>
+    <description>Recent content in Blog on Random thoughts</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <lastBuildDate>Fri, 24 Mar 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://harikt.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>building modular applications with psr 7</title>
+      <link>https://harikt.com/blog/2017/03/24/building-modular-applications-with-psr-7/</link>
+      <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2017/03/24/building-modular-applications-with-psr-7/</guid>
+      <description>PSR-7, the HTTP message interfaces opened a new door of creating modular applications.
+Sadly many of the PSR-7 implementations added many helper methods.
+So if someone is creating a library that needs a PSR-7 implementations they tie the particular library with the PSR-7 implementation and use these convinient helper methods.
+So was PSR-15: interfaces for HTTP Middleware and PSR-17: interfaces for HTTP Factories was proposed.
+When creating a module one of the most challenging part is how to serve the javascript, css and images.</description>
+    </item>
+    
+    <item>
+      <title>using cakephp migration as standalone</title>
+      <link>https://harikt.com/blog/2017/03/24/using-cakephp-migration-as-standalone/</link>
+      <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2017/03/24/using-cakephp-migration-as-standalone/</guid>
+      <description>Cakephp version 3 have a nice ORM. When using the cakephp/orm, it may be nice to integrate cakephp/migration than any other migration libraries, even though it uses phinx under the hood.
+Lets see how we can install and integrate cakephp/migration in our application.
+composer require cakephp/migrations:dev-master  The dev-master is currently passed for we need the latest version of master branch. Before this pull request, it was having dependency on cakephp/cakephp, which is not needed.</description>
+    </item>
+    
+    <item>
+      <title>aura dot di 2 dot x to 3 dot x upgrade guide</title>
+      <link>https://harikt.com/blog/2016/03/15/aura-dot-di-2-dot-x-to-3-dot-x-upgrade-guide/</link>
+      <pubDate>Tue, 15 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2016/03/15/aura-dot-di-2-dot-x-to-3-dot-x-upgrade-guide/</guid>
+      <description>3.x has a very minimal BC break. But if you are not sure what are they, then you may feel the pain. I am trying to document most of them, incase I missed please edit and send a pull request.
+I will try to eventually pushed to the main Aura.Di repo.
+BC Breaks Instantiation The way di container is instantiated has been changed from
+use Aura\Di\Container; use Aura\Di\Factory; use Aura\Di\ContainerBuilder; $di = new Container(new Factory); // or $container_builder = new ContainerBuilder(); $di = $container_builder-&amp;gt;newInstance( array(), array(), $auto_resolve = false ); to</description>
+    </item>
+    
+    <item>
+      <title>cakephp orm and logging queries</title>
+      <link>https://harikt.com/blog/2016/01/16/cakephp-orm-and-logging-queries/</link>
+      <pubDate>Sat, 16 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2016/01/16/cakephp-orm-and-logging-queries/</guid>
+      <description>Working with cakephp/orm library, I needed to log all the queries. Cakephp provides a way to do it via cakephp/log.
+use Cake\Log\Log; Log::config(&amp;#39;queries&amp;#39;, [ &amp;#39;className&amp;#39; =&amp;gt; &amp;#39;File&amp;#39;, &amp;#39;path&amp;#39; =&amp;gt; &amp;#39;/my/log/path/&amp;#39;, &amp;#39;file&amp;#39; =&amp;gt; &amp;#39;app&amp;#39;, &amp;#39;scopes&amp;#39; =&amp;gt; [&amp;#39;queriesLog&amp;#39;] ]); But you are not limited, if you need to configure it to a PSR-3 logger like monolog/monolog
+use Cake\Log\Log; use Monolog\Logger; use Monolog\Handler\StreamHandler; Log::config(&amp;#39;default&amp;#39;, function () { $log = new Logger(&amp;#39;cli&amp;#39;); $log-&amp;gt;pushHandler(new StreamHandler(&amp;#39;php://stdout&amp;#39;)); return $log; }); That was pretty simple and it logs to cli.</description>
+    </item>
+    
+    <item>
+      <title>cakephp orm and illuminate pagination</title>
+      <link>https://harikt.com/blog/2016/01/13/cakephp-orm-and-illuminate-pagination/</link>
+      <pubDate>Wed, 13 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2016/01/13/cakephp-orm-and-illuminate-pagination/</guid>
+      <description>Do you know CakePHP version 3 has a lovely ORM which can be used as standalone?
+Thank you José Lorenzo Rodríguez and every contributor, for your hard work.
+composer require cakephp/orm That&#39;s it.
+Working on I noticed I need to do some pagination. Oh, remember we have illuminate/pagination. Why not use it?
+Problem, there seems no one have implemented it. How could we achieve it? Lets do it.
+composer require illuminate/pagination If you are using a psr-7 request / response here is the middleware for you.</description>
+    </item>
+    
+    <item>
+      <title>eloquent and pagination inside zend expressive</title>
+      <link>https://harikt.com/blog/2015/11/13/eloquent-and-pagination-inside-zend-expressive/</link>
+      <pubDate>Fri, 13 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2015/11/13/eloquent-and-pagination-inside-zend-expressive/</guid>
+      <description>Recently working with eloquent (Laravel&#39;s orm), zend expressive and zend view, I wanted to integrate pagination.
+It was simple as registering a Paginator middleware.
+use Illuminate\Pagination\Paginator; use Psr\Http\Message\ResponseInterface; use Psr\Http\Message\ServerRequestInterface; IlluminatePaginator::currentPageResolver(function ($pageName) use ($request) { $params = $request-&amp;gt;getQueryParams(); return empty($params[$pageName]) ? 1 : $params[$pageName]; }); IlluminatePaginator::currentPathResolver(function () use ($request) { return $request-&amp;gt;getUri()-&amp;gt;getPath(); }); and you can call paginate on the Model.
+Eg : Consider you have a Post model.
+$posts = Post::paginate(20); and in view you can iterate through the $posts and render the pagination.</description>
+    </item>
+    
+    <item>
+      <title>integrating zend form in zend expressive and view</title>
+      <link>https://harikt.com/blog/2015/11/13/integrating-zend-form-in-zend-expressive-and-view/</link>
+      <pubDate>Fri, 13 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2015/11/13/integrating-zend-form-in-zend-expressive-and-view/</guid>
+      <description>Example is based using Aura.Di. But the functionality will be same for any containers. First register the service Zend\View\HelperPluginManager, so that we can access the same object.
+To register the form helpers, create the object of Zend\Form\View\HelperConfig and pass the Zend\View\HelperPluginManager service.
+Example code with Aura.Di version 3 configuration.
+&amp;lt;?php use Aura\Di\ContainerConfig; use Aura\Di\Container; use Zend\Form\View\HelperConfig; class ViewHelper extends ContainerConfig { public function define(Container $di) { $di-&amp;gt;set(&amp;#39;Zend\View\HelperPluginManager&amp;#39;, $di-&amp;gt;lazyNew(&amp;#39;Zend\View\HelperPluginManager&amp;#39;)); } public function modify(Container $di) { $serviceManager = $di-&amp;gt;get(&amp;#39;Zend\View\HelperPluginManager&amp;#39;); $helper = new HelperConfig(); $helper-&amp;gt;configureServiceManager($servicemanager); } } Creating your own zend-view helper  Create your helper class  &amp;lt;?</description>
+    </item>
+    
+    <item>
+      <title>custom events in symfony2 bundle</title>
+      <link>https://harikt.com/blog/2015/10/11/custom-events-in-symfony2-bundle/</link>
+      <pubDate>Sun, 11 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2015/10/11/custom-events-in-symfony2-bundle/</guid>
+      <description>In this tutorial we will create a custom event for symfony2 bundle.
+ Assuming you have downloaded the symfony-standard distribution to play.
+ Create HktEventBundle via sensio generator bundle.
+php app/console generate:bundle --namespace=Hkt/EventBundle --dir src --no-interaction Create the event class.
+&amp;lt;?php // src/Hkt/EventBundle/Event/PageViewed.php namespace Hkt\EventBundle\Event; use Symfony\Component\EventDispatcher\Event; class PageViewed extends Event { protected $name; public function __construct($name) { $this-&amp;gt;name = $name; } public function getName() { return $this-&amp;gt;name; } } Add as many methods/properties which are needed from the listener.</description>
+    </item>
+    
+    <item>
+      <title>20 years of php</title>
+      <link>https://harikt.com/blog/2015/06/17/20-years-of-php/</link>
+      <pubDate>Wed, 17 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2015/06/17/20-years-of-php/</guid>
+      <description>First my apologies being late! I hope you all know PHP is celebrating its 20th years of existence in the web.
+There is something that makes PHP unique that helps to standout with other languages.
+In this opporchunity I would like to thank the creator, the contributors, the maintainers, and all the users (past/present) to make this memorable.
+My Story I got an exposure to learn and use internet in my college days.</description>
+    </item>
+    
+    <item>
+      <title>zend feed and guzzle</title>
+      <link>https://harikt.com/blog/2015/04/01/zend-feed-and-guzzle/</link>
+      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2015/04/01/zend-feed-and-guzzle/</guid>
+      <description>You may have worked with Zend Feed as a standalone component. I don&#39;t know whether you have integrated Zend framework Feed with Guzzle as Http Client.
+This post is inspired by Matthew Weier O&#39;Phinney, who have mentioned the same on github.
+Our composer.json looks
+{ &amp;#34;require&amp;#34;: { &amp;#34;guzzlehttp/guzzle&amp;#34;: &amp;#34;~5.2&amp;#34;, &amp;#34;zendframework/zend-feed&amp;#34;: &amp;#34;~2.3&amp;#34;, &amp;#34;zendframework/zend-servicemanager&amp;#34;: &amp;#34;~2.3&amp;#34; }, &amp;#34;autoload&amp;#34;: { &amp;#34;psr-0&amp;#34;: { &amp;#34;&amp;#34;: &amp;#34;src/&amp;#34; } } } Zen\Feed\Reader\Reader have a method importRemoteFeed which accepts an instance of Zend\Feed\Reader\Http\ClientInterface.</description>
+    </item>
+    
+    <item>
+      <title>conduit middleware for php</title>
+      <link>https://harikt.com/blog/2015/01/21/conduit-middleware-for-php/</link>
+      <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2015/01/21/conduit-middleware-for-php/</guid>
+      <description>Long back, I happened to talk with Beau Simensen about stackphp on #auraphp channel. It was hard for me to digest when I noticed it need symfony/http-kernel and its dependencies.
+After a few months, I started to like the middleware approach of slim framework and wanted to push it to aura. But nothing happened there.
+Conduit to rescue Conduit is a Middleware for PHP built by Matthew Weier O&#39;Phinney lead of Zend framework.</description>
+    </item>
+    
+    <item>
+      <title>experimenting on different framework</title>
+      <link>https://harikt.com/blog/2015/01/13/experimenting-on-different-framework/</link>
+      <pubDate>Tue, 13 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2015/01/13/experimenting-on-different-framework/</guid>
+      <description>Whenever I get some time, I try to learn and experiment on different frameworks. I would like to stay away from pin pointing to the frameworks I have looked, so they don&#39;t feel bad.
+Long live components Components are awesome!. You can plug your favourite components to any system. Thank you composer. One strong preference choosing a framework was
+ It should be built from components  Advantage  I could use those components on a different project without spending long time learning a different API.</description>
+    </item>
+    
+    <item>
+      <title>improving environment value in aura v2</title>
+      <link>https://harikt.com/blog/2014/12/12/improving-environment-value-in-aura-v2/</link>
+      <pubDate>Fri, 12 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2014/12/12/improving-environment-value-in-aura-v2/</guid>
+      <description>Aura v2 framework probably have missed a better way to handle environment variables. But that doesn&#39;t make you stall. Things can be improved ;-).
+ Assume you are already using aura framework and is at root of the project.
+ We are going to make use of vlucas/phpdotenv , alternatives are there if you are interested to experiment.
+composer require vlucas/phpdotenv Edit the file config/_env.php and add Dotenv::load(/path/to/.env); to the first line.</description>
+    </item>
+    
+    <item>
+      <title>speedup configuration aura v2</title>
+      <link>https://harikt.com/blog/2014/12/06/speedup-configuration-aura-v2/</link>
+      <pubDate>Sat, 06 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2014/12/06/speedup-configuration-aura-v2/</guid>
+      <description>Aura v2 added auto resolution in-order to help lazy people writing configuration manually. Even though it was introduced to help, it introduced a few issues.
+So auto resolution will be disabled in the future. Some of the complains/suggestions are how to easily write the di configuration.
+So introducing you FOA.DiConfig
+Installation composer require foa/di-config Usage vendor/bin/di-config-dump Usage : vendor/bin/di-config-dump /real/path/to/file.php Usage : vendor/bin/di-config-dump /real/path/to/directory Example 1 Let&#39;s assume you have</description>
+    </item>
+    
+    <item>
+      <title>getting started with aura v2</title>
+      <link>https://harikt.com/blog/2014/10/06/getting-started-with-aura-v2/</link>
+      <pubDate>Mon, 06 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2014/10/06/getting-started-with-aura-v2/</guid>
+      <description>Yesterday aura framework v2 stable released.
+Lots of complains about documentation or missing documentation. So this is a quick start. Probably a five minutes walk through. Learn and change to make it better.
+Creating your project Create the project using composer.
+composer create-project aura/web-project quick-start cd quick-start The minimal framework don&#39;t come with any sort of view integrated. Let us use aura/view, the two step templating with the help of foa/html-view-bundle.</description>
+    </item>
+    
+    <item>
+      <title>aura input form inside slim framework</title>
+      <link>https://harikt.com/blog/2014/09/02/aura-input-form-inside-slim-framework/</link>
+      <pubDate>Tue, 02 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2014/09/02/aura-input-form-inside-slim-framework/</guid>
+      <description>Rob Allen wrote about Integrating ZF2 forms into Slim. I did write how you can use Aura.Input and Aura.Html to create standalone form for PHP. This time I felt I should write about integrating aura input inside Slim.
+Let us install a few dependencies aura/input for building the form and aura/html for the html helpers. You of-course can skip not to use aura/html and build your own helper. I also purposefully left not integrating the powerful Aura.</description>
+    </item>
+    
+    <item>
+      <title>aura framework v2 the missing manual</title>
+      <link>https://harikt.com/blog/2014/07/15/aura-framework-v2-the-missing-manual/</link>
+      <pubDate>Tue, 15 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2014/07/15/aura-framework-v2-the-missing-manual/</guid>
+      <description>Aura has an awesome collection of libraries for different purpose.
+It has components for authentication, cli, request and response, router, dependency injection container, dispatcher, html, view, event handlers, validation, extended pdo, query builders, sql schema, marshal, build and modify uri, http, internationalization, session, forms, includer.
+If you are new to aura, there is probably something you may want to figure out yourself.
+Some of the components have version 1 and version 2 releases.</description>
+    </item>
+    
+    <item>
+      <title>hidden gems of composer</title>
+      <link>https://harikt.com/blog/2014/05/29/hidden-gems-of-composer/</link>
+      <pubDate>Thu, 29 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2014/05/29/hidden-gems-of-composer/</guid>
+      <description>I hope everyone in the PHP world is aware of composer the dependency management tool that gives an end to Pear.
+We can look into some of the hidden gems of composer. Some of them are already documented in the composer docs.
+Bug Fixing : Documented over Loading a package from a VCS repository
+{ &amp;#34;repositories&amp;#34;: [ { &amp;#34;type&amp;#34;: &amp;#34;vcs&amp;#34;, &amp;#34;url&amp;#34;: &amp;#34;https://github.com/igorw/monolog&amp;#34; } ], &amp;#34;require&amp;#34;: { &amp;#34;monolog/monolog&amp;#34;: &amp;#34;dev-bugfix&amp;#34; } } The above example assume you have pushed your code to github.</description>
+    </item>
+    
+    <item>
+      <title>extending plates with aura html helpers</title>
+      <link>https://harikt.com/blog/2014/05/13/extending-plates-with-aura-html-helpers/</link>
+      <pubDate>Tue, 13 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2014/05/13/extending-plates-with-aura-html-helpers/</guid>
+      <description>Aura.Html provides HTML escapers and helpers, including form input helpers, that can be used in any template, view, or presentation system.
+In this post I would like to give you a short introduction to Aura.Html and how you could use with Plates a native php templating system like Aura.View.
+Aura.Html was extracted from Aura.View helper functions of version 1, when we at aura noticed that people who uses Aura.Input may need some html helper functions and they may not be using a templating like Aura.</description>
+    </item>
+    
+    <item>
+      <title>installing aura framework project via composer</title>
+      <link>https://harikt.com/blog/2014/04/29/installing-aura-framework-project-via-composer/</link>
+      <pubDate>Tue, 29 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2014/04/29/installing-aura-framework-project-via-composer/</guid>
+      <description>In this tutorial I am showing how to install aura framework project v2 via composer.
+composer create-project -s beta aura/framework-project path-to-project  Aura.Framework_Project helps you to build web and cli applications.
+If you need only web based application then Aura.Web_Project is what you need.
+{% showterm b971330ea7fd28d22e2f3 %}
+If you need only cli, then Aura.Cli_Project helps you.</description>
+    </item>
+    
+  </channel>
+</rss>
