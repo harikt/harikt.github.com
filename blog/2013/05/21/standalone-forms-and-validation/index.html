@@ -181,89 +181,93 @@ the <code>Aura\Input\FilterInterface</code> as below.</p>
 </code></pre></div><p>Create the filter object and pass it on instantiation of form.</p>
 <p>Please note that the $rootpath in this example is just above the vendor
 folder of the composer.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$filter = new Domicile\Example\Filter(
-    new RuleLocator(array_merge(
-        require $rootpath . &#39;/vendor/aura/filter/scripts/registry.php&#39;,
-        [&#39;any&#39; =&gt; function () {
-            $rule = new \Aura\Filter\Rule\Any;
-            $rule-&gt;setRuleLocator(new RuleLocator(
-                require $rootpath . &#39;/vendor/aura/filter/scripts/registry.php&#39;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$filter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Domicile\Example\Filter</span>(
+    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">RuleLocator</span>(<span style="color:#a6e22e">array_merge</span>(
+        <span style="color:#66d9ef">require</span> $rootpath <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/aura/filter/scripts/registry.php&#39;</span>,
+        [<span style="color:#e6db74">&#39;any&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> () {
+            $rule <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\Aura\Filter\Rule\Any</span>;
+            $rule<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setRuleLocator</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">RuleLocator</span>(
+                <span style="color:#66d9ef">require</span> $rootpath <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/aura/filter/scripts/registry.php&#39;</span>
             ));
-            return $rule;
+            <span style="color:#66d9ef">return</span> $rule;
         }]
     )),
-    new Translator(require $rootpath . &#39;/vendor/aura/filter/intl/en_US.php&#39;)
+    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Translator</span>(<span style="color:#66d9ef">require</span> $rootpath <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/aura/filter/intl/en_US.php&#39;</span>)
 );
 
-$form = new Domicile\Example\ContactForm(new Builder, $filter);
+$form <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Domicile\Example\ContactForm</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Builder</span>, $filter);
 </code></pre></div><p>The <a href="http://auraphp.com/Aura.Input/">Aura.Input</a> has two methods we can make use.</p>
 <p>1 ) fill() method helps us to fill the data values</p>
 <p>2 ) filter() method which helps to filter and validate data according to
 the rules specified in the form.</p>
 <p>The code will looks like</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">
-if ($_POST <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">&amp;</span> $_POST[&#39;submit&#39;] == &#39;send&#39;) {
-    $data = $_POST;
-    $form-&gt;fill($data);
-    if ($form-&gt;filter()) {
-        //
-        echo &#34;Yes successfully validated and filtered&#34;;
-        var_dump($data);
-        exit;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+<span style="color:#66d9ef">if</span> ($_POST <span style="color:#f92672">&amp;&amp;</span> $_POST[<span style="color:#e6db74">&#39;submit&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;send&#39;</span>) {
+    $data <span style="color:#f92672">=</span> $_POST;
+    $form<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">fill</span>($data);
+    <span style="color:#66d9ef">if</span> ($form<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">filter</span>()) {
+        <span style="color:#75715e">//
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Yes successfully validated and filtered&#34;</span>;
+        <span style="color:#a6e22e">var_dump</span>($data);
+        <span style="color:#66d9ef">exit</span>;
     }
 }
 </code></pre></div><p>The form element gives you hints for the view. An example from the above</p>
 <h2 id="hints-for-the-view">Hints for the view</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// get the hints for the name field
-$hints = $form-&gt;get(&#39;name&#39;);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#75715e">// get the hints for the name field
+</span><span style="color:#75715e"></span>$hints <span style="color:#f92672">=</span> $form<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;name&#39;</span>);
 
-// the hints array looks like this:
-$hints = array (
-  &#39;type&#39; =&gt; &#39;text&#39;,
-  &#39;name&#39; =&gt; &#39;name&#39;,
-  &#39;attribs&#39; =&gt; 
-  array (
-    &#39;id&#39; =&gt; &#39;name&#39;,
-    &#39;type&#39; =&gt; NULL,
-    &#39;name&#39; =&gt; NULL,
-    &#39;size&#39; =&gt; 20,
-    &#39;maxlength&#39; =&gt; 20,
+<span style="color:#75715e">// the hints array looks like this:
+</span><span style="color:#75715e"></span>$hints <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span> (
+  <span style="color:#e6db74">&#39;type&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;text&#39;</span>,
+  <span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;name&#39;</span>,
+  <span style="color:#e6db74">&#39;attribs&#39;</span> <span style="color:#f92672">=&gt;</span> 
+  <span style="color:#66d9ef">array</span> (
+    <span style="color:#e6db74">&#39;id&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;name&#39;</span>,
+    <span style="color:#e6db74">&#39;type&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">NULL</span>,
+    <span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">NULL</span>,
+    <span style="color:#e6db74">&#39;size&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>,
+    <span style="color:#e6db74">&#39;maxlength&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">20</span>,
   ),
-  &#39;options&#39; =&gt; 
-  array (
+  <span style="color:#e6db74">&#39;options&#39;</span> <span style="color:#f92672">=&gt;</span> 
+  <span style="color:#66d9ef">array</span> (
   ),
-  &#39;value&#39; =&gt; NULL,
+  <span style="color:#e6db74">&#39;value&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">NULL</span>,
 )
 </code></pre></div><h2 id="without-using-auraview-completely">Without using Aura.View completely</h2>
 <p>If you are not planning to use Aura.View entirely as templating, you can
 make use of <a href="http://auraphp.com/Aura.View/">Aura.View</a> helpers which can render to make the form.</p>
 <p>For that you need to instantiate <code>Aura\View\HelperLocator</code> and get the
 field object as below.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$helper = new Aura\View\HelperLocator([
-    &#39;field&#39;         =&gt; function () { 
-        return new Aura\View\Helper\Form\Field(
-            require dirname(__DIR__) . &#39;/vendor/aura/view/scripts/field_registry.php&#39;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$helper <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Aura\View\HelperLocator</span>([
+    <span style="color:#e6db74">&#39;field&#39;</span>         <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> () { 
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Aura\View\Helper\Form\Field</span>(
+            <span style="color:#66d9ef">require</span> <span style="color:#a6e22e">dirname</span>(<span style="color:#66d9ef">__DIR__</span>) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/aura/view/scripts/field_registry.php&#39;</span>
         ); 
     },
-    &#39;input&#39;         =&gt; function () { return new Aura\View\Helper\Form\Input(
-            require dirname(__DIR__) . &#39;/vendor/aura/view/scripts/input_registry.php&#39;
+    <span style="color:#e6db74">&#39;input&#39;</span>         <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> () { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Aura\View\Helper\Form\Input</span>(
+            <span style="color:#66d9ef">require</span> <span style="color:#a6e22e">dirname</span>(<span style="color:#66d9ef">__DIR__</span>) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/aura/view/scripts/input_registry.php&#39;</span>
         ); 
     },
-    &#39;radios&#39;        =&gt; function () { return new Aura\View\Helper\Form\Radios(new Aura\View\Helper\Form\Input\Checked); },
-    &#39;repeat&#39;         =&gt; function () { return new Aura\View\Helper\Form\Repeat(
-            require dirname(__DIR__) . &#39;/vendor/aura/view/scripts/repeat_registry.php&#39;
+    <span style="color:#e6db74">&#39;radios&#39;</span>        <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> () { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Aura\View\Helper\Form\Radios</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Aura\View\Helper\Form\Input\Checked</span>); },
+    <span style="color:#e6db74">&#39;repeat&#39;</span>         <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> () { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Aura\View\Helper\Form\Repeat</span>(
+            <span style="color:#66d9ef">require</span> <span style="color:#a6e22e">dirname</span>(<span style="color:#66d9ef">__DIR__</span>) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/aura/view/scripts/repeat_registry.php&#39;</span>
         ); 
     },
-    &#39;select&#39;        =&gt; function () { return new Aura\View\Helper\Form\Select; },
-    &#39;textarea&#39;      =&gt; function () { return new Aura\View\Helper\Form\Textarea; },
+    <span style="color:#e6db74">&#39;select&#39;</span>        <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> () { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Aura\View\Helper\Form\Select</span>; },
+    <span style="color:#e6db74">&#39;textarea&#39;</span>      <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> () { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Aura\View\Helper\Form\Textarea</span>; },
 ]);
 
-$field = $helper-&gt;get(&#39;field&#39;);
-echo $field($form-&gt;get(&#39;name&#39;));
-echo $field($form-&gt;get(&#39;message&#39;));
+$field <span style="color:#f92672">=</span> $helper<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;field&#39;</span>);
+<span style="color:#66d9ef">echo</span> $field($form<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;name&#39;</span>));
+<span style="color:#66d9ef">echo</span> $field($form<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;message&#39;</span>));
 
-// echo $field($form-&gt;get(&#39;form-element&#39;));
-
+<span style="color:#75715e">// echo $field($form-&gt;get(&#39;form-element&#39;));
+</span><span style="color:#75715e"></span>
 </code></pre></div><p>The above will output something like</p>
 <p><code>&lt;input id=&quot;name&quot; type=&quot;text&quot; name=&quot;name&quot; size=&quot;20&quot; maxlength=&quot;20&quot; /&gt;</code></p>
 <h2 id="using-auraview">Using Aura.View</h2>

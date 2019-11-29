@@ -117,112 +117,118 @@ One strong preference choosing a framework was</p>
 <p>Look at <a href="http://phinx.org">phinx</a> a db migration tool, <a href="https://drupal.org">drupal 8</a> etc. These makes use of components like <code>symfony/console</code>, <code>symfony/http-foundation</code>, <code>symfony/router</code> etc.</p>
 <p>Some of the good things I like in symfony console component are its <a href="http://symfony.com/doc/current/components/console/helpers/index.html">helpers</a>.</p>
 <h3 id="table">Table</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Symfony\Component\Console\Helper\Table;
-use Symfony\Component\Console\Output\ConsoleOutput;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Symfony\Component\Console\Helper\Table</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Symfony\Component\Console\Output\ConsoleOutput</span>;
 
-$output = new ConsoleOutput();
-$table = new Table($output);
+$output <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ConsoleOutput</span>();
+$table <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Table</span>($output);
 $table
-    -&gt;setHeaders(array(&#39;ISBN&#39;, &#39;Title&#39;, &#39;Author&#39;))
-    -&gt;setRows(array(
-        array(&#39;99921-58-10-7&#39;, &#39;Divine Comedy&#39;, &#39;Dante Alighieri&#39;),
-        array(&#39;9971-5-0210-0&#39;, &#39;A Tale of Two Cities&#39;, &#39;Charles Dickens&#39;),
-        array(&#39;960-425-059-0&#39;, &#39;The Lord of the Rings&#39;, &#39;J. R. R. Tolkien&#39;),
-        array(&#39;80-902734-1-6&#39;, &#39;And Then There Were None&#39;, &#39;Agatha Christie&#39;),
+    <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setHeaders</span>(<span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;ISBN&#39;</span>, <span style="color:#e6db74">&#39;Title&#39;</span>, <span style="color:#e6db74">&#39;Author&#39;</span>))
+    <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setRows</span>(<span style="color:#66d9ef">array</span>(
+        <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;99921-58-10-7&#39;</span>, <span style="color:#e6db74">&#39;Divine Comedy&#39;</span>, <span style="color:#e6db74">&#39;Dante Alighieri&#39;</span>),
+        <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;9971-5-0210-0&#39;</span>, <span style="color:#e6db74">&#39;A Tale of Two Cities&#39;</span>, <span style="color:#e6db74">&#39;Charles Dickens&#39;</span>),
+        <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;960-425-059-0&#39;</span>, <span style="color:#e6db74">&#39;The Lord of the Rings&#39;</span>, <span style="color:#e6db74">&#39;J. R. R. Tolkien&#39;</span>),
+        <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;80-902734-1-6&#39;</span>, <span style="color:#e6db74">&#39;And Then There Were None&#39;</span>, <span style="color:#e6db74">&#39;Agatha Christie&#39;</span>),
     ))
 ;
-$table-&gt;render();
+$table<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">render</span>();
 </code></pre></div><h2 id="progress-bar">Progress bar</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Symfony\Component\Console\Helper\ProgressBar;
-use Symfony\Component\Console\Output\ConsoleOutput;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Symfony\Component\Console\Helper\ProgressBar</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Symfony\Component\Console\Output\ConsoleOutput</span>;
 
-$output = new ConsoleOutput();
+$output <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ConsoleOutput</span>();
 
-// create a new progress bar (50 units)
-$progress = new ProgressBar($output, 50);
+<span style="color:#75715e">// create a new progress bar (50 units)
+</span><span style="color:#75715e"></span>$progress <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ProgressBar</span>($output, <span style="color:#ae81ff">50</span>);
 
-// start and displays the progress bar
-$progress-&gt;start();
+<span style="color:#75715e">// start and displays the progress bar
+</span><span style="color:#75715e"></span>$progress<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">start</span>();
 
-$i = 0;
-while ($i++ &lt; <span style="color:#f92672">50</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">{</span>
-    <span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#a6e22e">do</span> <span style="color:#a6e22e">some</span> <span style="color:#a6e22e">work</span>
+$i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+<span style="color:#66d9ef">while</span> ($i<span style="color:#f92672">++</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">50</span>) {
+    <span style="color:#75715e">// ... do some work
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">// advance the progress bar 1 unit
+</span><span style="color:#75715e"></span>    $progress<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">advance</span>();
 
-    <span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span> <span style="color:#a6e22e">advance</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">progress</span> <span style="color:#a6e22e">bar</span> <span style="color:#a6e22e">1</span> <span style="color:#a6e22e">unit</span>
-    <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">progress-</span>&gt;advance();
+    <span style="color:#75715e">// you can also advance the progress bar by more than 1 unit
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// $progress-&gt;advance(3);
+</span><span style="color:#75715e"></span>}
 
-    // you can also advance the progress bar by more than 1 unit
-    // $progress-&gt;advance(3);
-}
-
-// ensure that the progress bar is at 100%
-$progress-&gt;finish();
+<span style="color:#75715e">// ensure that the progress bar is at 100%
+</span><span style="color:#75715e"></span>$progress<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">finish</span>();
 </code></pre></div><h2 id="question">Question</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Symfony\Component\Console\Helper\QuestionHelper;
-use Symfony\Component\Console\Output\ConsoleOutput;
-use Symfony\Component\Console\Input\StringInput;
-use Symfony\Component\Console\Question\ConfirmationQuestion;
-use Symfony\Component\Console\Question\ChoiceQuestion;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Symfony\Component\Console\Helper\QuestionHelper</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Symfony\Component\Console\Output\ConsoleOutput</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Symfony\Component\Console\Input\StringInput</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Symfony\Component\Console\Question\ConfirmationQuestion</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Symfony\Component\Console\Question\ChoiceQuestion</span>;
 
-$output = new ConsoleOutput();
-$helper = new QuestionHelper();
-$input = new StringInput(&#39;action&#39;);
-$question = new ConfirmationQuestion(&#39;Continue with this action?&#39;, false);
+$output <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ConsoleOutput</span>();
+$helper <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">QuestionHelper</span>();
+$input <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">StringInput</span>(<span style="color:#e6db74">&#39;action&#39;</span>);
+$question <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ConfirmationQuestion</span>(<span style="color:#e6db74">&#39;Continue with this action?&#39;</span>, <span style="color:#66d9ef">false</span>);
 
-if ($helper-&gt;ask($input, $output, $question)) {
-    $question = new ChoiceQuestion(
-        &#39;Please select your favorite color (defaults to red)&#39;,
-        array(&#39;red&#39;, &#39;blue&#39;, &#39;yellow&#39;),
-        0
+<span style="color:#66d9ef">if</span> ($helper<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">ask</span>($input, $output, $question)) {
+    $question <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ChoiceQuestion</span>(
+        <span style="color:#e6db74">&#39;Please select your favorite color (defaults to red)&#39;</span>,
+        <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;red&#39;</span>, <span style="color:#e6db74">&#39;blue&#39;</span>, <span style="color:#e6db74">&#39;yellow&#39;</span>),
+        <span style="color:#ae81ff">0</span>
     );
-    $question-&gt;setErrorMessage(&#39;Color %s is invalid.&#39;);
+    $question<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setErrorMessage</span>(<span style="color:#e6db74">&#39;Color %s is invalid.&#39;</span>);
 
-    $color = $helper-&gt;ask($input, $output, $question);
-    $output-&gt;writeln(&#39;You have just selected: &#39;.$color);
-} else {
-    $output-&gt;writeln(&#39;Exiting !&#39;);
+    $color <span style="color:#f92672">=</span> $helper<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">ask</span>($input, $output, $question);
+    $output<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">writeln</span>(<span style="color:#e6db74">&#39;You have just selected: &#39;</span><span style="color:#f92672">.</span>$color);
+} <span style="color:#66d9ef">else</span> {
+    $output<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">writeln</span>(<span style="color:#e6db74">&#39;Exiting !&#39;</span>);
 }
 </code></pre></div><h2 id="hidden-passwords">Hidden Passwords</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Symfony\Component\Console\Helper\QuestionHelper;
-use Symfony\Component\Console\Output\ConsoleOutput;
-use Symfony\Component\Console\Input\StringInput;
-use Symfony\Component\Console\Question\Question;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Symfony\Component\Console\Helper\QuestionHelper</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Symfony\Component\Console\Output\ConsoleOutput</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Symfony\Component\Console\Input\StringInput</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Symfony\Component\Console\Question\Question</span>;
 
-$output = new ConsoleOutput();
-$helper = new QuestionHelper();
-$input = new StringInput(&#39;action&#39;);
-$question = new Question(&#39;What is the database password?&#39;);
-$question-&gt;setHidden(true);
-$question-&gt;setHiddenFallback(false);
+$output <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ConsoleOutput</span>();
+$helper <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">QuestionHelper</span>();
+$input <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">StringInput</span>(<span style="color:#e6db74">&#39;action&#39;</span>);
+$question <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Question</span>(<span style="color:#e6db74">&#39;What is the database password?&#39;</span>);
+$question<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setHidden</span>(<span style="color:#66d9ef">true</span>);
+$question<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setHiddenFallback</span>(<span style="color:#66d9ef">false</span>);
 
-$password = $helper-&gt;ask($input, $output, $question);
-$output-&gt;writeln(&#39;Entered password : &#39; . $password);
+$password <span style="color:#f92672">=</span> $helper<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">ask</span>($input, $output, $question);
+$output<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">writeln</span>(<span style="color:#e6db74">&#39;Entered password : &#39;</span> <span style="color:#f92672">.</span> $password);
 </code></pre></div><p>and more.. I hope you will also add <code>symfony/console</code> into your list.</p>
 <h2 id="http-foundation">Http Foundation</h2>
 <p>The <code>symfony/http-foundation</code> is another extensively used component. It is actually <a href="https://github.com/auraphp/Aura.Web">Aura.Web</a> + <a href="https://github.com/auraphp/Aura.Session">Aura.Session</a> with more session handlers. Used by <code>drupal</code>, <code>laravel</code> etc in core. When working on mixed projects like <code>drupal</code>, <code>laravel</code> etc, it is good to be in your list.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Symfony\Component\HttpFoundation\Request</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Symfony\Component\HttpFoundation\Response</span>;
 
-$request = Request::createFromGlobals();
-$response = new Response(
-    &#39;Hello symfony&#39;,
-    Response::HTTP_OK,
-    array(&#39;content-type&#39; =&gt; &#39;text/html&#39;)
+$request <span style="color:#f92672">=</span> <span style="color:#a6e22e">Request</span><span style="color:#f92672">::</span><span style="color:#a6e22e">createFromGlobals</span>();
+$response <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(
+    <span style="color:#e6db74">&#39;Hello symfony&#39;</span>,
+    <span style="color:#a6e22e">Response</span><span style="color:#f92672">::</span><span style="color:#a6e22e">HTTP_OK</span>,
+    <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;content-type&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;text/html&#39;</span>)
 );
-$response-&gt;send();
+$response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">send</span>();
 </code></pre></div><h2 id="finder">Finder</h2>
 <p>Another wonderful component is the finder.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Symfony\Component\Finder\Finder;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Symfony\Component\Finder\Finder</span>;
 
-$finder = new Finder();
+$finder <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Finder</span>();
 
-$iterator = $finder
-  -&gt;files()
-  -&gt;depth(0)
-  -&gt;in(__DIR__);
+$iterator <span style="color:#f92672">=</span> $finder
+  <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">files</span>()
+  <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">depth</span>(<span style="color:#ae81ff">0</span>)
+  <span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">in</span>(<span style="color:#66d9ef">__DIR__</span>);
 
-foreach ($iterator as $file) {
-    print $file-&gt;getRealpath().&#34;\n&#34;;
+<span style="color:#66d9ef">foreach</span> ($iterator <span style="color:#66d9ef">as</span> $file) {
+    <span style="color:#66d9ef">print</span> $file<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getRealpath</span>()<span style="color:#f92672">.</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
 }
 </code></pre></div><h2 id="filesystem">Filesystem</h2>
 <p>Filesystem is another nice component which helps you to copy, rename, create directories.</p>

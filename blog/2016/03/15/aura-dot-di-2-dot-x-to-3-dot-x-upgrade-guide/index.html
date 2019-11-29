@@ -104,31 +104,33 @@ I am trying to document most of them, incase I missed please <a href="https://gi
 <h2 id="bc-breaks">BC Breaks</h2>
 <h3 id="instantiation">Instantiation</h3>
 <p>The way di container is instantiated has been changed from</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Aura\Di\Container;
-use Aura\Di\Factory;
-use Aura\Di\ContainerBuilder;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Di\Container</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Di\Factory</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Di\ContainerBuilder</span>;
 
-$di = new Container(new Factory);
+$di <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Container</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Factory</span>);
 
-// or 
-
-$container_builder = new ContainerBuilder();
-$di = $container_builder-&gt;newInstance(
-    array(),
-    array(),
-    $auto_resolve = false
+<span style="color:#75715e">// or 
+</span><span style="color:#75715e"></span>
+$container_builder <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ContainerBuilder</span>();
+$di <span style="color:#f92672">=</span> $container_builder<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">newInstance</span>(
+    <span style="color:#66d9ef">array</span>(),
+    <span style="color:#66d9ef">array</span>(),
+    $auto_resolve <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
 );
 </code></pre></div><p>to</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Aura\Di\ContainerBuilder;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Di\ContainerBuilder</span>;
 
-$container_builder = new ContainerBuilder();
+$container_builder <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ContainerBuilder</span>();
 
-// use the builder to create and configure a container
-// using an array of ContainerConfig classes
-$di = $container_builder-&gt;newConfiguredInstance([
-    &#39;Aura\Cli\_Config\Common&#39;,
-    &#39;Aura\Router\_Config\Common&#39;,
-    &#39;Aura\Web\_Config\Common&#39;,
+<span style="color:#75715e">// use the builder to create and configure a container
+</span><span style="color:#75715e">// using an array of ContainerConfig classes
+</span><span style="color:#75715e"></span>$di <span style="color:#f92672">=</span> $container_builder<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">newConfiguredInstance</span>([
+    <span style="color:#e6db74">&#39;Aura\Cli\_Config\Common&#39;</span>,
+    <span style="color:#e6db74">&#39;Aura\Router\_Config\Common&#39;</span>,
+    <span style="color:#e6db74">&#39;Aura\Web\_Config\Common&#39;</span>,
 ]);
 </code></pre></div><h3 id="setter-vs-setters">setter vs setters</h3>
 <p><code>$di-&gt;setter</code> is now <code>$di-&gt;setters</code>. Please note there is an additional <code>s</code> in the end. <a href="https://github.com/auraphp/Aura.Di/issues/115"><a href="https://github.com/auraphp/Aura.Di/issues/115">https://github.com/auraphp/Aura.Di/issues/115</a></a>.</p>

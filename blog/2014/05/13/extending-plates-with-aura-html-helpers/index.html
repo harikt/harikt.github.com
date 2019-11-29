@@ -191,9 +191,10 @@ this functionality to plugin the helpers.</p>
 and use aura html helper to show the system works as expected.</p>
 <p>Create the templates in a <code>templates</code> folder or change the path in Plates Engine.</p>
 <h3 id="profile-template">Profile Template</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;!-- profile.php --&gt;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#f92672">&lt;!--</span> <span style="color:#a6e22e">profile</span><span style="color:#f92672">.</span><span style="color:#a6e22e">php</span> <span style="color:#f92672">--&gt;</span>
 
-<span style="color:#75715e">&lt;?php</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">layout</span>(<span style="color:#e6db74">&#39;template&#39;</span>) <span style="color:#75715e">?&gt;</span>
+<span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">layout</span>(<span style="color:#e6db74">&#39;template&#39;</span>) <span style="color:#75715e">?&gt;</span>
 
 <span style="color:#75715e">&lt;?php</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;User Profile&#39;</span> <span style="color:#75715e">?&gt;</span>
 
@@ -222,11 +223,12 @@ and use aura html helper to show the system works as expected.</p>
 </span><span style="color:#75715e"></span><span style="color:#75715e">?&gt;</span>
 &lt;/<span style="color:#f92672">div</span>&gt;
 </code></pre></div><h3 id="layout-template">Layout Template</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;!-- template.php --&gt;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#f92672">&lt;!--</span> <span style="color:#a6e22e">template</span><span style="color:#f92672">.</span><span style="color:#a6e22e">php</span> <span style="color:#f92672">--&gt;</span>
 
-&lt;<span style="color:#f92672">html</span>&gt;
-&lt;<span style="color:#f92672">head</span>&gt;
-    &lt;<span style="color:#f92672">title</span>&gt;<span style="color:#75715e">&lt;?</span><span style="color:#f92672">=</span>$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">title</span><span style="color:#75715e">?&gt;</span>&lt;/<span style="color:#f92672">title</span>&gt;
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">html</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">head</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">title</span><span style="color:#f92672">&gt;&lt;?=</span>$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">title</span><span style="color:#75715e">?&gt;</span>&lt;/<span style="color:#f92672">title</span>&gt;
 &lt;/<span style="color:#f92672">head</span>&gt;
 
 &lt;<span style="color:#f92672">body</span>&gt;
@@ -244,21 +246,22 @@ and use aura html helper to show the system works as expected.</p>
         }
     }
 </code></pre></div><h3 id="bootstrapping-and-rendering">Bootstrapping and Rendering</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// test.php file
-require __DIR__ . &#39;/vendor/autoload.php&#39;;
-$engine = new \League\Plates\Engine( __DIR__ . &#39;/templates&#39;);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#75715e">// test.php file
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">require</span> <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/autoload.php&#39;</span>;
+$engine <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\League\Plates\Engine</span>( <span style="color:#66d9ef">__DIR__</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/templates&#39;</span>);
 
-// Create a new template
-$template = new \League\Plates\Template($engine);
-$factory = new \Aura\Html\HelperLocatorFactory();
-$helper = $factory-&gt;newInstance();
-$engine-&gt;loadExtension(new AuraHtmlExtension($helper));
+<span style="color:#75715e">// Create a new template
+</span><span style="color:#75715e"></span>$template <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\League\Plates\Template</span>($engine);
+$factory <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\Aura\Html\HelperLocatorFactory</span>();
+$helper <span style="color:#f92672">=</span> $factory<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">newInstance</span>();
+$engine<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">loadExtension</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">AuraHtmlExtension</span>($helper));
 
-// Assign a variable to the template
-$template-&gt;name = &#39;Jonathan&#39;;
+<span style="color:#75715e">// Assign a variable to the template
+</span><span style="color:#75715e"></span>$template<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Jonathan&#39;</span>;
 
-// Render the template
-echo $template-&gt;render(&#39;profile&#39;);
+<span style="color:#75715e">// Render the template
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> $template<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">render</span>(<span style="color:#e6db74">&#39;profile&#39;</span>);
 </code></pre></div><p>If you run <code>php test.php</code> you will see something like this rendered.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
 &lt;<span style="color:#f92672">head</span>&gt;

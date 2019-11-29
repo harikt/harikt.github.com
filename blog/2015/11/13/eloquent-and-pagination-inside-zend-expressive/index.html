@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <title>eloquent and pagination inside zend expressive – Random thoughts</title>
-<meta name="description" content="Recently working with eloquent (Laravel&#39;s orm), zend expressive and zend view, I wanted to integrate pagination. It was simple as registering a Paginator middleware. use …">
+<meta name="description" content="Recently working with eloquent (Laravel&#39;s orm), zend expressive and zend view, I wanted to integrate pagination. It was simple as registering a Paginator middleware. …">
 <meta name="created" content="2015-11-13T00:00:00&#43;0000">
 <meta name="modified" content="2015-11-13T00:00:00&#43;0000">
 
@@ -34,7 +34,7 @@
     "datePublished": "2015-11-13T00:00:00Z",
     "dateModified": "2015-11-13T00:00:00Z",
     "url" : "https://harikt.com/blog/2015/11/13/eloquent-and-pagination-inside-zend-expressive/",
-    "description": "Recently working with eloquent (Laravel's orm), zend expressive and zend view, I wanted to integrate pagination. It was simple as registering a Paginator middleware. use …",
+    "description": "Recently working with eloquent (Laravel's orm), zend expressive and zend view, I wanted to integrate pagination. It was simple as registering a Paginator middleware. …",
     "image" : "https://harikt.com/apple-touch-icon-180.png",
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -101,20 +101,22 @@
 <p>Recently working with eloquent (Laravel's orm), zend expressive and zend view,
 I wanted to integrate pagination.</p>
 <p>It was simple as registering a <code>Paginator</code> middleware.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Illuminate\Pagination\Paginator;
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Illuminate\Pagination\Paginator</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Psr\Http\Message\ResponseInterface</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Psr\Http\Message\ServerRequestInterface</span>;
 
-IlluminatePaginator::currentPageResolver(function ($pageName) use ($request) {
-    $params = $request-&gt;getQueryParams();
-    return empty($params[$pageName]) ? 1 : $params[$pageName];
+<span style="color:#a6e22e">IlluminatePaginator</span><span style="color:#f92672">::</span><span style="color:#a6e22e">currentPageResolver</span>(<span style="color:#66d9ef">function</span> ($pageName) <span style="color:#66d9ef">use</span> ($request) {
+    $params <span style="color:#f92672">=</span> $request<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getQueryParams</span>();
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">empty</span>($params[$pageName]) <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> $params[$pageName];
 });
-IlluminatePaginator::currentPathResolver(function () use ($request) {
-    return $request-&gt;getUri()-&gt;getPath();
+<span style="color:#a6e22e">IlluminatePaginator</span><span style="color:#f92672">::</span><span style="color:#a6e22e">currentPathResolver</span>(<span style="color:#66d9ef">function</span> () <span style="color:#66d9ef">use</span> ($request) {
+    <span style="color:#66d9ef">return</span> $request<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getUri</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getPath</span>();
 });
 </code></pre></div><p>and you can call paginate on the <code>Model</code>.</p>
 <p>Eg : Consider you have a <code>Post</code> model.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$posts = Post::paginate(20);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$posts <span style="color:#f92672">=</span> <span style="color:#a6e22e">Post</span><span style="color:#f92672">::</span><span style="color:#a6e22e">paginate</span>(<span style="color:#ae81ff">20</span>);
 </code></pre></div><p>and in view you can iterate through the <code>$posts</code> and render the pagination.
 The <code>$posts</code> is an object of <a href="http://laravel.com/api/5.0/Illuminate/Pagination/LengthAwarePaginator.html">LengthAwarePaginator</a>.</p>
 <p>You can also modify the presenter accordingly. Default comes with  <a href="http://laravel.com/api/5.0/Illuminate/Pagination/BootstrapThreePresenter.html">BootstrapThreePresenter</a></p>

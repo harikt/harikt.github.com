@@ -103,7 +103,8 @@
 <p>Assuming you have downloaded the symfony-standard distribution to play.</p>
 </blockquote>
 <p>Create <code>HktEventBundle</code> via <a href="http://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html">sensio generator bundle</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">php app/console generate:bundle --namespace=Hkt/EventBundle --dir src --no-interaction
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#a6e22e">php</span> <span style="color:#a6e22e">app</span><span style="color:#f92672">/</span><span style="color:#a6e22e">console</span> <span style="color:#a6e22e">generate</span><span style="color:#f92672">:</span><span style="color:#a6e22e">bundle</span> <span style="color:#f92672">--</span><span style="color:#66d9ef">namespace</span><span style="color:#f92672">=</span><span style="color:#a6e22e">Hkt</span><span style="color:#f92672">/</span><span style="color:#a6e22e">EventBundle</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">dir</span> <span style="color:#a6e22e">src</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">no</span><span style="color:#f92672">-</span><span style="color:#a6e22e">interaction</span>
 </code></pre></div><p>Create the event class.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 <span style="color:#75715e">// src/Hkt/EventBundle/Event/PageViewed.php
@@ -153,6 +154,7 @@ class DefaultController extends Controller
 </code></pre><h2 id="listener">Listener</h2>
 <p>Create the listener to do what you want to do with the dispatched/triggered event.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 <span style="color:#75715e">// src/Hkt/EventBundle/EventListener/PageViewedListener.php
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Hkt\EventBundle\EventListener</span>;
 

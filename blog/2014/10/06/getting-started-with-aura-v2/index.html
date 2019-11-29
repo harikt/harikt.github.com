@@ -109,52 +109,55 @@ cd quick-start
 </code></pre><p>We will be keeping all the templates in <code>templates</code> folder where views in <code>templates/views</code> and layout in <code>templates/layouts</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p templates/<span style="color:#f92672">{</span>views,layouts<span style="color:#f92672">}</span>
 </code></pre></div><p>Edit <code>config/Common.php</code> and define service for <code>view</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">public function define(Container $di)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">define</span>(<span style="color:#a6e22e">Container</span> $di)
 {
-    $di-&gt;set(&#39;view&#39;, $di-&gt;lazyNew(&#39;Aura\View\View&#39;));
+    $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;view&#39;</span>, $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">lazyNew</span>(<span style="color:#e6db74">&#39;Aura\View\View&#39;</span>));
 }
 </code></pre></div><p>add a way to set the path to templates. Assuming you have <code>templates</code> folder in the root. There is no finder in <code>aura/view</code> to increase the performance of loading and rendering templates. For a quick hack let us iterate through the directory and set all the views and layouts to its registry.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">public function modify(Container $di)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">modify</span>(<span style="color:#a6e22e">Container</span> $di)
 {
-    // more code
-    $this-&gt;defineTemplates($di);
+    <span style="color:#75715e">// more code
+</span><span style="color:#75715e"></span>    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">defineTemplates</span>($di);
 }
 
-public function defineTemplates($di)
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">defineTemplates</span>($di)
 {
-    $view = $di-&gt;get(&#39;view&#39;);
-    $view_registry = $view-&gt;getViewRegistry();
-    $view_directory = dirname(__DIR__) . &#39;/templates/views/&#39;;
-    $iterator = new \DirectoryIterator($view_directory);
-    foreach ($iterator as $fileinfo) {
-        if ($fileinfo-&gt;isFile()) {
-            $view_registry-&gt;set($fileinfo-&gt;getBasename(&#39;.php&#39;), $fileinfo-&gt;getPathname());
+    $view <span style="color:#f92672">=</span> $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;view&#39;</span>);
+    $view_registry <span style="color:#f92672">=</span> $view<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getViewRegistry</span>();
+    $view_directory <span style="color:#f92672">=</span> <span style="color:#a6e22e">dirname</span>(<span style="color:#66d9ef">__DIR__</span>) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/templates/views/&#39;</span>;
+    $iterator <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\DirectoryIterator</span>($view_directory);
+    <span style="color:#66d9ef">foreach</span> ($iterator <span style="color:#66d9ef">as</span> $fileinfo) {
+        <span style="color:#66d9ef">if</span> ($fileinfo<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">isFile</span>()) {
+            $view_registry<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>($fileinfo<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getBasename</span>(<span style="color:#e6db74">&#39;.php&#39;</span>), $fileinfo<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getPathname</span>());
         }
     }
 
-    $layout_registry = $view-&gt;getLayoutRegistry();
-    $layout_directory = dirname(__DIR__) . &#39;/templates/layouts/&#39;;
-    $iterator = new \DirectoryIterator($layout_directory);
-    foreach ($iterator as $fileinfo) {
-        if ($fileinfo-&gt;isFile()) {
-            $layout_registry-&gt;set($fileinfo-&gt;getBasename(&#39;.php&#39;), $fileinfo-&gt;getPathname());
+    $layout_registry <span style="color:#f92672">=</span> $view<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getLayoutRegistry</span>();
+    $layout_directory <span style="color:#f92672">=</span> <span style="color:#a6e22e">dirname</span>(<span style="color:#66d9ef">__DIR__</span>) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/templates/layouts/&#39;</span>;
+    $iterator <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\DirectoryIterator</span>($layout_directory);
+    <span style="color:#66d9ef">foreach</span> ($iterator <span style="color:#66d9ef">as</span> $fileinfo) {
+        <span style="color:#66d9ef">if</span> ($fileinfo<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">isFile</span>()) {
+            $layout_registry<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>($fileinfo<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getBasename</span>(<span style="color:#e6db74">&#39;.php&#39;</span>), $fileinfo<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getPathname</span>());
         }
     }
 }
 </code></pre></div><p>Edit <code>modifyDispatcher</code> method to</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">public function modifyWebDispatcher($di)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">modifyWebDispatcher</span>($di)
 {
-    $dispatcher = $di-&gt;get(&#39;aura/web-kernel:dispatcher&#39;);
+    $dispatcher <span style="color:#f92672">=</span> $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;aura/web-kernel:dispatcher&#39;</span>);
 
-    $view = $di-&gt;get(&#39;view&#39;);
-    $response = $di-&gt;get(&#39;aura/web-kernel:response&#39;);
-    $request = $di-&gt;get(&#39;aura/web-kernel:request&#39;);
-    $dispatcher-&gt;setObject(&#39;hello&#39;, function () use ($view, $response, $request) {
-        $name = $request-&gt;query-&gt;get(&#39;name&#39;, &#39;Aura&#39;);
-        $view-&gt;setView(&#39;hello&#39;);
-        $view-&gt;setLayout(&#39;default&#39;);
-        $view-&gt;setData(array(&#39;name&#39; =&gt; $name));
-        $response-&gt;content-&gt;set($view-&gt;__invoke());
+    $view <span style="color:#f92672">=</span> $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;view&#39;</span>);
+    $response <span style="color:#f92672">=</span> $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;aura/web-kernel:response&#39;</span>);
+    $request <span style="color:#f92672">=</span> $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;aura/web-kernel:request&#39;</span>);
+    $dispatcher<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setObject</span>(<span style="color:#e6db74">&#39;hello&#39;</span>, <span style="color:#66d9ef">function</span> () <span style="color:#66d9ef">use</span> ($view, $response, $request) {
+        $name <span style="color:#f92672">=</span> $request<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">query</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;name&#39;</span>, <span style="color:#e6db74">&#39;Aura&#39;</span>);
+        $view<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setView</span>(<span style="color:#e6db74">&#39;hello&#39;</span>);
+        $view<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setLayout</span>(<span style="color:#e6db74">&#39;default&#39;</span>);
+        $view<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setData</span>(<span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#f92672">=&gt;</span> $name));
+        $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">content</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>($view<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">__invoke</span>());
     });
 }
 </code></pre></div><p>Create your basic template <code>templates/views/hello.php</code></p>

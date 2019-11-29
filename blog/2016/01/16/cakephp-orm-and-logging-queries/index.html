@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <title>cakephp orm and logging queries – Random thoughts</title>
-<meta name="description" content="Working with cakephp/orm library, I needed to log all the queries. Cakephp provides a way to do it via cakephp/log. use Cake\Log\Log; Log::config(&amp;#39;queries&amp;#39;, [ …">
+<meta name="description" content="Working with cakephp/orm library, I needed to log all the queries. Cakephp provides a way to do it via cakephp/log. &amp;lt;?php use Cake\Log\Log; …">
 <meta name="created" content="2016-01-16T00:00:00&#43;0000">
 <meta name="modified" content="2016-01-16T00:00:00&#43;0000">
 
@@ -34,7 +34,7 @@
     "datePublished": "2016-01-16T00:00:00Z",
     "dateModified": "2016-01-16T00:00:00Z",
     "url" : "https://harikt.com/blog/2016/01/16/cakephp-orm-and-logging-queries/",
-    "description": "Working with cakephp/orm library, I needed to log all the queries. Cakephp provides a way to do it via cakephp/log. use Cake\\Log\\Log; Log::config(\u0026#39;queries\u0026#39;, [ …",
+    "description": "Working with cakephp/orm library, I needed to log all the queries. Cakephp provides a way to do it via cakephp/log. \u0026lt;?php use Cake\\Log\\Log; …",
     "image" : "https://harikt.com/apple-touch-icon-180.png",
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -100,23 +100,25 @@
 <div class="content">
 <p>Working with <a href="http://packagist.org/packages/cakephp/orm">cakephp/orm</a> library, I needed to log all the queries.
 Cakephp provides a way to do it via <a href="http://packagist.org/packages/cakephp/log">cakephp/log</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Cake\Log\Log;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Cake\Log\Log</span>;
 
-Log::config(&#39;queries&#39;, [
-	&#39;className&#39; =&gt; &#39;File&#39;,
-	&#39;path&#39; =&gt; &#39;/my/log/path/&#39;,
-	&#39;file&#39; =&gt; &#39;app&#39;,
-	&#39;scopes&#39; =&gt; [&#39;queriesLog&#39;]
+<span style="color:#a6e22e">Log</span><span style="color:#f92672">::</span><span style="color:#a6e22e">config</span>(<span style="color:#e6db74">&#39;queries&#39;</span>, [
+	<span style="color:#e6db74">&#39;className&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;File&#39;</span>,
+	<span style="color:#e6db74">&#39;path&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;/my/log/path/&#39;</span>,
+	<span style="color:#e6db74">&#39;file&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;app&#39;</span>,
+	<span style="color:#e6db74">&#39;scopes&#39;</span> <span style="color:#f92672">=&gt;</span> [<span style="color:#e6db74">&#39;queriesLog&#39;</span>]
 ]);
 </code></pre></div><p>But you are not limited, if you need to configure it to a PSR-3 logger like <a href="http://packagist.org/packages/monolog/monolog">monolog/monolog</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Cake\Log\Log;
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Cake\Log\Log</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Monolog\Logger</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Monolog\Handler\StreamHandler</span>;
 
-Log::config(&#39;default&#39;, function () {
-    $log = new Logger(&#39;cli&#39;);
-    $log-&gt;pushHandler(new StreamHandler(&#39;php://stdout&#39;));
-    return $log;
+<span style="color:#a6e22e">Log</span><span style="color:#f92672">::</span><span style="color:#a6e22e">config</span>(<span style="color:#e6db74">&#39;default&#39;</span>, <span style="color:#66d9ef">function</span> () {
+    $log <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Logger</span>(<span style="color:#e6db74">&#39;cli&#39;</span>);
+    $log<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">pushHandler</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">StreamHandler</span>(<span style="color:#e6db74">&#39;php://stdout&#39;</span>));
+    <span style="color:#66d9ef">return</span> $log;
 });
 </code></pre></div><p>That was pretty simple and it logs to cli.</p>
 <p>Thank you <a href="https://github.com/lorenzo">José Lorenzo Rodríguez</a> for providing the necessary information.</p>
@@ -124,20 +126,21 @@ Log::config(&#39;default&#39;, function () {
 <p>Install <a href="https://github.com/fabfuel/prophiler/">fabfuel/prophiler</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">r</span> <span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">q</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span> <span style="color:#960050;background-color:#1e0010">f</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">b</span><span style="color:#960050;background-color:#1e0010">f</span><span style="color:#960050;background-color:#1e0010">u</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">l</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">r</span>
 </code></pre></div><h2 id="configuring-debugbar">Configuring debugbar</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use Cake\Log\Log;
-use Fabfuel\Prophiler\Profiler;
-use Fabfuel\Prophiler\Toolbar;
-use Fabfuel\Prophiler\DataCollector\Request;
-use Fabfuel\Prophiler\Adapter\Psr\Log\Logger;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Cake\Log\Log</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Fabfuel\Prophiler\Profiler</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Fabfuel\Prophiler\Toolbar</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Fabfuel\Prophiler\DataCollector\Request</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Fabfuel\Prophiler\Adapter\Psr\Log\Logger</span>;
 
-$profiler = new Profiler();
-$toolbar = new Toolbar($profiler);
-// add your data collectors
-// $toolbar-&gt;addDataCollector(new Request());
-
-Log::config(&#39;db&#39;, function () use ($profiler) {
-	$log = new Logger($profiler);
-	return $log;
+$profiler <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Profiler</span>();
+$toolbar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Toolbar</span>($profiler);
+<span style="color:#75715e">// add your data collectors
+</span><span style="color:#75715e">// $toolbar-&gt;addDataCollector(new Request());
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">Log</span><span style="color:#f92672">::</span><span style="color:#a6e22e">config</span>(<span style="color:#e6db74">&#39;db&#39;</span>, <span style="color:#66d9ef">function</span> () <span style="color:#66d9ef">use</span> ($profiler) {
+	$log <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Logger</span>($profiler);
+	<span style="color:#66d9ef">return</span> $log;
 });
 </code></pre></div><p>Using a PSR-7 framework like zend-expressive,  <a href="https://github.com/bitExpert/prophiler-psr7-middleware">bitExpert/prophiler-psr7-middleware</a> is your friend.</p>
 

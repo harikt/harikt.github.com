@@ -105,7 +105,7 @@ Since symfony 4.4 the symfony/debug component is deprecated.
  Running unit tests on Mascot, I noticed lots of warnings.
 But it was not easy as changing Symfony\Component\Debug\ExceptionHandler to Symfony\Component\ErrorHandler\ErrorHandler.
 Assume we have something as below
-37 38 39 40 41 42 43  $handler = new \Symfony\Component\Debug\ExceptionHandler($debug); $exception = $event-&gt;getThrowable(); if (!$exception instanceof FlattenException) { $exception = FlattenException::create($exception); } $response = Response::create($handler-&gt;getHtml($exception), $exception-&gt;getStatusCode(), $exception-&gt;getHeaders())-&gt;setCharset(ini_get(&#39;default_charset&#39;)); $event-&gt;setResponse($response);   The Symfony\Component\ErrorHandler\ErrorHandler has no getHtml method.
+37 38 39 40 41 42 43 44  &lt;?php $handler = new \Symfony\Component\Debug\ExceptionHandler($debug); $exception = $event-&gt;getThrowable(); if (!$exception instanceof FlattenException) { $exception = FlattenException::create($exception); } $response = Response::create($handler-&gt;getHtml($exception), $exception-&gt;getStatusCode(), $exception-&gt;getHeaders())-&gt;setCharset(ini_get(&#39;default_charset&#39;)); $event-&gt;setResponse($response);   The Symfony\Component\ErrorHandler\ErrorHandler has no getHtml method.
 </div>
 </article>
 
@@ -153,7 +153,7 @@ composer require cakephp/migrations:dev-master  The dev-master is currently pass
 3.x has a very minimal BC break. But if you are not sure what are they, then you may feel the pain. I am trying to document most of them, incase I missed please edit and send a pull request.
 I will try to eventually pushed to the main Aura.Di repo.
 BC Breaks Instantiation The way di container is instantiated has been changed from
-use Aura\Di\Container; use Aura\Di\Factory; use Aura\Di\ContainerBuilder; $di = new Container(new Factory); // or $container_builder = new ContainerBuilder(); $di = $container_builder-&gt;newInstance( array(), array(), $auto_resolve = false ); to
+&lt;?php use Aura\Di\Container; use Aura\Di\Factory; use Aura\Di\ContainerBuilder; $di = new Container(new Factory); // or  $container_builder = new ContainerBuilder(); $di = $container_builder-&gt;newInstance( array(), array(), $auto_resolve = false ); to
 </div>
 </article>
 
@@ -167,8 +167,8 @@ use Aura\Di\Container; use Aura\Di\Factory; use Aura\Di\ContainerBuilder; $di = 
 </header>
 <div class="content">
 Working with cakephp/orm library, I needed to log all the queries. Cakephp provides a way to do it via cakephp/log.
-use Cake\Log\Log; Log::config(&#39;queries&#39;, [ &#39;className&#39; =&gt; &#39;File&#39;, &#39;path&#39; =&gt; &#39;/my/log/path/&#39;, &#39;file&#39; =&gt; &#39;app&#39;, &#39;scopes&#39; =&gt; [&#39;queriesLog&#39;] ]); But you are not limited, if you need to configure it to a PSR-3 logger like monolog/monolog
-use Cake\Log\Log; use Monolog\Logger; use Monolog\Handler\StreamHandler; Log::config(&#39;default&#39;, function () { $log = new Logger(&#39;cli&#39;); $log-&gt;pushHandler(new StreamHandler(&#39;php://stdout&#39;)); return $log; }); That was pretty simple and it logs to cli.
+&lt;?php use Cake\Log\Log; Log::config(&#39;queries&#39;, [ &#39;className&#39; =&gt; &#39;File&#39;, &#39;path&#39; =&gt; &#39;/my/log/path/&#39;, &#39;file&#39; =&gt; &#39;app&#39;, &#39;scopes&#39; =&gt; [&#39;queriesLog&#39;] ]); But you are not limited, if you need to configure it to a PSR-3 logger like monolog/monolog
+&lt;?php use Cake\Log\Log; use Monolog\Logger; use Monolog\Handler\StreamHandler; Log::config(&#39;default&#39;, function () { $log = new Logger(&#39;cli&#39;); $log-&gt;pushHandler(new StreamHandler(&#39;php://stdout&#39;)); return $log; }); That was pretty simple and it logs to cli.
 </div>
 </article>
 
@@ -201,9 +201,8 @@ composer require illuminate/pagination If you are using a psr-7 request / respon
 <div class="content">
 Recently working with eloquent (Laravel's orm), zend expressive and zend view, I wanted to integrate pagination.
 It was simple as registering a Paginator middleware.
-use Illuminate\Pagination\Paginator; use Psr\Http\Message\ResponseInterface; use Psr\Http\Message\ServerRequestInterface; IlluminatePaginator::currentPageResolver(function ($pageName) use ($request) { $params = $request-&gt;getQueryParams(); return empty($params[$pageName]) ? 1 : $params[$pageName]; }); IlluminatePaginator::currentPathResolver(function () use ($request) { return $request-&gt;getUri()-&gt;getPath(); }); and you can call paginate on the Model.
+&lt;?php use Illuminate\Pagination\Paginator; use Psr\Http\Message\ResponseInterface; use Psr\Http\Message\ServerRequestInterface; IlluminatePaginator::currentPageResolver(function ($pageName) use ($request) { $params = $request-&gt;getQueryParams(); return empty($params[$pageName]) ? 1 : $params[$pageName]; }); IlluminatePaginator::currentPathResolver(function () use ($request) { return $request-&gt;getUri()-&gt;getPath(); }); and you can call paginate on the Model.
 Eg : Consider you have a Post model.
-$posts = Post::paginate(20); and in view you can iterate through the $posts and render the pagination.
 </div>
 </article>
 
@@ -235,7 +234,7 @@ Example code with Aura.Di version 3 configuration.
 In this tutorial we will create a custom event for symfony2 bundle.
  Assuming you have downloaded the symfony-standard distribution to play.
  Create HktEventBundle via sensio generator bundle.
-php app/console generate:bundle --namespace=Hkt/EventBundle --dir src --no-interaction Create the event class.
+&lt;?php php app/console generate:bundle --namespace=Hkt/EventBundle --dir src --no-interaction Create the event class.
 &lt;?php // src/Hkt/EventBundle/Event/PageViewed.php namespace Hkt\EventBundle\Event; use Symfony\Component\EventDispatcher\Event; class PageViewed extends Event { protected $name; public function __construct($name) { $this-&gt;name = $name; } public function getName() { return $this-&gt;name; } } Add as many methods/properties which are needed from the listener.
 </div>
 </article>

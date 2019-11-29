@@ -181,47 +181,48 @@ can be better ways for integration.</p>
 <p>Update : I was asking <a href="https://twitter.com/beausimensen">Beau D. Simensen</a>
 on the integration, and he gave another shot.</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// all code as same as above, upto the route
-
-$app-&gt;get(&#39;/hello/{name}&#39;, function ($name) use ($app) {
-    return [
-        &#39;controller&#39; =&gt; &#39;blog&#39;,
-        &#39;action&#39; =&gt; &#39;hello&#39;,
-        &#39;name&#39; =&gt; $name,
-        &#39;app&#39; =&gt; $app,
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#75715e">// all code as same as above, upto the route
+</span><span style="color:#75715e"></span>
+$app<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/hello/{name}&#39;</span>, <span style="color:#66d9ef">function</span> ($name) <span style="color:#66d9ef">use</span> ($app) {
+    <span style="color:#66d9ef">return</span> [
+        <span style="color:#e6db74">&#39;controller&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;blog&#39;</span>,
+        <span style="color:#e6db74">&#39;action&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;hello&#39;</span>,
+        <span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#f92672">=&gt;</span> $name,
+        <span style="color:#e6db74">&#39;app&#39;</span> <span style="color:#f92672">=&gt;</span> $app,
     ];
 });
 
-$app-&gt;on(\Symfony\Component\HttpKernel\KernelEvents::VIEW, function ($event) use ($app, $dispatcher) {
-    $view = $event-&gt;getControllerResult();
+$app<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">on</span>(<span style="color:#a6e22e">\Symfony\Component\HttpKernel\KernelEvents</span><span style="color:#f92672">::</span><span style="color:#a6e22e">VIEW</span>, <span style="color:#66d9ef">function</span> ($event) <span style="color:#66d9ef">use</span> ($app, $dispatcher) {
+    $view <span style="color:#f92672">=</span> $event<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getControllerResult</span>();
 
-    if (is_null($view) || is_string($view)) {
-        return;
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">is_null</span>($view) <span style="color:#f92672">||</span> <span style="color:#a6e22e">is_string</span>($view)) {
+        <span style="color:#66d9ef">return</span>;
     }
     
-    if ( ! is_array($view)) {
-        // we can only handle array data in the view
-        return;
+    <span style="color:#66d9ef">if</span> ( <span style="color:#f92672">!</span> <span style="color:#a6e22e">is_array</span>($view)) {
+        <span style="color:#75715e">// we can only handle array data in the view
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span>;
     }
     
-    if (! (isset($view[&#39;controller&#39;]) <span style="color:#960050;background-color:#1e0010">&amp;</span><span style="color:#960050;background-color:#1e0010">&amp;</span> isset($view[&#39;action&#39;]))) {
-        // at this point we don&#39;t know what is going on.
-        return;
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span> (<span style="color:#a6e22e">isset</span>($view[<span style="color:#e6db74">&#39;controller&#39;</span>]) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">isset</span>($view[<span style="color:#e6db74">&#39;action&#39;</span>]))) {
+        <span style="color:#75715e">// at this point we don&#39;t know what is going on.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span>;
     }
 
-    $response = $dispatcher($view);
+    $response <span style="color:#f92672">=</span> $dispatcher($view);
 
-    if ( ! $response instanceof \Symfony\Component\HttpFoundation\Response) {
-        // If the response is not a Response instance, wrap it in one
-        // and assume that it was something appropriate as a response
-        // body.
-        $response = new \Symfony\Component\HttpFoundation\Response($response);
+    <span style="color:#66d9ef">if</span> ( <span style="color:#f92672">!</span> $response <span style="color:#a6e22e">instanceof</span> <span style="color:#a6e22e">\Symfony\Component\HttpFoundation\Response</span>) {
+        <span style="color:#75715e">// If the response is not a Response instance, wrap it in one
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// and assume that it was something appropriate as a response
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// body.
+</span><span style="color:#75715e"></span>        $response <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\Symfony\Component\HttpFoundation\Response</span>($response);
     }
 
-    $event-&gt;setResponse($response);
+    $event<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setResponse</span>($response);
 });
 
-$app-&gt;run();
+$app<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">run</span>();
 </code></pre></div><blockquote>
 <p>I have purposefully kept the full path like <code>\Symfony\Component\HttpFoundation\Response</code></p>
 </blockquote>

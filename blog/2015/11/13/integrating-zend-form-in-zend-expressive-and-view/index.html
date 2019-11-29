@@ -146,21 +146,25 @@ and pass the <code>Zend\View\HelperPluginManager</code> service.</p>
 </ol>
 <p>First get the <code>Zend\View\HelperPluginManager</code> service.</p>
 <p>2.a ) Registering as a factory</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$serviceManager-&gt;setFactory(&#39;hasError&#39;, function () {
-    return new \App\View\Helper\HasError();
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$serviceManager<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setFactory</span>(<span style="color:#e6db74">&#39;hasError&#39;</span>, <span style="color:#66d9ef">function</span> () {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\App\View\Helper\HasError</span>();
 });
 </code></pre></div><p>2.b ) As an invokable</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$serviceManager-&gt;setInvokableClass(&#39;hasError&#39;, &#39;App\View\Helper\HasError&#39;);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$serviceManager<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setInvokableClass</span>(<span style="color:#e6db74">&#39;hasError&#39;</span>, <span style="color:#e6db74">&#39;App\View\Helper\HasError&#39;</span>);
 </code></pre></div><p>Now you can access inside zend-view as <code>$this-&gt;hasError()</code>. If your view
 helper need dependencies don't use the <code>setInvokableClass</code> method.
 Use factory and get the object from the container.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$serviceManager-&gt;setFactory(&#39;hasError&#39;, function () use ($di) {
-     return $di-&gt;get(&#39;App\View\Helper\HasError&#39;);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$serviceManager<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setFactory</span>(<span style="color:#e6db74">&#39;hasError&#39;</span>, <span style="color:#66d9ef">function</span> () <span style="color:#66d9ef">use</span> ($di) {
+     <span style="color:#66d9ef">return</span> $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;App\View\Helper\HasError&#39;</span>);
 });
 </code></pre></div><p>I wished if <code>$serviceManager</code> can understand the aura's <code>lazyNew</code> functionality
 so that we don't need to register it as a service.</p>
 <p>Eg : Below will not work.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$serviceManager-&gt;setFactory(&#39;hasError&#39;, $di-&gt;lazyNew(&#39;App\View\Helper\HasError&#39;));
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$serviceManager<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setFactory</span>(<span style="color:#e6db74">&#39;hasError&#39;</span>, $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">lazyNew</span>(<span style="color:#e6db74">&#39;App\View\Helper\HasError&#39;</span>));
 </code></pre></div><p>This is what I love to see it working for this a closure, but with namespaced.</p>
 
 

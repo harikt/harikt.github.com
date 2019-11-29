@@ -251,31 +251,33 @@ with REST api. In this post let us connect via SOAP.</p>
 </code></pre></div><p>In order to connect you want to create an object of the above
 class <code>My_Soap_Magento</code>. You need to get the username and api key
 from the magento host.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$object = new My_Soap_Magento(
-    &#39;the-magento-host&#39;,
-    &#39;username&#39;,
-    &#39;apikey&#39;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$object <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">My_Soap_Magento</span>(
+    <span style="color:#e6db74">&#39;the-magento-host&#39;</span>,
+    <span style="color:#e6db74">&#39;username&#39;</span>,
+    <span style="color:#e6db74">&#39;apikey&#39;</span>
 );
 </code></pre></div><p>Now you are done! You can connect to the soap api version 2 of
 Magento server.</p>
 <p>Sample how to get the product information, category tree,
 category information, products list etc are shown below.</p>
 <p>See we are not passing the session parameter.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">echo &#34;Product Info&#34;;
-$result = $proxy-&gt;catalogProductInfo(16);
-echo $result;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Product Info&#34;</span>;
+$result <span style="color:#f92672">=</span> $proxy<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">catalogProductInfo</span>(<span style="color:#ae81ff">16</span>);
+<span style="color:#66d9ef">echo</span> $result;
 
-echo &#34;Category Tree&#34;;
-$result = $proxy-&gt;catalogCategoryTree();
-echo $result;
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Category Tree&#34;</span>;
+$result <span style="color:#f92672">=</span> $proxy<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">catalogCategoryTree</span>();
+<span style="color:#66d9ef">echo</span> $result;
 
-echo &#34;Category Info&#34;;
-$result = $proxy-&gt;catalogCategoryInfo(10);
-echo $result;
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Category Info&#34;</span>;
+$result <span style="color:#f92672">=</span> $proxy<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">catalogCategoryInfo</span>(<span style="color:#ae81ff">10</span>);
+<span style="color:#66d9ef">echo</span> $result;
 
-echo &#39;Products List&#39;;
-$result = $proxy-&gt;catalogProductList();
-echo $result;
+<span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#39;Products List&#39;</span>;
+$result <span style="color:#f92672">=</span> $proxy<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">catalogProductList</span>();
+<span style="color:#66d9ef">echo</span> $result;
 </code></pre></div>
 
 </div>

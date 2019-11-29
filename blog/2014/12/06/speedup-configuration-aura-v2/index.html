@@ -129,7 +129,8 @@ Usage : vendor/bin/di-config-dump /real/path/to/directory
 </code></pre></div><p>Now you can make use of</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vendor/bin/di-config-dump src/Vendor/World.php
 </code></pre></div><p>will output</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$di-&gt;params[&#39;Vendor\World&#39;][&#39;baz&#39;] = $di-&gt;lazyNew(&#39;Vendor\Baz&#39;);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">params</span>[<span style="color:#e6db74">&#39;Vendor\World&#39;</span>][<span style="color:#e6db74">&#39;baz&#39;</span>] <span style="color:#f92672">=</span> $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">lazyNew</span>(<span style="color:#e6db74">&#39;Vendor\Baz&#39;</span>);
 </code></pre></div><p>You can also pass directory path instead of file. It will read the files and display the configuration.</p>
 <h2 id="example-2">Example 2</h2>
 <p>Let us look into another example</p>

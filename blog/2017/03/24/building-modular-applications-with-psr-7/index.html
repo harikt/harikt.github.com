@@ -173,11 +173,13 @@ What it does is copy the assets to the public folder and the files are served by
 });
 </code></pre></div><p>This is possible with the <code>hkt/psr7-asset</code>.</p>
 <p>What you need is get the asset locator and set the path to <code>vendor/package</code> as</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$assetLocator = $di-&gt;get(&#39;Hkt\Psr7Asset\AssetLocator&#39;);
-$assetLocator-&gt;set(&#39;hkt/psr7-asset-example&#39;, dirname(dirname(__DIR__)) . &#39;/public&#39;);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$assetLocator <span style="color:#f92672">=</span> $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;Hkt\Psr7Asset\AssetLocator&#39;</span>);
+$assetLocator<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;hkt/psr7-asset-example&#39;</span>, <span style="color:#a6e22e">dirname</span>(<span style="color:#a6e22e">dirname</span>(<span style="color:#66d9ef">__DIR__</span>)) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/public&#39;</span>);
 </code></pre></div><p>alternatievely you can set individual paths or files also.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$assetLocator = $di-&gt;get(&#39;Hkt\Psr7Asset\AssetLocator&#39;);
-$assetLocator-&gt;set(&#39;vendor/package/images/someimage.png&#39;, &#39;/path/to/different-image.png&#39;);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$assetLocator <span style="color:#f92672">=</span> $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;Hkt\Psr7Asset\AssetLocator&#39;</span>);
+$assetLocator<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;vendor/package/images/someimage.png&#39;</span>, <span style="color:#e6db74">&#39;/path/to/different-image.png&#39;</span>);
 </code></pre></div><p>The full source code of the example module is at <a href="https://github.com/harikt/psr7-asset-example"><a href="https://github.com/harikt/psr7-asset-example">https://github.com/harikt/psr7-asset-example</a></a></p>
 <h2 id="how-can-we-make-use-of-this-module-in-your-application">How can we make use of this module in your application?</h2>
 <p>Any frameworks that supports psr-7, psr-15 and psr-17 interfaces should work. We will use zend expressive with <a href="https://github.com/auraphp/Aura.Di">Aura.Di</a> as dependency injection container and <a href="https://github.com/auraphp/Aura.Router">Aura.Router</a>.</p>

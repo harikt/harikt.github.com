@@ -14,7 +14,7 @@
       <link>https://harikt.com/blog/2019/11/29/symfony-debug-to-error-handler-component/</link>
       <pubDate>Fri, 29 Nov 2019 01:04:31 +0530</pubDate>
       <guid>https://harikt.com/blog/2019/11/29/symfony-debug-to-error-handler-component/</guid>
-      <description>&lt;p&gt;Since symfony 4.4 the symfony/debug component is deprecated.&lt;/p&gt;
+      <description>&lt;p&gt;Since symfony 4.4 the &lt;code&gt;symfony/debug&lt;/code&gt; component is deprecated.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The &amp;ldquo;\Symfony\Component\Debug\ErrorHandler&amp;rdquo; class is deprecated since Symfony 4.4, use &amp;ldquo;\Symfony\Component\ErrorHandler\ErrorHandler&amp;rdquo;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -31,24 +31,28 @@ I noticed lots of warnings.&lt;/p&gt;
 &lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;41
 &lt;/span&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;42
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;43
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;44
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;$handler = new \Symfony\Component\Debug\ExceptionHandler($debug);
-&lt;/span&gt;$exception = $event-&amp;gt;getThrowable();
-if (!$exception instanceof FlattenException) {
-    $exception = FlattenException::create($exception);
-}
-&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;$response = Response::create($handler-&amp;gt;getHtml($exception), $exception-&amp;gt;getStatusCode(), $exception-&amp;gt;getHeaders())-&amp;gt;setCharset(ini_get(&amp;#39;default_charset&amp;#39;));
-&lt;/span&gt;$event-&amp;gt;setResponse($response);
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;/span&gt;$handler &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;\Symfony\Component\Debug\ExceptionHandler&lt;/span&gt;($debug);
+$exception &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; $event&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getThrowable&lt;/span&gt;();
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;$exception &lt;span style=&#34;color:#a6e22e&#34;&gt;instanceof&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;FlattenException&lt;/span&gt;) {
+    $exception &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;FlattenException&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;create&lt;/span&gt;($exception);
+&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;}
+&lt;/span&gt;$response &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Response&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;create&lt;/span&gt;($handler&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getHtml&lt;/span&gt;($exception), $exception&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getStatusCode&lt;/span&gt;(), $exception&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getHeaders&lt;/span&gt;())&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setCharset&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;ini_get&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;default_charset&amp;#39;&lt;/span&gt;));
+$event&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setResponse&lt;/span&gt;($response);
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;The &lt;code&gt;Symfony\Component\ErrorHandler\ErrorHandler&lt;/code&gt; has no &lt;code&gt;getHtml&lt;/code&gt; method.&lt;/p&gt;
 &lt;p&gt;From the symfony docs, if you are in development mode we can use below code.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;if ($_SERVER[&amp;#39;APP_DEBUG&amp;#39;]) {
-    Debug::enable();
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; ($_SERVER[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;APP_DEBUG&amp;#39;&lt;/span&gt;]) {
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;Debug&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;enable&lt;/span&gt;();
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;so I started with&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;ErrorHandler::register();
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;ErrorHandler&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;register&lt;/span&gt;();
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;But it was throwing all details. I was struggling how to fix this.
 After many failed experiments, I asked &lt;a href=&#34;https://twitter.com/YonelCerutoG&#34;&gt;Yonel Ceruto Gonzalez&lt;/a&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -60,7 +64,8 @@ After many failed experiments, I asked &lt;a href=&#34;https://twitter.com/Yonel
 &lt;p&gt;The above information was really helpful to do more experiments. I finally fixed the unit tests with the below code.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;38
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;37
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;38
 &lt;/span&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;39
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;40
 &lt;/span&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;41
@@ -75,19 +80,20 @@ After many failed experiments, I asked &lt;a href=&#34;https://twitter.com/Yonel
 &lt;/span&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;50
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;$handler = new \Symfony\Component\ErrorHandler\ErrorHandler();
-&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;$handler-&amp;gt;setExceptionHandler([$handler, &amp;#39;renderException&amp;#39;]);
-&lt;/span&gt;if (! $this-&amp;gt;debug) {
-&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;    $handler-&amp;gt;scopeAt(0, true);
+&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+$handler &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;\Symfony\Component\ErrorHandler\ErrorHandler&lt;/span&gt;();
+&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;$handler&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setExceptionHandler&lt;/span&gt;([$handler, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;renderException&amp;#39;&lt;/span&gt;]);
+&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt; $this&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;debug&lt;/span&gt;) {
+&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;    $handler&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;scopeAt&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;);
 &lt;/span&gt;}
-$exception = $event-&amp;gt;getThrowable();
-&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;ob_start();
-&lt;/span&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;$handler-&amp;gt;handleException($exception);
-&lt;/span&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;$response = ob_get_clean();
-&lt;/span&gt;if (!$exception instanceof FlattenException) {
-    $exception = FlattenException::create($exception);
+$exception &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; $event&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getThrowable&lt;/span&gt;();
+&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ob_start&lt;/span&gt;();
+&lt;/span&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;$handler&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;handleException&lt;/span&gt;($exception);
+&lt;/span&gt;&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;$response &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ob_get_clean&lt;/span&gt;();
+&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;$exception &lt;span style=&#34;color:#a6e22e&#34;&gt;instanceof&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;FlattenException&lt;/span&gt;) {
+    $exception &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;FlattenException&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;create&lt;/span&gt;($exception);
 }
-&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;$response = Response::create($response, $exception-&amp;gt;getStatusCode(), $exception-&amp;gt;getHeaders())-&amp;gt;setCharset(ini_get(&amp;#39;default_charset&amp;#39;));
+&lt;span style=&#34;display:block;width:100%;background-color:#3c3d38&#34;&gt;$response &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Response&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;create&lt;/span&gt;($response, $exception&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getStatusCode&lt;/span&gt;(), $exception&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getHeaders&lt;/span&gt;())&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setCharset&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;ini_get&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;default_charset&amp;#39;&lt;/span&gt;));
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;I hope this information may help someone at somepoint of time.&lt;/p&gt;
@@ -182,11 +188,13 @@ What it does is copy the assets to the public folder and the files are served by
 });
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is possible with the &lt;code&gt;hkt/psr7-asset&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;What you need is get the asset locator and set the path to &lt;code&gt;vendor/package&lt;/code&gt; as&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;$assetLocator = $di-&amp;gt;get(&amp;#39;Hkt\Psr7Asset\AssetLocator&amp;#39;);
-$assetLocator-&amp;gt;set(&amp;#39;hkt/psr7-asset-example&amp;#39;, dirname(dirname(__DIR__)) . &amp;#39;/public&amp;#39;);
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+$assetLocator &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; $di&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;get&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Hkt\Psr7Asset\AssetLocator&amp;#39;&lt;/span&gt;);
+$assetLocator&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;set&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hkt/psr7-asset-example&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;dirname&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;dirname&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;__DIR__&lt;/span&gt;)) &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/public&amp;#39;&lt;/span&gt;);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;alternatievely you can set individual paths or files also.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;$assetLocator = $di-&amp;gt;get(&amp;#39;Hkt\Psr7Asset\AssetLocator&amp;#39;);
-$assetLocator-&amp;gt;set(&amp;#39;vendor/package/images/someimage.png&amp;#39;, &amp;#39;/path/to/different-image.png&amp;#39;);
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+$assetLocator &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; $di&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;get&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Hkt\Psr7Asset\AssetLocator&amp;#39;&lt;/span&gt;);
+$assetLocator&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;set&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;vendor/package/images/someimage.png&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/path/to/different-image.png&amp;#39;&lt;/span&gt;);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The full source code of the example module is at &lt;a href=&#34;https://github.com/harikt/psr7-asset-example&#34;&gt;&lt;a href=&#34;https://github.com/harikt/psr7-asset-example&#34;&gt;https://github.com/harikt/psr7-asset-example&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;how-can-we-make-use-of-this-module-in-your-application&#34;&gt;How can we make use of this module in your application?&lt;/h2&gt;
 &lt;p&gt;Any frameworks that supports psr-7, psr-15 and psr-17 interfaces should work. We will use zend expressive with &lt;a href=&#34;https://github.com/auraphp/Aura.Di&#34;&gt;Aura.Di&lt;/a&gt; as dependency injection container and &lt;a href=&#34;https://github.com/auraphp/Aura.Router&#34;&gt;Aura.Router&lt;/a&gt;.&lt;/p&gt;
@@ -398,8 +406,9 @@ to execute. You can do via &lt;code&gt;chmod +x bin/cake-phinx&lt;/code&gt;&lt;/
 &lt;p&gt;PS : If you came across some errors regarding migration plugin not loaded etc.
 You may want to add the below code before calling MigrationsDispatcher&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;Cake\Core\Plugin::load(&amp;#39;Migrations&amp;#39;, [
-    &amp;#39;path&amp;#39; =&amp;gt; $projectDirectory . &amp;#39;/vendor/cakephp/migrations/&amp;#39;,
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;Cake\Core\Plugin&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;load&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Migrations&amp;#39;&lt;/span&gt;, [
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;path&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; $projectDirectory &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/vendor/cakephp/migrations/&amp;#39;&lt;/span&gt;,
 ]);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
@@ -415,31 +424,33 @@ I am trying to document most of them, incase I missed please &lt;a href=&#34;htt
 &lt;h2 id=&#34;bc-breaks&#34;&gt;BC Breaks&lt;/h2&gt;
 &lt;h3 id=&#34;instantiation&#34;&gt;Instantiation&lt;/h3&gt;
 &lt;p&gt;The way di container is instantiated has been changed from&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;use Aura\Di\Container;
-use Aura\Di\Factory;
-use Aura\Di\ContainerBuilder;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Aura\Di\Container&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Aura\Di\Factory&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Aura\Di\ContainerBuilder&lt;/span&gt;;
 
-$di = new Container(new Factory);
+$di &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Container&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Factory&lt;/span&gt;);
 
-// or 
-
-$container_builder = new ContainerBuilder();
-$di = $container_builder-&amp;gt;newInstance(
-    array(),
-    array(),
-    $auto_resolve = false
+&lt;span style=&#34;color:#75715e&#34;&gt;// or 
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+$container_builder &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ContainerBuilder&lt;/span&gt;();
+$di &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; $container_builder&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;newInstance&lt;/span&gt;(
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;array&lt;/span&gt;(),
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;array&lt;/span&gt;(),
+    $auto_resolve &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;
 );
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;to&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;use Aura\Di\ContainerBuilder;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Aura\Di\ContainerBuilder&lt;/span&gt;;
 
-$container_builder = new ContainerBuilder();
+$container_builder &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ContainerBuilder&lt;/span&gt;();
 
-// use the builder to create and configure a container
-// using an array of ContainerConfig classes
-$di = $container_builder-&amp;gt;newConfiguredInstance([
-    &amp;#39;Aura\Cli\_Config\Common&amp;#39;,
-    &amp;#39;Aura\Router\_Config\Common&amp;#39;,
-    &amp;#39;Aura\Web\_Config\Common&amp;#39;,
+&lt;span style=&#34;color:#75715e&#34;&gt;// use the builder to create and configure a container
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// using an array of ContainerConfig classes
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;$di &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; $container_builder&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;newConfiguredInstance&lt;/span&gt;([
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Aura\Cli\_Config\Common&amp;#39;&lt;/span&gt;,
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Aura\Router\_Config\Common&amp;#39;&lt;/span&gt;,
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Aura\Web\_Config\Common&amp;#39;&lt;/span&gt;,
 ]);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;setter-vs-setters&#34;&gt;setter vs setters&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;$di-&amp;gt;setter&lt;/code&gt; is now &lt;code&gt;$di-&amp;gt;setters&lt;/code&gt;. Please note there is an additional &lt;code&gt;s&lt;/code&gt; in the end. &lt;a href=&#34;https://github.com/auraphp/Aura.Di/issues/115&#34;&gt;&lt;a href=&#34;https://github.com/auraphp/Aura.Di/issues/115&#34;&gt;https://github.com/auraphp/Aura.Di/issues/115&lt;/a&gt;&lt;/a&gt;.&lt;/p&gt;
@@ -464,23 +475,25 @@ $di = $container_builder-&amp;gt;newConfiguredInstance([
       <guid>https://harikt.com/blog/2016/01/16/cakephp-orm-and-logging-queries/</guid>
       <description>&lt;p&gt;Working with &lt;a href=&#34;http://packagist.org/packages/cakephp/orm&#34;&gt;cakephp/orm&lt;/a&gt; library, I needed to log all the queries.
 Cakephp provides a way to do it via &lt;a href=&#34;http://packagist.org/packages/cakephp/log&#34;&gt;cakephp/log&lt;/a&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;use Cake\Log\Log;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Cake\Log\Log&lt;/span&gt;;
 
-Log::config(&amp;#39;queries&amp;#39;, [
-	&amp;#39;className&amp;#39; =&amp;gt; &amp;#39;File&amp;#39;,
-	&amp;#39;path&amp;#39; =&amp;gt; &amp;#39;/my/log/path/&amp;#39;,
-	&amp;#39;file&amp;#39; =&amp;gt; &amp;#39;app&amp;#39;,
-	&amp;#39;scopes&amp;#39; =&amp;gt; [&amp;#39;queriesLog&amp;#39;]
+&lt;span style=&#34;color:#a6e22e&#34;&gt;Log&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;config&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;queries&amp;#39;&lt;/span&gt;, [
+	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;className&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;File&amp;#39;&lt;/span&gt;,
+	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;path&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/my/log/path/&amp;#39;&lt;/span&gt;,
+	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;file&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;app&amp;#39;&lt;/span&gt;,
+	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;scopes&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;queriesLog&amp;#39;&lt;/span&gt;]
 ]);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;But you are not limited, if you need to configure it to a PSR-3 logger like &lt;a href=&#34;http://packagist.org/packages/monolog/monolog&#34;&gt;monolog/monolog&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;use Cake\Log\Log;
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Cake\Log\Log&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Monolog\Logger&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Monolog\Handler\StreamHandler&lt;/span&gt;;
 
-Log::config(&amp;#39;default&amp;#39;, function () {
-    $log = new Logger(&amp;#39;cli&amp;#39;);
-    $log-&amp;gt;pushHandler(new StreamHandler(&amp;#39;php://stdout&amp;#39;));
-    return $log;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;Log&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;config&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;default&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; () {
+    $log &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Logger&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;cli&amp;#39;&lt;/span&gt;);
+    $log&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;pushHandler&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;StreamHandler&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;php://stdout&amp;#39;&lt;/span&gt;));
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; $log;
 });
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That was pretty simple and it logs to cli.&lt;/p&gt;
 &lt;p&gt;Thank you &lt;a href=&#34;https://github.com/lorenzo&#34;&gt;José Lorenzo Rodríguez&lt;/a&gt; for providing the necessary information.&lt;/p&gt;
@@ -488,20 +501,21 @@ Log::config(&amp;#39;default&amp;#39;, function () {
 &lt;p&gt;Install &lt;a href=&#34;https://github.com/fabfuel/prophiler/&#34;&gt;fabfuel/prophiler&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;m&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;r&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;q&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;u&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;e&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;a&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;b&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;u&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;l&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;o&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;h&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;l&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;r&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;configuring-debugbar&#34;&gt;Configuring debugbar&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;use Cake\Log\Log;
-use Fabfuel\Prophiler\Profiler;
-use Fabfuel\Prophiler\Toolbar;
-use Fabfuel\Prophiler\DataCollector\Request;
-use Fabfuel\Prophiler\Adapter\Psr\Log\Logger;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Cake\Log\Log&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Fabfuel\Prophiler\Profiler&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Fabfuel\Prophiler\Toolbar&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Fabfuel\Prophiler\DataCollector\Request&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Fabfuel\Prophiler\Adapter\Psr\Log\Logger&lt;/span&gt;;
 
-$profiler = new Profiler();
-$toolbar = new Toolbar($profiler);
-// add your data collectors
-// $toolbar-&amp;gt;addDataCollector(new Request());
-
-Log::config(&amp;#39;db&amp;#39;, function () use ($profiler) {
-	$log = new Logger($profiler);
-	return $log;
+$profiler &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Profiler&lt;/span&gt;();
+$toolbar &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Toolbar&lt;/span&gt;($profiler);
+&lt;span style=&#34;color:#75715e&#34;&gt;// add your data collectors
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// $toolbar-&amp;gt;addDataCollector(new Request());
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;Log&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;config&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;db&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; () &lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; ($profiler) {
+	$log &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Logger&lt;/span&gt;($profiler);
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; $log;
 });
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Using a PSR-7 framework like zend-expressive,  &lt;a href=&#34;https://github.com/bitExpert/prophiler-psr7-middleware&#34;&gt;bitExpert/prophiler-psr7-middleware&lt;/a&gt; is your friend.&lt;/p&gt;
 </description>
@@ -577,20 +591,22 @@ can create your own.&lt;/p&gt;
       <description>&lt;p&gt;Recently working with eloquent (Laravel&#39;s orm), zend expressive and zend view,
 I wanted to integrate pagination.&lt;/p&gt;
 &lt;p&gt;It was simple as registering a &lt;code&gt;Paginator&lt;/code&gt; middleware.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;use Illuminate\Pagination\Paginator;
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Illuminate\Pagination\Paginator&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Psr\Http\Message\ResponseInterface&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Psr\Http\Message\ServerRequestInterface&lt;/span&gt;;
 
-IlluminatePaginator::currentPageResolver(function ($pageName) use ($request) {
-    $params = $request-&amp;gt;getQueryParams();
-    return empty($params[$pageName]) ? 1 : $params[$pageName];
+&lt;span style=&#34;color:#a6e22e&#34;&gt;IlluminatePaginator&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;currentPageResolver&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; ($pageName) &lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; ($request) {
+    $params &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; $request&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getQueryParams&lt;/span&gt;();
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;empty&lt;/span&gt;($params[$pageName]) &lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; $params[$pageName];
 });
-IlluminatePaginator::currentPathResolver(function () use ($request) {
-    return $request-&amp;gt;getUri()-&amp;gt;getPath();
+&lt;span style=&#34;color:#a6e22e&#34;&gt;IlluminatePaginator&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;currentPathResolver&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; () &lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; ($request) {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; $request&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getUri&lt;/span&gt;()&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getPath&lt;/span&gt;();
 });
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and you can call paginate on the &lt;code&gt;Model&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Eg : Consider you have a &lt;code&gt;Post&lt;/code&gt; model.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;$posts = Post::paginate(20);
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+$posts &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Post&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;paginate&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and in view you can iterate through the &lt;code&gt;$posts&lt;/code&gt; and render the pagination.
 The &lt;code&gt;$posts&lt;/code&gt; is an object of &lt;a href=&#34;http://laravel.com/api/5.0/Illuminate/Pagination/LengthAwarePaginator.html&#34;&gt;LengthAwarePaginator&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You can also modify the presenter accordingly. Default comes with  &lt;a href=&#34;http://laravel.com/api/5.0/Illuminate/Pagination/BootstrapThreePresenter.html&#34;&gt;BootstrapThreePresenter&lt;/a&gt;&lt;/p&gt;
@@ -661,21 +677,25 @@ and pass the &lt;code&gt;Zend\View\HelperPluginManager&lt;/code&gt; service.&lt;
 &lt;/ol&gt;
 &lt;p&gt;First get the &lt;code&gt;Zend\View\HelperPluginManager&lt;/code&gt; service.&lt;/p&gt;
 &lt;p&gt;2.a ) Registering as a factory&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;$serviceManager-&amp;gt;setFactory(&amp;#39;hasError&amp;#39;, function () {
-    return new \App\View\Helper\HasError();
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+$serviceManager&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setFactory&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hasError&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; () {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;\App\View\Helper\HasError&lt;/span&gt;();
 });
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;2.b ) As an invokable&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;$serviceManager-&amp;gt;setInvokableClass(&amp;#39;hasError&amp;#39;, &amp;#39;App\View\Helper\HasError&amp;#39;);
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+$serviceManager&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setInvokableClass&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hasError&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;App\View\Helper\HasError&amp;#39;&lt;/span&gt;);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now you can access inside zend-view as &lt;code&gt;$this-&amp;gt;hasError()&lt;/code&gt;. If your view
 helper need dependencies don&#39;t use the &lt;code&gt;setInvokableClass&lt;/code&gt; method.
 Use factory and get the object from the container.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;$serviceManager-&amp;gt;setFactory(&amp;#39;hasError&amp;#39;, function () use ($di) {
-     return $di-&amp;gt;get(&amp;#39;App\View\Helper\HasError&amp;#39;);
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+$serviceManager&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setFactory&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hasError&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; () &lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; ($di) {
+     &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; $di&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;get&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;App\View\Helper\HasError&amp;#39;&lt;/span&gt;);
 });
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I wished if &lt;code&gt;$serviceManager&lt;/code&gt; can understand the aura&#39;s &lt;code&gt;lazyNew&lt;/code&gt; functionality
 so that we don&#39;t need to register it as a service.&lt;/p&gt;
 &lt;p&gt;Eg : Below will not work.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;$serviceManager-&amp;gt;setFactory(&amp;#39;hasError&amp;#39;, $di-&amp;gt;lazyNew(&amp;#39;App\View\Helper\HasError&amp;#39;));
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+$serviceManager&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setFactory&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hasError&amp;#39;&lt;/span&gt;, $di&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;lazyNew&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;App\View\Helper\HasError&amp;#39;&lt;/span&gt;));
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is what I love to see it working for this a closure, but with namespaced.&lt;/p&gt;
 </description>
     </item>
@@ -690,7 +710,8 @@ so that we don&#39;t need to register it as a service.&lt;/p&gt;
 &lt;p&gt;Assuming you have downloaded the symfony-standard distribution to play.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Create &lt;code&gt;HktEventBundle&lt;/code&gt; via &lt;a href=&#34;http://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html&#34;&gt;sensio generator bundle&lt;/a&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;php app/console generate:bundle --namespace=Hkt/EventBundle --dir src --no-interaction
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;php&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;generate&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;bundle&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;namespace&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Hkt&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;EventBundle&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;dir&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;no&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;interaction&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Create the event class.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
 &lt;span style=&#34;color:#75715e&#34;&gt;// src/Hkt/EventBundle/Event/PageViewed.php
@@ -740,6 +761,7 @@ class DefaultController extends Controller
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;listener&#34;&gt;Listener&lt;/h2&gt;
 &lt;p&gt;Create the listener to do what you want to do with the dispatched/triggered event.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;php&lt;/span&gt;
 &lt;span style=&#34;color:#75715e&#34;&gt;// src/Hkt/EventBundle/EventListener/PageViewedListener.php
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;namespace&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Hkt\EventBundle\EventListener&lt;/span&gt;;
 
@@ -1018,112 +1040,118 @@ One strong preference choosing a framework was&lt;/p&gt;
 &lt;p&gt;Look at &lt;a href=&#34;http://phinx.org&#34;&gt;phinx&lt;/a&gt; a db migration tool, &lt;a href=&#34;https://drupal.org&#34;&gt;drupal 8&lt;/a&gt; etc. These makes use of components like &lt;code&gt;symfony/console&lt;/code&gt;, &lt;code&gt;symfony/http-foundation&lt;/code&gt;, &lt;code&gt;symfony/router&lt;/code&gt; etc.&lt;/p&gt;
 &lt;p&gt;Some of the good things I like in symfony console component are its &lt;a href=&#34;http://symfony.com/doc/current/components/console/helpers/index.html&#34;&gt;helpers&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;table&#34;&gt;Table&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;use Symfony\Component\Console\Helper\Table;
-use Symfony\Component\Console\Output\ConsoleOutput;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Symfony\Component\Console\Helper\Table&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Symfony\Component\Console\Output\ConsoleOutput&lt;/span&gt;;
 
-$output = new ConsoleOutput();
-$table = new Table($output);
+$output &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ConsoleOutput&lt;/span&gt;();
+$table &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Table&lt;/span&gt;($output);
 $table
-    -&amp;gt;setHeaders(array(&amp;#39;ISBN&amp;#39;, &amp;#39;Title&amp;#39;, &amp;#39;Author&amp;#39;))
-    -&amp;gt;setRows(array(
-        array(&amp;#39;99921-58-10-7&amp;#39;, &amp;#39;Divine Comedy&amp;#39;, &amp;#39;Dante Alighieri&amp;#39;),
-        array(&amp;#39;9971-5-0210-0&amp;#39;, &amp;#39;A Tale of Two Cities&amp;#39;, &amp;#39;Charles Dickens&amp;#39;),
-        array(&amp;#39;960-425-059-0&amp;#39;, &amp;#39;The Lord of the Rings&amp;#39;, &amp;#39;J. R. R. Tolkien&amp;#39;),
-        array(&amp;#39;80-902734-1-6&amp;#39;, &amp;#39;And Then There Were None&amp;#39;, &amp;#39;Agatha Christie&amp;#39;),
+    &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setHeaders&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;array&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ISBN&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Title&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Author&amp;#39;&lt;/span&gt;))
+    &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setRows&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;array&lt;/span&gt;(
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;array&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;99921-58-10-7&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Divine Comedy&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Dante Alighieri&amp;#39;&lt;/span&gt;),
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;array&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;9971-5-0210-0&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;A Tale of Two Cities&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Charles Dickens&amp;#39;&lt;/span&gt;),
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;array&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;960-425-059-0&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;The Lord of the Rings&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;J. R. R. Tolkien&amp;#39;&lt;/span&gt;),
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;array&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;80-902734-1-6&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;And Then There Were None&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Agatha Christie&amp;#39;&lt;/span&gt;),
     ))
 ;
-$table-&amp;gt;render();
+$table&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;render&lt;/span&gt;();
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;progress-bar&#34;&gt;Progress bar&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;use Symfony\Component\Console\Helper\ProgressBar;
-use Symfony\Component\Console\Output\ConsoleOutput;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Symfony\Component\Console\Helper\ProgressBar&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Symfony\Component\Console\Output\ConsoleOutput&lt;/span&gt;;
 
-$output = new ConsoleOutput();
+$output &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ConsoleOutput&lt;/span&gt;();
 
-// create a new progress bar (50 units)
-$progress = new ProgressBar($output, 50);
+&lt;span style=&#34;color:#75715e&#34;&gt;// create a new progress bar (50 units)
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;$progress &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ProgressBar&lt;/span&gt;($output, &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;);
 
-// start and displays the progress bar
-$progress-&amp;gt;start();
+&lt;span style=&#34;color:#75715e&#34;&gt;// start and displays the progress bar
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;$progress&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;start&lt;/span&gt;();
 
-$i = 0;
-while ($i++ &amp;lt; &lt;span style=&#34;color:#f92672&#34;&gt;50&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;{&lt;/span&gt;
-    &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;some&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;work&lt;/span&gt;
+$i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; ($i&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;) {
+    &lt;span style=&#34;color:#75715e&#34;&gt;// ... do some work
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;// advance the progress bar 1 unit
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    $progress&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;advance&lt;/span&gt;();
 
-    &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;advance&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;the&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;progress&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;bar&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;unit&lt;/span&gt;
-    &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;progress-&lt;/span&gt;&amp;gt;advance();
+    &lt;span style=&#34;color:#75715e&#34;&gt;// you can also advance the progress bar by more than 1 unit
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// $progress-&amp;gt;advance(3);
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;}
 
-    // you can also advance the progress bar by more than 1 unit
-    // $progress-&amp;gt;advance(3);
-}
-
-// ensure that the progress bar is at 100%
-$progress-&amp;gt;finish();
+&lt;span style=&#34;color:#75715e&#34;&gt;// ensure that the progress bar is at 100%
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;$progress&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;finish&lt;/span&gt;();
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;question&#34;&gt;Question&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;use Symfony\Component\Console\Helper\QuestionHelper;
-use Symfony\Component\Console\Output\ConsoleOutput;
-use Symfony\Component\Console\Input\StringInput;
-use Symfony\Component\Console\Question\ConfirmationQuestion;
-use Symfony\Component\Console\Question\ChoiceQuestion;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Symfony\Component\Console\Helper\QuestionHelper&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Symfony\Component\Console\Output\ConsoleOutput&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Symfony\Component\Console\Input\StringInput&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Symfony\Component\Console\Question\ConfirmationQuestion&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Symfony\Component\Console\Question\ChoiceQuestion&lt;/span&gt;;
 
-$output = new ConsoleOutput();
-$helper = new QuestionHelper();
-$input = new StringInput(&amp;#39;action&amp;#39;);
-$question = new ConfirmationQuestion(&amp;#39;Continue with this action?&amp;#39;, false);
+$output &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ConsoleOutput&lt;/span&gt;();
+$helper &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;QuestionHelper&lt;/span&gt;();
+$input &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;StringInput&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;action&amp;#39;&lt;/span&gt;);
+$question &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ConfirmationQuestion&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Continue with this action?&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;);
 
-if ($helper-&amp;gt;ask($input, $output, $question)) {
-    $question = new ChoiceQuestion(
-        &amp;#39;Please select your favorite color (defaults to red)&amp;#39;,
-        array(&amp;#39;red&amp;#39;, &amp;#39;blue&amp;#39;, &amp;#39;yellow&amp;#39;),
-        0
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; ($helper&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ask&lt;/span&gt;($input, $output, $question)) {
+    $question &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ChoiceQuestion&lt;/span&gt;(
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Please select your favorite color (defaults to red)&amp;#39;&lt;/span&gt;,
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;array&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;red&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;blue&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;yellow&amp;#39;&lt;/span&gt;),
+        &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
     );
-    $question-&amp;gt;setErrorMessage(&amp;#39;Color %s is invalid.&amp;#39;);
+    $question&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setErrorMessage&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Color %s is invalid.&amp;#39;&lt;/span&gt;);
 
-    $color = $helper-&amp;gt;ask($input, $output, $question);
-    $output-&amp;gt;writeln(&amp;#39;You have just selected: &amp;#39;.$color);
-} else {
-    $output-&amp;gt;writeln(&amp;#39;Exiting !&amp;#39;);
+    $color &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; $helper&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ask&lt;/span&gt;($input, $output, $question);
+    $output&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;writeln&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;You have just selected: &amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;$color);
+} &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; {
+    $output&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;writeln&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Exiting !&amp;#39;&lt;/span&gt;);
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;hidden-passwords&#34;&gt;Hidden Passwords&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;use Symfony\Component\Console\Helper\QuestionHelper;
-use Symfony\Component\Console\Output\ConsoleOutput;
-use Symfony\Component\Console\Input\StringInput;
-use Symfony\Component\Console\Question\Question;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Symfony\Component\Console\Helper\QuestionHelper&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Symfony\Component\Console\Output\ConsoleOutput&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Symfony\Component\Console\Input\StringInput&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Symfony\Component\Console\Question\Question&lt;/span&gt;;
 
-$output = new ConsoleOutput();
-$helper = new QuestionHelper();
-$input = new StringInput(&amp;#39;action&amp;#39;);
-$question = new Question(&amp;#39;What is the database password?&amp;#39;);
-$question-&amp;gt;setHidden(true);
-$question-&amp;gt;setHiddenFallback(false);
+$output &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ConsoleOutput&lt;/span&gt;();
+$helper &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;QuestionHelper&lt;/span&gt;();
+$input &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;StringInput&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;action&amp;#39;&lt;/span&gt;);
+$question &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Question&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;What is the database password?&amp;#39;&lt;/span&gt;);
+$question&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setHidden&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;);
+$question&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setHiddenFallback&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;);
 
-$password = $helper-&amp;gt;ask($input, $output, $question);
-$output-&amp;gt;writeln(&amp;#39;Entered password : &amp;#39; . $password);
+$password &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; $helper&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;ask&lt;/span&gt;($input, $output, $question);
+$output&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;writeln&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Entered password : &amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; $password);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and more.. I hope you will also add &lt;code&gt;symfony/console&lt;/code&gt; into your list.&lt;/p&gt;
 &lt;h2 id=&#34;http-foundation&#34;&gt;Http Foundation&lt;/h2&gt;
 &lt;p&gt;The &lt;code&gt;symfony/http-foundation&lt;/code&gt; is another extensively used component. It is actually &lt;a href=&#34;https://github.com/auraphp/Aura.Web&#34;&gt;Aura.Web&lt;/a&gt; + &lt;a href=&#34;https://github.com/auraphp/Aura.Session&#34;&gt;Aura.Session&lt;/a&gt; with more session handlers. Used by &lt;code&gt;drupal&lt;/code&gt;, &lt;code&gt;laravel&lt;/code&gt; etc in core. When working on mixed projects like &lt;code&gt;drupal&lt;/code&gt;, &lt;code&gt;laravel&lt;/code&gt; etc, it is good to be in your list.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Symfony\Component\HttpFoundation\Request&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Symfony\Component\HttpFoundation\Response&lt;/span&gt;;
 
-$request = Request::createFromGlobals();
-$response = new Response(
-    &amp;#39;Hello symfony&amp;#39;,
-    Response::HTTP_OK,
-    array(&amp;#39;content-type&amp;#39; =&amp;gt; &amp;#39;text/html&amp;#39;)
+$request &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Request&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;createFromGlobals&lt;/span&gt;();
+$response &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Response&lt;/span&gt;(
+    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Hello symfony&amp;#39;&lt;/span&gt;,
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;Response&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;HTTP_OK&lt;/span&gt;,
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;array&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;content-type&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;text/html&amp;#39;&lt;/span&gt;)
 );
-$response-&amp;gt;send();
+$response&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;send&lt;/span&gt;();
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;finder&#34;&gt;Finder&lt;/h2&gt;
 &lt;p&gt;Another wonderful component is the finder.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;use Symfony\Component\Finder\Finder;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Symfony\Component\Finder\Finder&lt;/span&gt;;
 
-$finder = new Finder();
+$finder &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Finder&lt;/span&gt;();
 
-$iterator = $finder
-  -&amp;gt;files()
-  -&amp;gt;depth(0)
-  -&amp;gt;in(__DIR__);
+$iterator &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; $finder
+  &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;files&lt;/span&gt;()
+  &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;depth&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+  &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;in&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;__DIR__&lt;/span&gt;);
 
-foreach ($iterator as $file) {
-    print $file-&amp;gt;getRealpath().&amp;#34;\n&amp;#34;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; ($iterator &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; $file) {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt; $file&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getRealpath&lt;/span&gt;()&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;;
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;filesystem&#34;&gt;Filesystem&lt;/h2&gt;
 &lt;p&gt;Filesystem is another nice component which helps you to copy, rename, create directories.&lt;/p&gt;
@@ -1220,7 +1248,8 @@ Usage : vendor/bin/di-config-dump /real/path/to/directory
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now you can make use of&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;vendor/bin/di-config-dump src/Vendor/World.php
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;will output&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;$di-&amp;gt;params[&amp;#39;Vendor\World&amp;#39;][&amp;#39;baz&amp;#39;] = $di-&amp;gt;lazyNew(&amp;#39;Vendor\Baz&amp;#39;);
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+$di&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;params&lt;/span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Vendor\World&amp;#39;&lt;/span&gt;][&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;baz&amp;#39;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; $di&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;lazyNew&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Vendor\Baz&amp;#39;&lt;/span&gt;);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can also pass directory path instead of file. It will read the files and display the configuration.&lt;/p&gt;
 &lt;h2 id=&#34;example-2&#34;&gt;Example 2&lt;/h2&gt;
 &lt;p&gt;Let us look into another example&lt;/p&gt;
@@ -1276,52 +1305,55 @@ cd quick-start
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We will be keeping all the templates in &lt;code&gt;templates&lt;/code&gt; folder where views in &lt;code&gt;templates/views&lt;/code&gt; and layout in &lt;code&gt;templates/layouts&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mkdir -p templates/&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;views,layouts&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Edit &lt;code&gt;config/Common.php&lt;/code&gt; and define service for &lt;code&gt;view&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;public function define(Container $di)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;define&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;Container&lt;/span&gt; $di)
 {
-    $di-&amp;gt;set(&amp;#39;view&amp;#39;, $di-&amp;gt;lazyNew(&amp;#39;Aura\View\View&amp;#39;));
+    $di&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;set&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;view&amp;#39;&lt;/span&gt;, $di&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;lazyNew&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Aura\View\View&amp;#39;&lt;/span&gt;));
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;add a way to set the path to templates. Assuming you have &lt;code&gt;templates&lt;/code&gt; folder in the root. There is no finder in &lt;code&gt;aura/view&lt;/code&gt; to increase the performance of loading and rendering templates. For a quick hack let us iterate through the directory and set all the views and layouts to its registry.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;public function modify(Container $di)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;modify&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;Container&lt;/span&gt; $di)
 {
-    // more code
-    $this-&amp;gt;defineTemplates($di);
+    &lt;span style=&#34;color:#75715e&#34;&gt;// more code
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    $this&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;defineTemplates&lt;/span&gt;($di);
 }
 
-public function defineTemplates($di)
+&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;defineTemplates&lt;/span&gt;($di)
 {
-    $view = $di-&amp;gt;get(&amp;#39;view&amp;#39;);
-    $view_registry = $view-&amp;gt;getViewRegistry();
-    $view_directory = dirname(__DIR__) . &amp;#39;/templates/views/&amp;#39;;
-    $iterator = new \DirectoryIterator($view_directory);
-    foreach ($iterator as $fileinfo) {
-        if ($fileinfo-&amp;gt;isFile()) {
-            $view_registry-&amp;gt;set($fileinfo-&amp;gt;getBasename(&amp;#39;.php&amp;#39;), $fileinfo-&amp;gt;getPathname());
+    $view &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; $di&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;get&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;view&amp;#39;&lt;/span&gt;);
+    $view_registry &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; $view&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getViewRegistry&lt;/span&gt;();
+    $view_directory &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dirname&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;__DIR__&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/templates/views/&amp;#39;&lt;/span&gt;;
+    $iterator &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;\DirectoryIterator&lt;/span&gt;($view_directory);
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; ($iterator &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; $fileinfo) {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; ($fileinfo&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;isFile&lt;/span&gt;()) {
+            $view_registry&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;set&lt;/span&gt;($fileinfo&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getBasename&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.php&amp;#39;&lt;/span&gt;), $fileinfo&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getPathname&lt;/span&gt;());
         }
     }
 
-    $layout_registry = $view-&amp;gt;getLayoutRegistry();
-    $layout_directory = dirname(__DIR__) . &amp;#39;/templates/layouts/&amp;#39;;
-    $iterator = new \DirectoryIterator($layout_directory);
-    foreach ($iterator as $fileinfo) {
-        if ($fileinfo-&amp;gt;isFile()) {
-            $layout_registry-&amp;gt;set($fileinfo-&amp;gt;getBasename(&amp;#39;.php&amp;#39;), $fileinfo-&amp;gt;getPathname());
+    $layout_registry &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; $view&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getLayoutRegistry&lt;/span&gt;();
+    $layout_directory &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;dirname&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;__DIR__&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/templates/layouts/&amp;#39;&lt;/span&gt;;
+    $iterator &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;\DirectoryIterator&lt;/span&gt;($layout_directory);
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; ($iterator &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; $fileinfo) {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; ($fileinfo&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;isFile&lt;/span&gt;()) {
+            $layout_registry&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;set&lt;/span&gt;($fileinfo&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getBasename&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.php&amp;#39;&lt;/span&gt;), $fileinfo&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getPathname&lt;/span&gt;());
         }
     }
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Edit &lt;code&gt;modifyDispatcher&lt;/code&gt; method to&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;public function modifyWebDispatcher($di)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;modifyWebDispatcher&lt;/span&gt;($di)
 {
-    $dispatcher = $di-&amp;gt;get(&amp;#39;aura/web-kernel:dispatcher&amp;#39;);
+    $dispatcher &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; $di&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;get&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;aura/web-kernel:dispatcher&amp;#39;&lt;/span&gt;);
 
-    $view = $di-&amp;gt;get(&amp;#39;view&amp;#39;);
-    $response = $di-&amp;gt;get(&amp;#39;aura/web-kernel:response&amp;#39;);
-    $request = $di-&amp;gt;get(&amp;#39;aura/web-kernel:request&amp;#39;);
-    $dispatcher-&amp;gt;setObject(&amp;#39;hello&amp;#39;, function () use ($view, $response, $request) {
-        $name = $request-&amp;gt;query-&amp;gt;get(&amp;#39;name&amp;#39;, &amp;#39;Aura&amp;#39;);
-        $view-&amp;gt;setView(&amp;#39;hello&amp;#39;);
-        $view-&amp;gt;setLayout(&amp;#39;default&amp;#39;);
-        $view-&amp;gt;setData(array(&amp;#39;name&amp;#39; =&amp;gt; $name));
-        $response-&amp;gt;content-&amp;gt;set($view-&amp;gt;__invoke());
+    $view &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; $di&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;get&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;view&amp;#39;&lt;/span&gt;);
+    $response &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; $di&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;get&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;aura/web-kernel:response&amp;#39;&lt;/span&gt;);
+    $request &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; $di&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;get&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;aura/web-kernel:request&amp;#39;&lt;/span&gt;);
+    $dispatcher&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setObject&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; () &lt;span style=&#34;color:#66d9ef&#34;&gt;use&lt;/span&gt; ($view, $response, $request) {
+        $name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; $request&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;query&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;get&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;name&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Aura&amp;#39;&lt;/span&gt;);
+        $view&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setView&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;);
+        $view&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setLayout&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;default&amp;#39;&lt;/span&gt;);
+        $view&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;setData&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;array&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;name&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; $name));
+        $response&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;set&lt;/span&gt;($view&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;__invoke&lt;/span&gt;());
     });
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Create your basic template &lt;code&gt;templates/views/hello.php&lt;/code&gt;&lt;/p&gt;
@@ -1844,9 +1876,10 @@ this functionality to plugin the helpers.&lt;/p&gt;
 and use aura html helper to show the system works as expected.&lt;/p&gt;
 &lt;p&gt;Create the templates in a &lt;code&gt;templates&lt;/code&gt; folder or change the path in Plates Engine.&lt;/p&gt;
 &lt;h3 id=&#34;profile-template&#34;&gt;Profile Template&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!-- profile.php --&amp;gt;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;profile&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;php&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;--&amp;gt;&lt;/span&gt;
 
-&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt; $this&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;layout&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;template&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;?&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;php&lt;/span&gt; $this&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;layout&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;template&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;?&amp;gt;&lt;/span&gt;
 
 &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt; $this&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;title&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;User Profile&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;?&amp;gt;&lt;/span&gt;
 
@@ -1875,11 +1908,12 @@ and use aura html helper to show the system works as expected.&lt;/p&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;?&amp;gt;&lt;/span&gt;
 &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;layout-template&#34;&gt;Layout Template&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!-- template.php --&amp;gt;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;!--&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;template&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;php&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;--&amp;gt;&lt;/span&gt;
 
-&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
-    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$this&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;title&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;?&amp;gt;&lt;/span&gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;head&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;title&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;lt;?=&lt;/span&gt;$this&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;title&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;?&amp;gt;&lt;/span&gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;
 &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
 
 &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
@@ -1897,21 +1931,22 @@ and use aura html helper to show the system works as expected.&lt;/p&gt;
         }
     }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bootstrapping-and-rendering&#34;&gt;Bootstrapping and Rendering&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;// test.php file
-require __DIR__ . &amp;#39;/vendor/autoload.php&amp;#39;;
-$engine = new \League\Plates\Engine( __DIR__ . &amp;#39;/templates&amp;#39;);
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;// test.php file
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;require&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;__DIR__&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/vendor/autoload.php&amp;#39;&lt;/span&gt;;
+$engine &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;\League\Plates\Engine&lt;/span&gt;( &lt;span style=&#34;color:#66d9ef&#34;&gt;__DIR__&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;/templates&amp;#39;&lt;/span&gt;);
 
-// Create a new template
-$template = new \League\Plates\Template($engine);
-$factory = new \Aura\Html\HelperLocatorFactory();
-$helper = $factory-&amp;gt;newInstance();
-$engine-&amp;gt;loadExtension(new AuraHtmlExtension($helper));
+&lt;span style=&#34;color:#75715e&#34;&gt;// Create a new template
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;$template &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;\League\Plates\Template&lt;/span&gt;($engine);
+$factory &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;\Aura\Html\HelperLocatorFactory&lt;/span&gt;();
+$helper &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; $factory&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;newInstance&lt;/span&gt;();
+$engine&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;loadExtension&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;AuraHtmlExtension&lt;/span&gt;($helper));
 
-// Assign a variable to the template
-$template-&amp;gt;name = &amp;#39;Jonathan&amp;#39;;
+&lt;span style=&#34;color:#75715e&#34;&gt;// Assign a variable to the template
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;$template&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Jonathan&amp;#39;&lt;/span&gt;;
 
-// Render the template
-echo $template-&amp;gt;render(&amp;#39;profile&amp;#39;);
+&lt;span style=&#34;color:#75715e&#34;&gt;// Render the template
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;echo&lt;/span&gt; $template&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;render&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;profile&amp;#39;&lt;/span&gt;);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you run &lt;code&gt;php test.php&lt;/code&gt; you will see something like this rendered.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt;&amp;gt;
 &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;

@@ -98,7 +98,7 @@
 </p>
 </header>
 <div class="content">
-<p>Since symfony 4.4 the symfony/debug component is deprecated.</p>
+<p>Since symfony 4.4 the <code>symfony/debug</code> component is deprecated.</p>
 <blockquote>
 <p>The &ldquo;\Symfony\Component\Debug\ErrorHandler&rdquo; class is deprecated since Symfony 4.4, use &ldquo;\Symfony\Component\ErrorHandler\ErrorHandler&rdquo;</p>
 </blockquote>
@@ -115,24 +115,28 @@ I noticed lots of warnings.</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
 </span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
 </span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="display:block;width:100%;background-color:#3c3d38">$handler = new \Symfony\Component\Debug\ExceptionHandler($debug);
-</span>$exception = $event-&gt;getThrowable();
-if (!$exception instanceof FlattenException) {
-    $exception = FlattenException::create($exception);
-}
-<span style="display:block;width:100%;background-color:#3c3d38">$response = Response::create($handler-&gt;getHtml($exception), $exception-&gt;getStatusCode(), $exception-&gt;getHeaders())-&gt;setCharset(ini_get(&#39;default_charset&#39;));
-</span>$event-&gt;setResponse($response);
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e">&lt;?php</span>
+</span>$handler <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\Symfony\Component\Debug\ExceptionHandler</span>($debug);
+$exception <span style="color:#f92672">=</span> $event<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getThrowable</span>();
+<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>$exception <span style="color:#a6e22e">instanceof</span> <span style="color:#a6e22e">FlattenException</span>) {
+    $exception <span style="color:#f92672">=</span> <span style="color:#a6e22e">FlattenException</span><span style="color:#f92672">::</span><span style="color:#a6e22e">create</span>($exception);
+<span style="display:block;width:100%;background-color:#3c3d38">}
+</span>$response <span style="color:#f92672">=</span> <span style="color:#a6e22e">Response</span><span style="color:#f92672">::</span><span style="color:#a6e22e">create</span>($handler<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getHtml</span>($exception), $exception<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getStatusCode</span>(), $exception<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getHeaders</span>())<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setCharset</span>(<span style="color:#a6e22e">ini_get</span>(<span style="color:#e6db74">&#39;default_charset&#39;</span>));
+$event<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setResponse</span>($response);
 </code></pre></td></tr></table>
 </div>
 </div><p>The <code>Symfony\Component\ErrorHandler\ErrorHandler</code> has no <code>getHtml</code> method.</p>
 <p>From the symfony docs, if you are in development mode we can use below code.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">if ($_SERVER[&#39;APP_DEBUG&#39;]) {
-    Debug::enable();
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">if</span> ($_SERVER[<span style="color:#e6db74">&#39;APP_DEBUG&#39;</span>]) {
+    <span style="color:#a6e22e">Debug</span><span style="color:#f92672">::</span><span style="color:#a6e22e">enable</span>();
 }
 </code></pre></div><p>so I started with</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">ErrorHandler::register();
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#a6e22e">ErrorHandler</span><span style="color:#f92672">::</span><span style="color:#a6e22e">register</span>();
 </code></pre></div><p>But it was throwing all details. I was struggling how to fix this.
 After many failed experiments, I asked <a href="https://twitter.com/YonelCerutoG">Yonel Ceruto Gonzalez</a>.</p>
 <blockquote>
@@ -144,7 +148,8 @@ After many failed experiments, I asked <a href="https://twitter.com/YonelCerutoG
 <p>The above information was really helpful to do more experiments. I finally fixed the unit tests with the below code.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
 </span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
 </span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
 </span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
@@ -159,19 +164,20 @@ After many failed experiments, I asked <a href="https://twitter.com/YonelCerutoG
 </span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
 </span></span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$handler = new \Symfony\Component\ErrorHandler\ErrorHandler();
-<span style="display:block;width:100%;background-color:#3c3d38">$handler-&gt;setExceptionHandler([$handler, &#39;renderException&#39;]);
-</span>if (! $this-&gt;debug) {
-<span style="display:block;width:100%;background-color:#3c3d38">    $handler-&gt;scopeAt(0, true);
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+$handler <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\Symfony\Component\ErrorHandler\ErrorHandler</span>();
+<span style="display:block;width:100%;background-color:#3c3d38">$handler<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setExceptionHandler</span>([$handler, <span style="color:#e6db74">&#39;renderException&#39;</span>]);
+</span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">debug</span>) {
+<span style="display:block;width:100%;background-color:#3c3d38">    $handler<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">scopeAt</span>(<span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">true</span>);
 </span>}
-$exception = $event-&gt;getThrowable();
-<span style="display:block;width:100%;background-color:#3c3d38">ob_start();
-</span><span style="display:block;width:100%;background-color:#3c3d38">$handler-&gt;handleException($exception);
-</span><span style="display:block;width:100%;background-color:#3c3d38">$response = ob_get_clean();
-</span>if (!$exception instanceof FlattenException) {
-    $exception = FlattenException::create($exception);
+$exception <span style="color:#f92672">=</span> $event<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getThrowable</span>();
+<span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#a6e22e">ob_start</span>();
+</span><span style="display:block;width:100%;background-color:#3c3d38">$handler<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">handleException</span>($exception);
+</span><span style="display:block;width:100%;background-color:#3c3d38">$response <span style="color:#f92672">=</span> <span style="color:#a6e22e">ob_get_clean</span>();
+</span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>$exception <span style="color:#a6e22e">instanceof</span> <span style="color:#a6e22e">FlattenException</span>) {
+    $exception <span style="color:#f92672">=</span> <span style="color:#a6e22e">FlattenException</span><span style="color:#f92672">::</span><span style="color:#a6e22e">create</span>($exception);
 }
-<span style="display:block;width:100%;background-color:#3c3d38">$response = Response::create($response, $exception-&gt;getStatusCode(), $exception-&gt;getHeaders())-&gt;setCharset(ini_get(&#39;default_charset&#39;));
+<span style="display:block;width:100%;background-color:#3c3d38">$response <span style="color:#f92672">=</span> <span style="color:#a6e22e">Response</span><span style="color:#f92672">::</span><span style="color:#a6e22e">create</span>($response, $exception<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getStatusCode</span>(), $exception<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getHeaders</span>())<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setCharset</span>(<span style="color:#a6e22e">ini_get</span>(<span style="color:#e6db74">&#39;default_charset&#39;</span>));
 </span></code></pre></td></tr></table>
 </div>
 </div><p>I hope this information may help someone at somepoint of time.</p>

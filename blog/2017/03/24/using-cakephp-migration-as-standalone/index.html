@@ -162,8 +162,9 @@ to execute. You can do via <code>chmod +x bin/cake-phinx</code></p>
 <p>PS : If you came across some errors regarding migration plugin not loaded etc.
 You may want to add the below code before calling MigrationsDispatcher</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">Cake\Core\Plugin::load(&#39;Migrations&#39;, [
-    &#39;path&#39; =&gt; $projectDirectory . &#39;/vendor/cakephp/migrations/&#39;,
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#a6e22e">Cake\Core\Plugin</span><span style="color:#f92672">::</span><span style="color:#a6e22e">load</span>(<span style="color:#e6db74">&#39;Migrations&#39;</span>, [
+    <span style="color:#e6db74">&#39;path&#39;</span> <span style="color:#f92672">=&gt;</span> $projectDirectory <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/vendor/cakephp/migrations/&#39;</span>,
 ]);
 </code></pre></div>
 
