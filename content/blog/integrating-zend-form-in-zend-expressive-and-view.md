@@ -65,6 +65,7 @@ First get the `Zend\View\HelperPluginManager` service.
 2.a ) Registering as a factory
 
 ```php
+<?php
 $serviceManager->setFactory('hasError', function () {
     return new \App\View\Helper\HasError();
 });
@@ -73,6 +74,7 @@ $serviceManager->setFactory('hasError', function () {
 2.b ) As an invokable
 
 ```php
+<?php
 $serviceManager->setInvokableClass('hasError', 'App\View\Helper\HasError');
 ```
 
@@ -81,6 +83,7 @@ helper need dependencies don't use the `setInvokableClass` method.
 Use factory and get the object from the container.
 
 ```php
+<?php
 $serviceManager->setFactory('hasError', function () use ($di) {
      return $di->get('App\View\Helper\HasError');
 });
@@ -92,6 +95,7 @@ so that we don't need to register it as a service.
 Eg : Below will not work.
 
 ```php
+<?php
 $serviceManager->setFactory('hasError', $di->lazyNew('App\View\Helper\HasError'));
 ```
 

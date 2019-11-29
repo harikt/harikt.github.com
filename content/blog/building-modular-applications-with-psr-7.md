@@ -108,6 +108,7 @@ This is possible with the `hkt/psr7-asset`.
 What you need is get the asset locator and set the path to `vendor/package` as
 
 ```php
+<?php
 $assetLocator = $di->get('Hkt\Psr7Asset\AssetLocator');
 $assetLocator->set('hkt/psr7-asset-example', dirname(dirname(__DIR__)) . '/public');
 ```
@@ -115,6 +116,7 @@ $assetLocator->set('hkt/psr7-asset-example', dirname(dirname(__DIR__)) . '/publi
 alternatievely you can set individual paths or files also.
 
 ```php
+<?php
 $assetLocator = $di->get('Hkt\Psr7Asset\AssetLocator');
 $assetLocator->set('vendor/package/images/someimage.png', '/path/to/different-image.png');
 ```

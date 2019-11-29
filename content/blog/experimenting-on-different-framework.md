@@ -30,6 +30,7 @@ Some of the good things I like in symfony console component are its [helpers](ht
 ### Table
 
 ```php
+<?php
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
@@ -50,6 +51,7 @@ $table->render();
 ## Progress bar
 
 ```php
+<?php
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
@@ -79,6 +81,7 @@ $progress->finish();
 ## Question
 
 ```php
+<?php
 use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Input\StringInput;
@@ -108,6 +111,7 @@ if ($helper->ask($input, $output, $question)) {
 ## Hidden Passwords
 
 ```php
+<?php
 use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Input\StringInput;
@@ -131,6 +135,7 @@ and more.. I hope you will also add `symfony/console` into your list.
 The `symfony/http-foundation` is another extensively used component. It is actually [Aura.Web](https://github.com/auraphp/Aura.Web) + [Aura.Session](https://github.com/auraphp/Aura.Session) with more session handlers. Used by `drupal`, `laravel` etc in core. When working on mixed projects like `drupal`, `laravel` etc, it is good to be in your list.
 
 ```php
+<?php
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -148,6 +153,7 @@ $response->send();
 Another wonderful component is the finder.
 
 ```php
+<?php
 use Symfony\Component\Finder\Finder;
 
 $finder = new Finder();

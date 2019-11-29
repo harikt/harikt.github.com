@@ -34,6 +34,7 @@ mkdir -p templates/{views,layouts}
 Edit `config/Common.php` and define service for `view`.
 
 ```php
+<?php
 public function define(Container $di)
 {
     $di->set('view', $di->lazyNew('Aura\View\View'));
@@ -43,6 +44,7 @@ public function define(Container $di)
 add a way to set the path to templates. Assuming you have `templates` folder in the root. There is no finder in `aura/view` to increase the performance of loading and rendering templates. For a quick hack let us iterate through the directory and set all the views and layouts to its registry.
 
 ```php
+<?php
 public function modify(Container $di)
 {
     // more code
@@ -75,6 +77,7 @@ public function defineTemplates($di)
 Edit `modifyDispatcher` method to
 
 ```php
+<?php
 public function modifyWebDispatcher($di)
 {
     $dispatcher = $di->get('aura/web-kernel:dispatcher');

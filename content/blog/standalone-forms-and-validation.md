@@ -113,6 +113,7 @@ Please note that the $rootpath in this example is just above the vendor
 folder of the composer.
 
 ```php
+<?php
 $filter = new Domicile\Example\Filter(
     new RuleLocator(array_merge(
         require $rootpath . '/vendor/aura/filter/scripts/registry.php',
@@ -140,6 +141,7 @@ the rules specified in the form.
 The code will looks like
 
 ```php
+<?php
 
 if ($_POST && $_POST['submit'] == 'send') {
     $data = $_POST;
@@ -159,6 +161,7 @@ Hints for the view
 ------------------
 
 ```php
+<?php
 // get the hints for the name field
 $hints = $form->get('name');
 
@@ -191,6 +194,7 @@ For that you need to instantiate `Aura\View\HelperLocator` and get the
 field object as below.
 
 ```php
+<?php
 $helper = new Aura\View\HelperLocator([
     'field'         => function () { 
         return new Aura\View\Helper\Form\Field(

@@ -61,6 +61,7 @@ vendor/bin/di-config-dump src/Vendor/World.php
 will output
 
 ```php
+<?php
 $di->params['Vendor\World']['baz'] = $di->lazyNew('Vendor\Baz');
 ```
 

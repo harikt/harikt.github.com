@@ -9,6 +9,7 @@ Working with [cakephp/orm](http://packagist.org/packages/cakephp/orm) library, I
 Cakephp provides a way to do it via [cakephp/log](http://packagist.org/packages/cakephp/log).
 
 ```php
+<?php
 use Cake\Log\Log;
 
 Log::config('queries', [
@@ -22,6 +23,7 @@ Log::config('queries', [
 But you are not limited, if you need to configure it to a PSR-3 logger like [monolog/monolog](http://packagist.org/packages/monolog/monolog)
 
 ```php
+<?php
 use Cake\Log\Log;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
@@ -48,6 +50,7 @@ composer require fabfuel/prophiler
 ## Configuring debugbar
 
 ```php
+<?php
 use Cake\Log\Log;
 use Fabfuel\Prophiler\Profiler;
 use Fabfuel\Prophiler\Toolbar;

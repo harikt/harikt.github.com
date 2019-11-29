@@ -3,7 +3,7 @@ title: "Symfony Debug to Error Handler Component"
 date: 2019-11-29T01:04:31+05:30
 ---
 
-Since symfony 4.4 the symfony/debug component is deprecated.
+Since symfony 4.4 the `symfony/debug` component is deprecated.
 
 > The "\Symfony\Component\Debug\ErrorHandler" class is deprecated since Symfony 4.4, use "\Symfony\Component\ErrorHandler\ErrorHandler"
 
@@ -15,6 +15,7 @@ But it was not easy as changing `Symfony\Component\Debug\ExceptionHandler` to `S
 Assume we have something as below
 
 ```php {linenos=table,hl_lines=[1,6],linenostart=37}
+<?php
 $handler = new \Symfony\Component\Debug\ExceptionHandler($debug);
 $exception = $event->getThrowable();
 if (!$exception instanceof FlattenException) {
@@ -29,6 +30,7 @@ The `Symfony\Component\ErrorHandler\ErrorHandler` has no `getHtml` method.
 From the symfony docs, if you are in development mode we can use below code.
 
 ```php
+<?php
 if ($_SERVER['APP_DEBUG']) {
     Debug::enable();
 }
@@ -37,6 +39,7 @@ if ($_SERVER['APP_DEBUG']) {
 so I started with 
 
 ```php
+<?php
 ErrorHandler::register();
 ```
 
@@ -55,7 +58,8 @@ After many failed experiments, I asked [Yonel Ceruto Gonzalez](https://twitter.c
 
 The above information was really helpful to do more experiments. I finally fixed the unit tests with the below code.
 
-```php {linenos=table,hl_lines=[2,4,"7-9",13],linenostart=38}
+```php {linenos=table,hl_lines=[3,5,"8-10",14],linenostart=37}
+<?php
 $handler = new \Symfony\Component\ErrorHandler\ErrorHandler();
 $handler->setExceptionHandler([$handler, 'renderException']);
 if (! $this->debug) {

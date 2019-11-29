@@ -17,6 +17,7 @@ I will try to eventually pushed to the main Aura.Di repo.
 The way di container is instantiated has been changed from
 
 ```php
+<?php
 use Aura\Di\Container;
 use Aura\Di\Factory;
 use Aura\Di\ContainerBuilder;
@@ -36,6 +37,7 @@ $di = $container_builder->newInstance(
 to 
 
 ```php
+<?php
 use Aura\Di\ContainerBuilder;
 
 $container_builder = new ContainerBuilder();

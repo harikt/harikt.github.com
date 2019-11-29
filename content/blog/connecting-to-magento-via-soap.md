@@ -165,6 +165,7 @@ class `My_Soap_Magento`. You need to get the username and api key
 from the magento host.
 
 ```php
+<?php
 $object = new My_Soap_Magento(
     'the-magento-host',
     'username',
@@ -181,6 +182,7 @@ category information, products list etc are shown below.
 See we are not passing the session parameter.
 
 ```php
+<?php
 echo "Product Info";
 $result = $proxy->catalogProductInfo(16);
 echo $result;

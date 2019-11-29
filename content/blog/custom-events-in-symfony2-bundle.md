@@ -12,6 +12,7 @@ In this tutorial we will create a custom event for symfony2 bundle.
 Create `HktEventBundle` via [sensio generator bundle](http://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html).
 
 ```php
+<?php
 php app/console generate:bundle --namespace=Hkt/EventBundle --dir src --no-interaction
 ```
 
@@ -74,7 +75,8 @@ class DefaultController extends Controller
 
 Create the listener to do what you want to do with the dispatched/triggered event.
 
-```php 
+```php
+<?php
 <?php
 // src/Hkt/EventBundle/EventListener/PageViewedListener.php
 namespace Hkt\EventBundle\EventListener;

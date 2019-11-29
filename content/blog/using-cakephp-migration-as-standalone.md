@@ -83,6 +83,7 @@ There is another [PR 312](https://github.com/cakephp/migrations/pull/312) waitin
 You may want to add the below code before calling MigrationsDispatcher
 
 ```php
+<?php
 Cake\Core\Plugin::load('Migrations', [
     'path' => $projectDirectory . '/vendor/cakephp/migrations/',
 ]);

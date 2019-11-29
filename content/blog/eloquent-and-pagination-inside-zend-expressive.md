@@ -11,6 +11,7 @@ I wanted to integrate pagination.
 It was simple as registering a `Paginator` middleware.
 
 ```php
+<?php
 use Illuminate\Pagination\Paginator;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -29,6 +30,7 @@ and you can call paginate on the `Model`.
 Eg : Consider you have a `Post` model.
 
 ```php
+<?php
 $posts = Post::paginate(20);
 ```
 

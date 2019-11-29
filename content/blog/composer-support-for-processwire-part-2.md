@@ -12,6 +12,7 @@ Sometimes you may see a non `composer.json` repo or some times people reject
 it, you still can do like the below.
 
 ```php
+<?php
 {
     "minimum-stability": "dev",
     "repositories": [

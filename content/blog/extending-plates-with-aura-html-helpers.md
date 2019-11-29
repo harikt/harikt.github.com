@@ -122,6 +122,7 @@ Create the templates in a `templates` folder or change the path in Plates Engine
 ### Profile Template
 
 ```php
+<?php
 <!-- profile.php -->
 
 <?php $this->layout('template') ?>
@@ -157,6 +158,7 @@ echo $this->html()->input(array(
 ### Layout Template
 
 ```php
+<?php
 <!-- template.php -->
 
 <html>
@@ -188,6 +190,7 @@ Make sure AuraHtmlExtension can be autoloaded. We can add in `composer.json`
 ### Bootstrapping and Rendering
 
 ```php
+<?php
 // test.php file
 require __DIR__ . '/vendor/autoload.php';
 $engine = new \League\Plates\Engine( __DIR__ . '/templates');

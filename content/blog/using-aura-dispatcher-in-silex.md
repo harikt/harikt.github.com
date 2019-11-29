@@ -98,6 +98,7 @@ can be better ways for integration.
 > on the integration, and he gave another shot.
 
 ```php
+<?php
 // all code as same as above, upto the route
 
 $app->get('/hello/{name}', function ($name) use ($app) {

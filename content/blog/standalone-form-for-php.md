@@ -23,6 +23,7 @@ I assume you know a bit about [composer] and how to install.
 The `composer.json` file
 
 ```php
+<?php
 {
     "minimum-stability": "dev",
     "require": {
