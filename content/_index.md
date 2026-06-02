@@ -16,7 +16,8 @@ While my core expertise lies in **PHP**, I am driven by a continuous desire to l
 
 - **Cross-platform desktop applications** using [Tauri](https://tauri.app/).
 - **Android applications**—such as the [Tripti restaurant app](https://tripti.cloud) available on the [Google Play Store](https://play.google.com/store/apps/developer?id=Tanvish).
+- **Working with AI for vibe coding** to rapidly prototype and build innovative software solutions.
 
 ---
 
-> I love tackling complex problems and delivering high-quality, scalable solutions for my clients.
+> I love tackling complex problems and delivering high-quality, scalable solutions for my clients. I also share my knowledge and coding journey on my [YouTube Channel](https://www.youtube.com/@HariKT).

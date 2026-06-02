@@ -23,7 +23,8 @@ enableRobotsTXT = true
       { linkedin = "https://www.linkedin.com/in/harikt" },
       { twitter = "https://x.com/harikt" },
       { github = "https://github.com/harikt" },
-      { stackoverflow = "https://stackoverflow.com/users/487878/hari-k-t" }
+      { stackoverflow = "https://stackoverflow.com/users/487878/hari-k-t" },
+      { youtube = "https://www.youtube.com/@HariKT" }
     ]
 
   [params.homepage]
