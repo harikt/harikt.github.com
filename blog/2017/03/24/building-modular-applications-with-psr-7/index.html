@@ -1,363 +1,1392 @@
-<!DOCTYPE html>
-<html class="nojs" lang="en" dir="ltr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>building modular applications with psr 7 – Random thoughts</title>
-<meta name="description" content="PSR-7, the HTTP message interfaces opened a new door of creating modular applications. Sadly many of the PSR-7 implementations added many helper methods. So if someone is …">
-<meta name="created" content="2017-03-24T00:00:00&#43;0000">
-<meta name="modified" content="2017-03-24T00:00:00&#43;0000">
+<!doctype html>
+<html
+  lang="en-GB"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"><head>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en-GB">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
 
-<meta name="contact" content="me@harikt.com">
-<meta property="og:site_name" content="Random thoughts">
-<meta property="og:title" content="building modular applications with psr 7">
-<meta property="og:url" content="https://harikt.com/blog/2017/03/24/building-modular-applications-with-psr-7/">
-<meta property="og:type" content="article">
-<meta property="og:image" content="https://harikt.com/apple-touch-icon-180.png">
-<meta name="generator" content="Hugo 0.60.0" />
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="theme-color" content="#ffffff">
+  
+  
+    <title>building modular applications with psr 7 &middot; Hari KT</title>
+    <meta name="title" content="building modular applications with psr 7 &middot; Hari KT">
+  
+
+  
+  
+  
+  
+  
+    
+  
+    
+  
+    
+  
+  
+  
+  
+  
+  <link rel="canonical" href="https://harikt.com/blog/2017/03/24/building-modular-applications-with-psr-7/">
+  
+  
+
+  
+  
+    <meta name="author" content="Hari KT">
+  
+  
+    
+      
+        
+          <link href="https://www.linkedin.com/in/harikt" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://x.com/harikt" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://github.com/harikt" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://stackoverflow.com/users/487878/hari-k-t" rel="me">
+        
+      
+    
+  
+
+  
+  <meta property="og:url" content="https://harikt.com/blog/2017/03/24/building-modular-applications-with-psr-7/">
+	<meta property="og:site_name" content="Hari KT">
+	<meta property="og:title" content="building modular applications with psr 7">
+	<meta property="og:description" content="PSR-7, the HTTP message interfaces opened a new door of creating modular applications.
+Sadly many of the PSR-7 implementations added many helper methods.
+So if someone is creating a library that needs a PSR-7 implementations they tie the particular library with the PSR-7 implementation and use these convinient helper methods.
+So was PSR-15: interfaces for HTTP Middleware and PSR-17: interfaces for HTTP Factories was proposed.
+When creating a module one of the most challenging part is how to serve the javascript, css and images. We are going to use hkt/psr7-asset which is a fork of Aura.Asset_Bundle . What you want to do is only map the path to the assets folder.">
+	<meta property="og:locale" content="en_GB">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="blog">
+		<meta property="article:published_time" content="2017-03-24T00:00:00+00:00">
+		<meta property="article:modified_time" content="2017-03-24T00:00:00+00:00">
+
+  
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="building modular applications with psr 7">
+	<meta name="twitter:description" content="PSR-7, the HTTP message interfaces opened a new door of creating modular applications.
+Sadly many of the PSR-7 implementations added many helper methods.
+So if someone is creating a library that needs a PSR-7 implementations they tie the particular library with the PSR-7 implementation and use these convinient helper methods.
+So was PSR-15: interfaces for HTTP Middleware and PSR-17: interfaces for HTTP Factories was proposed.
+When creating a module one of the most challenging part is how to serve the javascript, css and images. We are going to use hkt/psr7-asset which is a fork of Aura.Asset_Bundle . What you want to do is only map the path to the assets folder.">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.d8968b5074e51f1df2a14d9e8ab8071f02e54104fdf2df960e0484275b9fe02a27f22b633a79d5a05580f363a0119fb7304eb8d4c358fb0a6760875471fafd61.css"
+    integrity="sha512-2JaLUHTlHx3yoU2eirgHHwLlQQT98t&#43;WDgSEJ1uf4Con8itjOnnVoFWA82OgEZ&#43;3ME641MNY&#43;wpnYIdUcfr9YQ==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
+  
+  
+  
+  
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+  
+    
+  
+  
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.2e4a40a56a1c26644ff4dab6790eabc19d06af6171ea5b7ce1d008ad294537fedc437e8d1b2d28ae15b50ecb35defd0e442ddca3a21cb41b95435b3f03fd29fd.js"
+      integrity="sha512-LkpApWocJmRP9Nq2eQ6rwZ0Gr2Fx6lt84dAIrSlFN/7cQ36NGy0orhW1Dss13v0ORC3co6IctBuVQ1s/A/0p/Q=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+
+  
+  
 
 
-<link rel="canonical" href="https://harikt.com/blog/2017/03/24/building-modular-applications-with-psr-7/">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-<link rel="stylesheet" href="/css/mobile.2ab74aa64785dcab8114959e76ca140cf76207cd85989bc6d4fc3b12f734a09e.css" media="screen">
-<link rel="stylesheet" href="/css/styles.815d832c412376a2dcbec755e26a23c857bfc9df27f5000cebf4428684f1bdb5.css">
-<link rel="stylesheet" href="/css/print.27fc184f8670f41a2690985390779e7b20335a8fadff8fa015cf9417ffe50c36.css" media="print">
 
-<script type="application/ld+json">
-  {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
+    "@type": "Article",
+    "articleSection": "Blogs",
+    "name": "building modular applications with psr 7",
     "headline": "building modular applications with psr 7",
-    "datePublished": "2017-03-24T00:00:00Z",
-    "dateModified": "2017-03-24T00:00:00Z",
+    
+    "inLanguage": "en-GB",
     "url" : "https://harikt.com/blog/2017/03/24/building-modular-applications-with-psr-7/",
-    "description": "PSR-7, the HTTP message interfaces opened a new door of creating modular applications. Sadly many of the PSR-7 implementations added many helper methods. So if someone is …",
-    "image" : "https://harikt.com/apple-touch-icon-180.png",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://harikt.com/"
+    "author" : {
+      "@type": "Person",
+      "name": "Hari KT"
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Random thoughts",
-      "logo" : {
-        "@type": "ImageObject",
-        "url": "https://harikt.com/apple-touch-icon-180.png"
-      },
-      "url": "https://harikt.com/"
-    }
-  }
-</script>
-
-<script defer src="/js/jquery.slim.min.a5ab2a00a0439854f8787a0dda775dea5377ef4905886505c938941d6854ee4f.js"></script>
-<script defer src="/js/umbrella.min.b426107371d121c9a56a27aac9e9058ff592a021e2f4c3c94827fe70920d3cbb.js"></script>
-<script defer src="/js/mobile.min.3a3510028bab9810834389725137cfa50f5d3231799ef9ac70769331fa59859a.js"></script>
-<script defer src="/js/script.min.8e4d91ebe0d9226621e408b7205bd7b009e4935608e4b29c4275116490cc836d.js"></script>
+    "copyrightYear": "2017",
+    "dateCreated": "2017-03-24T00:00:00\u002b00:00",
+    "datePublished": "2017-03-24T00:00:00\u002b00:00",
+    
+    "dateModified": "2017-03-24T00:00:00\u002b00:00",
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "1152"
+  }]
+  </script>
 
 
+
+  
+  
+    
+
+
+
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
 </head>
 
-<body>
-<div class="page layout__page">
-<header class="header layout__header">
-<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
-<h1 class="header__site-name">
-<a href="/" title="Home" class="header__site-link" rel="home"><span>Random thoughts</span></a>
-</h1>
-<div class="region header__region">
 
-<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
-<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
-<input type="hidden" name="sites" value="harikt.com">
-<input type="submit" value="DuckDuckGo Search" class="hidden">
-</form>
-</div>
-</header>
 
-<nav class="main-menu layout__navigation">
-<h2 class="visually-hidden">Main menu</h2>
-<ul class="navbar">
-<li><a class="" href="/">Home</a></li>
-<li><a class="" href="/about/">About</a></li>
-<li><a class="" href="/blog/archives/">Archive</a></li>
-<li><a class="" href="/contact/">Contact</a></li>
-<li><a class="active" href="/blog/">Blog</a></li>
-</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral bf-scrollbar">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    
+    
+      <div class="main-menu flex items-center w-full gap-2 p-1 pl-0">
+  
+  
+    <a href="/" class="text-base font-medium truncate min-w-0 shrink">
+      Home
+    </a>
+  
+  <div class="flex items-center ms-auto">
+    <div class="hidden md:flex">
+      <nav class="flex items-center gap-x-5 h-12">
+  
+    
+      
+  
+    <a
+      href="/blog/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="Blog"
+      title="Blogs">
+      
+      
+        <span class="text-base font-medium break-normal">
+          Blog
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="/contact/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="Contact"
+      title="Contact">
+      
+      
+        <span class="text-base font-medium break-normal">
+          Contact
+        </span>
+      
+    </a>
+  
+
+    
+  
+
+  
+
+  
+
+  
+    <button
+      id="search-button"
+      aria-label="Search"
+      class="text-base bf-icon-color-hover"
+      title="Search (/)">
+      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+    </button>
+  
+
+  
+    <div class="flex items-center">
+      <button
+        id="appearance-switcher"
+        aria-label="Dark mode switcher"
+        type="button"
+        class="text-base bf-icon-color-hover">
+        <div class="flex items-center justify-center dark:hidden">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+        </div>
+      </button>
+    </div>
+  
 </nav>
 
 
-<main class="main layout__main">
-<article class="section-blog single-view">
-<header>
-<h1 class="title title-submitted">building modular applications with psr 7</h1>
-<p class="submitted">
-<time class="modified-date" datetime="2017-03-24T00:00:00Z">24 March, 2017</time>
-</p>
-</header>
-<div class="content">
-<p><a href="http://www.php-fig.org/psr/psr-7/">PSR-7, the HTTP message interfaces</a> opened
+
+    </div>
+    <div class="flex md:hidden">
+      <div class="flex items-center h-14 gap-4">
+  
+    <button
+      id="search-button-mobile"
+      aria-label="Search"
+      class="flex items-center justify-center bf-icon-color-hover"
+      title="Search (/)">
+      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+    </button>
+  
+
+  
+    <button
+      id="appearance-switcher-mobile"
+      type="button"
+      aria-label="Dark mode switcher"
+      class="flex items-center justify-center text-neutral-900 hover:text-primary-600 dark:text-neutral-200 dark:hover:text-primary-400">
+      <div class="dark:hidden">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+      </div>
+      <div class="hidden dark:block">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+      </div>
+    </button>
+  
+
+  
+    <input type="checkbox" id="mobile-menu-toggle" autocomplete="off" class="hidden peer">
+    <label for="mobile-menu-toggle" class="flex items-center justify-center cursor-pointer bf-icon-color-hover">
+      <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+    </label>
+
+    <div
+      role="dialog"
+      aria-modal="true"
+      style="scrollbar-gutter: stable;"
+      class="fixed inset-0 z-50 invisible overflow-y-auto px-6 py-20 opacity-0 transition-[opacity,visibility] duration-300 peer-checked:visible peer-checked:opacity-100 bg-neutral-50/97 dark:bg-neutral-900/99
+      bf-scrollbar">
+      <label
+        for="mobile-menu-toggle"
+        class="fixed end-8 top-5 flex items-center justify-center z-50 h-12 w-12 cursor-pointer select-none rounded-full bf-icon-color-hover border bf-border-color bf-border-color-hover bg-neutral-50 dark:bg-neutral-900">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </label>
+      <nav class="mx-auto max-w-md space-y-6">
+        
+  
+    
+    <div class="px-2">
+      <a
+        href="/blog/"
+        aria-label="Blog"
+        
+        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+        
+        <span title="Blogs" class="text-2xl font-bold tracking-tight">
+          Blog
+        </span>
+        
+      </a>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <a
+        href="/contact/"
+        aria-label="Contact"
+        
+        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+        
+        <span title="Contact" class="text-2xl font-bold tracking-tight">
+          Contact
+        </span>
+        
+      </a>
+
+      
+    </div>
+  
+
+        
+  
+
+        
+  
+
+      </nav>
+    </div>
+  
+</div>
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        building modular applications with psr 7
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2017-03-24T00:00:00&#43;00:00">24 March 2017</time><span class="px-2 text-primary-500">&middot;</span><span>1152 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">6 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    
+    
+<div class="flex author">
+  
+    
+    
+      
+    
+    
+      
+      
+      
+        
+        
+        
+      
+      <img
+        class="!mt-0 !mb-0 h-24 w-24 rounded-full me-4"
+        width="96"
+        height="96"
+        alt="Hari KT"
+        src="/harik-small_hu_130f2ff6678d7ed8.jpg"
+        data-zoom-src="/harik-small_hu_fb0ec66e6e7f9bd4.jpg">
+    
+  
+  <div class="place-self-center">
+    
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        Author
+      </div>
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+        Hari KT
+      </div>
+    
+    
+      <div class="text-sm text-neutral-700 dark:text-neutral-400">Freelancer | Founder of <a href="https://tripti.cloud/"  target="_blank" rel="noreferrer">Tripti</a> and <a href="https://tanvish.com/"  target="_blank" rel="noreferrer">Tanvish</a> | Maintainer of <a href="https://auraphp.com/"  target="_blank" rel="noreferrer">AuraPHP</a></div>
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500 space-x-2">
+    
+      
+        
+        <a
+          class=" hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://www.linkedin.com/in/harikt"
+          
+          target="_blank"
+          aria-label="Linkedin"
+          title="Linkedin"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+</span></span></a
+        >
+      
+    
+      
+        
+        <a
+          class=" hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://x.com/harikt"
+          
+          target="_blank"
+          aria-label="Twitter"
+          title="Twitter"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+</span></span></a
+        >
+      
+    
+      
+        
+        <a
+          class=" hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/harikt"
+          
+          target="_blank"
+          aria-label="Github"
+          title="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span></span></a
+        >
+      
+    
+      
+        
+        <a
+          class=" hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://stackoverflow.com/users/487878/hari-k-t"
+          
+          target="_blank"
+          aria-label="Stackoverflow"
+          title="Stackoverflow"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"></span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+  
+
+  
+
+  
+    <div class="mb-5"></div>
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          <p><a href="http://www.php-fig.org/psr/psr-7/"  target="_blank" rel="noreferrer">PSR-7, the HTTP message interfaces</a> opened
 a new door of creating modular applications.</p>
 <p>Sadly many of the PSR-7 implementations added many helper methods.</p>
 <p>So if someone is creating a library that needs a PSR-7 implementations they tie
 the particular library with the PSR-7 implementation and use these convinient helper methods.</p>
-<p>So was <a href="https://github.com/http-interop/http-middleware">PSR-15: interfaces for HTTP Middleware</a>
-and <a href="https://github.com/http-interop/http-factory">PSR-17: interfaces for HTTP Factories</a>
+<p>So was <a href="https://github.com/http-interop/http-middleware"  target="_blank" rel="noreferrer">PSR-15: interfaces for HTTP Middleware</a>
+and <a href="https://github.com/http-interop/http-factory"  target="_blank" rel="noreferrer">PSR-17: interfaces for HTTP Factories</a>
 was proposed.</p>
 <p>When creating a module one of the most challenging part is how to serve the
 javascript, css and images. We are going to use
-<a href="github.com/harikt/psr7-asset">hkt/psr7-asset</a> which is a fork of
-<a href="https://github.com/friendsofaura/Aura.Asset_Bundle/">Aura.Asset_Bundle</a> .
+<a href="github.com/harikt/psr7-asset" >hkt/psr7-asset</a> which is a fork of
+<a href="https://github.com/friendsofaura/Aura.Asset_Bundle/"  target="_blank" rel="noreferrer">Aura.Asset_Bundle</a> .
 What you want to do is only map the path to the assets folder.</p>
 <p>We can discuss more on the features later and start writing our first module.
-The source code of the module is hosted at <a href="https://github.com/harikt/psr7-asset-example">github</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p <span style="color:#f92672">{</span>src/<span style="color:#f92672">{</span>Middleware<span style="color:#f92672">}</span>,templates,public/<span style="color:#f92672">{</span>css,images,js<span style="color:#f92672">}</span><span style="color:#f92672">}</span>
-</code></pre></div><p>The command will create folder structure as below.</p>
-<blockquote>
-<p>If you are not using *nix probably you want to create each folder separately.</p>
-</blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">├── public
-│   ├── css
-│   ├── images
-│   └── js
-├── src
-│   └── Middleware
-└── templates
-</code></pre></div><p>Lets create our <code>Welcome</code> middleware.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Hkt\Psr7AssetExample\Middleware</span>;
-
-<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Interop\Http\Factory\ResponseFactoryInterface</span>;
-<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Interop\Http\ServerMiddleware\MiddlewareInterface</span>;
-<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Interop\Http\ServerMiddleware\DelegateInterface</span>;
-<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Psr\Http\Message\ServerRequestInterface</span>;
-<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Zend\Expressive\Template\TemplateRendererInterface</span>;
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Welcome</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">MiddlewareInterface</span>
-{
-    <span style="color:#66d9ef">private</span> $template;
-
-    <span style="color:#66d9ef">private</span> $responseFactory;
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(
-        <span style="color:#a6e22e">TemplateRendererInterface</span> $template,
-        <span style="color:#a6e22e">ResponseFactoryInterface</span> $responseFactory
-    ) {
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">template</span> <span style="color:#f92672">=</span> $template;
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">responseFactory</span> <span style="color:#f92672">=</span> $responseFactory;
-    }
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">process</span>(
-        <span style="color:#a6e22e">ServerRequestInterface</span> $request,
-        <span style="color:#a6e22e">DelegateInterface</span> $delegate
-    ) {
-        $response <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">responseFactory</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">createResponse</span>();
-        $response <span style="color:#f92672">=</span> $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">withHeader</span>(<span style="color:#e6db74">&#39;Content-Type&#39;</span>, <span style="color:#e6db74">&#39;text/html&#39;</span>);
-        $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getBody</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">write</span>(
-            $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">template</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">render</span>(<span style="color:#e6db74">&#39;hkt-psr7-asset-example::welcome&#39;</span>, [])
-        );
-        <span style="color:#66d9ef">return</span> $response;
-    }
-}
-</code></pre></div><p>You can see we have not tied the <code>Welcome</code> class to any PSR-7 implementation.
+The source code of the module is hosted at <a href="https://github.com/harikt/psr7-asset-example"  target="_blank" rel="noreferrer">github</a>.</p>
+<div class="highlight-wrapper"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p <span class="o">{</span>src/<span class="o">{</span>Middleware<span class="o">}</span>,templates,public/<span class="o">{</span>css,images,js<span class="o">}}</span></span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+<p>The command will create folder structure as below.</p>
+<blockquote><p>If you are not using *nix probably you want to create each folder separately.</p>
+</blockquote><div class="highlight-wrapper"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">├── public
+</span></span><span class="line"><span class="cl">│   ├── css
+</span></span><span class="line"><span class="cl">│   ├── images
+</span></span><span class="line"><span class="cl">│   └── js
+</span></span><span class="line"><span class="cl">├── src
+</span></span><span class="line"><span class="cl">│   └── Middleware
+</span></span><span class="line"><span class="cl">└── templates</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+<p>Lets create our <code>Welcome</code> middleware.</p>
+<div class="highlight-wrapper"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nx">Hkt\Psr7AssetExample\Middleware</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Interop\Http\Factory\ResponseFactoryInterface</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Interop\Http\ServerMiddleware\MiddlewareInterface</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Interop\Http\ServerMiddleware\DelegateInterface</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Psr\Http\Message\ServerRequestInterface</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Zend\Expressive\Template\TemplateRendererInterface</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Welcome</span> <span class="k">implements</span> <span class="nx">MiddlewareInterface</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="nv">$template</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">private</span> <span class="nv">$responseFactory</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">TemplateRendererInterface</span> <span class="nv">$template</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">ResponseFactoryInterface</span> <span class="nv">$responseFactory</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">template</span> <span class="o">=</span> <span class="nv">$template</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">responseFactory</span> <span class="o">=</span> <span class="nv">$responseFactory</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="nf">process</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">ServerRequestInterface</span> <span class="nv">$request</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">DelegateInterface</span> <span class="nv">$delegate</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">responseFactory</span><span class="o">-&gt;</span><span class="na">createResponse</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">withHeader</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s1">&#39;text/html&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">write</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">template</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;hkt-psr7-asset-example::welcome&#39;</span><span class="p">,</span> <span class="p">[])</span>
+</span></span><span class="line"><span class="cl">        <span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nv">$response</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+<p>You can see we have not tied the <code>Welcome</code> class to any PSR-7 implementation.
 But instead to many interfaces. This helps us to use <code>Welcome</code> middleware with any PSR-7 based frameworks.</p>
-<h2 id="how-can-we-serve-the-static-files">How can we serve the static files?</h2>
-<p>This can be solved with <a href="https://github.com/zfcampus/zf-asset-manager">zf-asset-manager</a>.
+
+<h2 class="relative group">How can we serve the static files?
+    <div id="how-can-we-serve-the-static-files" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#how-can-we-serve-the-static-files" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>This can be solved with <a href="https://github.com/zfcampus/zf-asset-manager"  target="_blank" rel="noreferrer">zf-asset-manager</a>.
 What it does is copy the assets to the public folder and the files are served by  webserver.</p>
 <p>But what about if you need to alter the behaviour of the file?</p>
 <p>Eg : You want to override the <code>hello.js</code> contents with something like</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">function</span> () {
-    <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Hello World&#34;</span>);
-});
-</code></pre></div><p>This is possible with the <code>hkt/psr7-asset</code>.</p>
+<div class="highlight-wrapper"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">alert</span><span class="p">(</span><span class="s2">&#34;Hello World&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span></span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+<p>This is possible with the <code>hkt/psr7-asset</code>.</p>
 <p>What you need is get the asset locator and set the path to <code>vendor/package</code> as</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-$assetLocator <span style="color:#f92672">=</span> $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;Hkt\Psr7Asset\AssetLocator&#39;</span>);
-$assetLocator<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;hkt/psr7-asset-example&#39;</span>, <span style="color:#a6e22e">dirname</span>(<span style="color:#a6e22e">dirname</span>(<span style="color:#66d9ef">__DIR__</span>)) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/public&#39;</span>);
-</code></pre></div><p>alternatievely you can set individual paths or files also.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-$assetLocator <span style="color:#f92672">=</span> $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;Hkt\Psr7Asset\AssetLocator&#39;</span>);
-$assetLocator<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;vendor/package/images/someimage.png&#39;</span>, <span style="color:#e6db74">&#39;/path/to/different-image.png&#39;</span>);
-</code></pre></div><p>The full source code of the example module is at <a href="https://github.com/harikt/psr7-asset-example"><a href="https://github.com/harikt/psr7-asset-example">https://github.com/harikt/psr7-asset-example</a></a></p>
-<h2 id="how-can-we-make-use-of-this-module-in-your-application">How can we make use of this module in your application?</h2>
-<p>Any frameworks that supports psr-7, psr-15 and psr-17 interfaces should work. We will use zend expressive with <a href="https://github.com/auraphp/Aura.Di">Aura.Di</a> as dependency injection container and <a href="https://github.com/auraphp/Aura.Router">Aura.Router</a>.</p>
-<pre><code>composer create-project zendframework/zend-expressive-skeleton expressive
-</code></pre><p>Below is selection process</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Installing zendframework/zend-expressive-skeleton <span style="color:#f92672">(</span>2.0.1<span style="color:#f92672">)</span>
-  - Installing zendframework/zend-expressive-skeleton <span style="color:#f92672">(</span>2.0.1<span style="color:#f92672">)</span> Loading from cache
-Created project in expressive
-&gt; ExpressiveInstaller<span style="color:#ae81ff">\O</span>ptionalPackages::install
-Setting up optional packages
-Setup data and cache dir
-Removing installer development dependencies
+<div class="highlight-wrapper"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$assetLocator</span> <span class="o">=</span> <span class="nv">$di</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;Hkt\Psr7Asset\AssetLocator&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$assetLocator</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;hkt/psr7-asset-example&#39;</span><span class="p">,</span> <span class="nx">dirname</span><span class="p">(</span><span class="nx">dirname</span><span class="p">(</span><span class="no">__DIR__</span><span class="p">))</span> <span class="o">.</span> <span class="s1">&#39;/public&#39;</span><span class="p">);</span></span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+<p>alternatievely you can set individual paths or files also.</p>
+<div class="highlight-wrapper"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$assetLocator</span> <span class="o">=</span> <span class="nv">$di</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;Hkt\Psr7Asset\AssetLocator&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$assetLocator</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;vendor/package/images/someimage.png&#39;</span><span class="p">,</span> <span class="s1">&#39;/path/to/different-image.png&#39;</span><span class="p">);</span></span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+<p>The full source code of the example module is at <a href="https://github.com/harikt/psr7-asset-example"  target="_blank" rel="noreferrer">https://github.com/harikt/psr7-asset-example</a></p>
 
-  What type of installation would you like?
-  <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> Minimal <span style="color:#f92672">(</span>no default middleware, templates, or assets; configuration only<span style="color:#f92672">)</span>
-  <span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> Flat <span style="color:#f92672">(</span>flat source code structure; default selection<span style="color:#f92672">)</span>
-  <span style="color:#f92672">[</span>3<span style="color:#f92672">]</span> Modular <span style="color:#f92672">(</span>modular source code structure; recommended<span style="color:#f92672">)</span>
-  Make your selection <span style="color:#f92672">(</span>2<span style="color:#f92672">)</span>: <span style="color:#ae81ff">3</span>
-  - Adding package zendframework/zend-expressive-tooling <span style="color:#f92672">(</span>^0.3.2<span style="color:#f92672">)</span>
-  - Copying src/App/src/ConfigProvider.php
-
-  Which container <span style="color:#66d9ef">do</span> you want to use <span style="color:#66d9ef">for</span> dependency injection?
-  <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> Aura.Di
-  <span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> Pimple
-  <span style="color:#f92672">[</span>3<span style="color:#f92672">]</span> Zend ServiceManager
-  Make your selection or type a composer package name and version <span style="color:#f92672">(</span>Zend ServiceManager<span style="color:#f92672">)</span>: <span style="color:#ae81ff">1</span>
-  - Adding package aura/di <span style="color:#f92672">(</span>^3.2<span style="color:#f92672">)</span>
-  - Copying config/container.php
-  - Copying config/ExpressiveAuraConfig.php
-  - Copying config/ExpressiveAuraDelegatorFactory.php
-
-  Which router <span style="color:#66d9ef">do</span> you want to use?
-  <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> Aura.Router
-  <span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> FastRoute
-  <span style="color:#f92672">[</span>3<span style="color:#f92672">]</span> Zend Router
-  Make your selection or type a composer package name and version <span style="color:#f92672">(</span>FastRoute<span style="color:#f92672">)</span>: <span style="color:#ae81ff">1</span>
-  - Adding package zendframework/zend-expressive-aurarouter <span style="color:#f92672">(</span>^2.0<span style="color:#f92672">)</span>
-  - Copying config/routes.php
-  - Copying config/autoload/router.global.php
-
-  Which template engine <span style="color:#66d9ef">do</span> you want to use?
-  <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> Plates
-  <span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> Twig
-  <span style="color:#f92672">[</span>3<span style="color:#f92672">]</span> Zend View installs Zend ServiceManager
-  <span style="color:#f92672">[</span>n<span style="color:#f92672">]</span> None of the above
-  Make your selection or type a composer package name and version <span style="color:#f92672">(</span>n<span style="color:#f92672">)</span>: <span style="color:#ae81ff">2</span>
-  - Adding package zendframework/zend-expressive-twigrenderer <span style="color:#f92672">(</span>^1.4<span style="color:#f92672">)</span>
-  - Copying config/autoload/templates.global.php
-  - Copying src/App/templates/error/404.html.twig
-  - Copying src/App/templates/error/error.html.twig
-  - Copying src/App/templates/layout/default.html.twig
-  - Copying src/App/templates/app/home-page.html.twig
-
-  Which error handler <span style="color:#66d9ef">do</span> you want to use during development?
-  <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> Whoops
-  <span style="color:#f92672">[</span>n<span style="color:#f92672">]</span> None of the above
-  Make your selection or type a composer package name and version <span style="color:#f92672">(</span>Whoops<span style="color:#f92672">)</span>: <span style="color:#ae81ff">1</span>
-  - Adding package filp/whoops <span style="color:#f92672">(</span>^2.1.7<span style="color:#f92672">)</span>
-  - Copying config/autoload/development.local.php.dist
-</code></pre></div><p>Once the installation is finished we can start integrating the module.</p>
-<pre><code>cd expressive
-</code></pre><p>Add to your <code>composer.json</code> the below configuration.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">    <span style="color:#e6db74">&#34;repositories&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
-        {
-            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;git&#34;</span>,
-            <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://github.com/harikt/psr7-asset-example&#34;</span>
-        }
-    ]<span style="color:#960050;background-color:#1e0010">,</span>
-    <span style="color:#e6db74">&#34;require&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
-        <span style="color:#f92672">&#34;http-interop/http-factory-diactoros&#34;</span>: <span style="color:#e6db74">&#34;^0.2.0&#34;</span>,
-        <span style="color:#f92672">&#34;hkt/psr7-asset-example&#34;</span>:<span style="color:#e6db74">&#34;1.*@dev&#34;</span>,
-        <span style="color:#f92672">&#34;hkt/psr7-asset&#34;</span>:<span style="color:#e6db74">&#34;1.*@dev&#34;</span>,
-        <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">.</span>
-    }<span style="color:#960050;background-color:#1e0010">,</span>
-</code></pre></div><blockquote>
-<p>I think the dependencies are self explanatory. In case you need any help feel free to comment on the post.</p>
-</blockquote>
-<p>We need a few things for the assets to be displayed.</p>
+<h2 class="relative group">How can we make use of this module in your application?
+    <div id="how-can-we-make-use-of-this-module-in-your-application" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#how-can-we-make-use-of-this-module-in-your-application" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Any frameworks that supports psr-7, psr-15 and psr-17 interfaces should work. We will use zend expressive with <a href="https://github.com/auraphp/Aura.Di"  target="_blank" rel="noreferrer">Aura.Di</a> as dependency injection container and <a href="https://github.com/auraphp/Aura.Router"  target="_blank" rel="noreferrer">Aura.Router</a>.</p>
+<div class="highlight-wrapper"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">composer create-project zendframework/zend-expressive-skeleton expressive</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+<p>Below is selection process</p>
+<div class="highlight-wrapper"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Installing zendframework/zend-expressive-skeleton <span class="o">(</span>2.0.1<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  - Installing zendframework/zend-expressive-skeleton <span class="o">(</span>2.0.1<span class="o">)</span> Loading from cache
+</span></span><span class="line"><span class="cl">Created project in expressive
+</span></span><span class="line"><span class="cl">&gt; ExpressiveInstaller<span class="se">\O</span>ptionalPackages::install
+</span></span><span class="line"><span class="cl">Setting up optional packages
+</span></span><span class="line"><span class="cl">Setup data and cache dir
+</span></span><span class="line"><span class="cl">Removing installer development dependencies
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  What <span class="nb">type</span> of installation would you like?
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>1<span class="o">]</span> Minimal <span class="o">(</span>no default middleware, templates, or assets<span class="p">;</span> configuration only<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>2<span class="o">]</span> Flat <span class="o">(</span>flat <span class="nb">source</span> code structure<span class="p">;</span> default selection<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>3<span class="o">]</span> Modular <span class="o">(</span>modular <span class="nb">source</span> code structure<span class="p">;</span> recommended<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  Make your selection <span class="o">(</span>2<span class="o">)</span>: <span class="m">3</span>
+</span></span><span class="line"><span class="cl">  - Adding package zendframework/zend-expressive-tooling <span class="o">(</span>^0.3.2<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  - Copying src/App/src/ConfigProvider.php
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  Which container <span class="k">do</span> you want to use <span class="k">for</span> dependency injection?
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>1<span class="o">]</span> Aura.Di
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>2<span class="o">]</span> Pimple
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>3<span class="o">]</span> Zend ServiceManager
+</span></span><span class="line"><span class="cl">  Make your selection or <span class="nb">type</span> a composer package name and version <span class="o">(</span>Zend ServiceManager<span class="o">)</span>: <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  - Adding package aura/di <span class="o">(</span>^3.2<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  - Copying config/container.php
+</span></span><span class="line"><span class="cl">  - Copying config/ExpressiveAuraConfig.php
+</span></span><span class="line"><span class="cl">  - Copying config/ExpressiveAuraDelegatorFactory.php
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  Which router <span class="k">do</span> you want to use?
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>1<span class="o">]</span> Aura.Router
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>2<span class="o">]</span> FastRoute
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>3<span class="o">]</span> Zend Router
+</span></span><span class="line"><span class="cl">  Make your selection or <span class="nb">type</span> a composer package name and version <span class="o">(</span>FastRoute<span class="o">)</span>: <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  - Adding package zendframework/zend-expressive-aurarouter <span class="o">(</span>^2.0<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  - Copying config/routes.php
+</span></span><span class="line"><span class="cl">  - Copying config/autoload/router.global.php
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  Which template engine <span class="k">do</span> you want to use?
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>1<span class="o">]</span> Plates
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>2<span class="o">]</span> Twig
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>3<span class="o">]</span> Zend View installs Zend ServiceManager
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>n<span class="o">]</span> None of the above
+</span></span><span class="line"><span class="cl">  Make your selection or <span class="nb">type</span> a composer package name and version <span class="o">(</span>n<span class="o">)</span>: <span class="m">2</span>
+</span></span><span class="line"><span class="cl">  - Adding package zendframework/zend-expressive-twigrenderer <span class="o">(</span>^1.4<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  - Copying config/autoload/templates.global.php
+</span></span><span class="line"><span class="cl">  - Copying src/App/templates/error/404.html.twig
+</span></span><span class="line"><span class="cl">  - Copying src/App/templates/error/error.html.twig
+</span></span><span class="line"><span class="cl">  - Copying src/App/templates/layout/default.html.twig
+</span></span><span class="line"><span class="cl">  - Copying src/App/templates/app/home-page.html.twig
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  Which error handler <span class="k">do</span> you want to use during development?
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>1<span class="o">]</span> Whoops
+</span></span><span class="line"><span class="cl">  <span class="o">[</span>n<span class="o">]</span> None of the above
+</span></span><span class="line"><span class="cl">  Make your selection or <span class="nb">type</span> a composer package name and version <span class="o">(</span>Whoops<span class="o">)</span>: <span class="m">1</span>
+</span></span><span class="line"><span class="cl">  - Adding package filp/whoops <span class="o">(</span>^2.1.7<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  - Copying config/autoload/development.local.php.dist</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+<p>Once the installation is finished we can start integrating the module.</p>
+<div class="highlight-wrapper"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cd expressive</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+<p>Add to your <code>composer.json</code> the below configuration.</p>
+<div class="highlight-wrapper"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl">    <span class="s2">&#34;repositories&#34;</span><span class="err">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;git&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;url&#34;</span><span class="p">:</span> <span class="s2">&#34;https://github.com/harikt/psr7-asset-example&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span><span class="err">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;require&#34;</span><span class="err">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;http-interop/http-factory-diactoros&#34;</span><span class="p">:</span> <span class="s2">&#34;^0.2.0&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;hkt/psr7-asset-example&#34;</span><span class="p">:</span><span class="s2">&#34;1.*@dev&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;hkt/psr7-asset&#34;</span><span class="p">:</span><span class="s2">&#34;1.*@dev&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="err">...</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span><span class="err">,</span></span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+<blockquote><p>I think the dependencies are self explanatory. In case you need any help feel free to comment on the post.</p>
+</blockquote><p>We need a few things for the assets to be displayed.</p>
 <ol>
 <li>Add the asset router. So that any request coming to <code>/asset/*</code> can be served by <code>Hkt\Psr7Asset\AssetAction</code>.</li>
 <li>Configure the <code>Interop\Http\Factory\ResponseFactoryInterface</code> to return an instance of <code>Http\Factory\Diactoros\ResponseFactory</code>.</li>
 <li>Add a route to serve the example welcome action &lsquo;Hkt\Psr7AssetExample\Middleware\Welcome&rsquo;</li>
 </ol>
 <p>Below is what we can do with Aura.Di configuration.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-<span style="color:#75715e">// src/App/src/Config/Common.php
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">App\Config</span>;
-
-<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Di\Container</span>;
-<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Aura\Di\ContainerConfigInterface</span>;
-<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Zend\Expressive\Router\Route</span>;
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Common</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">ContainerConfigInterface</span>
-{
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">define</span>(<span style="color:#a6e22e">Container</span> $di)
-    {
-        $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;Interop\Http\Factory\ResponseFactoryInterface&#39;</span>, $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">lazyNew</span>(<span style="color:#e6db74">&#39;Http\Factory\Diactoros\ResponseFactory&#39;</span>));
-    }
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">modify</span>(<span style="color:#a6e22e">Container</span> $di)
-    {
-        $router <span style="color:#f92672">=</span> $di<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;Zend\Expressive\Router\RouterInterface&#39;</span>);
-
-        <span style="color:#75715e">// PSR-7 asset Router
-</span><span style="color:#75715e"></span>
-        $route <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Route</span>(<span style="color:#e6db74">&#39;/asset/{vendor}/{package}/{file}&#39;</span>, <span style="color:#e6db74">&#39;Hkt\Psr7Asset\AssetAction&#39;</span>, [<span style="color:#e6db74">&#39;GET&#39;</span>], <span style="color:#e6db74">&#39;hkt/psr7-asset&#39;</span>);
-        $route<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setOptions</span>([
-            <span style="color:#e6db74">&#39;tokens&#39;</span> <span style="color:#f92672">=&gt;</span> [
-                <span style="color:#e6db74">&#39;file&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;(.*)&#39;</span>
-            ]
-        ]);
-        $router<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addRoute</span>($route);
-        $router<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">addRoute</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Route</span>(<span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#e6db74">&#39;Hkt\Psr7AssetExample\Middleware\Welcome&#39;</span>, [<span style="color:#e6db74">&#39;GET&#39;</span>], <span style="color:#e6db74">&#39;hkt/psr7-asset-example:welcome&#39;</span>));
-        <span style="color:#75715e">// Try modifying the below lines
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// $assetLocator = $di-&gt;get(&#39;Hkt\Psr7Asset\AssetLocator&#39;);
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// $rootPath = dirname(dirname(dirname(dirname(__DIR__))));
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// $assetLocator-&gt;set(&#39;hkt/psr7-asset-example/images/white-image.png&#39;, $rootPath . &#39;/public/zf-logo.png&#39;);
-</span><span style="color:#75715e"></span>    }
-}
-</code></pre></div><p>Now we can load the Aura.Di configuration in <code>config/container.php</code> .</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-<span style="color:#f92672">....</span> <span style="color:#a6e22e">more</span> <span style="color:#a6e22e">code</span><span style="color:#f92672">.</span>
-
-<span style="color:#66d9ef">return</span> $builder<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">newConfiguredInstance</span>([
-    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ExpressiveAuraConfig</span>(<span style="color:#a6e22e">is_array</span>($config) <span style="color:#f92672">?</span> $config <span style="color:#f92672">:</span> []),
-    <span style="color:#a6e22e">Hkt\Psr7Asset\Container\AssetConfig</span><span style="color:#f92672">::</span><span style="color:#a6e22e">class</span>,
-    <span style="color:#a6e22e">Hkt\Psr7AssetExample\Container\Common</span><span style="color:#f92672">::</span><span style="color:#a6e22e">class</span>,
-    <span style="color:#a6e22e">App\Config\Common</span><span style="color:#f92672">::</span><span style="color:#a6e22e">class</span>,
-]);
-</code></pre></div><p>What it does, is load different configurations of different modules.</p>
+<div class="highlight-wrapper"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// src/App/src/Config/Common.php
+</span></span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nx">App\Config</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Aura\Di\Container</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Aura\Di\ContainerConfigInterface</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Zend\Expressive\Router\Route</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Common</span> <span class="k">implements</span> <span class="nx">ContainerConfigInterface</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="nf">define</span><span class="p">(</span><span class="nx">Container</span> <span class="nv">$di</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$di</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;Interop\Http\Factory\ResponseFactoryInterface&#39;</span><span class="p">,</span> <span class="nv">$di</span><span class="o">-&gt;</span><span class="na">lazyNew</span><span class="p">(</span><span class="s1">&#39;Http\Factory\Diactoros\ResponseFactory&#39;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="nf">modify</span><span class="p">(</span><span class="nx">Container</span> <span class="nv">$di</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$router</span> <span class="o">=</span> <span class="nv">$di</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;Zend\Expressive\Router\RouterInterface&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// PSR-7 asset Router
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nv">$route</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Route</span><span class="p">(</span><span class="s1">&#39;/asset/{vendor}/{package}/{file}&#39;</span><span class="p">,</span> <span class="s1">&#39;Hkt\Psr7Asset\AssetAction&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">],</span> <span class="s1">&#39;hkt/psr7-asset&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$route</span><span class="o">-&gt;</span><span class="na">setOptions</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;tokens&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">                <span class="s1">&#39;file&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;(.*)&#39;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$router</span><span class="o">-&gt;</span><span class="na">addRoute</span><span class="p">(</span><span class="nv">$route</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$router</span><span class="o">-&gt;</span><span class="na">addRoute</span><span class="p">(</span><span class="k">new</span> <span class="nx">Route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;Hkt\Psr7AssetExample\Middleware\Welcome&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">],</span> <span class="s1">&#39;hkt/psr7-asset-example:welcome&#39;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Try modifying the below lines
+</span></span></span><span class="line"><span class="cl">        <span class="c1">// $assetLocator = $di-&gt;get(&#39;Hkt\Psr7Asset\AssetLocator&#39;);
+</span></span></span><span class="line"><span class="cl">        <span class="c1">// $rootPath = dirname(dirname(dirname(dirname(__DIR__))));
+</span></span></span><span class="line"><span class="cl">        <span class="c1">// $assetLocator-&gt;set(&#39;hkt/psr7-asset-example/images/white-image.png&#39;, $rootPath . &#39;/public/zf-logo.png&#39;);
+</span></span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+<p>Now we can load the Aura.Di configuration in <code>config/container.php</code> .</p>
+<div class="highlight-wrapper"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl"><span class="o">....</span> <span class="nx">more</span> <span class="nx">code</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="nv">$builder</span><span class="o">-&gt;</span><span class="na">newConfiguredInstance</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">    <span class="k">new</span> <span class="nx">ExpressiveAuraConfig</span><span class="p">(</span><span class="nx">is_array</span><span class="p">(</span><span class="nv">$config</span><span class="p">)</span> <span class="o">?</span> <span class="nv">$config</span> <span class="o">:</span> <span class="p">[]),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Hkt\Psr7Asset\Container\AssetConfig</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Hkt\Psr7AssetExample\Container\Common</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">App\Config\Common</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">]);</span></span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+<p>What it does, is load different configurations of different modules.</p>
 <p>If you run</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php -S 0.0.0.0:8080 -t public public/index.php
-</code></pre></div><p>and point to <code>http://localhost:8080</code> you can see the welcome screen of example module.</p>
+<div class="highlight-wrapper"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">php -S 0.0.0.0:8080 -t public public/index.php</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+<p>and point to <code>http://localhost:8080</code> you can see the welcome screen of example module.</p>
 <p>Try modifying the <code>hkt/psr7-asset-example/images/white-image.png</code> path to a different image and browse  http://localhost:8080/asset/hkt/psr7-asset-example/images/white-image.png</p>
 <p>It will render that image.</p>
-<p>All source code is accompanied at <a href="https://github.com/harikt/psr7-asset-example-zendexpressive"><a href="https://github.com/harikt/psr7-asset-example-zendexpressive">https://github.com/harikt/psr7-asset-example-zendexpressive</a></a></p>
-<h2 id="caching">Caching</h2>
+<p>All source code is accompanied at <a href="https://github.com/harikt/psr7-asset-example-zendexpressive"  target="_blank" rel="noreferrer">https://github.com/harikt/psr7-asset-example-zendexpressive</a></p>
+
+<h2 class="relative group">Caching
+    <div id="caching" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#caching" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
 <p>We can use psr7-asset-cache to cache all public files in production.</p>
 <p>Hope this will be helpful to someone to begin writing modular applications.</p>
 
+          
+          
+          
+        </div>
+        
+        
 
-</div>
-</article>
-</main>
+        
 
+        
 
-<footer class="footer layout__footer">
-<p><!-- raw HTML omitted --></p>
-<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
+      </div>
+    </section>
 
-</footer>
-
-</div>
-<div class="mobile-nav" dir="ltr">
-  <div class="mobile-nav__cover"></div>
-  <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true" role="button">Menu</a>
-  <div class="mobile-nav__sheet">
-    <div class="mobile-nav__region">
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
     
     
-<form class="search-form" method="get" action="https://duckduckgo.com/" role="search">
-<input type="search" name="q" class="search-text" placeholder="Search" title="Enter the terms you wish to search for." size="20" maxlength="128">
-<input type="hidden" name="sites" value="harikt.com">
-<input type="submit" value="DuckDuckGo Search" class="hidden">
-</form>
-
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span class="flex flex-col">
+          
+            <a
+              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="/blog/2017/03/24/using-cakephp-migration-as-standalone/">
+              <span class="leading-6">
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;using cakephp migration as standalone
+              </span>
+            </a>
+            
+              <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2017-03-24T00:00:00&#43;00:00">24 March 2017</time>
+              </span>
+            
+          
+        </span>
+        <span class="flex flex-col items-end">
+          
+            <a
+              class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="/blog/symfony-debug-to-error-handler-component/">
+              <span class="leading-6">
+                Symfony Debug to Error Handler Component&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
+              </span>
+            </a>
+            
+              <span class="me-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2019-11-29T01:04:31&#43;05:30">29 November 2019</time>
+              </span>
+            
+          
+        </span>
+      </div>
     </div>
-    <nav class="mobile-nav__main-menu">
-    <h2 class="visually-hidden">Main menu</h2>
-    <ul class="mobile-nav__navbar">
-    <li><a class="" href="/">Home</a></li>
-    <li><a class="" href="/about/">About</a></li>
-    <li><a class="" href="/blog/archives/">Archive</a></li>
-    <li><a class="" href="/contact/">Contact</a></li>
-    <li><a class="active" href="/blog/">Blog</a></li>
-    </ul>
-    </nav>
+  
+
+
+      
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2026
+          Hari KT
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+      </p>
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="https://harikt.com/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
   </div>
 </div>
-</body>
+
+    </div>
+  </body>
+  
 </html>
