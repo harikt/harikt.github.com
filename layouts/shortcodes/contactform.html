@@ -1,0 +1,150 @@
+<style>
+.custom-contact-container {
+    margin-top: 2rem;
+    max-width: 600px;
+}
+.custom-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+.custom-form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+.custom-form-row > .custom-form-group {
+    flex: 1;
+}
+.custom-label {
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+.custom-input, .custom-textarea {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(150, 150, 150, 0.3);
+    background: rgba(150, 150, 150, 0.05);
+    color: inherit;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+.custom-input:focus, .custom-textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    background: rgba(150, 150, 150, 0.1);
+}
+.custom-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: #3b82f6;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.custom-btn:hover {
+    background-color: #2563eb;
+}
+.custom-btn:active {
+    transform: scale(0.98);
+}
+.custom-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+.optional-text {
+    font-weight: 400;
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+@media (max-width: 600px) {
+    .custom-form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+</style>
+
+<div class="custom-contact-container">
+<form id="contact-form">
+    <div class="custom-form-row">
+        <div class="custom-form-group">
+            <label for="name" class="custom-label">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name" class="custom-input" />
+        </div>
+        <div class="custom-form-group">
+            <label for="email" class="custom-label">Email</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com" class="custom-input" />
+        </div>
+    </div>
+
+    <div class="custom-form-group">
+        <label for="phone" class="custom-label">Phone / WhatsApp <span class="optional-text">(Optional)</span></label>
+        <input type="tel" id="phone" name="phone" placeholder="+91 12345 67890" class="custom-input" />
+    </div>
+
+    <div class="custom-form-group">
+        <label for="message" class="custom-label">Message</label>
+        <textarea id="message" name="message" required rows="5" placeholder="How can I help you?" class="custom-textarea"></textarea>
+    </div>
+
+    <div aria-hidden="true" style="position: absolute; left: -9999px;">
+        <label for="website">Website</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <button type="submit" id="submit-btn" class="custom-btn">Send Message</button>
+    <div id="form-status" style="margin-top: 1rem; font-weight: bold; display: none;"></div>
+</form>
+</div>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const btn = document.getElementById('submit-btn');
+    const status = document.getElementById('form-status');
+    
+    const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        message: form.message.value,
+        website: form.website.value
+    };
+    
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    status.style.display = 'none';
+    
+    try {
+        const res = await fetch('https://mailer.tanvish.com/send-public', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+        
+        if (!res.ok) throw new Error('Failed to send message');
+        
+        status.textContent = '✅ Message sent successfully! I will be in touch soon.';
+        status.style.color = '#10b981';
+        status.style.display = 'block';
+        form.reset();
+    } catch (err) {
+        status.textContent = '❌ Something went wrong. Please try again.';
+        status.style.color = '#ef4444';
+        status.style.display = 'block';
+    } finally {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+    }
+});
+</script>

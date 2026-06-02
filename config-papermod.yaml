@@ -1,0 +1,52 @@
+baseURL: "https://harikt.com/"
+title: "Hari KT"
+theme: "PaperMod"
+languageCode: "en-GB"
+defaultContentLanguage: "en"
+paginate: 10
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+menu:
+  main:
+    - identifier: blog
+      name: Blog
+      url: /blog/
+      weight: 10
+    - identifier: contact
+      name: Contact
+      url: /contact/
+      weight: 30
+
+params:
+  env: production
+  title: "Hari KT"
+  description: "Freelancer working with international clients"
+  author: "Hari KT"
+  defaultTheme: auto
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowCodeCopyButtons: true
+
+  profileMode:
+    enabled: true
+    title: "Hari KT"
+    subtitle: "Freelancer | Founder of [Tripti](https://tripti.cloud/) and [Tanvish](https://tanvish.com/) | Maintainer of [AuraPHP](https://auraphp.com/)"
+    imageUrl: "harik-small.jpg"
+    imageWidth: 150
+    imageHeight: 150
+    buttons:
+      - name: "Blog"
+        url: "/blog/"
+  
+  socialIcons:
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/harikt"
+    - name: "x"
+      url: "https://x.com/harikt"
+    - name: "github"
+      url: "https://github.com/harikt"
+    - name: "stackoverflow"
+      url: "https://stackoverflow.com/users/487878/hari-k-t"

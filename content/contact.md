@@ -1,9 +1,12 @@
 ---
 title: "Contact"
-author: "Hari KT"
-submitted: false
+type: "page"
+showDate: false
+showAuthor: false
+showReadingTime: false
+showWordCount: false
 ---
 
-Email : me at this-domain
+Please use the form below to send me a direct message. I will get back to you as soon as possible!
 
-Twitter : [@harikt](https://twitter.com/harikt)
+{{< contactform >}}
