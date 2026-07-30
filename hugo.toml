@@ -1,0 +1,104 @@
+baseURL = "https://harikt.com/"
+title = "Hari KT — Full Stack Developer"
+theme = "blowfish"
+locale = "en-GB"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+enableGitInfo = false
+canonifyURLs = false
+
+[pagination]
+  # Replaces the deprecated top-level `paginate` key. The theme default is 100,
+  # so this must stay set to keep 10 posts per page.
+  pagerSize = 10
+
+[outputs]
+  # Blowfish's search reads /index.json — Hugo emits only HTML and RSS for the
+  # home page unless JSON is requested here, so search 404s without this block.
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[taxonomies]
+  tag = "tags"
+
+[params]
+  colorScheme = "blowfish"
+  defaultAppearance = "light"
+  autoSwitchAppearance = true
+  enableSearch = true
+  description = "Hari KT — freelance full stack developer from Kerala, India and a maintainer of the Aura PHP framework. PHP, Golang, Python and NodeJS backends, ReactJS frontends, desktop apps with Tauri and mobile apps with React Native."
+  keywords = ["PHP developer", "Golang developer", "Python developer", "ReactJS developer", "full stack web developer", "freelance web developer India", "web developer Kerala", "Aura PHP", "Paul M Jones", "FastAPI", "Scrapy", "NodeJS", "React Native", "Tauri", "desktop app developer", "mobile app developer", "web scraping", "open source"]
+  images = ["harik-small.jpg"]
+
+  [params.sitemap]
+    excludedKinds = []
+
+  [params.header]
+    logoText = "Home"
+  
+  [params.author]
+    name = "Hari KT"
+    image = "harik-small.jpg"
+    headline = "Freelance full stack developer from Kerala, India — maintainer of Aura for PHP"
+    bio = "Freelancer | Founder of [Tripti](https://tripti.cloud/) and [Tanvish](https://tanvish.com/) | Maintainer of [Aura for PHP](https://auraphp.com/), created by [Paul M Jones](https://paul-m-jones.com/)"
+    links = [
+      { linkedin = "https://www.linkedin.com/in/harikt" },
+      { twitter = "https://x.com/harikt" },
+      { github = "https://github.com/harikt" },
+      { stackoverflow = "https://stackoverflow.com/users/487878/hari-k-t" },
+      { youtube = "https://www.youtube.com/@HariKT" }
+    ]
+
+  [params.homepage]
+    layout = "profile"
+    showRecent = true
+    showRecentItems = 5
+
+  [params.article]
+    showDate = true
+    showViews = false
+    showReadingTime = true
+    showAuthor = true
+    showTaxonomies = true
+    showRelatedContent = true
+    relatedContentLimit = 3
+    showTableOfContents = true
+
+  [params.list]
+    showSummary = true
+    showTableOfContents = false
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+    tabWidth = 4
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[menu]
+  [[menu.main]]
+    name = "Blog"
+    pageRef = "/blog"
+    weight = 10
+  [[menu.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 5
+  [[menu.main]]
+    name = "Tags"
+    pageRef = "/tags"
+    weight = 20
+  [[menu.main]]
+    name = "Contact"
+    pageRef = "/contact"
+    weight = 30

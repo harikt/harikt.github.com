@@ -30,7 +30,7 @@ echo "Removing existing files"
 rm -rf public/*
 
 echo "Generating site"
-hugo --config config-blowfish.toml
+hugo
 
 echo "Updating master branch"
 cd public && git add --all && git commit -m "Publishing to master (deploy.sh)"

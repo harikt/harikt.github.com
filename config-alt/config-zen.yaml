@@ -1,5 +1,5 @@
 ---
-title: "Random thoughts"
+title: "Random thoughts of Hari KT, Freelancer from Kerala, India"
 baseURL: "https://harikt.com/"
 theme: "zen"
 languageCode: "en-GB"
@@ -16,8 +16,8 @@ author:
   avatar: "harikt.jpg"
 
 outputs:
-  home: ["HTML","RSS", "JSON"]
-  section: ["HTML","RSS", "JSON"]
+  home: ["HTML", "RSS", "JSON"]
+  section: ["HTML", "RSS", "JSON"]
 
 params:
   contact: "me@harikt.com"
