@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogs on Hari KT</title>
+    <title>Blogs on Hari KT — Full Stack Developer</title>
     <link>https://harikt.com/blog/</link>
-    <description>Recent content in Blogs on Hari KT</description>
+    <description>Recent content in Blogs on Hari KT — Full Stack Developer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-GB</language>
     <copyright>© 2026 Hari KT</copyright>
@@ -20,7 +20,7 @@
     </item>
     
     <item>
-      <title>building modular applications with psr 7</title>
+      <title>Building Modular Applications With PSR-7</title>
       <link>https://harikt.com/blog/2017/03/24/building-modular-applications-with-psr-7/</link>
       <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
       
@@ -30,7 +30,7 @@
     </item>
     
     <item>
-      <title>using cakephp migration as standalone</title>
+      <title>Using CakePHP Migrations as a Standalone Library</title>
       <link>https://harikt.com/blog/2017/03/24/using-cakephp-migration-as-standalone/</link>
       <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
       
@@ -40,7 +40,7 @@
     </item>
     
     <item>
-      <title>aura dot di 2 dot x to 3 dot x upgrade guide</title>
+      <title>Aura.Di 2.x to 3.x Upgrade Guide</title>
       <link>https://harikt.com/blog/2016/03/15/aura-dot-di-2-dot-x-to-3-dot-x-upgrade-guide/</link>
       <pubDate>Tue, 15 Mar 2016 00:00:00 +0000</pubDate>
       
@@ -50,7 +50,7 @@
     </item>
     
     <item>
-      <title>cakephp orm and logging queries</title>
+      <title>CakePHP ORM and Logging Queries</title>
       <link>https://harikt.com/blog/2016/01/16/cakephp-orm-and-logging-queries/</link>
       <pubDate>Sat, 16 Jan 2016 00:00:00 +0000</pubDate>
       
@@ -60,7 +60,7 @@
     </item>
     
     <item>
-      <title>cakephp orm and illuminate pagination</title>
+      <title>CakePHP ORM and Illuminate Pagination</title>
       <link>https://harikt.com/blog/2016/01/13/cakephp-orm-and-illuminate-pagination/</link>
       <pubDate>Wed, 13 Jan 2016 00:00:00 +0000</pubDate>
       
@@ -70,7 +70,7 @@
     </item>
     
     <item>
-      <title>eloquent and pagination inside zend expressive</title>
+      <title>Eloquent and Pagination Inside Zend Expressive</title>
       <link>https://harikt.com/blog/2015/11/13/eloquent-and-pagination-inside-zend-expressive/</link>
       <pubDate>Fri, 13 Nov 2015 00:00:00 +0000</pubDate>
       
@@ -80,7 +80,7 @@
     </item>
     
     <item>
-      <title>integrating zend form in zend expressive and view</title>
+      <title>Integrating Zend Form in Zend Expressive and Zend View</title>
       <link>https://harikt.com/blog/2015/11/13/integrating-zend-form-in-zend-expressive-and-view/</link>
       <pubDate>Fri, 13 Nov 2015 00:00:00 +0000</pubDate>
       
@@ -90,7 +90,7 @@
     </item>
     
     <item>
-      <title>custom events in symfony2 bundle</title>
+      <title>Custom Events in a Symfony2 Bundle</title>
       <link>https://harikt.com/blog/2015/10/11/custom-events-in-symfony2-bundle/</link>
       <pubDate>Sun, 11 Oct 2015 00:00:00 +0000</pubDate>
       
@@ -100,7 +100,7 @@
     </item>
     
     <item>
-      <title>20 years of php</title>
+      <title>20 Years of PHP</title>
       <link>https://harikt.com/blog/2015/06/17/20-years-of-php/</link>
       <pubDate>Wed, 17 Jun 2015 00:00:00 +0000</pubDate>
       
@@ -110,7 +110,7 @@
     </item>
     
     <item>
-      <title>zend feed and guzzle</title>
+      <title>Zend Feed and Guzzle</title>
       <link>https://harikt.com/blog/2015/04/01/zend-feed-and-guzzle/</link>
       <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
       
@@ -120,7 +120,7 @@
     </item>
     
     <item>
-      <title>conduit middleware for php</title>
+      <title>Conduit: Middleware for PHP</title>
       <link>https://harikt.com/blog/2015/01/21/conduit-middleware-for-php/</link>
       <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
       
@@ -130,7 +130,7 @@
     </item>
     
     <item>
-      <title>experimenting on different framework</title>
+      <title>Experimenting With Different PHP Frameworks</title>
       <link>https://harikt.com/blog/2015/01/13/experimenting-on-different-framework/</link>
       <pubDate>Tue, 13 Jan 2015 00:00:00 +0000</pubDate>
       
@@ -140,7 +140,7 @@
     </item>
     
     <item>
-      <title>improving environment value in aura v2</title>
+      <title>Improving Environment Values in Aura v2</title>
       <link>https://harikt.com/blog/2014/12/12/improving-environment-value-in-aura-v2/</link>
       <pubDate>Fri, 12 Dec 2014 00:00:00 +0000</pubDate>
       
@@ -150,7 +150,7 @@
     </item>
     
     <item>
-      <title>speedup configuration aura v2</title>
+      <title>Speed Up Configuration in Aura v2</title>
       <link>https://harikt.com/blog/2014/12/06/speedup-configuration-aura-v2/</link>
       <pubDate>Sat, 06 Dec 2014 00:00:00 +0000</pubDate>
       
@@ -160,7 +160,7 @@
     </item>
     
     <item>
-      <title>getting started with aura v2</title>
+      <title>Getting Started With Aura v2</title>
       <link>https://harikt.com/blog/2014/10/06/getting-started-with-aura-v2/</link>
       <pubDate>Mon, 06 Oct 2014 00:00:00 +0000</pubDate>
       
@@ -170,7 +170,7 @@
     </item>
     
     <item>
-      <title>aura input form inside slim framework</title>
+      <title>Using Aura.Input Forms Inside Slim Framework</title>
       <link>https://harikt.com/blog/2014/09/02/aura-input-form-inside-slim-framework/</link>
       <pubDate>Tue, 02 Sep 2014 00:00:00 +0000</pubDate>
       
@@ -180,7 +180,7 @@
     </item>
     
     <item>
-      <title>aura framework v2 the missing manual</title>
+      <title>Aura Framework v2: The Missing Manual</title>
       <link>https://harikt.com/blog/2014/07/15/aura-framework-v2-the-missing-manual/</link>
       <pubDate>Tue, 15 Jul 2014 00:00:00 +0000</pubDate>
       
@@ -190,7 +190,7 @@
     </item>
     
     <item>
-      <title>hidden gems of composer</title>
+      <title>Hidden Gems of Composer</title>
       <link>https://harikt.com/blog/2014/05/29/hidden-gems-of-composer/</link>
       <pubDate>Thu, 29 May 2014 00:00:00 +0000</pubDate>
       
@@ -200,7 +200,7 @@
     </item>
     
     <item>
-      <title>extending plates with aura html helpers</title>
+      <title>Extending Plates With Aura.Html Helpers</title>
       <link>https://harikt.com/blog/2014/05/13/extending-plates-with-aura-html-helpers/</link>
       <pubDate>Tue, 13 May 2014 00:00:00 +0000</pubDate>
       
@@ -210,7 +210,7 @@
     </item>
     
     <item>
-      <title>installing aura framework project via composer</title>
+      <title>Installing an Aura Framework Project via Composer</title>
       <link>https://harikt.com/blog/2014/04/29/installing-aura-framework-project-via-composer/</link>
       <pubDate>Tue, 29 Apr 2014 00:00:00 +0000</pubDate>
       
@@ -220,7 +220,7 @@
     </item>
     
     <item>
-      <title>frameworks are good</title>
+      <title>Frameworks Are Good</title>
       <link>https://harikt.com/blog/2014/01/09/frameworks-are-good/</link>
       <pubDate>Thu, 09 Jan 2014 00:00:00 +0000</pubDate>
       
@@ -230,7 +230,7 @@
     </item>
     
     <item>
-      <title>composer support for processwire part 2</title>
+      <title>Composer Support for ProcessWire, Part 2</title>
       <link>https://harikt.com/blog/2013/11/19/composer-support-for-processwire-part-2/</link>
       <pubDate>Tue, 19 Nov 2013 00:00:00 +0000</pubDate>
       
@@ -240,7 +240,7 @@
     </item>
     
     <item>
-      <title>composer support for processwire modules</title>
+      <title>Composer Support for ProcessWire Modules</title>
       <link>https://harikt.com/blog/2013/11/16/composer-support-for-processwire-modules/</link>
       <pubDate>Sat, 16 Nov 2013 00:00:00 +0000</pubDate>
       
@@ -250,7 +250,7 @@
     </item>
     
     <item>
-      <title>assets for processwire</title>
+      <title>Assets for ProcessWire</title>
       <link>https://harikt.com/blog/2013/11/08/assets-for-processwire/</link>
       <pubDate>Fri, 08 Nov 2013 00:00:00 +0000</pubDate>
       
@@ -260,7 +260,7 @@
     </item>
     
     <item>
-      <title>using aura dispatcher in silex</title>
+      <title>Using Aura.Dispatcher in Silex</title>
       <link>https://harikt.com/blog/2013/11/06/using-aura-dispatcher-in-silex/</link>
       <pubDate>Wed, 06 Nov 2013 00:00:00 +0000</pubDate>
       
@@ -270,7 +270,7 @@
     </item>
     
     <item>
-      <title>rest is delete idempotent</title>
+      <title>REST: Is DELETE Idempotent?</title>
       <link>https://harikt.com/blog/2013/11/01/rest-is-delete-idempotent/</link>
       <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
       
@@ -280,7 +280,7 @@
     </item>
     
     <item>
-      <title>looking at aura v2</title>
+      <title>Looking at Aura v2</title>
       <link>https://harikt.com/blog/2013/09/28/looking-at-aura-v2/</link>
       <pubDate>Sat, 28 Sep 2013 00:00:00 +0000</pubDate>
       
@@ -290,7 +290,7 @@
     </item>
     
     <item>
-      <title>aura framework released</title>
+      <title>Aura Framework Released</title>
       <link>https://harikt.com/blog/2013/09/19/aura-framework-released/</link>
       <pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
       
@@ -300,7 +300,7 @@
     </item>
     
     <item>
-      <title>book on aura moved to manual</title>
+      <title>The Book on Aura Moves to the Manual</title>
       <link>https://harikt.com/blog/2013/09/07/book-on-aura-moved-to-manual/</link>
       <pubDate>Sat, 07 Sep 2013 00:00:00 +0000</pubDate>
       
@@ -310,7 +310,7 @@
     </item>
     
     <item>
-      <title>connecting to magento via soap</title>
+      <title>Connecting to Magento via SOAP</title>
       <link>https://harikt.com/blog/2013/07/12/connecting-to-magento-via-soap/</link>
       <pubDate>Fri, 12 Jul 2013 00:00:00 +0000</pubDate>
       
@@ -320,7 +320,7 @@
     </item>
     
     <item>
-      <title>the book on aura</title>
+      <title>The Book on Aura</title>
       <link>https://harikt.com/blog/2013/07/09/the-book-on-aura/</link>
       <pubDate>Tue, 09 Jul 2013 00:00:00 +0000</pubDate>
       
@@ -330,7 +330,7 @@
     </item>
     
     <item>
-      <title>magento and rest api</title>
+      <title>Magento and the REST API</title>
       <link>https://harikt.com/blog/2013/07/05/magento-and-rest-api/</link>
       <pubDate>Fri, 05 Jul 2013 00:00:00 +0000</pubDate>
       
@@ -340,7 +340,7 @@
     </item>
     
     <item>
-      <title>aura dot web</title>
+      <title>Aura.Web: A Page Controller for MVC</title>
       <link>https://harikt.com/blog/2013/06/04/aura-dot-web/</link>
       <pubDate>Tue, 04 Jun 2013 00:00:00 +0000</pubDate>
       
@@ -350,7 +350,7 @@
     </item>
     
     <item>
-      <title>aura system released beta5</title>
+      <title>Aura System Released Beta 5</title>
       <link>https://harikt.com/blog/2013/05/25/aura-system-released-beta5/</link>
       <pubDate>Sat, 25 May 2013 00:00:00 +0000</pubDate>
       
@@ -360,7 +360,7 @@
     </item>
     
     <item>
-      <title>standalone form for php</title>
+      <title>Standalone Forms for PHP</title>
       <link>https://harikt.com/blog/2013/05/23/standalone-form-for-php/</link>
       <pubDate>Thu, 23 May 2013 00:00:00 +0000</pubDate>
       
@@ -370,7 +370,7 @@
     </item>
     
     <item>
-      <title>standalone forms and validation</title>
+      <title>Standalone Forms and Validation in PHP</title>
       <link>https://harikt.com/blog/2013/05/21/standalone-forms-and-validation/</link>
       <pubDate>Tue, 21 May 2013 00:00:00 +0000</pubDate>
       
@@ -380,7 +380,7 @@
     </item>
     
     <item>
-      <title>aura turns 2</title>
+      <title>Aura Turns 2</title>
       <link>https://harikt.com/blog/2013/02/22/aura-turns-2/</link>
       <pubDate>Fri, 22 Feb 2013 00:00:00 +0000</pubDate>
       
@@ -390,7 +390,7 @@
     </item>
     
     <item>
-      <title>aura dot http request and response</title>
+      <title>Aura.Http Request and Response</title>
       <link>https://harikt.com/blog/2013/02/16/aura-dot-http-request-and-response/</link>
       <pubDate>Sat, 16 Feb 2013 00:00:00 +0000</pubDate>
       
@@ -400,7 +400,7 @@
     </item>
     
     <item>
-      <title>our awesome php people</title>
+      <title>Our Awesome PHP People</title>
       <link>https://harikt.com/blog/2013/01/09/our-awesome-php-people/</link>
       <pubDate>Wed, 09 Jan 2013 00:00:00 +0000</pubDate>
       
@@ -410,7 +410,7 @@
     </item>
     
     <item>
-      <title>thoughts on package or component</title>
+      <title>Thoughts on Packages and Components</title>
       <link>https://harikt.com/blog/2013/01/04/thoughts-on-package-or-component/</link>
       <pubDate>Fri, 04 Jan 2013 00:00:00 +0000</pubDate>
       
@@ -420,7 +420,7 @@
     </item>
     
     <item>
-      <title>aura framework releases beta4</title>
+      <title>Aura Framework Releases Beta 4</title>
       <link>https://harikt.com/blog/2012/12/18/aura-framework-releases-beta4/</link>
       <pubDate>Tue, 18 Dec 2012 00:00:00 +0000</pubDate>
       

@@ -15,9 +15,13 @@
 
   
   
-    <title>improving environment value in aura v2 &middot; Hari KT</title>
-    <meta name="title" content="improving environment value in aura v2 &middot; Hari KT">
   
+    
+      
+    
+  
+  <title>Improving Environment Values in Aura v2 · Hari KT — Full Stack Developer</title>
+  <meta name="title" content="Improving Environment Values in Aura v2 · Hari KT — Full Stack Developer">
 
   
   
@@ -31,6 +35,10 @@
     
   
   
+    <meta name="description" content="Handling environment variables cleanly in the Aura v2 framework with vlucas/phpdotenv.">
+  
+  
+    <meta name="keywords" content="PHP,Aura,Configuration,">
   
   
   
@@ -78,25 +86,24 @@
 
   
   <meta property="og:url" content="https://harikt.com/blog/2014/12/12/improving-environment-value-in-aura-v2/">
-	<meta property="og:site_name" content="Hari KT">
-	<meta property="og:title" content="improving environment value in aura v2">
-	<meta property="og:description" content="Aura v2 framework probably have missed a better way to handle environment variables. But that doesn’t make you stall. Things can be improved ;-).
-Assume you are already using aura framework and is at root of the project.
-We are going to make use of vlucas/phpdotenv , alternatives are there if you are interested to experiment.
-1 composer require vlucas/phpdotenv Edit the file config/_env.php and add Dotenv::load(/path/to/.env); to the first line. If you have not modified anything it will look as below">
+	<meta property="og:site_name" content="Hari KT — Full Stack Developer">
+	<meta property="og:title" content="Improving Environment Values in Aura v2">
+	<meta property="og:description" content="Handling environment variables cleanly in the Aura v2 framework with vlucas/phpdotenv.">
 	<meta property="og:locale" content="en_GB">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="blog">
 		<meta property="article:published_time" content="2014-12-12T00:00:00+00:00">
 		<meta property="article:modified_time" content="2014-12-12T00:00:00+00:00">
+		<meta property="article:tag" content="PHP">
+		<meta property="article:tag" content="Aura">
+		<meta property="article:tag" content="Configuration">
+		<meta property="og:image" content="https://harikt.com/harik-small.JPG">
 
   
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="improving environment value in aura v2">
-	<meta name="twitter:description" content="Aura v2 framework probably have missed a better way to handle environment variables. But that doesn’t make you stall. Things can be improved ;-).
-Assume you are already using aura framework and is at root of the project.
-We are going to make use of vlucas/phpdotenv , alternatives are there if you are interested to experiment.
-1 composer require vlucas/phpdotenv Edit the file config/_env.php and add Dotenv::load(/path/to/.env); to the first line. If you have not modified anything it will look as below">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://harikt.com/harik-small.JPG">
+	<meta name="twitter:title" content="Improving Environment Values in Aura v2">
+	<meta name="twitter:description" content="Handling environment variables cleanly in the Aura v2 framework with vlucas/phpdotenv.">
 
   
   
@@ -249,9 +256,9 @@ We are going to make use of vlucas/phpdotenv , alternatives are there if you are
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Blogs",
-    "name": "improving environment value in aura v2",
-    "headline": "improving environment value in aura v2",
-    
+    "name": "Improving Environment Values in Aura v2",
+    "headline": "Improving Environment Values in Aura v2",
+    "description": "Handling environment variables cleanly in the Aura v2 framework with vlucas\/phpdotenv.",
     "inLanguage": "en-GB",
     "url" : "https://harikt.com/blog/2014/12/12/improving-environment-value-in-aura-v2/",
     "author" : {
@@ -264,7 +271,7 @@ We are going to make use of vlucas/phpdotenv , alternatives are there if you are
     
     "dateModified": "2014-12-12T00:00:00\u002b00:00",
     
-    
+    "keywords": ["PHP","Aura","Configuration"],
     
     "mainEntityOfPage": "true",
     "wordCount": "208"
@@ -286,6 +293,9 @@ We are going to make use of vlucas/phpdotenv , alternatives are there if you are
   
 
   
+  
+    
+
   
 
   
@@ -336,6 +346,24 @@ We are going to make use of vlucas/phpdotenv , alternatives are there if you are
       
   
     <a
+      href="/about/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="About"
+      title="About Hari KT — Freelance Full Stack Developer from Kerala, India">
+      
+      
+        <span class="text-base font-medium break-normal">
+          About
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
       href="/blog/"
       
       class="flex items-center bf-icon-color-hover"
@@ -345,6 +373,24 @@ We are going to make use of vlucas/phpdotenv , alternatives are there if you are
       
         <span class="text-base font-medium break-normal">
           Blog
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="/tags/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="Tags"
+      title="Tags">
+      
+      
+        <span class="text-base font-medium break-normal">
+          Tags
         </span>
       
     </a>
@@ -464,6 +510,23 @@ We are going to make use of vlucas/phpdotenv , alternatives are there if you are
     
     <div class="px-2">
       <a
+        href="/about/"
+        aria-label="About"
+        
+        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+        
+        <span title="About Hari KT — Freelance Full Stack Developer from Kerala, India" class="text-2xl font-bold tracking-tight">
+          About
+        </span>
+        
+      </a>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <a
         href="/blog/"
         aria-label="Blog"
         
@@ -471,6 +534,23 @@ We are going to make use of vlucas/phpdotenv , alternatives are there if you are
         
         <span title="Blogs" class="text-2xl font-bold tracking-tight">
           Blog
+        </span>
+        
+      </a>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <a
+        href="/tags/"
+        aria-label="Tags"
+        
+        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+        
+        <span title="Tags" class="text-2xl font-bold tracking-tight">
+          Tags
         </span>
         
       </a>
@@ -534,7 +614,7 @@ We are going to make use of vlucas/phpdotenv , alternatives are there if you are
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        improving environment value in aura v2
+        Improving Environment Values in Aura v2
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -597,6 +677,80 @@ We are going to make use of vlucas/phpdotenv , alternatives are there if you are
 
   
   
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/php/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    PHP
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/aura/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Aura
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/configuration/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Configuration
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+        
+      
+    </div>
+  
 
 
       </div>
@@ -647,7 +801,7 @@ We are going to make use of vlucas/phpdotenv , alternatives are there if you are
       </div>
     
     
-      <div class="text-sm text-neutral-700 dark:text-neutral-400">Freelancer | Founder of <a href="https://tripti.cloud/"  target="_blank" rel="noreferrer">Tripti</a> and <a href="https://tanvish.com/"  target="_blank" rel="noreferrer">Tanvish</a> | Maintainer of <a href="https://auraphp.com/"  target="_blank" rel="noreferrer">AuraPHP</a></div>
+      <div class="text-sm text-neutral-700 dark:text-neutral-400">Freelancer | Founder of <a href="https://tripti.cloud/"  target="_blank" rel="noreferrer">Tripti</a> and <a href="https://tanvish.com/"  target="_blank" rel="noreferrer">Tanvish</a> | Maintainer of <a href="https://auraphp.com/"  target="_blank" rel="noreferrer">Aura for PHP</a>, created by <a href="https://paul-m-jones.com/"  target="_blank" rel="noreferrer">Paul M Jones</a></div>
     
     <div class="text-2xl sm:text-lg">
   <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500 space-x-2">
@@ -850,6 +1004,646 @@ We are going to make use of vlucas/phpdotenv , alternatives are there if you are
         
 
         
+  
+  
+    <h2 class="mt-8 text-2xl font-extrabold mb-10">Related</h2>
+    <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      
+        
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+    
+  
+
+  
+  
+    
+  
+
+
+
+<article
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  
+  
+  <div class="p-4">
+    <header>
+      <a
+        
+          href="/blog/2014/12/06/speedup-configuration-aura-v2/"
+        
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        <h2>
+          Speed Up Configuration in Aura v2
+          
+        </h2>
+      </a>
+    </header>
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2014-12-06T00:00:00&#43;00:00">6 December 2014</time><span class="px-2 text-primary-500">&middot;</span><span>322 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/php/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    PHP
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/aura/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Aura
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/dependency-injection/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Dependency Injection
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+        
+      
+    </div>
+  
+
+
+    </div>
+    
+      <div class="article-link__summary prose dark:prose-invert mt-1 line-clamp-5">
+        Aura v2 added auto resolution in-order to help lazy people writing configuration manually. Even though it was introduced to help, it introduced a few issues.
+So auto resolution will be disabled in the future. Some of the complains/suggestions are how to easily write the di configuration.
+So introducing you FOA.DiConfig
+Installation # 1 composer require foa/di-config Usage # 1 2 3 vendor/bin/di-config-dump Usage : vendor/bin/di-config-dump /real/path/to/file.php Usage : vendor/bin/di-config-dump /real/path/to/directory Example 1 # Let&rsquo;s assume you have
+
+      </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</article>
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+    
+  
+
+  
+  
+    
+  
+
+
+
+<article
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  
+  
+  <div class="p-4">
+    <header>
+      <a
+        
+          href="/blog/2014/10/06/getting-started-with-aura-v2/"
+        
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        <h2>
+          Getting Started With Aura v2
+          
+        </h2>
+      </a>
+    </header>
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2014-10-06T00:00:00&#43;00:00">6 October 2014</time><span class="px-2 text-primary-500">&middot;</span><span>438 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/php/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    PHP
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/aura/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Aura
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/tutorial/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Tutorial
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+        
+      
+    </div>
+  
+
+
+    </div>
+    
+      <div class="article-link__summary prose dark:prose-invert mt-1 line-clamp-5">
+        Yesterday aura framework v2 stable released.
+Lots of complains about documentation or missing documentation. So this is a quick start. Probably a five minutes walk through. Learn and change to make it better.
+Creating your project # Create the project using composer.
+1 2 composer create-project aura/web-project quick-start cd quick-start The minimal framework don&rsquo;t come with any sort of view integrated. Let us use aura/view, the two step templating with the help of foa/html-view-bundle.
+
+      </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</article>
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+    
+  
+
+  
+  
+    
+  
+
+
+
+<article
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  
+  
+  <div class="p-4">
+    <header>
+      <a
+        
+          href="/blog/2014/09/02/aura-input-form-inside-slim-framework/"
+        
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        <h2>
+          Using Aura.Input Forms Inside Slim Framework
+          
+        </h2>
+      </a>
+    </header>
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2014-09-02T00:00:00&#43;00:00">2 September 2014</time><span class="px-2 text-primary-500">&middot;</span><span>738 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/php/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    PHP
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/aura/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Aura
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/slim/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Slim
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/forms/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Forms
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+        
+      
+    </div>
+  
+
+
+    </div>
+    
+      <div class="article-link__summary prose dark:prose-invert mt-1 line-clamp-5">
+        Rob Allen wrote about Integrating ZF2 forms into Slim. I did write how you can use Aura.Input and Aura.Html to create standalone form for PHP. This time I felt I should write about integrating aura input inside Slim.
+Let us install a few dependencies aura/input for building the form and aura/html for the html helpers. You of-course can skip not to use aura/html and build your own helper. I also purposefully left not integrating the powerful Aura.Filter , but you are not limited to integrate any validator you love inside Aura.Input .
+
+      </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</article>
+
+      
+    </section>
+  
+
 
       </div>
     </section>
@@ -870,7 +1664,7 @@ We are going to make use of vlucas/phpdotenv , alternatives are there if you are
               class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
               href="/blog/2014/12/06/speedup-configuration-aura-v2/">
               <span class="leading-6">
-                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;speedup configuration aura v2
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;Speed Up Configuration in Aura v2
               </span>
             </a>
             
@@ -886,7 +1680,7 @@ We are going to make use of vlucas/phpdotenv , alternatives are there if you are
               class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
               href="/blog/2015/01/13/experimenting-on-different-framework/">
               <span class="leading-6">
-                experimenting on different framework&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
+                Experimenting With Different PHP Frameworks&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
               </span>
             </a>
             

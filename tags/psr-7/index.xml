@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PSR-7 on Hari KT — Full Stack Developer</title>
+    <link>https://harikt.com/tags/psr-7/</link>
+    <description>Recent content in PSR-7 on Hari KT — Full Stack Developer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>© 2026 Hari KT</copyright>
+    <lastBuildDate>Fri, 24 Mar 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://harikt.com/tags/psr-7/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Building Modular Applications With PSR-7</title>
+      <link>https://harikt.com/blog/2017/03/24/building-modular-applications-with-psr-7/</link>
+      <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2017/03/24/building-modular-applications-with-psr-7/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.php-fig.org/psr/psr-7/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;PSR-7, the HTTP message interfaces&lt;/a&gt; opened&#xA;a new door of creating modular applications.&lt;/p&gt;&#xA;&lt;p&gt;Sadly many of the PSR-7 implementations added many helper methods.&lt;/p&gt;&#xA;&lt;p&gt;So if someone is creating a library that needs a PSR-7 implementations they tie&#xA;the particular library with the PSR-7 implementation and use these convinient helper methods.&lt;/p&gt;&#xA;&lt;p&gt;So was &lt;a href=&#34;https://github.com/http-interop/http-middleware&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;PSR-15: interfaces for HTTP Middleware&lt;/a&gt;&#xA;and &lt;a href=&#34;https://github.com/http-interop/http-factory&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;PSR-17: interfaces for HTTP Factories&lt;/a&gt;&#xA;was proposed.&lt;/p&gt;&#xA;&lt;p&gt;When creating a module one of the most challenging part is how to serve the&#xA;javascript, css and images. We are going to use&#xA;&lt;a href=&#34;github.com/harikt/psr7-asset&#34; &gt;hkt/psr7-asset&lt;/a&gt; which is a fork of&#xA;&lt;a href=&#34;https://github.com/friendsofaura/Aura.Asset_Bundle/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.Asset_Bundle&lt;/a&gt; .&#xA;What you want to do is only map the path to the assets folder.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Conduit: Middleware for PHP</title>
+      <link>https://harikt.com/blog/2015/01/21/conduit-middleware-for-php/</link>
+      <pubDate>Wed, 21 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2015/01/21/conduit-middleware-for-php/</guid>
+      <description>&lt;p&gt;Long back, I happened to talk with &lt;a href=&#34;https://beau.io/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Beau Simensen&lt;/a&gt; about &lt;a href=&#34;http://stackphp.com/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;stackphp&lt;/a&gt; on #auraphp channel. It was hard for me to digest when I noticed it need &lt;code&gt;symfony/http-kernel&lt;/code&gt; and its dependencies.&lt;/p&gt;&#xA;&lt;p&gt;After a few months, I started to like the middleware approach of slim framework and wanted to push it to aura. But nothing happened  there.&lt;/p&gt;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Conduit to rescue&#xA;    &lt;div id=&#34;conduit-to-rescue&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#conduit-to-rescue&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Conduit is a Middleware for PHP built by &lt;a href=&#34;http://mwop.net/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Matthew Weier O&amp;rsquo;Phinney&lt;/a&gt; lead of Zend framework. Conduit supports the current &lt;a href=&#34;https://github.com/php-fig/fig-standards/blob/master/proposed/http-message.md&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;PSR-7 proposal&lt;/a&gt;. I believe like the many PSR&amp;rsquo;s, PSR-7 will be a revolution in the PHP world. Conduit is really a micro framework and can grow with your project.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

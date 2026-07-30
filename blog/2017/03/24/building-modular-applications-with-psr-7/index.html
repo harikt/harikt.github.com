@@ -15,9 +15,13 @@
 
   
   
-    <title>building modular applications with psr 7 &middot; Hari KT</title>
-    <meta name="title" content="building modular applications with psr 7 &middot; Hari KT">
   
+    
+      
+    
+  
+  <title>Building Modular Applications With PSR-7 · Hari KT — Full Stack Developer</title>
+  <meta name="title" content="Building Modular Applications With PSR-7 · Hari KT — Full Stack Developer">
 
   
   
@@ -31,6 +35,10 @@
     
   
   
+    <meta name="description" content="How PSR-7 HTTP message interfaces let you build genuinely modular PHP applications without tying to one implementation.">
+  
+  
+    <meta name="keywords" content="PHP,PSR-7,Middleware,Architecture,">
   
   
   
@@ -78,27 +86,25 @@
 
   
   <meta property="og:url" content="https://harikt.com/blog/2017/03/24/building-modular-applications-with-psr-7/">
-	<meta property="og:site_name" content="Hari KT">
-	<meta property="og:title" content="building modular applications with psr 7">
-	<meta property="og:description" content="PSR-7, the HTTP message interfaces opened a new door of creating modular applications.
-Sadly many of the PSR-7 implementations added many helper methods.
-So if someone is creating a library that needs a PSR-7 implementations they tie the particular library with the PSR-7 implementation and use these convinient helper methods.
-So was PSR-15: interfaces for HTTP Middleware and PSR-17: interfaces for HTTP Factories was proposed.
-When creating a module one of the most challenging part is how to serve the javascript, css and images. We are going to use hkt/psr7-asset which is a fork of Aura.Asset_Bundle . What you want to do is only map the path to the assets folder.">
+	<meta property="og:site_name" content="Hari KT — Full Stack Developer">
+	<meta property="og:title" content="Building Modular Applications With PSR-7">
+	<meta property="og:description" content="How PSR-7 HTTP message interfaces let you build genuinely modular PHP applications without tying to one implementation.">
 	<meta property="og:locale" content="en_GB">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="blog">
 		<meta property="article:published_time" content="2017-03-24T00:00:00+00:00">
 		<meta property="article:modified_time" content="2017-03-24T00:00:00+00:00">
+		<meta property="article:tag" content="PHP">
+		<meta property="article:tag" content="PSR-7">
+		<meta property="article:tag" content="Middleware">
+		<meta property="article:tag" content="Architecture">
+		<meta property="og:image" content="https://harikt.com/harik-small.JPG">
 
   
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="building modular applications with psr 7">
-	<meta name="twitter:description" content="PSR-7, the HTTP message interfaces opened a new door of creating modular applications.
-Sadly many of the PSR-7 implementations added many helper methods.
-So if someone is creating a library that needs a PSR-7 implementations they tie the particular library with the PSR-7 implementation and use these convinient helper methods.
-So was PSR-15: interfaces for HTTP Middleware and PSR-17: interfaces for HTTP Factories was proposed.
-When creating a module one of the most challenging part is how to serve the javascript, css and images. We are going to use hkt/psr7-asset which is a fork of Aura.Asset_Bundle . What you want to do is only map the path to the assets folder.">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://harikt.com/harik-small.JPG">
+	<meta name="twitter:title" content="Building Modular Applications With PSR-7">
+	<meta name="twitter:description" content="How PSR-7 HTTP message interfaces let you build genuinely modular PHP applications without tying to one implementation.">
 
   
   
@@ -251,9 +257,9 @@ When creating a module one of the most challenging part is how to serve the java
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Blogs",
-    "name": "building modular applications with psr 7",
-    "headline": "building modular applications with psr 7",
-    
+    "name": "Building Modular Applications With PSR-7",
+    "headline": "Building Modular Applications With PSR-7",
+    "description": "How PSR-7 HTTP message interfaces let you build genuinely modular PHP applications without tying to one implementation.",
     "inLanguage": "en-GB",
     "url" : "https://harikt.com/blog/2017/03/24/building-modular-applications-with-psr-7/",
     "author" : {
@@ -266,7 +272,7 @@ When creating a module one of the most challenging part is how to serve the java
     
     "dateModified": "2017-03-24T00:00:00\u002b00:00",
     
-    
+    "keywords": ["PHP","PSR-7","Middleware","Architecture"],
     
     "mainEntityOfPage": "true",
     "wordCount": "1152"
@@ -288,6 +294,9 @@ When creating a module one of the most challenging part is how to serve the java
   
 
   
+  
+    
+
   
 
   
@@ -338,6 +347,24 @@ When creating a module one of the most challenging part is how to serve the java
       
   
     <a
+      href="/about/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="About"
+      title="About Hari KT — Freelance Full Stack Developer from Kerala, India">
+      
+      
+        <span class="text-base font-medium break-normal">
+          About
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
       href="/blog/"
       
       class="flex items-center bf-icon-color-hover"
@@ -347,6 +374,24 @@ When creating a module one of the most challenging part is how to serve the java
       
         <span class="text-base font-medium break-normal">
           Blog
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="/tags/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="Tags"
+      title="Tags">
+      
+      
+        <span class="text-base font-medium break-normal">
+          Tags
         </span>
       
     </a>
@@ -466,6 +511,23 @@ When creating a module one of the most challenging part is how to serve the java
     
     <div class="px-2">
       <a
+        href="/about/"
+        aria-label="About"
+        
+        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+        
+        <span title="About Hari KT — Freelance Full Stack Developer from Kerala, India" class="text-2xl font-bold tracking-tight">
+          About
+        </span>
+        
+      </a>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <a
         href="/blog/"
         aria-label="Blog"
         
@@ -473,6 +535,23 @@ When creating a module one of the most challenging part is how to serve the java
         
         <span title="Blogs" class="text-2xl font-bold tracking-tight">
           Blog
+        </span>
+        
+      </a>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <a
+        href="/tags/"
+        aria-label="Tags"
+        
+        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+        
+        <span title="Tags" class="text-2xl font-bold tracking-tight">
+          Tags
         </span>
         
       </a>
@@ -536,7 +615,7 @@ When creating a module one of the most challenging part is how to serve the java
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        building modular applications with psr 7
+        Building Modular Applications With PSR-7
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -599,6 +678,102 @@ When creating a module one of the most challenging part is how to serve the java
 
   
   
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/php/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    PHP
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/psr-7/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    PSR-7
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/middleware/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Middleware
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/architecture/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Architecture
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+        
+      
+    </div>
+  
 
 
       </div>
@@ -649,7 +824,7 @@ When creating a module one of the most challenging part is how to serve the java
       </div>
     
     
-      <div class="text-sm text-neutral-700 dark:text-neutral-400">Freelancer | Founder of <a href="https://tripti.cloud/"  target="_blank" rel="noreferrer">Tripti</a> and <a href="https://tanvish.com/"  target="_blank" rel="noreferrer">Tanvish</a> | Maintainer of <a href="https://auraphp.com/"  target="_blank" rel="noreferrer">AuraPHP</a></div>
+      <div class="text-sm text-neutral-700 dark:text-neutral-400">Freelancer | Founder of <a href="https://tripti.cloud/"  target="_blank" rel="noreferrer">Tripti</a> and <a href="https://tanvish.com/"  target="_blank" rel="noreferrer">Tanvish</a> | Maintainer of <a href="https://auraphp.com/"  target="_blank" rel="noreferrer">Aura for PHP</a>, created by <a href="https://paul-m-jones.com/"  target="_blank" rel="noreferrer">Paul M Jones</a></div>
     
     <div class="text-2xl sm:text-lg">
   <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500 space-x-2">
@@ -751,6 +926,49 @@ When creating a module one of the most challenging part is how to serve the java
       
       
       
+      
+        <div class="order-first lg:ms-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-10">
+            <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain bf-scrollbar rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-can-we-serve-the-static-files">How can we serve the static files?</a></li>
+    <li><a href="#how-can-we-make-use-of-this-module-in-your-application">How can we make use of this module in your application?</a></li>
+    <li><a href="#caching">Caching</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-can-we-serve-the-static-files">How can we serve the static files?</a></li>
+    <li><a href="#how-can-we-make-use-of-this-module-in-your-application">How can we make use of this module in your application?</a></li>
+    <li><a href="#caching">Caching</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+
+          </div>
+        </div>
       
 
 
@@ -1256,6 +1474,645 @@ What it does is copy the assets to the public folder and the files are served by
         
 
         
+  
+  
+    <h2 class="mt-8 text-2xl font-extrabold mb-10">Related</h2>
+    <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      
+        
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+    
+  
+
+  
+  
+    
+  
+
+
+
+<article
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  
+  
+  <div class="p-4">
+    <header>
+      <a
+        
+          href="/blog/2015/01/21/conduit-middleware-for-php/"
+        
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        <h2>
+          Conduit: Middleware for PHP
+          
+        </h2>
+      </a>
+    </header>
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2015-01-21T00:00:00&#43;00:00">21 January 2015</time><span class="px-2 text-primary-500">&middot;</span><span>618 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/php/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    PHP
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/middleware/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Middleware
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/psr-7/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    PSR-7
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+        
+      
+    </div>
+  
+
+
+    </div>
+    
+      <div class="article-link__summary prose dark:prose-invert mt-1 line-clamp-5">
+        Long back, I happened to talk with Beau Simensen about stackphp on #auraphp channel. It was hard for me to digest when I noticed it need symfony/http-kernel and its dependencies.
+After a few months, I started to like the middleware approach of slim framework and wanted to push it to aura. But nothing happened there.
+Conduit to rescue # Conduit is a Middleware for PHP built by Matthew Weier O&rsquo;Phinney lead of Zend framework. Conduit supports the current PSR-7 proposal. I believe like the many PSR&rsquo;s, PSR-7 will be a revolution in the PHP world. Conduit is really a micro framework and can grow with your project.
+
+      </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</article>
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+    
+  
+
+  
+  
+    
+  
+
+
+
+<article
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  
+  
+  <div class="p-4">
+    <header>
+      <a
+        
+          href="/blog/2015/11/13/eloquent-and-pagination-inside-zend-expressive/"
+        
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        <h2>
+          Eloquent and Pagination Inside Zend Expressive
+          
+        </h2>
+      </a>
+    </header>
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2015-11-13T00:00:00&#43;00:00">13 November 2015</time><span class="px-2 text-primary-500">&middot;</span><span>154 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/php/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    PHP
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/zend-expressive/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Zend Expressive
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/eloquent/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Eloquent
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/middleware/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Middleware
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+        
+      
+    </div>
+  
+
+
+    </div>
+    
+      <div class="article-link__summary prose dark:prose-invert mt-1 line-clamp-5">
+        Recently working with eloquent (Laravel&rsquo;s orm), zend expressive and zend view, I wanted to integrate pagination.
+It was simple as registering a Paginator middleware.
+1 2 3 4 5 6 7 8 9 10 11 12 &lt;?php use Illuminate\Pagination\Paginator; use Psr\Http\Message\ResponseInterface; use Psr\Http\Message\ServerRequestInterface; IlluminatePaginator::currentPageResolver(function ($pageName) use ($request) { $params = $request-&gt;getQueryParams(); return empty($params[$pageName]) ? 1 : $params[$pageName]; }); IlluminatePaginator::currentPathResolver(function () use ($request) { return $request-&gt;getUri()-&gt;getPath(); }); and you can call paginate on the Model.
+Eg : Consider you have a Post model.
+
+      </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</article>
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+    
+  
+
+  
+  
+    
+  
+
+
+
+<article
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  
+  
+  <div class="p-4">
+    <header>
+      <a
+        
+          href="/blog/2015/01/13/experimenting-on-different-framework/"
+        
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        <h2>
+          Experimenting With Different PHP Frameworks
+          
+        </h2>
+      </a>
+    </header>
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2015-01-13T00:00:00&#43;00:00">13 January 2015</time><span class="px-2 text-primary-500">&middot;</span><span>765 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/php/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    PHP
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/frameworks/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Frameworks
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/architecture/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Architecture
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+        
+      
+    </div>
+  
+
+
+    </div>
+    
+      <div class="article-link__summary prose dark:prose-invert mt-1 line-clamp-5">
+        Whenever I get some time, I try to learn and experiment on different frameworks. I would like to stay away from pin pointing to the frameworks I have looked, so they don&rsquo;t feel bad.
+Long live components # Components are awesome!. You can plug your favourite components to any system. Thank you composer. One strong preference choosing a framework was
+
+      </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</article>
+
+      
+    </section>
+  
+
 
       </div>
     </section>
@@ -1276,7 +2133,7 @@ What it does is copy the assets to the public folder and the files are served by
               class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
               href="/blog/2017/03/24/using-cakephp-migration-as-standalone/">
               <span class="leading-6">
-                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;using cakephp migration as standalone
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;Using CakePHP Migrations as a Standalone Library
               </span>
             </a>
             

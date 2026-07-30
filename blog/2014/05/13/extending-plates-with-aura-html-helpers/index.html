@@ -15,9 +15,13 @@
 
   
   
-    <title>extending plates with aura html helpers &middot; Hari KT</title>
-    <meta name="title" content="extending plates with aura html helpers &middot; Hari KT">
   
+    
+      
+    
+  
+  <title>Extending Plates With Aura.Html Helpers · Hari KT — Full Stack Developer</title>
+  <meta name="title" content="Extending Plates With Aura.Html Helpers · Hari KT — Full Stack Developer">
 
   
   
@@ -31,6 +35,10 @@
     
   
   
+    <meta name="description" content="Using Aura.Html escapers and form helpers inside Plates, a native PHP templating system.">
+  
+  
+    <meta name="keywords" content="PHP,Aura,Plates,Templating,">
   
   
   
@@ -78,23 +86,25 @@
 
   
   <meta property="og:url" content="https://harikt.com/blog/2014/05/13/extending-plates-with-aura-html-helpers/">
-	<meta property="og:site_name" content="Hari KT">
-	<meta property="og:title" content="extending plates with aura html helpers">
-	<meta property="og:description" content="Aura.Html provides HTML escapers and helpers, including form input helpers, that can be used in any template, view, or presentation system.
-In this post I would like to give you a short introduction to Aura.Html and how you could use with Plates a native php templating system like Aura.View.
-Aura.Html was extracted from Aura.View helper functions of version 1, when we at aura noticed that people who uses Aura.Input may need some html helper functions and they may not be using a templating like Aura.View, but some other templating system.">
+	<meta property="og:site_name" content="Hari KT — Full Stack Developer">
+	<meta property="og:title" content="Extending Plates With Aura.Html Helpers">
+	<meta property="og:description" content="Using Aura.Html escapers and form helpers inside Plates, a native PHP templating system.">
 	<meta property="og:locale" content="en_GB">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="blog">
 		<meta property="article:published_time" content="2014-05-13T00:00:00+00:00">
 		<meta property="article:modified_time" content="2014-05-13T00:00:00+00:00">
+		<meta property="article:tag" content="PHP">
+		<meta property="article:tag" content="Aura">
+		<meta property="article:tag" content="Plates">
+		<meta property="article:tag" content="Templating">
+		<meta property="og:image" content="https://harikt.com/harik-small.JPG">
 
   
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="extending plates with aura html helpers">
-	<meta name="twitter:description" content="Aura.Html provides HTML escapers and helpers, including form input helpers, that can be used in any template, view, or presentation system.
-In this post I would like to give you a short introduction to Aura.Html and how you could use with Plates a native php templating system like Aura.View.
-Aura.Html was extracted from Aura.View helper functions of version 1, when we at aura noticed that people who uses Aura.Input may need some html helper functions and they may not be using a templating like Aura.View, but some other templating system.">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://harikt.com/harik-small.JPG">
+	<meta name="twitter:title" content="Extending Plates With Aura.Html Helpers">
+	<meta name="twitter:description" content="Using Aura.Html escapers and form helpers inside Plates, a native PHP templating system.">
 
   
   
@@ -247,9 +257,9 @@ Aura.Html was extracted from Aura.View helper functions of version 1, when we at
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Blogs",
-    "name": "extending plates with aura html helpers",
-    "headline": "extending plates with aura html helpers",
-    
+    "name": "Extending Plates With Aura.Html Helpers",
+    "headline": "Extending Plates With Aura.Html Helpers",
+    "description": "Using Aura.Html escapers and form helpers inside Plates, a native PHP templating system.",
     "inLanguage": "en-GB",
     "url" : "https://harikt.com/blog/2014/05/13/extending-plates-with-aura-html-helpers/",
     "author" : {
@@ -262,7 +272,7 @@ Aura.Html was extracted from Aura.View helper functions of version 1, when we at
     
     "dateModified": "2014-05-13T00:00:00\u002b00:00",
     
-    
+    "keywords": ["PHP","Aura","Plates","Templating"],
     
     "mainEntityOfPage": "true",
     "wordCount": "730"
@@ -284,6 +294,9 @@ Aura.Html was extracted from Aura.View helper functions of version 1, when we at
   
 
   
+  
+    
+
   
 
   
@@ -334,6 +347,24 @@ Aura.Html was extracted from Aura.View helper functions of version 1, when we at
       
   
     <a
+      href="/about/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="About"
+      title="About Hari KT — Freelance Full Stack Developer from Kerala, India">
+      
+      
+        <span class="text-base font-medium break-normal">
+          About
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
       href="/blog/"
       
       class="flex items-center bf-icon-color-hover"
@@ -343,6 +374,24 @@ Aura.Html was extracted from Aura.View helper functions of version 1, when we at
       
         <span class="text-base font-medium break-normal">
           Blog
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="/tags/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="Tags"
+      title="Tags">
+      
+      
+        <span class="text-base font-medium break-normal">
+          Tags
         </span>
       
     </a>
@@ -462,6 +511,23 @@ Aura.Html was extracted from Aura.View helper functions of version 1, when we at
     
     <div class="px-2">
       <a
+        href="/about/"
+        aria-label="About"
+        
+        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+        
+        <span title="About Hari KT — Freelance Full Stack Developer from Kerala, India" class="text-2xl font-bold tracking-tight">
+          About
+        </span>
+        
+      </a>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <a
         href="/blog/"
         aria-label="Blog"
         
@@ -469,6 +535,23 @@ Aura.Html was extracted from Aura.View helper functions of version 1, when we at
         
         <span title="Blogs" class="text-2xl font-bold tracking-tight">
           Blog
+        </span>
+        
+      </a>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <a
+        href="/tags/"
+        aria-label="Tags"
+        
+        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+        
+        <span title="Tags" class="text-2xl font-bold tracking-tight">
+          Tags
         </span>
         
       </a>
@@ -532,7 +615,7 @@ Aura.Html was extracted from Aura.View helper functions of version 1, when we at
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        extending plates with aura html helpers
+        Extending Plates With Aura.Html Helpers
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -595,6 +678,102 @@ Aura.Html was extracted from Aura.View helper functions of version 1, when we at
 
   
   
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/php/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    PHP
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/aura/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Aura
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/plates/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Plates
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/templating/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Templating
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+        
+      
+    </div>
+  
 
 
       </div>
@@ -645,7 +824,7 @@ Aura.Html was extracted from Aura.View helper functions of version 1, when we at
       </div>
     
     
-      <div class="text-sm text-neutral-700 dark:text-neutral-400">Freelancer | Founder of <a href="https://tripti.cloud/"  target="_blank" rel="noreferrer">Tripti</a> and <a href="https://tanvish.com/"  target="_blank" rel="noreferrer">Tanvish</a> | Maintainer of <a href="https://auraphp.com/"  target="_blank" rel="noreferrer">AuraPHP</a></div>
+      <div class="text-sm text-neutral-700 dark:text-neutral-400">Freelancer | Founder of <a href="https://tripti.cloud/"  target="_blank" rel="noreferrer">Tripti</a> and <a href="https://tanvish.com/"  target="_blank" rel="noreferrer">Tanvish</a> | Maintainer of <a href="https://auraphp.com/"  target="_blank" rel="noreferrer">Aura for PHP</a>, created by <a href="https://paul-m-jones.com/"  target="_blank" rel="noreferrer">Paul M Jones</a></div>
     
     <div class="text-2xl sm:text-lg">
   <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500 space-x-2">
@@ -747,6 +926,59 @@ Aura.Html was extracted from Aura.View helper functions of version 1, when we at
       
       
       
+      
+        <div class="order-first lg:ms-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-10">
+            <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain bf-scrollbar rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#installation">Installation</a>
+      <ul>
+        <li><a href="#profile-template">Profile Template</a></li>
+        <li><a href="#layout-template">Layout Template</a></li>
+        <li><a href="#autoload-extension">Autoload Extension</a></li>
+        <li><a href="#bootstrapping-and-rendering">Bootstrapping and Rendering</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#installation">Installation</a>
+      <ul>
+        <li><a href="#profile-template">Profile Template</a></li>
+        <li><a href="#layout-template">Layout Template</a></li>
+        <li><a href="#autoload-extension">Autoload Extension</a></li>
+        <li><a href="#bootstrapping-and-rendering">Bootstrapping and Rendering</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+
+          </div>
+        </div>
       
 
 
@@ -1199,6 +1431,629 @@ and use aura html helper to show the system works as expected.</p>
         
 
         
+  
+  
+    <h2 class="mt-8 text-2xl font-extrabold mb-10">Related</h2>
+    <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      
+        
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+    
+  
+
+  
+  
+    
+  
+
+
+
+<article
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  
+  
+  <div class="p-4">
+    <header>
+      <a
+        
+          href="/blog/2014/04/29/installing-aura-framework-project-via-composer/"
+        
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        <h2>
+          Installing an Aura Framework Project via Composer
+          
+        </h2>
+      </a>
+    </header>
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2014-04-29T00:00:00&#43;00:00">29 April 2014</time><span class="px-2 text-primary-500">&middot;</span><span>56 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/php/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    PHP
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/aura/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Aura
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/composer/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Composer
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/tutorial/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Tutorial
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+        
+      
+    </div>
+  
+
+
+    </div>
+    
+      <div class="article-link__summary prose dark:prose-invert mt-1 line-clamp-5">
+        In this tutorial I am showing how to install aura framework project v2 via composer.
+composer create-project -s beta aura/framework-project path-to-project Aura.Framework_Project helps you to build web and cli applications.
+If you need only web based application then Aura.Web_Project is what you need.
+{% showterm b971330ea7fd28d22e2f3 %}
+If you need only cli, then Aura.Cli_Project helps you.
+
+      </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</article>
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+    
+  
+
+  
+  
+    
+  
+
+
+
+<article
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  
+  
+  <div class="p-4">
+    <header>
+      <a
+        
+          href="/blog/2013/11/06/using-aura-dispatcher-in-silex/"
+        
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        <h2>
+          Using Aura.Dispatcher in Silex
+          
+        </h2>
+      </a>
+    </header>
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2013-11-06T00:00:00&#43;00:00">6 November 2013</time><span class="px-2 text-primary-500">&middot;</span><span>527 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/php/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    PHP
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/aura/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Aura
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/silex/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Silex
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+        
+      
+    </div>
+  
+
+
+    </div>
+    
+      <div class="article-link__summary prose dark:prose-invert mt-1 line-clamp-5">
+        2 days back Paul M Jones wrote an awesome post A Peek At Aura v2 &ndash; Aura.Dispatcher the idea behind Aura.Dispatcher and how it was born.
+So today, let us try to integrate Aura.Dispatcher with Silex. This post is inspired by the comment made by Luis Cordova. Thank you.
+1 2 3 composer create-project silex/silex --no-dev silexproject cd silexproject composer require aura/dispatcher dev-develop-2 I hope you have composer installed else get composer.
+I am not going to explain each and everything, the code is self explanatory. You can move the classes according to your wish (may be to another folder). I am trying to show a simple use case.
+
+      </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</article>
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+    
+  
+
+  
+  
+    
+  
+
+
+
+<article
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  
+  
+  <div class="p-4">
+    <header>
+      <a
+        
+          href="/blog/2013/09/28/looking-at-aura-v2/"
+        
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        <h2>
+          Looking at Aura v2
+          
+        </h2>
+      </a>
+    </header>
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2013-09-28T00:00:00&#43;00:00">28 September 2013</time><span class="px-2 text-primary-500">&middot;</span><span>919 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/php/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    PHP
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/aura/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Aura
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+        
+      
+    </div>
+  
+
+
+    </div>
+    
+      <div class="article-link__summary prose dark:prose-invert mt-1 line-clamp-5">
+        If you have noticed recently, there have been tons of commits from Paul M Jones﻿ for aura version 2.
+More standalone repos born. Everyone should try and give feedback as much as possible.
+Interesting stuffs split from Aura.Sql v 1.3 are
+Extended PDO,
+As the name says, it is an extended version of PDO. Good thing is it is PHP 5.3 compatible.
+If you have worked with PDO you know the good and bad. One of the difficulty is, it cannot use an array for an in clause.
+
+      </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</article>
+
+      
+    </section>
+  
+
 
       </div>
     </section>
@@ -1219,7 +2074,7 @@ and use aura html helper to show the system works as expected.</p>
               class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
               href="/blog/2014/04/29/installing-aura-framework-project-via-composer/">
               <span class="leading-6">
-                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;installing aura framework project via composer
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;Installing an Aura Framework Project via Composer
               </span>
             </a>
             
@@ -1235,7 +2090,7 @@ and use aura html helper to show the system works as expected.</p>
               class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
               href="/blog/2014/05/29/hidden-gems-of-composer/">
               <span class="leading-6">
-                hidden gems of composer&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
+                Hidden Gems of Composer&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
               </span>
             </a>
             

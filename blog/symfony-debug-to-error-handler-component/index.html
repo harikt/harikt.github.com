@@ -15,9 +15,13 @@
 
   
   
-    <title>Symfony Debug to Error Handler Component &middot; Hari KT</title>
-    <meta name="title" content="Symfony Debug to Error Handler Component &middot; Hari KT">
   
+    
+      
+    
+  
+  <title>Symfony Debug to Error Handler Component · Hari KT — Full Stack Developer</title>
+  <meta name="title" content="Symfony Debug to Error Handler Component · Hari KT — Full Stack Developer">
 
   
   
@@ -31,6 +35,10 @@
     
   
   
+    <meta name="description" content="Migrating from the deprecated symfony/debug component to symfony/error-handler in Symfony 4.4 and later.">
+  
+  
+    <meta name="keywords" content="PHP,Symfony,Debugging,">
   
   
   
@@ -78,31 +86,24 @@
 
   
   <meta property="og:url" content="https://harikt.com/blog/symfony-debug-to-error-handler-component/">
-	<meta property="og:site_name" content="Hari KT">
+	<meta property="og:site_name" content="Hari KT — Full Stack Developer">
 	<meta property="og:title" content="Symfony Debug to Error Handler Component">
-	<meta property="og:description" content="Since symfony 4.4 the symfony/debug component is deprecated.
-The “\Symfony\Component\Debug\ErrorHandler” class is deprecated since Symfony 4.4, use “\Symfony\Component\ErrorHandler\ErrorHandler”
-Running unit tests on Mascot, I noticed lots of warnings.
-But it was not easy as changing Symfony\Component\Debug\ExceptionHandler to Symfony\Component\ErrorHandler\ErrorHandler.
-Assume we have something as below
-37 38 39 40 41 42 43 44 &lt;?php $handler = new \Symfony\Component\Debug\ExceptionHandler($debug); $exception = $event-&gt;getThrowable(); if (!$exception instanceof FlattenException) { $exception = FlattenException::create($exception); } $response = Response::create($handler-&gt;getHtml($exception), $exception-&gt;getStatusCode(), $exception-&gt;getHeaders())-&gt;setCharset(ini_get(&#39;default_charset&#39;)); $event-&gt;setResponse($response); The Symfony\Component\ErrorHandler\ErrorHandler has no getHtml method.
-From the symfony docs, if you are in development mode we can use below code.">
+	<meta property="og:description" content="Migrating from the deprecated symfony/debug component to symfony/error-handler in Symfony 4.4 and later.">
 	<meta property="og:locale" content="en_GB">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="blog">
 		<meta property="article:published_time" content="2019-11-29T01:04:31+05:30">
 		<meta property="article:modified_time" content="2019-11-29T01:04:31+05:30">
+		<meta property="article:tag" content="PHP">
+		<meta property="article:tag" content="Symfony">
+		<meta property="article:tag" content="Debugging">
+		<meta property="og:image" content="https://harikt.com/harik-small.JPG">
 
   
-	<meta name="twitter:card" content="summary">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://harikt.com/harik-small.JPG">
 	<meta name="twitter:title" content="Symfony Debug to Error Handler Component">
-	<meta name="twitter:description" content="Since symfony 4.4 the symfony/debug component is deprecated.
-The “\Symfony\Component\Debug\ErrorHandler” class is deprecated since Symfony 4.4, use “\Symfony\Component\ErrorHandler\ErrorHandler”
-Running unit tests on Mascot, I noticed lots of warnings.
-But it was not easy as changing Symfony\Component\Debug\ExceptionHandler to Symfony\Component\ErrorHandler\ErrorHandler.
-Assume we have something as below
-37 38 39 40 41 42 43 44 &lt;?php $handler = new \Symfony\Component\Debug\ExceptionHandler($debug); $exception = $event-&gt;getThrowable(); if (!$exception instanceof FlattenException) { $exception = FlattenException::create($exception); } $response = Response::create($handler-&gt;getHtml($exception), $exception-&gt;getStatusCode(), $exception-&gt;getHeaders())-&gt;setCharset(ini_get(&#39;default_charset&#39;)); $event-&gt;setResponse($response); The Symfony\Component\ErrorHandler\ErrorHandler has no getHtml method.
-From the symfony docs, if you are in development mode we can use below code.">
+	<meta name="twitter:description" content="Migrating from the deprecated symfony/debug component to symfony/error-handler in Symfony 4.4 and later.">
 
   
   
@@ -257,7 +258,7 @@ From the symfony docs, if you are in development mode we can use below code.">
     "articleSection": "Blogs",
     "name": "Symfony Debug to Error Handler Component",
     "headline": "Symfony Debug to Error Handler Component",
-    
+    "description": "Migrating from the deprecated symfony\/debug component to symfony\/error-handler in Symfony 4.4 and later.",
     "inLanguage": "en-GB",
     "url" : "https://harikt.com/blog/symfony-debug-to-error-handler-component/",
     "author" : {
@@ -270,7 +271,7 @@ From the symfony docs, if you are in development mode we can use below code.">
     
     "dateModified": "2019-11-29T01:04:31\u002b05:30",
     
-    
+    "keywords": ["PHP","Symfony","Debugging"],
     
     "mainEntityOfPage": "true",
     "wordCount": "260"
@@ -292,6 +293,9 @@ From the symfony docs, if you are in development mode we can use below code.">
   
 
   
+  
+    
+
   
 
   
@@ -342,6 +346,24 @@ From the symfony docs, if you are in development mode we can use below code.">
       
   
     <a
+      href="/about/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="About"
+      title="About Hari KT — Freelance Full Stack Developer from Kerala, India">
+      
+      
+        <span class="text-base font-medium break-normal">
+          About
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
       href="/blog/"
       
       class="flex items-center bf-icon-color-hover"
@@ -351,6 +373,24 @@ From the symfony docs, if you are in development mode we can use below code.">
       
         <span class="text-base font-medium break-normal">
           Blog
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="/tags/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="Tags"
+      title="Tags">
+      
+      
+        <span class="text-base font-medium break-normal">
+          Tags
         </span>
       
     </a>
@@ -470,6 +510,23 @@ From the symfony docs, if you are in development mode we can use below code.">
     
     <div class="px-2">
       <a
+        href="/about/"
+        aria-label="About"
+        
+        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+        
+        <span title="About Hari KT — Freelance Full Stack Developer from Kerala, India" class="text-2xl font-bold tracking-tight">
+          About
+        </span>
+        
+      </a>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <a
         href="/blog/"
         aria-label="Blog"
         
@@ -477,6 +534,23 @@ From the symfony docs, if you are in development mode we can use below code.">
         
         <span title="Blogs" class="text-2xl font-bold tracking-tight">
           Blog
+        </span>
+        
+      </a>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <a
+        href="/tags/"
+        aria-label="Tags"
+        
+        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+        
+        <span title="Tags" class="text-2xl font-bold tracking-tight">
+          Tags
         </span>
         
       </a>
@@ -603,6 +677,80 @@ From the symfony docs, if you are in development mode we can use below code.">
 
   
   
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/php/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    PHP
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/symfony/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Symfony
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/debugging/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Debugging
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+        
+      
+    </div>
+  
 
 
       </div>
@@ -653,7 +801,7 @@ From the symfony docs, if you are in development mode we can use below code.">
       </div>
     
     
-      <div class="text-sm text-neutral-700 dark:text-neutral-400">Freelancer | Founder of <a href="https://tripti.cloud/"  target="_blank" rel="noreferrer">Tripti</a> and <a href="https://tanvish.com/"  target="_blank" rel="noreferrer">Tanvish</a> | Maintainer of <a href="https://auraphp.com/"  target="_blank" rel="noreferrer">AuraPHP</a></div>
+      <div class="text-sm text-neutral-700 dark:text-neutral-400">Freelancer | Founder of <a href="https://tripti.cloud/"  target="_blank" rel="noreferrer">Tripti</a> and <a href="https://tanvish.com/"  target="_blank" rel="noreferrer">Tanvish</a> | Maintainer of <a href="https://auraphp.com/"  target="_blank" rel="noreferrer">Aura for PHP</a>, created by <a href="https://paul-m-jones.com/"  target="_blank" rel="noreferrer">Paul M Jones</a></div>
     
     <div class="text-2xl sm:text-lg">
   <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500 space-x-2">
@@ -878,6 +1026,671 @@ After many failed experiments, I asked <a href="https://twitter.com/YonelCerutoG
         
 
         
+  
+  
+    <h2 class="mt-8 text-2xl font-extrabold mb-10">Related</h2>
+    <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      
+        
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+    
+  
+
+  
+  
+    
+  
+
+
+
+<article
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  
+  
+  <div class="p-4">
+    <header>
+      <a
+        
+          href="/blog/2016/01/16/cakephp-orm-and-logging-queries/"
+        
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        <h2>
+          CakePHP ORM and Logging Queries
+          
+        </h2>
+      </a>
+    </header>
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2016-01-16T00:00:00&#43;00:00">16 January 2016</time><span class="px-2 text-primary-500">&middot;</span><span>196 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/php/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    PHP
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/cakephp/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    CakePHP
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/orm/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    ORM
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/debugging/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Debugging
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+        
+      
+    </div>
+  
+
+
+    </div>
+    
+      <div class="article-link__summary prose dark:prose-invert mt-1 line-clamp-5">
+        Working with cakephp/orm library, I needed to log all the queries. Cakephp provides a way to do it via cakephp/log.
+1 2 3 4 5 6 7 8 9 &lt;?php use Cake\Log\Log; Log::config(&#39;queries&#39;, [ &#39;className&#39; =&gt; &#39;File&#39;, &#39;path&#39; =&gt; &#39;/my/log/path/&#39;, &#39;file&#39; =&gt; &#39;app&#39;, &#39;scopes&#39; =&gt; [&#39;queriesLog&#39;] ]); But you are not limited, if you need to configure it to a PSR-3 logger like monolog/monolog
+1 2 3 4 5 6 7 8 9 10 &lt;?php use Cake\Log\Log; use Monolog\Logger; use Monolog\Handler\StreamHandler; Log::config(&#39;default&#39;, function () { $log = new Logger(&#39;cli&#39;); $log-&gt;pushHandler(new StreamHandler(&#39;php://stdout&#39;)); return $log; }); That was pretty simple and it logs to cli.
+
+      </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</article>
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+    
+  
+
+  
+  
+    
+  
+
+
+
+<article
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  
+  
+  <div class="p-4">
+    <header>
+      <a
+        
+          href="/blog/2015/10/11/custom-events-in-symfony2-bundle/"
+        
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        <h2>
+          Custom Events in a Symfony2 Bundle
+          
+        </h2>
+      </a>
+    </header>
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2015-10-11T00:00:00&#43;00:00">11 October 2015</time><span class="px-2 text-primary-500">&middot;</span><span>301 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/php/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    PHP
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/symfony/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Symfony
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/events/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Events
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+        
+      
+    </div>
+  
+
+
+    </div>
+    
+      <div class="article-link__summary prose dark:prose-invert mt-1 line-clamp-5">
+        In this tutorial we will create a custom event for symfony2 bundle.
+Assuming you have downloaded the symfony-standard distribution to play.
+Create HktEventBundle via sensio generator bundle.
+1 2 &lt;?php php app/console generate:bundle --namespace=Hkt/EventBundle --dir src --no-interaction Create the event class.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 &lt;?php // src/Hkt/EventBundle/Event/PageViewed.php namespace Hkt\EventBundle\Event; use Symfony\Component\EventDispatcher\Event; class PageViewed extends Event { protected $name; public function __construct($name) { $this-&gt;name = $name; } public function getName() { return $this-&gt;name; } } Add as many methods/properties which are needed from the listener. Instead of creating an event class we can make use of generic event also.
+
+      </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</article>
+
+      
+        
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+    
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+  
+    
+    
+  
+
+  
+  
+    
+  
+
+
+
+<article
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  
+  
+  <div class="p-4">
+    <header>
+      <a
+        
+          href="/blog/2017/03/24/building-modular-applications-with-psr-7/"
+        
+        class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
+        <h2>
+          Building Modular Applications With PSR-7
+          
+        </h2>
+      </a>
+    </header>
+    <div class="text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2017-03-24T00:00:00&#43;00:00">24 March 2017</time><span class="px-2 text-primary-500">&middot;</span><span>1152 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">6 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/php/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    PHP
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/psr-7/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    PSR-7
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/middleware/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Middleware
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/architecture/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Architecture
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+        
+      
+    </div>
+  
+
+
+    </div>
+    
+      <div class="article-link__summary prose dark:prose-invert mt-1 line-clamp-5">
+        PSR-7, the HTTP message interfaces opened a new door of creating modular applications.
+Sadly many of the PSR-7 implementations added many helper methods.
+So if someone is creating a library that needs a PSR-7 implementations they tie the particular library with the PSR-7 implementation and use these convinient helper methods.
+So was PSR-15: interfaces for HTTP Middleware and PSR-17: interfaces for HTTP Factories was proposed.
+When creating a module one of the most challenging part is how to serve the javascript, css and images. We are going to use hkt/psr7-asset which is a fork of Aura.Asset_Bundle . What you want to do is only map the path to the assets folder.
+
+      </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</article>
+
+      
+    </section>
+  
+
 
       </div>
     </section>
@@ -898,7 +1711,7 @@ After many failed experiments, I asked <a href="https://twitter.com/YonelCerutoG
               class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
               href="/blog/2017/03/24/building-modular-applications-with-psr-7/">
               <span class="leading-6">
-                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;building modular applications with psr 7
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;Building Modular Applications With PSR-7
               </span>
             </a>
             
