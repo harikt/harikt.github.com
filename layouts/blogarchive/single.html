@@ -1,16 +1,27 @@
 {{ define "main" -}}
 <main class="main layout__main">
-  {{ range (where .Site.Pages "Type" "blog") }}
-    <article class="{{ with .Section }}section-{{ . | urlize }} {{ end }}single-view">    
-      <header>
-        <a href="{{ .Permalink }}" title="{{ .Title }}">
-          <h2 class="title {{ if $.Param "submitted" | default false }}title-submitted{{ end }}">{{ .Title }}</h2>
-        </a>          
-        {{ if $.Param "submitted" | default false }}{{ partial "submitted.html" . }}{{ end -}}
-        {{ if .Params.tags }}{{ partial "tags.html" . }}{{ end -}}
+  <h1 class="mb-6 text-3xl font-extrabold">{{ .Title }}</h1>
 
-      </header>
-    </article>
+  {{ $posts := where .Site.RegularPages "Type" "blog" }}
+  {{ range $posts.GroupByDate "2006" }}
+    <h2 class="mt-8 mb-2 text-xl font-bold">{{ .Key }}</h2>
+    <ul class="list-none">
+      {{ range .Pages }}
+        <li class="mb-2">
+          <a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a>
+          <time datetime="{{ .Date.Format "2006-01-02" }}" class="text-sm">
+            {{ .Date.Format "2 January" }}
+          </time>
+          {{ with .Params.tags }}
+            <span class="text-sm">
+              {{ range . }}
+                <a href="{{ (urls.JoinPath "/tags" (. | urlize)) | relURL }}">#{{ . }}</a>
+              {{ end }}
+            </span>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
   {{ end }}
 </main>
 {{ end }}

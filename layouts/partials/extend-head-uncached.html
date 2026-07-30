@@ -1,0 +1,75 @@
+{{- if .IsHome }}
+{{- $avatar := resources.GetMatch "harik-small.*" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://harikt.com/#person",
+  "name": "Hari KT",
+  "url": "https://harikt.com/",
+  {{- with $avatar }}
+  "image": {{ .Permalink }},
+  {{- end }}
+  "jobTitle": "Freelance Full Stack Web Developer",
+  "description": "Freelance full stack web developer from Kerala, India and a maintainer of the Aura PHP framework.",
+  "email": "mailto:me@harikt.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "Kerala",
+    "addressCountry": "IN"
+  },
+  "knowsAbout": [
+    "PHP",
+    "Laravel",
+    "Symfony",
+    "CakePHP",
+    "CodeIgniter",
+    "Doctrine",
+    "Twig",
+    "Golang",
+    "Fiber",
+    "Beego",
+    "NodeJS",
+    "ReactJS",
+    "React Native",
+    "Tauri",
+    "Python",
+    "FastAPI",
+    "Scrapy",
+    "Full stack web development",
+    "Web scraping and data extraction",
+    "Cross platform desktop application development",
+    "Mobile application development",
+    "Nginx",
+    "Let's Encrypt",
+    "Linux server administration",
+    "Open source software"
+  ],
+  "sameAs": [
+    "https://github.com/harikt",
+    "https://www.linkedin.com/in/harikt",
+    "https://x.com/harikt",
+    "https://stackoverflow.com/users/487878/hari-k-t",
+    "https://www.youtube.com/@HariKT"
+  ],
+  "worksFor": [
+    {
+      "@type": "Organization",
+      "name": "Tanvish",
+      "url": "https://tanvish.com/"
+    }
+  ],
+  "contributor": {
+    "@type": "SoftwareApplication",
+    "name": "Aura for PHP",
+    "url": "https://auraphp.com/",
+    "applicationCategory": "DeveloperApplication",
+    "author": {
+      "@type": "Person",
+      "name": "Paul M Jones",
+      "url": "https://paul-m-jones.com/"
+    }
+  }
+}
+</script>
+{{- end }}
