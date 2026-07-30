@@ -1,8 +1,9 @@
 +++
-title = "magento and rest api"
+title = "Magento and the REST API"
 date = "2013-07-05"
 slug = "2013/07/05/magento-and-rest-api"
-Categories = []
+description = "Registering an OAuth consumer and fetching products from a Magento shop through its REST API in PHP."
+tags = ["PHP", "Magento", "REST", "API"]
 +++
 
 Magento provides both REST and SOAP api. In this post I would like to 

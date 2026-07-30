@@ -1,8 +1,9 @@
 +++
-title = "aura input form inside slim framework"
+title = "Using Aura.Input Forms Inside Slim Framework"
 date = "2014-09-02"
 slug = "2014/09/02/aura-input-form-inside-slim-framework"
-Categories = []
+description = "Integrating Aura.Input and Aura.Html to build and render standalone PHP forms inside the Slim framework."
+tags = ["PHP", "Aura", "Slim", "Forms"]
 +++
 
 Rob Allen wrote about [Integrating ZF2 forms into Slim](http://akrabat.com/zend-framework-2/integrating-zf2-forms-into-slim/).

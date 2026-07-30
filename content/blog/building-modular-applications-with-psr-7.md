@@ -1,8 +1,9 @@
 +++
-title = "building modular applications with psr 7"
+title = "Building Modular Applications With PSR-7"
 date = "2017-03-24"
 slug = "2017/03/24/building-modular-applications-with-psr-7"
-Categories = []
+description = "How PSR-7 HTTP message interfaces let you build genuinely modular PHP applications without tying to one implementation."
+tags = ["PHP", "PSR-7", "Middleware", "Architecture"]
 +++
 
 [PSR-7, the HTTP message interfaces](http://www.php-fig.org/psr/psr-7/) opened

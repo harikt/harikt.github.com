@@ -1,8 +1,9 @@
 +++
-title = "cakephp orm and logging queries"
+title = "CakePHP ORM and Logging Queries"
 date = "2016-01-16"
 slug = "2016/01/16/cakephp-orm-and-logging-queries"
-Categories = []
+description = "How to log every SQL query issued by the standalone cakephp/orm library using cakephp/log."
+tags = ["PHP", "CakePHP", "ORM", "Debugging"]
 +++
 
 Working with [cakephp/orm](http://packagist.org/packages/cakephp/orm) library, I needed to log all the queries.

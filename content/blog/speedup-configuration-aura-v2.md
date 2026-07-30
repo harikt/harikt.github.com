@@ -1,8 +1,9 @@
 +++
-title = "speedup configuration aura v2"
+title = "Speed Up Configuration in Aura v2"
 date = "2014-12-06"
 slug = "2014/12/06/speedup-configuration-aura-v2"
-Categories = []
+description = "Writing dependency injection configuration faster in Aura v2 with FOA.DiConfig, now that auto resolution is going away."
+tags = ["PHP", "Aura", "Dependency Injection"]
 +++
 
 Aura v2 added auto resolution in-order to help lazy people writing configuration manually. Even though it was introduced to help, [it introduced a few issues](https://github.com/auraphp/Aura.Di/blob/2.1.0/README.md#auto-resolution-of-parameter-values).

@@ -1,8 +1,9 @@
 +++
-title = "experimenting on different framework"
+title = "Experimenting With Different PHP Frameworks"
 date = "2015-01-13"
 slug = "2015/01/13/experimenting-on-different-framework"
-Categories = []
+description = "What I look for when evaluating a PHP framework, and why decoupled components win over monoliths."
+tags = ["PHP", "Frameworks", "Architecture"]
 +++
 
 Whenever I get some time, I try to learn and experiment on different frameworks. I would like to stay away from pin pointing to the frameworks I have looked, so they don't feel bad.

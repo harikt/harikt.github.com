@@ -1,8 +1,9 @@
 +++
-title = "conduit middleware for php"
+title = "Conduit: Middleware for PHP"
 date = "2015-01-21"
 slug = "2015/01/21/conduit-middleware-for-php"
-Categories = []
+description = "A look at Conduit, an early PSR-7 middleware micro framework for PHP, and why middleware matters."
+tags = ["PHP", "Middleware", "PSR-7"]
 +++
 
 Long back, I happened to talk with [Beau Simensen](https://beau.io/) about [stackphp](http://stackphp.com/) on #auraphp channel. It was hard for me to digest when I noticed it need `symfony/http-kernel` and its dependencies.

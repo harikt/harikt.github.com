@@ -1,8 +1,9 @@
 +++
-title = "aura framework released"
+title = "Aura Framework Released"
 date = "2013-09-19"
 slug = "2013/09/19/aura-framework-released"
-Categories = []
+description = "Aura ships its first stable framework release, and what working on Aura taught me about how frameworks work."
+tags = ["PHP", "Aura", "Frameworks"]
 +++
 
 It is a great feeling, and one of the happiest moment in my life when 

@@ -1,8 +1,9 @@
 +++
-title = "extending plates with aura html helpers"
+title = "Extending Plates With Aura.Html Helpers"
 date = "2014-05-13"
 slug = "2014/05/13/extending-plates-with-aura-html-helpers"
-Categories = []
+description = "Using Aura.Html escapers and form helpers inside Plates, a native PHP templating system."
+tags = ["PHP", "Aura", "Plates", "Templating"]
 +++
 
 [Aura.Html][] provides HTML escapers and helpers, including form input helpers, 

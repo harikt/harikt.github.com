@@ -1,8 +1,9 @@
 +++
-title = "aura framework v2 the missing manual"
+title = "Aura Framework v2: The Missing Manual"
 date = "2014-07-15"
 slug = "2014/07/15/aura-framework-v2-the-missing-manual"
-Categories = []
+description = "A walkthrough of the Aura v2 library collection and how the pieces fit together into a full framework."
+tags = ["PHP", "Aura", "Frameworks"]
 +++
 
 [Aura](http://auraphp.com) has an awesome collection of 

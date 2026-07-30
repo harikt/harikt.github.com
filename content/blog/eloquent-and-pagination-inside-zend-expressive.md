@@ -1,8 +1,9 @@
 +++
-title = "eloquent and pagination inside zend expressive"
+title = "Eloquent and Pagination Inside Zend Expressive"
 date = "2015-11-13"
 slug = "2015/11/13/eloquent-and-pagination-inside-zend-expressive"
-Categories = []
+description = "Wiring Laravel's Eloquent ORM and its paginator into a Zend Expressive application using middleware."
+tags = ["PHP", "Zend Expressive", "Eloquent", "Middleware"]
 +++
 
 Recently working with eloquent (Laravel's orm), zend expressive and zend view,

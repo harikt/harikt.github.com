@@ -1,8 +1,9 @@
 +++
-title = "frameworks are good"
+title = "Frameworks Are Good"
 date = "2014-01-09"
 slug = "2014/01/09/frameworks-are-good"
-Categories = []
+description = "My take on the framework debate in the PHP community, and why frameworks still earn their place."
+tags = ["PHP", "Frameworks", "Opinion"]
 +++
 
 Some of the recent discussions in the PHP world are  

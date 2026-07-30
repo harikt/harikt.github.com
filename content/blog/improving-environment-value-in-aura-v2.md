@@ -1,8 +1,9 @@
 +++
-title = "improving environment value in aura v2"
+title = "Improving Environment Values in Aura v2"
 date = "2014-12-12"
 slug = "2014/12/12/improving-environment-value-in-aura-v2"
-Categories = []
+description = "Handling environment variables cleanly in the Aura v2 framework with vlucas/phpdotenv."
+tags = ["PHP", "Aura", "Configuration"]
 +++
 
 Aura v2 framework probably have missed a better way to handle environment variables. But that doesn't make you stall. Things can be improved ;-).

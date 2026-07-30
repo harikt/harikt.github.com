@@ -1,8 +1,9 @@
 +++
-title = "composer support for processwire modules"
+title = "Composer Support for ProcessWire Modules"
 date = "2013-11-16"
 slug = "2013/11/16/composer-support-for-processwire-modules"
-Categories = []
+description = "A custom Composer installer that lets you install third party ProcessWire modules with Composer."
+tags = ["PHP", "Composer", "ProcessWire", "CMS"]
 +++
 
 I am a huge fan of [composer][]. [PW][] ( ProcessWire) is missing one of the good parts of [composer][].

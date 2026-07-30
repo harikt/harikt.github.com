@@ -1,8 +1,9 @@
 +++
-title = "standalone form for php"
+title = "Standalone Forms for PHP"
 date = "2013-05-23"
 slug = "2013/05/23/standalone-form-for-php"
-Categories = []
+description = "The most minimal way to build and render a standalone PHP form with the Aura packages."
+tags = ["PHP", "Aura", "Forms"]
 +++
 
 Yesterday I wrote about [Standalone Forms and Validation][]. It may need 

@@ -1,8 +1,9 @@
 +++
-title = "20 years of php"
+title = "20 Years of PHP"
 date = "2015-06-17"
 slug = "2015/06/17/20-years-of-php"
-Categories = []
+description = "Celebrating 20 years of PHP, and my own story of learning the language and joining the PHP community."
+tags = ["PHP", "Community"]
 +++
 
 First my apologies being late! I hope you all know PHP is celebrating its

@@ -1,8 +1,9 @@
 +++
-title = "the book on aura"
+title = "The Book on Aura"
 date = "2013-07-09"
 slug = "2013/07/09/the-book-on-aura"
-Categories = []
+description = "Announcing a community written book showing how the individual Aura packages are used inside the framework."
+tags = ["PHP", "Aura", "Documentation"]
 +++
 
 There has been lot of requests to show how the individual packages 

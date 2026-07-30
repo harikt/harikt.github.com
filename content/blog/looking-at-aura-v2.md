@@ -1,8 +1,9 @@
 +++
-title = "looking at aura v2"
+title = "Looking at Aura v2"
 date = "2013-09-28"
 slug = "2013/09/28/looking-at-aura-v2"
-Categories = []
+description = "An early tour of the standalone packages split out of Aura v1 for the version 2 release."
+tags = ["PHP", "Aura"]
 +++
 
 If you have noticed recently, there have been tons of commits from 

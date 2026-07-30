@@ -1,8 +1,9 @@
 +++
-title = "using aura dispatcher in silex"
+title = "Using Aura.Dispatcher in Silex"
 date = "2013-11-06"
 slug = "2013/11/06/using-aura-dispatcher-in-silex"
-Categories = []
+description = "Replacing the Silex controller resolver with Aura.Dispatcher to dispatch to any callable."
+tags = ["PHP", "Aura", "Silex"]
 +++
 
 2 days back [Paul M Jones](http://paul-m-jones.com/) wrote an awesome post 

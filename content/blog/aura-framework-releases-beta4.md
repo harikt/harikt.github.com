@@ -1,8 +1,9 @@
 +++
-title = "aura framework releases beta4"
+title = "Aura Framework Releases Beta 4"
 date = "2012-12-18"
 slug = "2012/12/18/aura-framework-releases-beta4"
-Categories = []
+description = "Aura.Framework beta 4 extracts the Hello World package into Aura.Demo. Release notes and download links."
+tags = ["PHP", "Aura", "Frameworks"]
 +++
 
 Aura.Framework released Beta4. In this release [Aura.Framework](http://auraphp.github.com/Aura.Framework) has extracted the Hello Word package and renamed it as [Aura.Demo](http://auraphp.github.com/Aura.Demo).

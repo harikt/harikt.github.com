@@ -1,8 +1,9 @@
 +++
-title = "integrating zend form in zend expressive and view"
+title = "Integrating Zend Form in Zend Expressive and Zend View"
 date = "2015-11-13"
 slug = "2015/11/13/integrating-zend-form-in-zend-expressive-and-view"
-Categories = []
+description = "Registering Zend Form and its view helpers in a Zend Expressive application using Aura.Di."
+tags = ["PHP", "Zend Expressive", "Forms", "Dependency Injection"]
 +++
 
 Example is based using [Aura.Di](https://github.com/auraphp/Aura.Di).

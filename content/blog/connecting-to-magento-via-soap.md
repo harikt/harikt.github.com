@@ -1,8 +1,9 @@
 +++
-title = "connecting to magento via soap"
+title = "Connecting to Magento via SOAP"
 date = "2013-07-12"
 slug = "2013/07/12/connecting-to-magento-via-soap"
-Categories = []
+description = "A reusable PHP proxy class for calling the Magento SOAP API to read and write shop data."
+tags = ["PHP", "Magento", "SOAP", "API"]
 +++
 
 In my earlier post I have shown how you can connect to Magento 

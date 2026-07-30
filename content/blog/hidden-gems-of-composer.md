@@ -1,8 +1,9 @@
 +++
-title = "hidden gems of composer"
+title = "Hidden Gems of Composer"
 date = "2014-05-29"
 slug = "2014/05/29/hidden-gems-of-composer"
-Categories = []
+description = "Lesser known Composer features for PHP developers: VCS repositories, patching dependencies and more."
+tags = ["PHP", "Composer", "Tooling"]
 +++
 
 I hope everyone in the PHP world is aware of [composer](https://getcomposer.org) 

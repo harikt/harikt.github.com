@@ -1,8 +1,9 @@
 +++
-title = "using cakephp migration as standalone"
+title = "Using CakePHP Migrations as a Standalone Library"
 date = "2017-03-24"
 slug = "2017/03/24/using-cakephp-migration-as-standalone"
-Categories = []
+description = "Installing and running cakephp/migrations outside CakePHP alongside the standalone cakephp/orm."
+tags = ["PHP", "CakePHP", "Database", "Migrations"]
 +++
 
 Cakephp version 3 have a nice ORM. When using the `cakephp/orm`,

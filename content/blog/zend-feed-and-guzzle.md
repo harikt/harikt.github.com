@@ -1,8 +1,9 @@
 +++
-title = "zend feed and guzzle"
+title = "Zend Feed and Guzzle"
 date = "2015-04-01"
 slug = "2015/04/01/zend-feed-and-guzzle"
-Categories = []
+description = "Using Guzzle as the HTTP client behind the standalone Zend Feed component."
+tags = ["PHP", "Zend Framework", "Guzzle", "HTTP"]
 +++
 
 You may have worked with Zend Feed as a standalone component.

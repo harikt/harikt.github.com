@@ -1,8 +1,9 @@
 +++
-title = "installing aura framework project via composer"
+title = "Installing an Aura Framework Project via Composer"
 date = "2014-04-29"
 slug = "2014/04/29/installing-aura-framework-project-via-composer"
-Categories = []
+description = "How to create a new Aura framework v2 project with a single Composer create-project command."
+tags = ["PHP", "Aura", "Composer", "Tutorial"]
 +++
 
 In this tutorial I am showing how to install aura framework project v2 

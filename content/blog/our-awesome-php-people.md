@@ -1,8 +1,9 @@
 +++
-title = "our awesome php people"
+title = "Our Awesome PHP People"
 date = "2013-01-09"
 slug = "2013/01/09/our-awesome-php-people"
-Categories = []
+description = "A look at the GitHub contribution graphs of some of the most prolific developers in the PHP community."
+tags = ["PHP", "Community", "Open Source"]
 +++
 
 Recently github introduces contributions chart. So I peeped into some of the people of our php community. It seems [@fabpot](https://github.com/fabpot) is the one who contributes almost every day. Just 21 days without any contribution.

@@ -1,8 +1,9 @@
 +++
-title = "assets for processwire"
+title = "Assets for ProcessWire"
 date = "2013-11-08"
 slug = "2013/11/08/assets-for-processwire"
-Categories = []
+description = "How to move the assets directory of a ProcessWire installation and keep the site directory structure clean."
+tags = ["PHP", "ProcessWire", "CMS"]
 +++
 
 [Processwire](http://processwire.com/) is a content management framework.

@@ -1,8 +1,9 @@
 +++
-title = "custom events in symfony2 bundle"
+title = "Custom Events in a Symfony2 Bundle"
 date = "2015-10-11"
 slug = "2015/10/11/custom-events-in-symfony2-bundle"
-Categories = []
+description = "A step by step tutorial on creating and dispatching custom events inside your own Symfony2 bundle."
+tags = ["PHP", "Symfony", "Events"]
 +++
 
 In this tutorial we will create a custom event for symfony2 bundle. 

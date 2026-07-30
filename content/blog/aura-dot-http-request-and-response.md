@@ -1,8 +1,9 @@
 +++
-title = "aura dot http request and response"
+title = "Aura.Http Request and Response"
 date = "2013-02-16"
 slug = "2013/02/16/aura-dot-http-request-and-response"
-Categories = []
+description = "Building and sending HTTP requests and responses in PHP with the standalone Aura.Http package."
+tags = ["PHP", "Aura", "HTTP"]
 +++
 
 The `Aura.Http` package provide you the tool to build and send request and response.

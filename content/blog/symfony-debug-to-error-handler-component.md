@@ -1,6 +1,8 @@
 ---
 title: "Symfony Debug to Error Handler Component"
 date: 2019-11-29T01:04:31+05:30
+description: "Migrating from the deprecated symfony/debug component to symfony/error-handler in Symfony 4.4 and later."
+tags: ["PHP", "Symfony", "Debugging"]
 ---
 
 Since symfony 4.4 the `symfony/debug` component is deprecated.

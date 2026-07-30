@@ -1,8 +1,9 @@
 +++
-title = "aura turns 2"
+title = "Aura Turns 2"
 date = "2013-02-22"
 slug = "2013/02/22/aura-turns-2"
-Categories = []
+description = "The Aura project turns two years old, and a look at the new standalone packages under active development."
+tags = ["PHP", "Aura"]
 +++
 
 Looking over [the commits on Aura.Router][], [Aura.Signal][] etc you will 

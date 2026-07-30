@@ -1,8 +1,9 @@
 +++
-title = "getting started with aura v2"
+title = "Getting Started With Aura v2"
 date = "2014-10-06"
 slug = "2014/10/06/getting-started-with-aura-v2"
-Categories = []
+description = "A five minute quick start for the newly stable Aura framework v2: install, route, dispatch and render."
+tags = ["PHP", "Aura", "Tutorial"]
 +++
 
 Yesterday [aura framework v2 stable released](http://auraphp.com/blog/2014/10/05/stable-project-releases/).

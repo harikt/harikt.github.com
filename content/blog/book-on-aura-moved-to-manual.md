@@ -1,8 +1,9 @@
 +++
-title = "book on aura moved to manual"
+title = "The Book on Aura Moves to the Manual"
 date = "2013-09-07"
 slug = "2013/09/07/book-on-aura-moved-to-manual"
-Categories = []
+description = "The community-written Book on Aura is folded into the official manual, with translations and pull requests."
+tags = ["PHP", "Aura", "Documentation"]
 +++
 
 Some days back I wrote about a WIP of 

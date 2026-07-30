@@ -1,8 +1,9 @@
 +++
-title = "cakephp orm and illuminate pagination"
+title = "CakePHP ORM and Illuminate Pagination"
 date = "2016-01-13"
 slug = "2016/01/13/cakephp-orm-and-illuminate-pagination"
-Categories = []
+description = "Using the standalone CakePHP 3 ORM together with Laravel's Illuminate pagination component."
+tags = ["PHP", "CakePHP", "ORM", "Laravel"]
 +++
 
 Do you know CakePHP version 3 has a lovely ORM which can be used as standalone?

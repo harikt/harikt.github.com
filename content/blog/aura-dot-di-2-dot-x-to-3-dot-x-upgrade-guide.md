@@ -1,8 +1,9 @@
 +++
-title = "aura dot di 2 dot x to 3 dot x upgrade guide"
+title = "Aura.Di 2.x to 3.x Upgrade Guide"
 date = "2016-03-15"
 slug = "2016/03/15/aura-dot-di-2-dot-x-to-3-dot-x-upgrade-guide"
-Categories = []
+description = "A practical upgrade guide covering every backwards compatibility break between Aura.Di 2.x and 3.x."
+tags = ["PHP", "Aura", "Dependency Injection"]
 +++
 
 3.x has a very minimal BC break. But if you are not sure what are they, then you may feel the pain.

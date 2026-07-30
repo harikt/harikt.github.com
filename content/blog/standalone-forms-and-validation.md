@@ -1,8 +1,9 @@
 +++
-title = "standalone forms and validation"
+title = "Standalone Forms and Validation in PHP"
 date = "2013-05-21"
 slug = "2013/05/21/standalone-forms-and-validation"
-Categories = []
+description = "Combining Aura.Input, Aura.Filter and Aura.View to build a PHP form with validation, without a framework."
+tags = ["PHP", "Aura", "Forms", "Validation"]
 +++
 
 Update : I wrote a very minimal approach [here][]

@@ -1,8 +1,9 @@
 +++
-title = "rest is delete idempotent"
+title = "REST: Is DELETE Idempotent?"
 date = "2013-11-01"
 slug = "2013/11/01/rest-is-delete-idempotent"
-Categories = []
+description = "Thinking through whether HTTP DELETE is really idempotent, and what that means for REST API design."
+tags = ["REST", "HTTP", "API", "Architecture"]
 +++
 
 This post is a thrive to learn, and not to show anyone is incorrect. 

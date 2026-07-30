@@ -1,8 +1,9 @@
 +++
-title = "composer support for processwire part 2"
+title = "Composer Support for ProcessWire, Part 2"
 date = "2013-11-19"
 slug = "2013/11/19/composer-support-for-processwire-part-2"
-Categories = []
+description = "Installing ProcessWire modules with Composer even when the upstream repository has no composer.json."
+tags = ["PHP", "Composer", "ProcessWire", "CMS"]
 +++
 
 In my [earlier post](http://harikt.com/blog/2013/11/16/composer-support-for-processwire-modules/)

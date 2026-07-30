@@ -1,8 +1,9 @@
 +++
-title = "thoughts on package or component"
+title = "Thoughts on Packages and Components"
 date = "2013-01-04"
 slug = "2013/01/04/thoughts-on-package-or-component"
-Categories = []
+description = "What separates a good reusable PHP package from a framework in disguise, and why the distinction matters."
+tags = ["PHP", "Architecture", "Open Source"]
 +++
 
 Comparing a software X with Y will not make anything worst, but makes it better. But many of them will think it as a promotional stuff. It is not anyones's problem. Some like to build it that way, some like the other way.

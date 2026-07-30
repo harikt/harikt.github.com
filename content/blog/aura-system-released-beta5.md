@@ -1,8 +1,9 @@
 +++
-title = "aura system released beta5"
+title = "Aura System Released Beta 5"
 date = "2013-05-25"
 slug = "2013/05/25/aura-system-released-beta5"
-Categories = []
+description = "Aura system beta 5 is tagged. How to install it via Composer or a direct download."
+tags = ["PHP", "Aura", "Composer"]
 +++
 
 Yesterday Paul M Jones tagged the beta5 for the system repo.

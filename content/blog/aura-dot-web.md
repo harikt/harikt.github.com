@@ -1,8 +1,9 @@
 +++
-title = "aura dot web"
+title = "Aura.Web: A Page Controller for MVC"
 date = "2013-06-04"
 slug = "2013/06/04/aura-dot-web"
-Categories = []
+description = "An introduction to Aura.Web, a standalone PHP page controller you can use to build your own MVC framework."
+tags = ["PHP", "Aura", "MVC"]
 +++
 
 If you are new to the concept of MVC, or if you are planning to build your 
