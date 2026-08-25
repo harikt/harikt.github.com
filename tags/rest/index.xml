@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>REST on Hari KT — Full Stack Developer</title>
-    <link>https://harikt.com/tags/rest/</link>
-    <description>Recent content in REST on Hari KT — Full Stack Developer</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-GB</language>
-    <copyright>© 2026 Hari KT</copyright>
-    <lastBuildDate>Fri, 01 Nov 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://harikt.com/tags/rest/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>REST: Is DELETE Idempotent?</title>
-      <link>https://harikt.com/blog/2013/11/01/rest-is-delete-idempotent/</link>
-      <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://harikt.com/blog/2013/11/01/rest-is-delete-idempotent/</guid>
-      <description>&lt;p&gt;This post is a thrive to learn, and not to show anyone is incorrect.&#xA;Feel free to share your thoughts.&lt;/p&gt;&#xA;&lt;p&gt;Lukas Kahwe Smith was having a nice post&#xA;&lt;a href=&#34;https://blog.liip.ch/archive/2013/10/28/resting-with-symfony2.html&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;RESTing with Symfony2&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Quoting a few words from the post on REST&lt;/p&gt;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;DELETE and 404&#xA;    &lt;div id=&#34;delete-and-404&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#delete-and-404&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;blockquote&gt;&lt;p&gt;I started my talk on RESTing with Symfony2 with an introduction to REST itself.&#xA;On slide 7 of my talk I explained the concept of &amp;ldquo;safe&amp;rdquo; and&#xA;&amp;ldquo;idempotent&amp;rdquo; HTTP methods. Many people were surprised when I explained&#xA;that DELETE should be idempotent, meaning that sending a DELETE request&#xA;to a resource that has been removed should infact not return a 404.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Magento and the REST API</title>
-      <link>https://harikt.com/blog/2013/07/05/magento-and-rest-api/</link>
-      <pubDate>Fri, 05 Jul 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://harikt.com/blog/2013/07/05/magento-and-rest-api/</guid>
-      <description>&lt;p&gt;Magento provides both REST and SOAP api. In this post I would like to&#xA;concentrate on REST api to connect and get the products from magento shop.&lt;/p&gt;&#xA;&lt;p&gt;First we want to register an Oauth consumer to get the consumer key and secret key.&lt;/p&gt;&#xA;&lt;p&gt;Login to the admin of the magento shop and from the menu&#xA;&lt;code&gt;System-&amp;gt;Web Services-&amp;gt;REST - Oauth Consumers&lt;/code&gt; and add a new Ouath consumer.&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure&gt;&lt;img&#xA;    class=&#34;my-0 rounded-md&#34;&#xA;    loading=&#34;lazy&#34;&#xA;    decoding=&#34;async&#34;&#xA;    fetchpriority=&#34;low&#34;&#xA;    alt=&#34;REST - Oauth Consumers&#34;&#xA;    src=&#34;http://harikt.com/images/oauth-consumer.png&#34;&#xA;    &gt;&lt;/figure&gt;&#xA;&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
+	<channel>
+		<title>REST on Hari KT — Full Stack Developer</title>
+		<link>https://harikt.com/tags/rest/</link>
+		<description>Recent content in REST on Hari KT — Full Stack Developer</description>
+		<generator>Hugo</generator>
+		<language>en-GB</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 01 Nov 2013 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://harikt.com/tags/rest/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>REST: Is DELETE Idempotent?</title>
+				<link>https://harikt.com/blog/2013/11/01/rest-is-delete-idempotent/</link>
+				<pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
+				<guid>https://harikt.com/blog/2013/11/01/rest-is-delete-idempotent/</guid>
+				<description>&lt;p&gt;This post is a thrive to learn, and not to show anyone is incorrect.&#xA;Feel free to share your thoughts.&lt;/p&gt;&#xA;&lt;p&gt;Lukas Kahwe Smith was having a nice post&#xA;&lt;a href=&#34;https://blog.liip.ch/archive/2013/10/28/resting-with-symfony2.html&#34;&gt;RESTing with Symfony2&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Quoting a few words from the post on REST&lt;/p&gt;&#xA;&lt;h2 id=&#34;delete-and-404&#34;&gt;DELETE and 404&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;I started my talk on RESTing with Symfony2 with an introduction to REST itself.&#xA;On slide 7 of my talk I explained the concept of &amp;ldquo;safe&amp;rdquo; and&#xA;&amp;ldquo;idempotent&amp;rdquo; HTTP methods. Many people were surprised when I explained&#xA;that DELETE should be idempotent, meaning that sending a DELETE request&#xA;to a resource that has been removed should infact not return a 404.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Magento and the REST API</title>
+				<link>https://harikt.com/blog/2013/07/05/magento-and-rest-api/</link>
+				<pubDate>Fri, 05 Jul 2013 00:00:00 +0000</pubDate>
+				<guid>https://harikt.com/blog/2013/07/05/magento-and-rest-api/</guid>
+				<description>&lt;p&gt;Magento provides both REST and SOAP api. In this post I would like to&#xA;concentrate on REST api to connect and get the products from magento shop.&lt;/p&gt;&#xA;&lt;p&gt;First we want to register an Oauth consumer to get the consumer key and secret key.&lt;/p&gt;&#xA;&lt;p&gt;Login to the admin of the magento shop and from the menu&#xA;&lt;code&gt;System-&amp;gt;Web Services-&amp;gt;REST - Oauth Consumers&lt;/code&gt; and add a new Ouath consumer.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://harikt.com/images/oauth-consumer.png&#34; alt=&#34;REST - Oauth Consumers&#34;&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

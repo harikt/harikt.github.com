@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>MVC on Hari KT — Full Stack Developer</title>
-    <link>https://harikt.com/tags/mvc/</link>
-    <description>Recent content in MVC on Hari KT — Full Stack Developer</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-GB</language>
-    <copyright>© 2026 Hari KT</copyright>
-    <lastBuildDate>Tue, 04 Jun 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://harikt.com/tags/mvc/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Aura.Web: A Page Controller for MVC</title>
-      <link>https://harikt.com/blog/2013/06/04/aura-dot-web/</link>
-      <pubDate>Tue, 04 Jun 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://harikt.com/blog/2013/06/04/aura-dot-web/</guid>
-      <description>&lt;p&gt;If you are new to the concept of MVC, or if you are planning to build your&#xA;own framework, probably Aura.Web help you to do the same.&lt;/p&gt;&#xA;&lt;p&gt;Here is the article in phpmaster.com &lt;a href=&#34;http://phpmaster.com/aura-web-auras-page-controller-for-mvc/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.Web: Aura’s Page Controller for MVC&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Probably you may also like the article &lt;a href=&#34;http://phpmaster.com/web-routing-in-php-with-aura-router/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Web Routing in PHP with Aura.Router&lt;/a&gt;.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
+	<channel>
+		<title>MVC on Hari KT — Full Stack Developer</title>
+		<link>https://harikt.com/tags/mvc/</link>
+		<description>Recent content in MVC on Hari KT — Full Stack Developer</description>
+		<generator>Hugo</generator>
+		<language>en-GB</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 04 Jun 2013 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://harikt.com/tags/mvc/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Aura.Web: A Page Controller for MVC</title>
+				<link>https://harikt.com/blog/2013/06/04/aura-dot-web/</link>
+				<pubDate>Tue, 04 Jun 2013 00:00:00 +0000</pubDate>
+				<guid>https://harikt.com/blog/2013/06/04/aura-dot-web/</guid>
+				<description>&lt;p&gt;If you are new to the concept of MVC, or if you are planning to build your&#xA;own framework, probably Aura.Web help you to do the same.&lt;/p&gt;&#xA;&lt;p&gt;Here is the article in phpmaster.com &lt;a href=&#34;http://phpmaster.com/aura-web-auras-page-controller-for-mvc/&#34;&gt;Aura.Web: Aura’s Page Controller for MVC&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Probably you may also like the article &lt;a href=&#34;http://phpmaster.com/web-routing-in-php-with-aura-router/&#34;&gt;Web Routing in PHP with Aura.Router&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

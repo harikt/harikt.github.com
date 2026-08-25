@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Migrations on Hari KT — Full Stack Developer</title>
-    <link>https://harikt.com/tags/migrations/</link>
-    <description>Recent content in Migrations on Hari KT — Full Stack Developer</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-GB</language>
-    <copyright>© 2026 Hari KT</copyright>
-    <lastBuildDate>Fri, 24 Mar 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://harikt.com/tags/migrations/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Using CakePHP Migrations as a Standalone Library</title>
-      <link>https://harikt.com/blog/2017/03/24/using-cakephp-migration-as-standalone/</link>
-      <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://harikt.com/blog/2017/03/24/using-cakephp-migration-as-standalone/</guid>
-      <description>&lt;p&gt;Cakephp version 3 have a nice ORM. When using the &lt;code&gt;cakephp/orm&lt;/code&gt;,&#xA;it may be nice to integrate &lt;code&gt;cakephp/migration&lt;/code&gt; than any other migration&#xA;libraries, even though it uses phinx under the hood.&lt;/p&gt;&#xA;&lt;p&gt;Lets see how we can install and integrate &lt;code&gt;cakephp/migration&lt;/code&gt; in our application.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight-wrapper&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;composer require cakephp/migrations:dev-master&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;/div&gt;&#xA;&lt;blockquote&gt;&lt;p&gt;The dev-master is currently passed for we need the latest version of master branch.&#xA;Before &lt;a href=&#34;https://github.com/cakephp/migrations/pull/308&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;this pull request&lt;/a&gt;, it was&#xA;having dependency on &lt;code&gt;cakephp/cakephp&lt;/code&gt;, which is not needed.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Migrations on Hari KT — Full Stack Developer</title>
+		<link>https://harikt.com/tags/migrations/</link>
+		<description>Recent content in Migrations on Hari KT — Full Stack Developer</description>
+		<generator>Hugo</generator>
+		<language>en-GB</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 24 Mar 2017 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://harikt.com/tags/migrations/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Using CakePHP Migrations as a Standalone Library</title>
+				<link>https://harikt.com/blog/2017/03/24/using-cakephp-migration-as-standalone/</link>
+				<pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
+				<guid>https://harikt.com/blog/2017/03/24/using-cakephp-migration-as-standalone/</guid>
+				<description>&lt;p&gt;Cakephp version 3 have a nice ORM. When using the &lt;code&gt;cakephp/orm&lt;/code&gt;,&#xA;it may be nice to integrate &lt;code&gt;cakephp/migration&lt;/code&gt; than any other migration&#xA;libraries, even though it uses phinx under the hood.&lt;/p&gt;&#xA;&lt;p&gt;Lets see how we can install and integrate &lt;code&gt;cakephp/migration&lt;/code&gt; in our application.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;composer require cakephp/migrations:dev-master&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;blockquote&gt;&#xA;&lt;p&gt;The dev-master is currently passed for we need the latest version of master branch.&#xA;Before &lt;a href=&#34;https://github.com/cakephp/migrations/pull/308&#34;&gt;this pull request&lt;/a&gt;, it was&#xA;having dependency on &lt;code&gt;cakephp/cakephp&lt;/code&gt;, which is not needed.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

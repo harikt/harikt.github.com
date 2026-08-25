@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Laravel on Hari KT — Full Stack Developer</title>
-    <link>https://harikt.com/tags/laravel/</link>
-    <description>Recent content in Laravel on Hari KT — Full Stack Developer</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-GB</language>
-    <copyright>© 2026 Hari KT</copyright>
-    <lastBuildDate>Wed, 13 Jan 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://harikt.com/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>CakePHP ORM and Illuminate Pagination</title>
-      <link>https://harikt.com/blog/2016/01/13/cakephp-orm-and-illuminate-pagination/</link>
-      <pubDate>Wed, 13 Jan 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://harikt.com/blog/2016/01/13/cakephp-orm-and-illuminate-pagination/</guid>
-      <description>&lt;p&gt;Do you know CakePHP version 3 has a lovely ORM which can be used as standalone?&lt;/p&gt;&#xA;&lt;p&gt;Thank you &lt;a href=&#34;https://github.com/lorenzo&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;José Lorenzo Rodríguez&lt;/a&gt; and every contributor, for your hard work.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight-wrapper&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;composer require cakephp/orm&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;/div&gt;&#xA;&lt;p&gt;That&amp;rsquo;s it.&lt;/p&gt;&#xA;&lt;p&gt;Working on I noticed I need to do some pagination. Oh, remember we have &lt;code&gt;illuminate/pagination&lt;/code&gt;. Why not use it?&lt;/p&gt;&#xA;&lt;p&gt;Problem, there seems no one have implemented it. How could we achieve it?&#xA;Lets do it.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight-wrapper&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;composer require illuminate/pagination&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;/div&gt;&#xA;&lt;p&gt;If you are using a psr-7 request / response here is the middleware for you.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Laravel on Hari KT — Full Stack Developer</title>
+		<link>https://harikt.com/tags/laravel/</link>
+		<description>Recent content in Laravel on Hari KT — Full Stack Developer</description>
+		<generator>Hugo</generator>
+		<language>en-GB</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 13 Jan 2016 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://harikt.com/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>CakePHP ORM and Illuminate Pagination</title>
+				<link>https://harikt.com/blog/2016/01/13/cakephp-orm-and-illuminate-pagination/</link>
+				<pubDate>Wed, 13 Jan 2016 00:00:00 +0000</pubDate>
+				<guid>https://harikt.com/blog/2016/01/13/cakephp-orm-and-illuminate-pagination/</guid>
+				<description>&lt;p&gt;Do you know CakePHP version 3 has a lovely ORM which can be used as standalone?&lt;/p&gt;&#xA;&lt;p&gt;Thank you &lt;a href=&#34;https://github.com/lorenzo&#34;&gt;José Lorenzo Rodríguez&lt;/a&gt; and every contributor, for your hard work.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;composer require cakephp/orm&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;That&amp;rsquo;s it.&lt;/p&gt;&#xA;&lt;p&gt;Working on I noticed I need to do some pagination. Oh, remember we have &lt;code&gt;illuminate/pagination&lt;/code&gt;. Why not use it?&lt;/p&gt;&#xA;&lt;p&gt;Problem, there seems no one have implemented it. How could we achieve it?&#xA;Lets do it.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;composer require illuminate/pagination&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;If you are using a psr-7 request / response here is the middleware for you.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

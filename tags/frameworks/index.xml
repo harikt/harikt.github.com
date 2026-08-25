@@ -1,63 +1,52 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Frameworks on Hari KT — Full Stack Developer</title>
-    <link>https://harikt.com/tags/frameworks/</link>
-    <description>Recent content in Frameworks on Hari KT — Full Stack Developer</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-GB</language>
-    <copyright>© 2026 Hari KT</copyright>
-    <lastBuildDate>Tue, 13 Jan 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://harikt.com/tags/frameworks/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Experimenting With Different PHP Frameworks</title>
-      <link>https://harikt.com/blog/2015/01/13/experimenting-on-different-framework/</link>
-      <pubDate>Tue, 13 Jan 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://harikt.com/blog/2015/01/13/experimenting-on-different-framework/</guid>
-      <description>&lt;p&gt;Whenever I get some time, I try to learn and experiment on different frameworks. I would like to stay away from pin pointing to the frameworks I have looked, so they don&amp;rsquo;t feel bad.&lt;/p&gt;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Long live components&#xA;    &lt;div id=&#34;long-live-components&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#long-live-components&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Components are awesome!. You can plug your favourite components to any system. Thank you composer.&#xA;One strong preference choosing a framework was&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Aura Framework v2: The Missing Manual</title>
-      <link>https://harikt.com/blog/2014/07/15/aura-framework-v2-the-missing-manual/</link>
-      <pubDate>Tue, 15 Jul 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://harikt.com/blog/2014/07/15/aura-framework-v2-the-missing-manual/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://auraphp.com&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura&lt;/a&gt; has an awesome collection of&#xA;&lt;a href=&#34;https://github.com/auraphp&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;libraries&lt;/a&gt; for different purpose.&lt;/p&gt;&#xA;&lt;p&gt;It has components for&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Auth&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;authentication&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Cli&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;cli&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Web&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;request and response&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Router&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;router&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Router&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;dependency injection container&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Dispatcher&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;dispatcher&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Html&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;html&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.View&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;view&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Signal&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;event handlers&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Filter&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;validation&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Sql&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;extended pdo&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.SqlQuery&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;query builders&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.SqlSchema&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;sql schema&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Marshal&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;marshal&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Uri&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;build and modify uri&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Http&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;http&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Intl&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;internationalization&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Session&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;session&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Input&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;forms&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Include&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;includer&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;If you are new to aura, there is probably something you&#xA;may want to figure out yourself.&lt;/p&gt;&#xA;&lt;p&gt;Some of the components have &lt;a href=&#34;http://auraphp.com/packages/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;version 1&lt;/a&gt; and&#xA;&lt;a href=&#34;http://auraphp.com/packages/v2&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;version 2&lt;/a&gt; releases.&#xA;There is a question of which branch corresponds to which version.&lt;/p&gt;&#xA;&lt;p&gt;The v1 packages are in &lt;code&gt;develop&lt;/code&gt; branch and v2 over &lt;code&gt;develop-2&lt;/code&gt; branch.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Frameworks Are Good</title>
-      <link>https://harikt.com/blog/2014/01/09/frameworks-are-good/</link>
-      <pubDate>Thu, 09 Jan 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://harikt.com/blog/2014/01/09/frameworks-are-good/</guid>
-      <description>&lt;p&gt;Some of the recent discussions in the PHP world are&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://philsturgeon.co.uk/blog/2014/01/the-tribal-framework-mindset&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;The Tribal Framework Mindset&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://adamwathan.me/2014/01/05/decoupling-your-packages-from-your-framework&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Decoupling your packages from your framework&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.brandonsavage.net/you-dont-need-a-framework/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;You don’t need a framework&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://afilina.com/frameworks-for-everyone/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Frameworks for everyone&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Framework is not a bad idea&#xA;    &lt;div id=&#34;framework-is-not-a-bad-idea&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#framework-is-not-a-bad-idea&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;If you don&amp;rsquo;t use a framework, probably you will be using a bunch&#xA;of independent libraries glued together or some code which&#xA;help you to achieve your task.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Aura Framework Released</title>
-      <link>https://harikt.com/blog/2013/09/19/aura-framework-released/</link>
-      <pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://harikt.com/blog/2013/09/19/aura-framework-released/</guid>
-      <description>&lt;p&gt;It is a great feeling, and one of the happiest moment in my life when&#xA;&lt;a href=&#34;http://auraphp.com/blog/2013/09/18/aura-framework-stable-system-release/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;aura releases its stable framework&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Aura is one of my first framework, which helped me to learn the inner&#xA;working of a framework, how to create a framework, rather than playing&#xA;with full stack framework.&lt;/p&gt;&#xA;&lt;p&gt;If you are interested to learn or contribute in the next version of Aura&#xA;&lt;a href=&#34;http://groups.google.com/group/auraphp&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;join the group&lt;/a&gt;.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Aura Framework Releases Beta 4</title>
-      <link>https://harikt.com/blog/2012/12/18/aura-framework-releases-beta4/</link>
-      <pubDate>Tue, 18 Dec 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://harikt.com/blog/2012/12/18/aura-framework-releases-beta4/</guid>
-      <description>&lt;p&gt;Aura.Framework released Beta4. In this release &lt;a href=&#34;http://auraphp.github.com/Aura.Framework&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.Framework&lt;/a&gt; has extracted the Hello Word package and renamed it as &lt;a href=&#34;http://auraphp.github.com/Aura.Demo&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.Demo&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;You can get the system as a whole from &lt;a href=&#34;http://auraphp.github.com/system/downloads/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;http://auraphp.github.com/system/downloads/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Read about the release from &lt;a href=&#34;http://auraphp.github.com/2012/12/18/new-system-release/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;blog post&lt;/a&gt; and join discussion at &lt;a href=&#34;https://groups.google.com/d/topic/auraphp/uPsSK7OqOoI/discussion&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;auraphp group&lt;/a&gt;&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Frameworks on Hari KT — Full Stack Developer</title>
+		<link>https://harikt.com/tags/frameworks/</link>
+		<description>Recent content in Frameworks on Hari KT — Full Stack Developer</description>
+		<generator>Hugo</generator>
+		<language>en-GB</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 13 Jan 2015 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://harikt.com/tags/frameworks/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Experimenting With Different PHP Frameworks</title>
+				<link>https://harikt.com/blog/2015/01/13/experimenting-on-different-framework/</link>
+				<pubDate>Tue, 13 Jan 2015 00:00:00 +0000</pubDate>
+				<guid>https://harikt.com/blog/2015/01/13/experimenting-on-different-framework/</guid>
+				<description>&lt;p&gt;Whenever I get some time, I try to learn and experiment on different frameworks. I would like to stay away from pin pointing to the frameworks I have looked, so they don&amp;rsquo;t feel bad.&lt;/p&gt;&#xA;&lt;h2 id=&#34;long-live-components&#34;&gt;Long live components&lt;/h2&gt;&#xA;&lt;p&gt;Components are awesome!. You can plug your favourite components to any system. Thank you composer.&#xA;One strong preference choosing a framework was&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;It should be built from components&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;advantage&#34;&gt;Advantage&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;I could use those components on a different project without spending long time learning a different API.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;choosing-symfony-as-a-framework&#34;&gt;Choosing Symfony as a framework&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Symfony framework have been used in production for long, big community, and backed by Sensio Labs.&lt;/li&gt;&#xA;&lt;li&gt;Many of the libraries, cms and frameowrks that exists on packagist rely on symfony components.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Look at &lt;a href=&#34;http://phinx.org&#34;&gt;phinx&lt;/a&gt; a db migration tool, &lt;a href=&#34;https://drupal.org&#34;&gt;drupal 8&lt;/a&gt; etc. These makes use of components like &lt;code&gt;symfony/console&lt;/code&gt;, &lt;code&gt;symfony/http-foundation&lt;/code&gt;, &lt;code&gt;symfony/router&lt;/code&gt; etc.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Aura Framework v2: The Missing Manual</title>
+				<link>https://harikt.com/blog/2014/07/15/aura-framework-v2-the-missing-manual/</link>
+				<pubDate>Tue, 15 Jul 2014 00:00:00 +0000</pubDate>
+				<guid>https://harikt.com/blog/2014/07/15/aura-framework-v2-the-missing-manual/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;http://auraphp.com&#34;&gt;Aura&lt;/a&gt; has an awesome collection of&#xA;&lt;a href=&#34;https://github.com/auraphp&#34;&gt;libraries&lt;/a&gt; for different purpose.&lt;/p&gt;&#xA;&lt;p&gt;It has components for&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Auth&#34;&gt;authentication&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Cli&#34;&gt;cli&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Web&#34;&gt;request and response&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Router&#34;&gt;router&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Router&#34;&gt;dependency injection container&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Dispatcher&#34;&gt;dispatcher&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Html&#34;&gt;html&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.View&#34;&gt;view&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Signal&#34;&gt;event handlers&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Filter&#34;&gt;validation&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Sql&#34;&gt;extended pdo&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.SqlQuery&#34;&gt;query builders&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.SqlSchema&#34;&gt;sql schema&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Marshal&#34;&gt;marshal&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Uri&#34;&gt;build and modify uri&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Http&#34;&gt;http&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Intl&#34;&gt;internationalization&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Session&#34;&gt;session&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Input&#34;&gt;forms&lt;/a&gt;,&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Include&#34;&gt;includer&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;If you are new to aura, there is probably something you&#xA;may want to figure out yourself.&lt;/p&gt;&#xA;&lt;p&gt;Some of the components have &lt;a href=&#34;http://auraphp.com/packages/&#34;&gt;version 1&lt;/a&gt; and&#xA;&lt;a href=&#34;http://auraphp.com/packages/v2&#34;&gt;version 2&lt;/a&gt; releases.&#xA;There is a question of which branch corresponds to which version.&lt;/p&gt;&#xA;&lt;p&gt;The v1 packages are in &lt;code&gt;develop&lt;/code&gt; branch and v2 over &lt;code&gt;develop-2&lt;/code&gt; branch.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Frameworks Are Good</title>
+				<link>https://harikt.com/blog/2014/01/09/frameworks-are-good/</link>
+				<pubDate>Thu, 09 Jan 2014 00:00:00 +0000</pubDate>
+				<guid>https://harikt.com/blog/2014/01/09/frameworks-are-good/</guid>
+				<description>&lt;p&gt;Some of the recent discussions in the PHP world are&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://philsturgeon.co.uk/blog/2014/01/the-tribal-framework-mindset&#34;&gt;The Tribal Framework Mindset&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://adamwathan.me/2014/01/05/decoupling-your-packages-from-your-framework&#34;&gt;Decoupling your packages from your framework&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.brandonsavage.net/you-dont-need-a-framework/&#34;&gt;You don’t need a framework&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://afilina.com/frameworks-for-everyone/&#34;&gt;Frameworks for everyone&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;framework-is-not-a-bad-idea&#34;&gt;Framework is not a bad idea&lt;/h2&gt;&#xA;&lt;p&gt;If you don&amp;rsquo;t use a framework, probably you will be using a bunch&#xA;of independent libraries glued together or some code which&#xA;help you to achieve your task.&lt;/p&gt;&#xA;&lt;p&gt;Whether we use a framework or independent library, our ultimate aim&#xA;is building the right product for our customer.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Aura Framework Released</title>
+				<link>https://harikt.com/blog/2013/09/19/aura-framework-released/</link>
+				<pubDate>Thu, 19 Sep 2013 00:00:00 +0000</pubDate>
+				<guid>https://harikt.com/blog/2013/09/19/aura-framework-released/</guid>
+				<description>&lt;p&gt;It is a great feeling, and one of the happiest moment in my life when&#xA;&lt;a href=&#34;http://auraphp.com/blog/2013/09/18/aura-framework-stable-system-release/&#34;&gt;aura releases its stable framework&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Aura is one of my first framework, which helped me to learn the inner&#xA;working of a framework, how to create a framework, rather than playing&#xA;with full stack framework.&lt;/p&gt;&#xA;&lt;p&gt;If you are interested to learn or contribute in the next version of Aura&#xA;&lt;a href=&#34;http://groups.google.com/group/auraphp&#34;&gt;join the group&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Aura Framework Releases Beta 4</title>
+				<link>https://harikt.com/blog/2012/12/18/aura-framework-releases-beta4/</link>
+				<pubDate>Tue, 18 Dec 2012 00:00:00 +0000</pubDate>
+				<guid>https://harikt.com/blog/2012/12/18/aura-framework-releases-beta4/</guid>
+				<description>&lt;p&gt;Aura.Framework released Beta4. In this release &lt;a href=&#34;http://auraphp.github.com/Aura.Framework&#34;&gt;Aura.Framework&lt;/a&gt; has extracted the Hello Word package and renamed it as &lt;a href=&#34;http://auraphp.github.com/Aura.Demo&#34;&gt;Aura.Demo&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;You can get the system as a whole from &lt;a href=&#34;http://auraphp.github.com/system/downloads/&#34;&gt;http://auraphp.github.com/system/downloads/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Read about the release from &lt;a href=&#34;http://auraphp.github.com/2012/12/18/new-system-release/&#34;&gt;blog post&lt;/a&gt; and join discussion at &lt;a href=&#34;https://groups.google.com/d/topic/auraphp/uPsSK7OqOoI/discussion&#34;&gt;auraphp group&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

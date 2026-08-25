@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Configuration on Hari KT — Full Stack Developer</title>
-    <link>https://harikt.com/tags/configuration/</link>
-    <description>Recent content in Configuration on Hari KT — Full Stack Developer</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-GB</language>
-    <copyright>© 2026 Hari KT</copyright>
-    <lastBuildDate>Fri, 12 Dec 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://harikt.com/tags/configuration/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Improving Environment Values in Aura v2</title>
-      <link>https://harikt.com/blog/2014/12/12/improving-environment-value-in-aura-v2/</link>
-      <pubDate>Fri, 12 Dec 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://harikt.com/blog/2014/12/12/improving-environment-value-in-aura-v2/</guid>
-      <description>&lt;p&gt;Aura v2 framework probably have missed a better way to handle environment variables. But that doesn&amp;rsquo;t make you stall. Things can be improved ;-).&lt;/p&gt;&#xA;&lt;blockquote&gt;&lt;p&gt;Assume you are already using aura framework and is at root of the project.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&lt;p&gt;We are going to make use of &lt;a href=&#34;https://github.com/vlucas/phpdotenv&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;vlucas/phpdotenv&lt;/a&gt; , alternatives are there if you are interested to experiment.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight-wrapper&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;composer require vlucas/phpdotenv&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;/div&gt;&#xA;&lt;p&gt;Edit the file &lt;code&gt;config/_env.php&lt;/code&gt; and add &lt;code&gt;Dotenv::load(/path/to/.env);&lt;/code&gt; to the first line. If you have not modified anything it will look as below&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Configuration on Hari KT — Full Stack Developer</title>
+		<link>https://harikt.com/tags/configuration/</link>
+		<description>Recent content in Configuration on Hari KT — Full Stack Developer</description>
+		<generator>Hugo</generator>
+		<language>en-GB</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 12 Dec 2014 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://harikt.com/tags/configuration/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Improving Environment Values in Aura v2</title>
+				<link>https://harikt.com/blog/2014/12/12/improving-environment-value-in-aura-v2/</link>
+				<pubDate>Fri, 12 Dec 2014 00:00:00 +0000</pubDate>
+				<guid>https://harikt.com/blog/2014/12/12/improving-environment-value-in-aura-v2/</guid>
+				<description>&lt;p&gt;Aura v2 framework probably have missed a better way to handle environment variables. But that doesn&amp;rsquo;t make you stall. Things can be improved ;-).&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Assume you are already using aura framework and is at root of the project.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;We are going to make use of &lt;a href=&#34;https://github.com/vlucas/phpdotenv&#34;&gt;vlucas/phpdotenv&lt;/a&gt; , alternatives are there if you are interested to experiment.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;composer require vlucas/phpdotenv&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;Edit the file &lt;code&gt;config/_env.php&lt;/code&gt; and add &lt;code&gt;Dotenv::load(/path/to/.env);&lt;/code&gt; to the first line. If you have not modified anything it will look as below&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

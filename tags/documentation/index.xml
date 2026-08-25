@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Documentation on Hari KT — Full Stack Developer</title>
-    <link>https://harikt.com/tags/documentation/</link>
-    <description>Recent content in Documentation on Hari KT — Full Stack Developer</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-GB</language>
-    <copyright>© 2026 Hari KT</copyright>
-    <lastBuildDate>Sat, 07 Sep 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://harikt.com/tags/documentation/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>The Book on Aura Moves to the Manual</title>
-      <link>https://harikt.com/blog/2013/09/07/book-on-aura-moved-to-manual/</link>
-      <pubDate>Sat, 07 Sep 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://harikt.com/blog/2013/09/07/book-on-aura-moved-to-manual/</guid>
-      <description>&lt;p&gt;Some days back I wrote about a WIP of&#xA;&lt;a href=&#34;http://harikt.com/blog/2013/07/09/the-book-on-aura/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;The Book on Aura&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;It got some attention and pull requests.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/koriym/the-book-on-aura-ja&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Akihito Koriyama&lt;/a&gt;&#xA;have already started to convert the documentation to Japanese.&lt;/p&gt;&#xA;&lt;p&gt;And today I am happy to announce that it is officially going to the&#xA;manuals.&lt;/p&gt;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Contributing&#xA;    &lt;div id=&#34;contributing&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#contributing&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Fork&#xA;&lt;a href=&#34;https://github.com/auraphp/auraphp.github.com&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;https://github.com/auraphp/auraphp.github.com&lt;/a&gt;&#xA;and contribute to the manuals.&lt;/p&gt;&#xA;&lt;p&gt;The manuals are in different languages. Currently&lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/koriym/the-book-on-aura-ja&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Akihito Koriyama&lt;/a&gt;&#xA;is working on Japanese translation.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>The Book on Aura</title>
-      <link>https://harikt.com/blog/2013/07/09/the-book-on-aura/</link>
-      <pubDate>Tue, 09 Jul 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://harikt.com/blog/2013/07/09/the-book-on-aura/</guid>
-      <description>&lt;p&gt;There has been lot of requests to show how the individual packages&#xA;in aura, can be made use inside the framework.&lt;/p&gt;&#xA;&lt;p&gt;So today I am happy to announce that there is a work in progress&#xA;to make the framework documentation better. I have already started&#xA;the work on the same.&lt;/p&gt;&#xA;&lt;p&gt;You can &lt;a href=&#34;http://auraphp.com/manuals/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;read the chapters online&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The examples used in the book are also online at&lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/harikt/Example.Package&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;https://github.com/harikt/Example.Package&lt;/a&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&lt;p&gt;I hope Something is better than nothing.&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Documentation on Hari KT — Full Stack Developer</title>
+		<link>https://harikt.com/tags/documentation/</link>
+		<description>Recent content in Documentation on Hari KT — Full Stack Developer</description>
+		<generator>Hugo</generator>
+		<language>en-GB</language>
+		
+		
+		
+		
+			<lastBuildDate>Sat, 07 Sep 2013 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://harikt.com/tags/documentation/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>The Book on Aura Moves to the Manual</title>
+				<link>https://harikt.com/blog/2013/09/07/book-on-aura-moved-to-manual/</link>
+				<pubDate>Sat, 07 Sep 2013 00:00:00 +0000</pubDate>
+				<guid>https://harikt.com/blog/2013/09/07/book-on-aura-moved-to-manual/</guid>
+				<description>&lt;p&gt;Some days back I wrote about a WIP of&#xA;&lt;a href=&#34;http://harikt.com/blog/2013/07/09/the-book-on-aura/&#34;&gt;The Book on Aura&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;It got some attention and pull requests.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/koriym/the-book-on-aura-ja&#34;&gt;Akihito Koriyama&lt;/a&gt;&#xA;have already started to convert the documentation to Japanese.&lt;/p&gt;&#xA;&lt;p&gt;And today I am happy to announce that it is officially going to the&#xA;manuals.&lt;/p&gt;&#xA;&lt;h2 id=&#34;contributing&#34;&gt;Contributing&lt;/h2&gt;&#xA;&lt;p&gt;Fork&#xA;&lt;a href=&#34;https://github.com/auraphp/auraphp.github.com&#34;&gt;https://github.com/auraphp/auraphp.github.com&lt;/a&gt;&#xA;and contribute to the manuals.&lt;/p&gt;&#xA;&lt;p&gt;The manuals are in different languages. Currently&lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/koriym/the-book-on-aura-ja&#34;&gt;Akihito Koriyama&lt;/a&gt;&#xA;is working on Japanese translation.&lt;/p&gt;&#xA;&lt;p&gt;We are aware some parts of the manual needs a rewrite / more explanation.&#xA;If you are interested to learn and contribute get in touch via&#xA;&lt;a href=&#34;http://groups.google.com/group/auraphp&#34;&gt;http://groups.google.com/group/auraphp&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>The Book on Aura</title>
+				<link>https://harikt.com/blog/2013/07/09/the-book-on-aura/</link>
+				<pubDate>Tue, 09 Jul 2013 00:00:00 +0000</pubDate>
+				<guid>https://harikt.com/blog/2013/07/09/the-book-on-aura/</guid>
+				<description>&lt;p&gt;There has been lot of requests to show how the individual packages&#xA;in aura, can be made use inside the framework.&lt;/p&gt;&#xA;&lt;p&gt;So today I am happy to announce that there is a work in progress&#xA;to make the framework documentation better. I have already started&#xA;the work on the same.&lt;/p&gt;&#xA;&lt;p&gt;You can &lt;a href=&#34;http://auraphp.com/manuals/&#34;&gt;read the chapters online&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The examples used in the book are also online at&lt;br&gt;&#xA;&lt;a href=&#34;https://github.com/harikt/Example.Package&#34;&gt;https://github.com/harikt/Example.Package&lt;/a&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;I hope Something is better than nothing.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

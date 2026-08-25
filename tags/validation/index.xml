@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Validation on Hari KT — Full Stack Developer</title>
-    <link>https://harikt.com/tags/validation/</link>
-    <description>Recent content in Validation on Hari KT — Full Stack Developer</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-GB</language>
-    <copyright>© 2026 Hari KT</copyright>
-    <lastBuildDate>Tue, 21 May 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://harikt.com/tags/validation/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Standalone Forms and Validation in PHP</title>
-      <link>https://harikt.com/blog/2013/05/21/standalone-forms-and-validation/</link>
-      <pubDate>Tue, 21 May 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://harikt.com/blog/2013/05/21/standalone-forms-and-validation/</guid>
-      <description>&lt;p&gt;Update : I wrote a very minimal approach &lt;a href=&#34;http://harikt.com/blog/2013/05/23/standalone-form-for-php/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;here&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Recently &lt;a href=&#34;http://auraphp.com/Aura.Input/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.Input&lt;/a&gt; was tagged Beta1. I would like to show you how you&#xA;can use &lt;a href=&#34;http://auraphp.com/Aura.Input/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.Input&lt;/a&gt;, &lt;a href=&#34;http://auraphp.com/Aura.Filter/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.Filter&lt;/a&gt; and &lt;a href=&#34;http://auraphp.com/Aura.View/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.View&lt;/a&gt; to create form.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;http://auraphp.com/Aura.Input/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.Input&lt;/a&gt; itself contains a basic filter implementation. As shown&#xA;in earlier post &lt;a href=&#34;http://harikt.com/blog/2013/02/22/aura-turns-2/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura Turns 2&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;But in this post let us use the power of &lt;a href=&#34;http://auraphp.com/Aura.Filter/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.Filter&lt;/a&gt;. As &lt;a href=&#34;http://auraphp.com/Aura.Input/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.Input&lt;/a&gt;&#xA;doesn&amp;rsquo;t have a rendering capability you may need to use &lt;a href=&#34;http://auraphp.com/Aura.View/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.View&lt;/a&gt; as&#xA;templating system ( see Using Aura.View ) or use the helper classes provided by &lt;a href=&#34;http://auraphp.com/Aura.View/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.View&lt;/a&gt;&#xA;( see below Without using Aura.View completely )&#xA;or create your own helper classes to render the same from the hints&#xA;( see Hints for the view ).&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Validation on Hari KT — Full Stack Developer</title>
+		<link>https://harikt.com/tags/validation/</link>
+		<description>Recent content in Validation on Hari KT — Full Stack Developer</description>
+		<generator>Hugo</generator>
+		<language>en-GB</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 21 May 2013 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://harikt.com/tags/validation/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Standalone Forms and Validation in PHP</title>
+				<link>https://harikt.com/blog/2013/05/21/standalone-forms-and-validation/</link>
+				<pubDate>Tue, 21 May 2013 00:00:00 +0000</pubDate>
+				<guid>https://harikt.com/blog/2013/05/21/standalone-forms-and-validation/</guid>
+				<description>&lt;p&gt;Update : I wrote a very minimal approach &lt;a href=&#34;http://harikt.com/blog/2013/05/23/standalone-form-for-php/&#34;&gt;here&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Recently &lt;a href=&#34;http://auraphp.com/Aura.Input/&#34;&gt;Aura.Input&lt;/a&gt; was tagged Beta1. I would like to show you how you&#xA;can use &lt;a href=&#34;http://auraphp.com/Aura.Input/&#34;&gt;Aura.Input&lt;/a&gt;, &lt;a href=&#34;http://auraphp.com/Aura.Filter/&#34;&gt;Aura.Filter&lt;/a&gt; and &lt;a href=&#34;http://auraphp.com/Aura.View/&#34;&gt;Aura.View&lt;/a&gt; to create form.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;http://auraphp.com/Aura.Input/&#34;&gt;Aura.Input&lt;/a&gt; itself contains a basic filter implementation. As shown&#xA;in earlier post &lt;a href=&#34;http://harikt.com/blog/2013/02/22/aura-turns-2/&#34;&gt;Aura Turns 2&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;But in this post let us use the power of &lt;a href=&#34;http://auraphp.com/Aura.Filter/&#34;&gt;Aura.Filter&lt;/a&gt;. As &lt;a href=&#34;http://auraphp.com/Aura.Input/&#34;&gt;Aura.Input&lt;/a&gt;&#xA;doesn&amp;rsquo;t have a rendering capability you may need to use &lt;a href=&#34;http://auraphp.com/Aura.View/&#34;&gt;Aura.View&lt;/a&gt; as&#xA;templating system ( see Using Aura.View ) or use the helper classes provided by &lt;a href=&#34;http://auraphp.com/Aura.View/&#34;&gt;Aura.View&lt;/a&gt;&#xA;( see below Without using Aura.View completely )&#xA;or create your own helper classes to render the same from the hints&#xA;( see Hints for the view ).&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

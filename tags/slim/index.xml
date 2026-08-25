@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Slim on Hari KT — Full Stack Developer</title>
-    <link>https://harikt.com/tags/slim/</link>
-    <description>Recent content in Slim on Hari KT — Full Stack Developer</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-GB</language>
-    <copyright>© 2026 Hari KT</copyright>
-    <lastBuildDate>Tue, 02 Sep 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://harikt.com/tags/slim/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Using Aura.Input Forms Inside Slim Framework</title>
-      <link>https://harikt.com/blog/2014/09/02/aura-input-form-inside-slim-framework/</link>
-      <pubDate>Tue, 02 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://harikt.com/blog/2014/09/02/aura-input-form-inside-slim-framework/</guid>
-      <description>&lt;p&gt;Rob Allen wrote about &lt;a href=&#34;http://akrabat.com/zend-framework-2/integrating-zf2-forms-into-slim/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Integrating ZF2 forms into Slim&lt;/a&gt;.&#xA;I did write how you can use &lt;a href=&#34;https://github.com/auraphp/Aura.Input/tree/develop&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.Input&lt;/a&gt; and &lt;a href=&#34;https://github.com/auraphp/Aura.Html&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.Html&lt;/a&gt; to create &lt;a href=&#34;http://harikt.com/phpform/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;standalone form for PHP&lt;/a&gt;.&#xA;This time I felt I should write about integrating aura input inside &lt;a href=&#34;http://slimframework.com/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Slim&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Let us install a few dependencies &lt;code&gt;aura/input&lt;/code&gt; for building the form and&#xA;&lt;code&gt;aura/html&lt;/code&gt; for the html helpers. You of-course can skip not to use &lt;code&gt;aura/html&lt;/code&gt;&#xA;and build your own helper. I also purposefully left not integrating the powerful&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Filter/tree/develop&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.Filter&lt;/a&gt; , but you&#xA;are not limited to integrate any validator you love inside Aura.Input .&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
+	<channel>
+		<title>Slim on Hari KT — Full Stack Developer</title>
+		<link>https://harikt.com/tags/slim/</link>
+		<description>Recent content in Slim on Hari KT — Full Stack Developer</description>
+		<generator>Hugo</generator>
+		<language>en-GB</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 02 Sep 2014 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://harikt.com/tags/slim/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Using Aura.Input Forms Inside Slim Framework</title>
+				<link>https://harikt.com/blog/2014/09/02/aura-input-form-inside-slim-framework/</link>
+				<pubDate>Tue, 02 Sep 2014 00:00:00 +0000</pubDate>
+				<guid>https://harikt.com/blog/2014/09/02/aura-input-form-inside-slim-framework/</guid>
+				<description>&lt;p&gt;Rob Allen wrote about &lt;a href=&#34;http://akrabat.com/zend-framework-2/integrating-zf2-forms-into-slim/&#34;&gt;Integrating ZF2 forms into Slim&lt;/a&gt;.&#xA;I did write how you can use &lt;a href=&#34;https://github.com/auraphp/Aura.Input/tree/develop&#34;&gt;Aura.Input&lt;/a&gt; and &lt;a href=&#34;https://github.com/auraphp/Aura.Html&#34;&gt;Aura.Html&lt;/a&gt; to create &lt;a href=&#34;http://harikt.com/phpform/&#34;&gt;standalone form for PHP&lt;/a&gt;.&#xA;This time I felt I should write about integrating aura input inside &lt;a href=&#34;http://slimframework.com/&#34;&gt;Slim&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Let us install a few dependencies &lt;code&gt;aura/input&lt;/code&gt; for building the form and&#xA;&lt;code&gt;aura/html&lt;/code&gt; for the html helpers. You of-course can skip not to use &lt;code&gt;aura/html&lt;/code&gt;&#xA;and build your own helper. I also purposefully left not integrating the powerful&#xA;&lt;a href=&#34;https://github.com/auraphp/Aura.Filter/tree/develop&#34;&gt;Aura.Filter&lt;/a&gt; , but you&#xA;are not limited to integrate any validator you love inside Aura.Input .&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>
