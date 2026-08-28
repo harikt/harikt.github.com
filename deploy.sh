@@ -1,4 +1,3 @@
-
 #!/bin/sh
 
 if [ "`git status -s`" ]
@@ -17,6 +16,16 @@ fi
 
 echo "Deploying from branch: $CURRENT_BRANCH"
 
+echo "Ensuring theme submodules are checked out"
+git submodule update --init --recursive || exit 1
+
+THEME=$(sed -n 's/^theme *= *"\(.*\)"/\1/p' hugo.toml)
+if [ -n "$THEME" ] && [ ! -f "themes/$THEME/theme.toml" ]; then
+    echo "Error: theme '$THEME' is missing or empty in themes/$THEME."
+    echo "Run: git submodule update --init --recursive"
+    exit 1;
+fi
+
 echo "Deleting old publication"
 rm -rf public
 mkdir public
@@ -30,7 +39,19 @@ echo "Removing existing files"
 rm -rf public/*
 
 echo "Generating site"
-hugo
+hugo || exit 1
+
+if [ ! -f public/index.html ]; then
+    echo "Error: build produced no public/index.html - refusing to publish."
+    exit 1;
+fi
+
+HTML_COUNT=$(find public -name '*.html' | wc -l | tr -d ' ')
+if [ "$HTML_COUNT" -lt 10 ]; then
+    echo "Error: build produced only $HTML_COUNT HTML files - refusing to publish."
+    exit 1;
+fi
+echo "Build looks sane: $HTML_COUNT HTML files"
 
 echo "Updating master branch"
 cd public && git add --all && git commit -m "Publishing to master (deploy.sh)"
