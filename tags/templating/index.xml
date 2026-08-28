@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Templating on Hari KT — Full Stack Developer</title>
-		<link>https://harikt.com/tags/templating/</link>
-		<description>Recent content in Templating on Hari KT — Full Stack Developer</description>
-		<generator>Hugo</generator>
-		<language>en-GB</language>
-		
-		
-		
-		
-			<lastBuildDate>Tue, 13 May 2014 00:00:00 +0000</lastBuildDate>
-		
-			<atom:link href="https://harikt.com/tags/templating/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>Extending Plates With Aura.Html Helpers</title>
-				<link>https://harikt.com/blog/2014/05/13/extending-plates-with-aura-html-helpers/</link>
-				<pubDate>Tue, 13 May 2014 00:00:00 +0000</pubDate>
-				<guid>https://harikt.com/blog/2014/05/13/extending-plates-with-aura-html-helpers/</guid>
-				<description>&lt;p&gt;&lt;a href=&#34;https://github.com/auraphp/Aura.Html&#34;&gt;Aura.Html&lt;/a&gt; provides HTML escapers and helpers, including form input helpers,&#xA;that can be used in any template, view, or presentation system.&lt;/p&gt;&#xA;&lt;p&gt;In this post I would like to give you a short introduction to Aura.Html&#xA;and how you could use with &lt;a href=&#34;http://platesphp.com&#34;&gt;Plates&lt;/a&gt; a native php templating system like &lt;a href=&#34;https://github.com/auraphp/Aura.View&#34;&gt;Aura.View&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/auraphp/Aura.Html&#34;&gt;Aura.Html&lt;/a&gt; was extracted from &lt;a href=&#34;https://github.com/auraphp/Aura.View&#34;&gt;Aura.View&lt;/a&gt; helper functions of version 1,&#xA;when we at aura noticed that people who uses &lt;a href=&#34;https://github.com/auraphp/Aura.Input&#34;&gt;Aura.Input&lt;/a&gt; may need some html helper&#xA;functions and they may not be using a templating like &lt;a href=&#34;https://github.com/auraphp/Aura.View&#34;&gt;Aura.View&lt;/a&gt;,&#xA;but some other templating system.&lt;/p&gt;</description>
-			</item>
-	</channel>
+  <channel>
+    <title>Templating on Hari KT — Full Stack Developer</title>
+    <link>https://harikt.com/tags/templating/</link>
+    <description>Recent content in Templating on Hari KT — Full Stack Developer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>© 2026 Hari KT</copyright>
+    <lastBuildDate>Tue, 13 May 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://harikt.com/tags/templating/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Extending Plates With Aura.Html Helpers</title>
+      <link>https://harikt.com/blog/2014/05/13/extending-plates-with-aura-html-helpers/</link>
+      <pubDate>Tue, 13 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2014/05/13/extending-plates-with-aura-html-helpers/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/auraphp/Aura.Html&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.Html&lt;/a&gt; provides HTML escapers and helpers, including form input helpers,&#xA;that can be used in any template, view, or presentation system.&lt;/p&gt;&#xA;&lt;p&gt;In this post I would like to give you a short introduction to Aura.Html&#xA;and how you could use with &lt;a href=&#34;http://platesphp.com&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Plates&lt;/a&gt; a native php templating system like &lt;a href=&#34;https://github.com/auraphp/Aura.View&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.View&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/auraphp/Aura.Html&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.Html&lt;/a&gt; was extracted from &lt;a href=&#34;https://github.com/auraphp/Aura.View&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.View&lt;/a&gt; helper functions of version 1,&#xA;when we at aura noticed that people who uses &lt;a href=&#34;https://github.com/auraphp/Aura.Input&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.Input&lt;/a&gt; may need some html helper&#xA;functions and they may not be using a templating like &lt;a href=&#34;https://github.com/auraphp/Aura.View&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.View&lt;/a&gt;,&#xA;but some other templating system.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
 </rss>

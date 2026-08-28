@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Silex on Hari KT — Full Stack Developer</title>
-		<link>https://harikt.com/tags/silex/</link>
-		<description>Recent content in Silex on Hari KT — Full Stack Developer</description>
-		<generator>Hugo</generator>
-		<language>en-GB</language>
-		
-		
-		
-		
-			<lastBuildDate>Wed, 06 Nov 2013 00:00:00 +0000</lastBuildDate>
-		
-			<atom:link href="https://harikt.com/tags/silex/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>Using Aura.Dispatcher in Silex</title>
-				<link>https://harikt.com/blog/2013/11/06/using-aura-dispatcher-in-silex/</link>
-				<pubDate>Wed, 06 Nov 2013 00:00:00 +0000</pubDate>
-				<guid>https://harikt.com/blog/2013/11/06/using-aura-dispatcher-in-silex/</guid>
-				<description>&lt;p&gt;2 days back &lt;a href=&#34;http://paul-m-jones.com/&#34;&gt;Paul M Jones&lt;/a&gt; wrote an awesome post&#xA;&lt;a href=&#34;http://auraphp.com/blog/2013/11/04/aura-v2-dispatcher/&#34;&gt;A Peek At Aura v2 &amp;ndash; Aura.Dispatcher&lt;/a&gt;&#xA;the idea behind &lt;a href=&#34;http://github.com/auraphp/Aura.Dispatcher/&#34;&gt;Aura.Dispatcher&lt;/a&gt;&#xA;and how it was born.&lt;/p&gt;&#xA;&lt;p&gt;So today, let us try to integrate&#xA;&lt;a href=&#34;http://github.com/auraphp/Aura.Dispatcher&#34;&gt;Aura.Dispatcher&lt;/a&gt; with&#xA;&lt;a href=&#34;https://github.com/silexphp/Silex&#34;&gt;Silex&lt;/a&gt;. This post is inspired by the&#xA;&lt;a href=&#34;http://auraphp.com/blog/2013/11/04/aura-v2-dispatcher/#comment-1109657910&#34;&gt;comment&lt;/a&gt;&#xA;made by &lt;a href=&#34;https://twitter.com/cordoval&#34;&gt;Luis Cordova&lt;/a&gt;. Thank you.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;composer create-project silex/silex --no-dev silexproject&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; silexproject&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;composer require aura/dispatcher dev-develop-2&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;blockquote&gt;&#xA;&lt;p&gt;I hope you have composer installed else &lt;a href=&#34;http://getcomposer.org/&#34;&gt;get composer&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;I am not going to explain each and everything, the code is self explanatory.&#xA;You can move the classes according to your wish (may be to another folder).&#xA;I am trying to show a simple use case.&lt;/p&gt;</description>
-			</item>
-	</channel>
+  <channel>
+    <title>Silex on Hari KT — Full Stack Developer</title>
+    <link>https://harikt.com/tags/silex/</link>
+    <description>Recent content in Silex on Hari KT — Full Stack Developer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>© 2026 Hari KT</copyright>
+    <lastBuildDate>Wed, 06 Nov 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://harikt.com/tags/silex/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Using Aura.Dispatcher in Silex</title>
+      <link>https://harikt.com/blog/2013/11/06/using-aura-dispatcher-in-silex/</link>
+      <pubDate>Wed, 06 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2013/11/06/using-aura-dispatcher-in-silex/</guid>
+      <description>&lt;p&gt;2 days back &lt;a href=&#34;http://paul-m-jones.com/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Paul M Jones&lt;/a&gt; wrote an awesome post&#xA;&lt;a href=&#34;http://auraphp.com/blog/2013/11/04/aura-v2-dispatcher/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;A Peek At Aura v2 &amp;ndash; Aura.Dispatcher&lt;/a&gt;&#xA;the idea behind &lt;a href=&#34;http://github.com/auraphp/Aura.Dispatcher/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.Dispatcher&lt;/a&gt;&#xA;and how it was born.&lt;/p&gt;&#xA;&lt;p&gt;So today, let us try to integrate&#xA;&lt;a href=&#34;http://github.com/auraphp/Aura.Dispatcher&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.Dispatcher&lt;/a&gt; with&#xA;&lt;a href=&#34;https://github.com/silexphp/Silex&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Silex&lt;/a&gt;. This post is inspired by the&#xA;&lt;a href=&#34;http://auraphp.com/blog/2013/11/04/aura-v2-dispatcher/#comment-1109657910&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;comment&lt;/a&gt;&#xA;made by &lt;a href=&#34;https://twitter.com/cordoval&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Luis Cordova&lt;/a&gt;. Thank you.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight-wrapper&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;composer create-project silex/silex --no-dev silexproject&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; silexproject&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;composer require aura/dispatcher dev-develop-2&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;/div&gt;&#xA;&lt;blockquote&gt;&lt;p&gt;I hope you have composer installed else &lt;a href=&#34;http://getcomposer.org/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;get composer&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&lt;p&gt;I am not going to explain each and everything, the code is self explanatory.&#xA;You can move the classes according to your wish (may be to another folder).&#xA;I am trying to show a simple use case.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
 </rss>

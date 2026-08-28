@@ -1,45 +1,53 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Architecture on Hari KT — Full Stack Developer</title>
-		<link>https://harikt.com/tags/architecture/</link>
-		<description>Recent content in Architecture on Hari KT — Full Stack Developer</description>
-		<generator>Hugo</generator>
-		<language>en-GB</language>
-		
-		
-		
-		
-			<lastBuildDate>Fri, 24 Mar 2017 00:00:00 +0000</lastBuildDate>
-		
-			<atom:link href="https://harikt.com/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>Building Modular Applications With PSR-7</title>
-				<link>https://harikt.com/blog/2017/03/24/building-modular-applications-with-psr-7/</link>
-				<pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
-				<guid>https://harikt.com/blog/2017/03/24/building-modular-applications-with-psr-7/</guid>
-				<description>&lt;p&gt;&lt;a href=&#34;http://www.php-fig.org/psr/psr-7/&#34;&gt;PSR-7, the HTTP message interfaces&lt;/a&gt; opened&#xA;a new door of creating modular applications.&lt;/p&gt;&#xA;&lt;p&gt;Sadly many of the PSR-7 implementations added many helper methods.&lt;/p&gt;&#xA;&lt;p&gt;So if someone is creating a library that needs a PSR-7 implementations they tie&#xA;the particular library with the PSR-7 implementation and use these convinient helper methods.&lt;/p&gt;&#xA;&lt;p&gt;So was &lt;a href=&#34;https://github.com/http-interop/http-middleware&#34;&gt;PSR-15: interfaces for HTTP Middleware&lt;/a&gt;&#xA;and &lt;a href=&#34;https://github.com/http-interop/http-factory&#34;&gt;PSR-17: interfaces for HTTP Factories&lt;/a&gt;&#xA;was proposed.&lt;/p&gt;&#xA;&lt;p&gt;When creating a module one of the most challenging part is how to serve the&#xA;javascript, css and images. We are going to use&#xA;&lt;a href=&#34;github.com/harikt/psr7-asset&#34;&gt;hkt/psr7-asset&lt;/a&gt; which is a fork of&#xA;&lt;a href=&#34;https://github.com/friendsofaura/Aura.Asset_Bundle/&#34;&gt;Aura.Asset_Bundle&lt;/a&gt; .&#xA;What you want to do is only map the path to the assets folder.&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>Experimenting With Different PHP Frameworks</title>
-				<link>https://harikt.com/blog/2015/01/13/experimenting-on-different-framework/</link>
-				<pubDate>Tue, 13 Jan 2015 00:00:00 +0000</pubDate>
-				<guid>https://harikt.com/blog/2015/01/13/experimenting-on-different-framework/</guid>
-				<description>&lt;p&gt;Whenever I get some time, I try to learn and experiment on different frameworks. I would like to stay away from pin pointing to the frameworks I have looked, so they don&amp;rsquo;t feel bad.&lt;/p&gt;&#xA;&lt;h2 id=&#34;long-live-components&#34;&gt;Long live components&lt;/h2&gt;&#xA;&lt;p&gt;Components are awesome!. You can plug your favourite components to any system. Thank you composer.&#xA;One strong preference choosing a framework was&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;It should be built from components&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;advantage&#34;&gt;Advantage&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;I could use those components on a different project without spending long time learning a different API.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;choosing-symfony-as-a-framework&#34;&gt;Choosing Symfony as a framework&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Symfony framework have been used in production for long, big community, and backed by Sensio Labs.&lt;/li&gt;&#xA;&lt;li&gt;Many of the libraries, cms and frameowrks that exists on packagist rely on symfony components.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Look at &lt;a href=&#34;http://phinx.org&#34;&gt;phinx&lt;/a&gt; a db migration tool, &lt;a href=&#34;https://drupal.org&#34;&gt;drupal 8&lt;/a&gt; etc. These makes use of components like &lt;code&gt;symfony/console&lt;/code&gt;, &lt;code&gt;symfony/http-foundation&lt;/code&gt;, &lt;code&gt;symfony/router&lt;/code&gt; etc.&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>REST: Is DELETE Idempotent?</title>
-				<link>https://harikt.com/blog/2013/11/01/rest-is-delete-idempotent/</link>
-				<pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
-				<guid>https://harikt.com/blog/2013/11/01/rest-is-delete-idempotent/</guid>
-				<description>&lt;p&gt;This post is a thrive to learn, and not to show anyone is incorrect.&#xA;Feel free to share your thoughts.&lt;/p&gt;&#xA;&lt;p&gt;Lukas Kahwe Smith was having a nice post&#xA;&lt;a href=&#34;https://blog.liip.ch/archive/2013/10/28/resting-with-symfony2.html&#34;&gt;RESTing with Symfony2&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Quoting a few words from the post on REST&lt;/p&gt;&#xA;&lt;h2 id=&#34;delete-and-404&#34;&gt;DELETE and 404&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;I started my talk on RESTing with Symfony2 with an introduction to REST itself.&#xA;On slide 7 of my talk I explained the concept of &amp;ldquo;safe&amp;rdquo; and&#xA;&amp;ldquo;idempotent&amp;rdquo; HTTP methods. Many people were surprised when I explained&#xA;that DELETE should be idempotent, meaning that sending a DELETE request&#xA;to a resource that has been removed should infact not return a 404.&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>Thoughts on Packages and Components</title>
-				<link>https://harikt.com/blog/2013/01/04/thoughts-on-package-or-component/</link>
-				<pubDate>Fri, 04 Jan 2013 00:00:00 +0000</pubDate>
-				<guid>https://harikt.com/blog/2013/01/04/thoughts-on-package-or-component/</guid>
-				<description>&lt;p&gt;Comparing a software X with Y will not make anything worst, but makes it better. But many of them will think it as a promotional stuff. It is not anyones&amp;rsquo;s problem. Some like to build it that way, some like the other way.&lt;/p&gt;&#xA;&lt;p&gt;So I am not comparing X with Y here.&lt;/p&gt;&#xA;&lt;p&gt;Not talking about package like Guzzle:&lt;/p&gt;&#xA;&lt;p&gt;I am not mentioning building something like Guzzle, which is a framework that includes the tools needed to create a robust web service client.&lt;/p&gt;</description>
-			</item>
-	</channel>
+  <channel>
+    <title>Architecture on Hari KT — Full Stack Developer</title>
+    <link>https://harikt.com/tags/architecture/</link>
+    <description>Recent content in Architecture on Hari KT — Full Stack Developer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>© 2026 Hari KT</copyright>
+    <lastBuildDate>Fri, 24 Mar 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://harikt.com/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Building Modular Applications With PSR-7</title>
+      <link>https://harikt.com/blog/2017/03/24/building-modular-applications-with-psr-7/</link>
+      <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2017/03/24/building-modular-applications-with-psr-7/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.php-fig.org/psr/psr-7/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;PSR-7, the HTTP message interfaces&lt;/a&gt; opened&#xA;a new door of creating modular applications.&lt;/p&gt;&#xA;&lt;p&gt;Sadly many of the PSR-7 implementations added many helper methods.&lt;/p&gt;&#xA;&lt;p&gt;So if someone is creating a library that needs a PSR-7 implementations they tie&#xA;the particular library with the PSR-7 implementation and use these convinient helper methods.&lt;/p&gt;&#xA;&lt;p&gt;So was &lt;a href=&#34;https://github.com/http-interop/http-middleware&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;PSR-15: interfaces for HTTP Middleware&lt;/a&gt;&#xA;and &lt;a href=&#34;https://github.com/http-interop/http-factory&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;PSR-17: interfaces for HTTP Factories&lt;/a&gt;&#xA;was proposed.&lt;/p&gt;&#xA;&lt;p&gt;When creating a module one of the most challenging part is how to serve the&#xA;javascript, css and images. We are going to use&#xA;&lt;a href=&#34;github.com/harikt/psr7-asset&#34; &gt;hkt/psr7-asset&lt;/a&gt; which is a fork of&#xA;&lt;a href=&#34;https://github.com/friendsofaura/Aura.Asset_Bundle/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;Aura.Asset_Bundle&lt;/a&gt; .&#xA;What you want to do is only map the path to the assets folder.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Experimenting With Different PHP Frameworks</title>
+      <link>https://harikt.com/blog/2015/01/13/experimenting-on-different-framework/</link>
+      <pubDate>Tue, 13 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2015/01/13/experimenting-on-different-framework/</guid>
+      <description>&lt;p&gt;Whenever I get some time, I try to learn and experiment on different frameworks. I would like to stay away from pin pointing to the frameworks I have looked, so they don&amp;rsquo;t feel bad.&lt;/p&gt;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;Long live components&#xA;    &lt;div id=&#34;long-live-components&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#long-live-components&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Components are awesome!. You can plug your favourite components to any system. Thank you composer.&#xA;One strong preference choosing a framework was&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>REST: Is DELETE Idempotent?</title>
+      <link>https://harikt.com/blog/2013/11/01/rest-is-delete-idempotent/</link>
+      <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2013/11/01/rest-is-delete-idempotent/</guid>
+      <description>&lt;p&gt;This post is a thrive to learn, and not to show anyone is incorrect.&#xA;Feel free to share your thoughts.&lt;/p&gt;&#xA;&lt;p&gt;Lukas Kahwe Smith was having a nice post&#xA;&lt;a href=&#34;https://blog.liip.ch/archive/2013/10/28/resting-with-symfony2.html&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;RESTing with Symfony2&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Quoting a few words from the post on REST&lt;/p&gt;&#xA;&#xA;&lt;h2 class=&#34;relative group&#34;&gt;DELETE and 404&#xA;    &lt;div id=&#34;delete-and-404&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;&#xA;        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#delete-and-404&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;&#xA;    &#xA;&lt;/h2&gt;&#xA;&lt;blockquote&gt;&lt;p&gt;I started my talk on RESTing with Symfony2 with an introduction to REST itself.&#xA;On slide 7 of my talk I explained the concept of &amp;ldquo;safe&amp;rdquo; and&#xA;&amp;ldquo;idempotent&amp;rdquo; HTTP methods. Many people were surprised when I explained&#xA;that DELETE should be idempotent, meaning that sending a DELETE request&#xA;to a resource that has been removed should infact not return a 404.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Thoughts on Packages and Components</title>
+      <link>https://harikt.com/blog/2013/01/04/thoughts-on-package-or-component/</link>
+      <pubDate>Fri, 04 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://harikt.com/blog/2013/01/04/thoughts-on-package-or-component/</guid>
+      <description>&lt;p&gt;Comparing a software X with Y will not make anything worst, but makes it better. But many of them will think it as a promotional stuff. It is not anyones&amp;rsquo;s problem. Some like to build it that way, some like the other way.&lt;/p&gt;&#xA;&lt;p&gt;So I am not comparing X with Y here.&lt;/p&gt;&#xA;&lt;p&gt;Not talking about package like Guzzle:&lt;/p&gt;&#xA;&lt;p&gt;I am not mentioning building something like Guzzle, which is a framework that includes the tools needed to create a robust web service client.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
 </rss>
