@@ -1,8 +1,13 @@
 ---
-title: "About Hari KT — Freelance Full Stack Developer from Kerala, India"
-description: "Hari KT is a freelance full stack developer based in Kerala, India and a maintainer of Aura for PHP. He builds web applications, APIs, Tauri desktop apps and React Native mobile apps for clients worldwide."
+title: "About Hari KT — Freelancer and Full Stack Developer from Kerala, India"
+description: "Hari KT is a freelancer and full stack developer based in Kerala, India, and a maintainer of Aura for PHP. Freelancing since 2013, he builds web applications, APIs, Tauri desktop apps and React Native mobile apps for clients worldwide."
 keywords:
   - about Hari KT
+  - freelancer
+  - freelancer Kerala
+  - freelancer India
+  - freelancer full stack developer
+  - hire a freelancer Kerala
   - freelance full stack developer India
   - PHP developer Kerala
   - Golang developer India
@@ -27,9 +32,9 @@ showAuthor: false
 showTableOfContents: true
 ---
 
-I am **Hari KT**, a freelance full stack developer based in Kerala, India—God's own country. I work remotely with clients around the world, from solo founders validating a first idea to established teams who need an extra pair of experienced hands.
+I am **Hari KT**, a **freelancer** and full stack developer based in Kerala, India—God's own country. I work remotely with clients around the world, from solo founders validating a first idea to established teams who need an extra pair of experienced hands.
 
-I have been writing PHP since 2006 and publishing what I learn on this site since 2012.
+I have been freelancing since 2013, writing PHP since 2006, and publishing what I learn on this site since 2012.
 
 ## What I do
 
@@ -84,9 +89,9 @@ Beyond Aura and ProcessWire, I advocate for open source generally and give back 
 
 I write here about PHP, frameworks, Composer, APIs, and software architecture—you can browse everything by [topic](/tags/) or by [date](/blog/archives/). I also share my coding journey on my [YouTube channel](https://www.youtube.com/@HariKT).
 
-## Work with me
+## Hire me as a freelancer
 
-I am available for freelance and contract work. If you are building something and think I can help, I would genuinely like to hear about it.
+I am available for freelance and contract work. If you are looking for a **freelancer from Kerala, India** who can take a product across the whole stack, I would genuinely like to hear what you are building.
 
 - **Email** — [me@harikt.com](mailto:me@harikt.com) (or use the [contact form](/contact/))
 - **GitHub** — [github.com/harikt](https://github.com/harikt)

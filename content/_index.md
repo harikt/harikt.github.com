@@ -1,7 +1,12 @@
 ---
-title: "Hari KT — PHP, Golang, React and Python Developer"
-description: "Hari KT is a freelance full stack developer from Kerala, India and a maintainer of the Aura PHP framework. PHP, Golang, Python and NodeJS backends, ReactJS frontends, plus desktop apps with Tauri and mobile apps with React Native."
+title: "Hari KT — Freelancer from Kerala | PHP, Golang, React and Python Developer"
+description: "Hari KT is a freelancer and full stack developer from Kerala, India, and a maintainer of the Aura PHP framework. Freelancing since 2013: PHP, Golang, Python and NodeJS backends, ReactJS frontends, plus desktop apps with Tauri and mobile apps with React Native."
 keywords:
+  - freelancer
+  - freelancer Kerala
+  - freelancer India
+  - freelancer PHP developer
+  - hire a freelancer Kerala
   - PHP developer
   - Golang developer
   - full stack web developer
@@ -13,7 +18,7 @@ keywords:
   - cross platform mobile app developer
 ---
 
-👋 **I am Hari KT**, a **freelance full stack web developer** based in God's own country—Kerala, India. I work with clients around the world, from solo founders to established product teams.
+👋 **I am Hari KT**, a **freelancer** and full stack web developer based in God's own country—Kerala, India. I have been freelancing since 2013 and writing PHP since 2006, working with clients around the world, from solo founders to established product teams.
 
 I am a passionate advocate for open-source software and regularly contribute back to the community through code, documentation, and financial support.
 
@@ -45,5 +50,9 @@ Because desktop, mobile and web all share the same React skills in my toolkit, I
 ---
 
 > I love tackling complex problems and delivering high-quality, scalable solutions for my clients. I also share my knowledge and coding journey on my [YouTube Channel](https://www.youtube.com/@HariKT).
+
+### 🤝 Hire a freelancer
+
+Looking for a **freelancer from Kerala, India** to build or rescue a product? I am available for freelance and contract work—[get in touch](/contact/) or email [me@harikt.com](mailto:me@harikt.com).
 
 [Read more about me and my work →](/about/)
