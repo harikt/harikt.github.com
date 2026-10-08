@@ -101,18 +101,68 @@
         <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
     </div>
 
+    {{- with site.Params.turnstileSiteKey }}
+    <div class="custom-form-group">
+        <div id="turnstile-widget" style="min-height: 65px;"></div>
+        <div id="turnstile-error" role="alert" style="display: none; color: #ef4444;">
+            The spam check could not load, so the form can't be sent yet. An ad or content blocker can cause this; allow challenges.cloudflare.com, then try again.
+            <div><button type="button" id="turnstile-retry" class="custom-btn" style="margin-top: 0.5rem;">Try again</button></div>
+        </div>
+    </div>
+    {{- end }}
+
     <button type="submit" id="submit-btn" class="custom-btn">Send Message</button>
     <div id="form-status" style="margin-top: 1rem; font-weight: bold; display: none;"></div>
 </form>
 </div>
 
 <script>
+// Cloudflare Turnstile, on when params.turnstileSiteKey is set. The mailer
+// checks the token; without one it refuses the message once it enforces.
+const turnstileSiteKey = {{ site.Params.turnstileSiteKey | default "" }};
+let turnstileToken = '';
+let turnstileWidgetId = null;
+
+function setSubmitReady() {
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = turnstileSiteKey !== '' && turnstileToken === '';
+}
+
+function loadTurnstile() {
+    const errorBox = document.getElementById('turnstile-error');
+    errorBox.style.display = 'none';
+    const script = document.createElement('script');
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+    script.async = true;
+    script.onload = () => {
+        turnstileWidgetId = window.turnstile.render('#turnstile-widget', {
+            sitekey: turnstileSiteKey,
+            action: 'contact',
+            callback: (token) => { turnstileToken = token; setSubmitReady(); },
+            'expired-callback': () => { turnstileToken = ''; setSubmitReady(); },
+            'error-callback': () => { turnstileToken = ''; setSubmitReady(); },
+        });
+    };
+    // A blocked script would leave the button disabled with no reason given.
+    script.onerror = () => {
+        script.remove();
+        errorBox.style.display = 'block';
+    };
+    document.head.appendChild(script);
+}
+
+if (turnstileSiteKey !== '') {
+    setSubmitReady();
+    loadTurnstile();
+    document.getElementById('turnstile-retry').addEventListener('click', loadTurnstile);
+}
+
 document.getElementById('contact-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const form = e.target;
     const btn = document.getElementById('submit-btn');
     const status = document.getElementById('form-status');
-    
+
     const formData = {
         name: form.name.value,
         email: form.email.value,
@@ -120,7 +170,10 @@ document.getElementById('contact-form').addEventListener('submit', async (e) => 
         message: form.message.value,
         website: form.website.value
     };
-    
+    if (turnstileSiteKey !== '') {
+        formData.turnstile_token = turnstileToken;
+    }
+
     btn.disabled = true;
     btn.textContent = 'Sending...';
     status.style.display = 'none';
@@ -132,19 +185,28 @@ document.getElementById('contact-form').addEventListener('submit', async (e) => 
             body: JSON.stringify(formData)
         });
         
-        if (!res.ok) throw new Error('Failed to send message');
-        
+        if (!res.ok) {
+            // The mailer explains a refused spam check in {"message": ...}.
+            const body = await res.json().catch(() => ({}));
+            throw new Error(body.message || '');
+        }
+
         status.textContent = '✅ Message sent successfully! I will be in touch soon.';
         status.style.color = '#10b981';
         status.style.display = 'block';
         form.reset();
     } catch (err) {
-        status.textContent = '❌ Something went wrong. Please try again.';
+        status.textContent = '❌ ' + (err.message || 'Something went wrong. Please try again.');
         status.style.color = '#ef4444';
         status.style.display = 'block';
     } finally {
-        btn.disabled = false;
         btn.textContent = 'Send Message';
+        // A token is single-use: get a fresh one before the next attempt.
+        if (turnstileSiteKey !== '') {
+            turnstileToken = '';
+            if (window.turnstile && turnstileWidgetId !== null) window.turnstile.reset(turnstileWidgetId);
+        }
+        setSubmitReady();
     }
 });
 </script>
